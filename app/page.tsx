@@ -546,19 +546,26 @@ export default function GoogleGeminiEffectDemo() {
                           November 21
                         </span>
                       </div>
-                      <span className="text-sm font-medium text-white/40">Day 01</span>
+                      <span className="text-sm font-medium text-white/40">
+                        Day 01
+                      </span>
                     </div>
-                    
+
                     <div className="space-y-8">
                       <div>
-                        <h3 className="text-3xl font-light text-white mb-2">Kickoff</h3>
+                        <h3 className="text-3xl font-light text-white mb-2">
+                          Kickoff
+                        </h3>
                         <p className="text-white/70 font-light leading-relaxed">
-                          Welcome presentation, challenge announcement, and team formation
+                          Welcome presentation, challenge announcement, and team
+                          formation
                         </p>
                       </div>
-                      
+
                       <div className="flex items-center gap-6">
-                        <div className="text-lg font-medium text-white/80">4:00 PM</div>
+                        <div className="text-lg font-medium text-white/80">
+                          4:00 PM
+                        </div>
                         <div className="flex-1 h-px bg-gradient-to-r from-white/20 via-transparent to-transparent"></div>
                         <div className="text-sm text-white/50">Start</div>
                       </div>
@@ -586,19 +593,26 @@ export default function GoogleGeminiEffectDemo() {
                           November 22
                         </span>
                       </div>
-                      <span className="text-sm font-medium text-white/40">Day 02</span>
+                      <span className="text-sm font-medium text-white/40">
+                        Day 02
+                      </span>
                     </div>
-                    
+
                     <div className="space-y-8">
                       <div>
-                        <h3 className="text-3xl font-light text-white mb-2">Build</h3>
+                        <h3 className="text-3xl font-light text-white mb-2">
+                          Build
+                        </h3>
                         <p className="text-white/70 font-light leading-relaxed">
-                          Full day of development with mentor support and technical workshops
+                          Full day of development with mentor support and
+                          technical workshops
                         </p>
                       </div>
-                      
+
                       <div className="flex items-center gap-6">
-                        <div className="text-lg font-medium text-white/80">All Day</div>
+                        <div className="text-lg font-medium text-white/80">
+                          All Day
+                        </div>
                         <div className="flex-1 h-px bg-gradient-to-r from-white/20 via-transparent to-transparent"></div>
                         <div className="text-sm text-white/50">Continuous</div>
                       </div>
@@ -626,19 +640,25 @@ export default function GoogleGeminiEffectDemo() {
                           November 23
                         </span>
                       </div>
-                      <span className="text-sm font-medium text-white/40">Day 03</span>
+                      <span className="text-sm font-medium text-white/40">
+                        Day 03
+                      </span>
                     </div>
-                    
+
                     <div className="space-y-8">
                       <div>
-                        <h3 className="text-3xl font-light text-white mb-2">Present</h3>
+                        <h3 className="text-3xl font-light text-white mb-2">
+                          Present
+                        </h3>
                         <p className="text-white/70 font-light leading-relaxed">
                           Final presentations, judging, and awards ceremony
                         </p>
                       </div>
-                      
+
                       <div className="flex items-center gap-6">
-                        <div className="text-lg font-medium text-white/80">5:00 PM</div>
+                        <div className="text-lg font-medium text-white/80">
+                          5:00 PM
+                        </div>
                         <div className="flex-1 h-px bg-gradient-to-r from-white/20 via-transparent to-transparent"></div>
                         <div className="text-sm text-white/50">Finals</div>
                       </div>
@@ -724,63 +744,127 @@ export default function GoogleGeminiEffectDemo() {
             </section>
           </div> */}
 
-          <div className="flex flex-wrap self-center w-full max-w-[1280px] gap-16 px-8">
-            <section className="flex flex-col flex-1">
-              <div className="flex flex-row items-center gap-4 mb-8">
-                <div className="max-w-9 bg-white h-1 flex-1" />
-                Questions
-              </div>
-
-              <div className="text-6xl text-balance leading-tight">
-                Have any questions? We are here to help!
+          <div className="flex flex-col self-center w-full max-w-[1280px] gap-24 px-8">
+            <section className="flex flex-col items-center gap-16 py-24">
+              <div className="flex flex-col items-center gap-6">
+                <div className="text-sm font-medium text-white/50 uppercase tracking-[0.3em]">
+                  Questions
+                </div>
+                <h2 className="text-4xl md:text-6xl font-light text-center leading-tight text-white max-w-4xl">
+                  Everything you need
+                  <br />
+                  <span className="text-white/70">to know.</span>
+                </h2>
               </div>
             </section>
-            <section className="flex flex-col flex-1">
-              <Accordion variant="splitted">
-                <AccordionItem
-                  key="1"
-                  aria-label="Do I need to know how to code?"
-                  title="Do I need to know how to code?"
-                >
-                  If you're applying as a hacker — yes, at least one person on
-                  your team needs solid AI/ML experience. If you're not
-                  technical, check out the showroom instead!
-                </AccordionItem>
-                <AccordionItem
-                  key="2"
-                  aria-label="Can I apply solo?"
-                  title="Can I apply solo?"
-                >
-                  Absolutely. We'll help you find a team before and during the
-                  event.
-                </AccordionItem>
-                <AccordionItem
-                  key="3"
-                  aria-label="Where is the event?"
-                  title="Where is the event?"
-                >
-                  In Turku, Finland. The exact location will be shared with
-                  approved participants.
-                </AccordionItem>
 
-                <AccordionItem
-                  key="4"
-                  aria-label="Is it really free?"
-                  title="Is it really free?"
-                >
-                  Yes. We cover everything — food, drinks, space, swag, and
-                  compute.
-                </AccordionItem>
-                <AccordionItem
-                  key="5"
-                  aria-label="How do I know if I got in?"
-                  title="How do I know if I got in?"
-                >
-                  All applications are reviewed. You'll receive an approval
-                  email if selected.
-                </AccordionItem>
-              </Accordion>
-            </section>
+            <div className="space-y-6">
+              <div className="group relative overflow-hidden rounded-2xl bg-white/5 backdrop-blur-xl border border-white/10 hover:border-white/20 transition-all duration-300">
+                <details className="peer">
+                  <summary className="flex items-center justify-between p-8 cursor-pointer list-none">
+                    <span className="text-xl font-light text-white">
+                      Do I need to know how to code?
+                    </span>
+                    <div className="w-6 h-6 rounded-full bg-white/10 flex items-center justify-center transition-transform duration-300 group-open:rotate-45">
+                      <div className="w-3 h-px bg-white/60"></div>
+                      <div className="w-px h-3 bg-white/60 absolute"></div>
+                    </div>
+                  </summary>
+                  <div className="px-8 pb-8">
+                    <div className="w-full h-px bg-gradient-to-r from-white/10 via-white/20 to-white/10 mb-6"></div>
+                    <p className="text-white/70 font-light leading-relaxed">
+                      If you're applying as a hacker — yes, at least one person
+                      on your team needs solid AI/ML experience. If you're not
+                      technical, check out the showroom instead!
+                    </p>
+                  </div>
+                </details>
+              </div>
+
+              <div className="group relative overflow-hidden rounded-2xl bg-white/5 backdrop-blur-xl border border-white/10 hover:border-white/20 transition-all duration-300">
+                <details className="peer">
+                  <summary className="flex items-center justify-between p-8 cursor-pointer list-none">
+                    <span className="text-xl font-light text-white">
+                      Can I apply solo?
+                    </span>
+                    <div className="w-6 h-6 rounded-full bg-white/10 flex items-center justify-center transition-transform duration-300 group-open:rotate-45">
+                      <div className="w-3 h-px bg-white/60"></div>
+                      <div className="w-px h-3 bg-white/60 absolute"></div>
+                    </div>
+                  </summary>
+                  <div className="px-8 pb-8">
+                    <div className="w-full h-px bg-gradient-to-r from-white/10 via-white/20 to-white/10 mb-6"></div>
+                    <p className="text-white/70 font-light leading-relaxed">
+                      Absolutely. We'll help you find a team before and during
+                      the event.
+                    </p>
+                  </div>
+                </details>
+              </div>
+
+              <div className="group relative overflow-hidden rounded-2xl bg-white/5 backdrop-blur-xl border border-white/10 hover:border-white/20 transition-all duration-300">
+                <details className="peer">
+                  <summary className="flex items-center justify-between p-8 cursor-pointer list-none">
+                    <span className="text-xl font-light text-white">
+                      Where is the event?
+                    </span>
+                    <div className="w-6 h-6 rounded-full bg-white/10 flex items-center justify-center transition-transform duration-300 group-open:rotate-45">
+                      <div className="w-3 h-px bg-white/60"></div>
+                      <div className="w-px h-3 bg-white/60 absolute"></div>
+                    </div>
+                  </summary>
+                  <div className="px-8 pb-8">
+                    <div className="w-full h-px bg-gradient-to-r from-white/10 via-white/20 to-white/10 mb-6"></div>
+                    <p className="text-white/70 font-light leading-relaxed">
+                      In Turku, Finland. The exact location will be shared with
+                      approved participants.
+                    </p>
+                  </div>
+                </details>
+              </div>
+
+              <div className="group relative overflow-hidden rounded-2xl bg-white/5 backdrop-blur-xl border border-white/10 hover:border-white/20 transition-all duration-300">
+                <details className="peer">
+                  <summary className="flex items-center justify-between p-8 cursor-pointer list-none">
+                    <span className="text-xl font-light text-white">
+                      Is it really free?
+                    </span>
+                    <div className="w-6 h-6 rounded-full bg-white/10 flex items-center justify-center transition-transform duration-300 group-open:rotate-45">
+                      <div className="w-3 h-px bg-white/60"></div>
+                      <div className="w-px h-3 bg-white/60 absolute"></div>
+                    </div>
+                  </summary>
+                  <div className="px-8 pb-8">
+                    <div className="w-full h-px bg-gradient-to-r from-white/10 via-white/20 to-white/10 mb-6"></div>
+                    <p className="text-white/70 font-light leading-relaxed">
+                      Yes. We cover everything — food, drinks, space, swag, and
+                      compute.
+                    </p>
+                  </div>
+                </details>
+              </div>
+
+              <div className="group relative overflow-hidden rounded-2xl bg-white/5 backdrop-blur-xl border border-white/10 hover:border-white/20 transition-all duration-300">
+                <details className="peer">
+                  <summary className="flex items-center justify-between p-8 cursor-pointer list-none">
+                    <span className="text-xl font-light text-white">
+                      How do I know if I got in?
+                    </span>
+                    <div className="w-6 h-6 rounded-full bg-white/10 flex items-center justify-center transition-transform duration-300 group-open:rotate-45">
+                      <div className="w-3 h-px bg-white/60"></div>
+                      <div className="w-px h-3 bg-white/60 absolute"></div>
+                    </div>
+                  </summary>
+                  <div className="px-8 pb-8">
+                    <div className="w-full h-px bg-gradient-to-r from-white/10 via-white/20 to-white/10 mb-6"></div>
+                    <p className="text-white/70 font-light leading-relaxed">
+                      All applications are reviewed. You'll receive an approval
+                      email if selected.
+                    </p>
+                  </div>
+                </details>
+              </div>
+            </div>
           </div>
 
           <div className="flex flex-wrap self-center w-full max-w-[1280px] gap-16 px-8">
@@ -871,95 +955,97 @@ export default function GoogleGeminiEffectDemo() {
               </div> */}
           </div>
 
-          <div
-            className="relative h-[800px]"
-            style={{ clipPath: "polygon(0% 0, 100% 0%, 100% 100%, 0 100%)" }}
-          >
-            <div className="relative h-[calc(100vh+800px)] -top-[100vh]">
-              <div className="h-[800px] sticky top-[calc(100vh-800px)]">
-                <div className="bg-content2 py-8 px-12 h-full w-full flex flex-col justify-between">
-                  <div>
-                    <div className="flex shrink-0 gap-20">
-                      <div className="flex flex-col gap-2">
-                        <h3 className="mb-2 uppercase text-[#ffffff80]">
-                          Socials
-                        </h3>
-                        <a
-                          href="https://www.linkedin.com/company/sinceai"
-                          target="_blank"
-                          rel="noopener noreferrer"
-                          className="hover:underline text-white"
-                        >
-                          LinkedIn
-                        </a>
-                        <a
-                          href="https://www.instagram.com/sinceai"
-                          target="_blank"
-                          rel="noopener noreferrer"
-                          className="hover:underline text-white"
-                        >
-                          Instagram
-                        </a>
-                        <a
-                          href="https://twitter.com/sinceai"
-                          target="_blank"
-                          rel="noopener noreferrer"
-                          className="hover:underline text-white"
-                        >
-                          Twitter
-                        </a>
-                        <a
-                          href="https://www.tiktok.com/@sinceai"
-                          target="_blank"
-                          rel="noopener noreferrer"
-                          className="hover:underline text-white"
-                        >
-                          TikTok
-                        </a>
-                        <a
-                          href="https://www.youtube.com/@sinceai"
-                          target="_blank"
-                          rel="noopener noreferrer"
-                          className="hover:underline text-white"
-                        >
-                          YouTube
-                        </a>
-                        <a
-                          href="https://github.com/sinceai"
-                          target="_blank"
-                          rel="noopener noreferrer"
-                          className="hover:underline text-white"
-                        >
-                          GitHub
-                        </a>
-                      </div>
-                      <div className="flex flex-col gap-2">
-                        <h3 className="mb-2 uppercase text-[#ffffff80]">
-                          Contact
-                        </h3>
-                        <p className="text-white">Boost Turku ry</p>
+          <div className="bg-black border-t border-white/10">
+              <div className="max-w-[1280px] mx-auto px-8 py-16">
+                <div className="grid grid-cols-1 md:grid-cols-4 gap-12 mb-16">
+                  <div className="col-span-1 md:col-span-2">
+                    <h2 className="text-4xl md:text-5xl font-light text-white mb-4">
+                      Since AI
+                    </h2>
+                    <p className="text-white/60 text-lg font-light max-w-md">
+                      Pioneering the future of artificial intelligence with
+                      innovation and purpose.
+                    </p>
+                  </div>
 
-                        <p className="text-white">Business ID: 2321515-1</p>
-                      </div>
+                  <div className="space-y-4">
+                    <h3 className="text-white font-medium text-sm uppercase tracking-wider">
+                      Connect
+                    </h3>
+                    <div className="space-y-3">
+                      <a
+                        href="https://www.linkedin.com/company/sinceai"
+                        target="_blank"
+                        rel="noopener noreferrer"
+                        className="block text-white/60 hover:text-white transition-colors duration-200 text-sm"
+                      >
+                        LinkedIn
+                      </a>
+                      <a
+                        href="https://www.instagram.com/sinceai"
+                        target="_blank"
+                        rel="noopener noreferrer"
+                        className="block text-white/60 hover:text-white transition-colors duration-200 text-sm"
+                      >
+                        Instagram
+                      </a>
+                      <a
+                        href="https://twitter.com/sinceai"
+                        target="_blank"
+                        rel="noopener noreferrer"
+                        className="block text-white/60 hover:text-white transition-colors duration-200 text-sm"
+                      >
+                        X (Twitter)
+                      </a>
+                      <a
+                        href="https://github.com/sinceai"
+                        target="_blank"
+                        rel="noopener noreferrer"
+                        className="block text-white/60 hover:text-white transition-colors duration-200 text-sm"
+                      >
+                        GitHub
+                      </a>
                     </div>
                   </div>
-                  <div className="flex justify-between items-end">
-                    <h1 className="text-[14vw] leading-[0.8] mt-10">
-                      Since AI
-                    </h1>
-                    <p>© 2025 All rights reserved.</p>
+
+                  <div className="space-y-4">
+                    <h3 className="text-white font-medium text-sm uppercase tracking-wider">
+                      Legal
+                    </h3>
+                    <div className="space-y-3">
+                      <p className="text-white/60 text-sm">Boost Turku ry</p>
+                      <p className="text-white/60 text-sm">
+                        Business ID: 2321515-1
+                      </p>
+                    </div>
+                  </div>
+                </div>
+
+                <div className="pt-8 border-t border-white/10 flex flex-col md:flex-row justify-between items-center gap-4">
+                  <p className="text-white/40 text-sm">
+                    © 2025 Since AI. All rights reserved.
+                  </p>
+                  <div className="flex gap-6">
+                    <a
+                      href="#"
+                      className="text-white/40 hover:text-white/60 transition-colors duration-200 text-sm"
+                    >
+                      Privacy Policy
+                    </a>
+                    <a
+                      href="#"
+                      className="text-white/40 hover:text-white/60 transition-colors duration-200 text-sm"
+                    >
+                      Terms of Service
+                    </a>
                   </div>
                 </div>
               </div>
             </div>
-          </div>
         </div>
       </div>
     </SmoothScroll>
   );
 }
-
-
-
 
 // make it look apple style, billion dollar company looking, minimalist, modern

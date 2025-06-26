@@ -62,7 +62,8 @@ export default function GoogleGeminiEffectDemo() {
                 </span>
               </h1>
               <p className="text-white/60 text-lg md:text-xl font-light text-center max-w-2xl leading-relaxed mb-16">
-                Connect with our team of visionaries and innovators who are shaping tomorrow's AI landscape.
+                Connect with our team of visionaries and innovators who are
+                shaping tomorrow's AI landscape.
               </p>
             </div>
           </div>
@@ -80,8 +81,18 @@ export default function GoogleGeminiEffectDemo() {
               </section> */}
               <section className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 xl:grid-cols-4 gap-6 max-w-[1280px] px-6 mb-8">
                 {[
-                  { name: "Yuehan John", role: "Head of Growth", email: "yuehan.john@boostturku.com", linkedin: "https://www.linkedin.com/in/yuehanjohn/" },
-                  { name: "Riku Lauttia", role: "Head of Partnerships", email: "riku@boostturku.com", linkedin: "https://www.linkedin.com/in/rikulauttia/" },
+                  {
+                    name: "Yuehan John",
+                    role: "Head of Growth",
+                    email: "yuehan.john@boostturku.com",
+                    linkedin: "https://www.linkedin.com/in/yuehanjohn/",
+                  },
+                  {
+                    name: "Riku Lauttia",
+                    role: "Head of Partnerships",
+                    email: "riku@boostturku.com",
+                    linkedin: "https://www.linkedin.com/in/rikulauttia/",
+                  },
                   { name: "Vishaka Salpiumi", role: "Head of Community" },
                   { name: "Juho Salmi", role: "Head of Sales" },
                   { name: "Joonas Ukkonen", role: "Sales Manager" },
@@ -97,38 +108,38 @@ export default function GoogleGeminiEffectDemo() {
                   { name: "Olli Jartti", role: "Sales Manager" },
                   { name: "Vyas Aman", role: "Sales Manager" },
                   { name: "Uruj Sarwar", role: "Program Manager" },
-                  { name: "Janina Paasila", role: "Art Director" }
+                  { name: "Janina Paasila", role: "Art Director" },
                 ].map((person, index) => (
-                  <div 
+                  <div
                     key={index}
                     className="group relative bg-white/5 backdrop-blur-sm border border-white/10 rounded-2xl p-6 hover:bg-white/10 hover:border-white/20 transition-all duration-300 cursor-pointer overflow-hidden"
                   >
                     <div className="absolute inset-0 bg-gradient-to-br from-white/5 to-transparent opacity-0 group-hover:opacity-100 transition-opacity duration-300" />
-                    
+
                     <div className="relative z-10">
                       {/* <div className="w-12 h-12 bg-gradient-to-br from-white/20 to-white/10 rounded-full flex items-center justify-center mb-4">
                         <span className="text-white font-medium text-lg">
                           {person.name.split(' ').map(n => n[0]).join('')}
                         </span>
                       </div> */}
-                      
+
                       <h3 className="text-white font-medium text-lg mb-2 leading-tight">
                         {person.name}
                       </h3>
-                      
+
                       <p className="text-white/60 text-sm font-light mb-4">
                         {person.role}
                       </p>
-                      
+
                       {person.email && (
-                        <a 
+                        <a
                           href={`mailto:${person.email}`}
                           className="text-white/40 hover:text-white/70 text-xs font-light transition-colors duration-200 block mb-3 truncate"
                         >
                           {person.email}
                         </a>
                       )}
-                      
+
                       {person.linkedin && (
                         <button
                           onClick={() => window.open(person.linkedin, "_blank")}
@@ -138,7 +149,7 @@ export default function GoogleGeminiEffectDemo() {
                         </button>
                       )}
                     </div>
-                    
+
                     <div className="absolute top-0 right-0 w-20 h-20 bg-gradient-to-br from-white/5 to-transparent rounded-full -translate-y-10 translate-x-10 group-hover:scale-150 transition-transform duration-500" />
                   </div>
                 ))}
@@ -146,21 +157,21 @@ export default function GoogleGeminiEffectDemo() {
             </div>
 
             <InfiniteSlider gap={24} className="my-16">
-                <div className="text-6xl md:text-8xl lg:text-9xl font-light text-white/90 tracking-tight mr-28">
+              <div className="text-6xl md:text-8xl lg:text-9xl font-light text-white/90 tracking-tight mr-28">
                 Innovation
-                </div>
-                <div className="text-6xl md:text-8xl lg:text-9xl font-light text-white/90 tracking-tight mr-28">
+              </div>
+              <div className="text-6xl md:text-8xl lg:text-9xl font-light text-white/90 tracking-tight mr-28">
                 Impact
-                </div>
-                <div className="text-6xl md:text-8xl lg:text-9xl font-light text-white/90 tracking-tight mr-28">
+              </div>
+              <div className="text-6xl md:text-8xl lg:text-9xl font-light text-white/90 tracking-tight mr-28">
                 Startup
-                </div>
-                <div className="text-6xl md:text-8xl lg:text-9xl font-light text-white/90 tracking-tight mr-28">
+              </div>
+              <div className="text-6xl md:text-8xl lg:text-9xl font-light text-white/90 tracking-tight mr-28">
                 Future
-                </div>
-                <div className="text-6xl md:text-8xl lg:text-9xl font-light text-white/90 tracking-tight mr-28">
+              </div>
+              <div className="text-6xl md:text-8xl lg:text-9xl font-light text-white/90 tracking-tight mr-28">
                 Next Gen
-                </div>
+              </div>
             </InfiniteSlider>
             <div className="bg-black border-t border-white/10">
               <div className="max-w-[1280px] mx-auto px-8 py-16">
@@ -170,10 +181,11 @@ export default function GoogleGeminiEffectDemo() {
                       Since AI
                     </h2>
                     <p className="text-white/60 text-lg font-light max-w-md">
-                      Pioneering the future of artificial intelligence with innovation and purpose.
+                      Pioneering the future of artificial intelligence with
+                      innovation and purpose.
                     </p>
                   </div>
-                  
+
                   <div className="space-y-4">
                     <h3 className="text-white font-medium text-sm uppercase tracking-wider">
                       Connect
@@ -213,37 +225,41 @@ export default function GoogleGeminiEffectDemo() {
                       </a>
                     </div>
                   </div>
-                  
+
                   <div className="space-y-4">
                     <h3 className="text-white font-medium text-sm uppercase tracking-wider">
                       Legal
                     </h3>
                     <div className="space-y-3">
                       <p className="text-white/60 text-sm">Boost Turku ry</p>
-                      <p className="text-white/60 text-sm">Business ID: 2321515-1</p>
+                      <p className="text-white/60 text-sm">
+                        Business ID: 2321515-1
+                      </p>
                     </div>
                   </div>
                 </div>
-                
+
                 <div className="pt-8 border-t border-white/10 flex flex-col md:flex-row justify-between items-center gap-4">
                   <p className="text-white/40 text-sm">
                     © 2025 Since AI. All rights reserved.
                   </p>
                   <div className="flex gap-6">
-                    <a href="#" className="text-white/40 hover:text-white/60 transition-colors duration-200 text-sm">
+                    <a
+                      href="#"
+                      className="text-white/40 hover:text-white/60 transition-colors duration-200 text-sm"
+                    >
                       Privacy Policy
                     </a>
-                    <a href="#" className="text-white/40 hover:text-white/60 transition-colors duration-200 text-sm">
+                    <a
+                      href="#"
+                      className="text-white/40 hover:text-white/60 transition-colors duration-200 text-sm"
+                    >
                       Terms of Service
                     </a>
                   </div>
                 </div>
               </div>
             </div>
-
-
-
-
           </div>
         </WavyBackground>
       </div>
