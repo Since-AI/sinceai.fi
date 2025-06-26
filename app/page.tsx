@@ -701,13 +701,7 @@ export default function GoogleGeminiEffectDemo() {
                           Contact
                         </h3>
                         <p className="text-white">Boost Turku ry</p>
-                        <p className="text-white">Project team</p>
-                        <a
-                          href="mailto:info@boostturku.com"
-                          className="hover:underline text-white"
-                        >
-                          info@boostturku.com
-                        </a>
+                        
                         <p className="text-white">Business ID: 2321515-1</p>
                       </div>
                     </div>
@@ -716,7 +710,7 @@ export default function GoogleGeminiEffectDemo() {
                     <h1 className="text-[14vw] leading-[0.8] mt-10">
                       Since AI
                     </h1>
-                    <p>©copyright</p>
+                    <p>© 2025 All rights reserved.</p>
                   </div>
                 </div>
               </div>
