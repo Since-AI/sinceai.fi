@@ -40,46 +40,51 @@ export default function GoogleGeminiEffectDemo() {
       <div className="flex flex-col w-full">
         <WavyBackground className="flex w-full h-screen p-16 my-32">
           <div className="w-full flex flex-col h-full">
-            <div className="w-full flex h-full flex-col gap-4">
-              <p className="text-3xl md:text-5xl lg:text-9xl text-white font-bold inter-var text-center">
-                Since AI
-              </p>
-              <div className="text-2xl md:text-4xl lg:text-8xl text-center">
-                <TextLoop
-                  className="flex w-full text-balance"
-                  transition={{
-                    type: "spring",
-                    stiffness: 900,
-                    damping: 80,
-                    mass: 10,
-                  }}
-                  variants={{
-                    initial: {
-                      y: 20,
-                      rotateX: 90,
-                      opacity: 0,
-                      filter: "blur(4px)",
-                    },
-                    animate: {
-                      y: 0,
-                      rotateX: 0,
-                      opacity: 1,
-                      filter: "blur(0px)",
-                    },
-                    exit: {
-                      y: -20,
-                      rotateX: -90,
-                      opacity: 0,
-                      filter: "blur(4px)",
-                    },
-                  }}
-                >
-                  <span>Loved and made in Founders</span>
-                  <span>Loved and made in Developers</span>
-                  <span>Loved and made in Designers</span>
-                  <span>Loved and made in AI enthusiast</span>
-                </TextLoop>
+            <div className="relative flex h-full w-full flex-col items-center justify-center">
+              <div className="relative z-10 flex flex-col items-center space-y-8">
+                <div className="flex flex-col items-center space-y-4">
+                  <h1 className="bg-gradient-to-b from-white to-white/60 bg-clip-text text-6xl font-medium tracking-tight text-transparent md:text-8xl lg:text-[12rem] xl:text-[14rem]">
+                    Since AI
+                  </h1>
+                  <div className="h-px w-24 bg-gradient-to-r from-transparent via-white/40 to-transparent"></div>
+                </div>
+                
+                <div className="text-center">
+                  <TextLoop
+                    className="text-xl font-light tracking-wide text-white/80 md:text-2xl lg:text-3xl"
+                    transition={{
+                      type: "spring",
+                      stiffness: 300,
+                      damping: 30,
+                      mass: 1,
+                    }}
+                    variants={{
+                      initial: {
+                        y: 10,
+                        opacity: 0,
+                        filter: "blur(2px)",
+                      },
+                      animate: {
+                        y: 0,
+                        opacity: 1,
+                        filter: "blur(0px)",
+                      },
+                      exit: {
+                        y: -10,
+                        opacity: 0,
+                        filter: "blur(2px)",
+                      },
+                    }}
+                  >
+                    <span>For Founders</span>
+                    <span>For Developers</span>
+                    <span>For Designers</span>
+                    <span>For AI Enthusiasts</span>
+                  </TextLoop>
+                </div>
               </div>
+              
+              <div className="absolute inset-0 bg-gradient-to-b from-transparent via-transparent to-black/20"></div>
             </div>
             <div className="flex flex-wrap h-fit w-full gap-4 items-center">
               <p className="text-center w-full md:w-fit text-large">
@@ -94,7 +99,7 @@ export default function GoogleGeminiEffectDemo() {
           </div>
         </WavyBackground>
         <div className="flex flex-col gap-32">
-          <InfiniteSlider gap={68}>
+          {/* <InfiniteSlider gap={68}>
             <img
               src="assets\logo\logo_full.png"
               alt="logo"
@@ -150,187 +155,309 @@ export default function GoogleGeminiEffectDemo() {
               alt="logo"
               className="h-[48px] w-auto"
             />
-          </InfiniteSlider>
+          </InfiniteSlider> */}
 
-          <div className="flex flex-col self-center w-full max-w-[1280px] gap-8 px-8">
-            <section className="flex flex-col gap-8">
-              <div className="flex flex-row items-center gap-4 mb-8">
-                <div className="max-w-9 bg-white h-1 flex-1" />
+            <div className="flex flex-col self-center w-full max-w-[1280px] gap-24 px-8">
+            <section className="flex flex-col items-center gap-16 py-24">
+              <div className="flex flex-col items-center gap-6">
+              <div className="text-sm font-medium text-white/50 uppercase tracking-[0.2em]">
                 About Since AI
               </div>
-
-              <div className="text-6xl text-balance">
-                Why you should attend the Since AI Hackathon
+              <div className="text-5xl md:text-7xl font-semibold text-center leading-tight text-white">
+                Think different.
+                <br />
+                Build the future.
+              </div>
               </div>
             </section>
-            <section className="flex flex-wrap w-full gap-8">
-              <div className="relative aspect-video h-full rounded-3xl border border-zinc-800 bg-black flex flex-1">
-                <Spotlight
-                  className="from-blue-800 via-blue-600 to-blue-400 blur-xl dark:from-blue-900 dark:via-blue-500 dark:to-blue-900"
-                  size={64}
+
+            <section className="grid grid-cols-1 lg:grid-cols-2 gap-16 items-center">
+              <div className="relative overflow-hidden rounded-3xl bg-gradient-to-br from-zinc-900/50 to-black/50 backdrop-blur-xl border border-white/10">
+              <div className="absolute inset-0 bg-gradient-to-br from-blue-500/10 via-transparent to-purple-500/10"></div>
+              <div className="relative p-12 h-[400px] flex items-center justify-center">
+                <img
+                src="/assets/logo/logo_full.png"
+                alt="Since AI Logo"
+                className="w-48 h-auto object-contain opacity-90"
                 />
-                <div className="absolute inset-0">
-                  <svg className="h-full w-full">
-                    <defs>
-                      <pattern
-                        id="grid-pattern"
-                        width="8"
-                        height="8"
-                        patternUnits="userSpaceOnUse"
-                      >
-                        <path
-                          xmlns="http://www.w3.org/2000/svg"
-                          d="M0 4H4M4 4V0M4 4H8M4 4V8"
-                          stroke="currentColor"
-                          strokeOpacity="0.3"
-                          className="stroke-black"
-                        />
-                        <rect
-                          x="3"
-                          y="3"
-                          width="2"
-                          height="2"
-                          fill="currentColor"
-                          fillOpacity="0.25"
-                          className="fill-black"
-                        />
-                      </pattern>
-                    </defs>
-                    <rect
-                      width="100%"
-                      height="100%"
-                      fill="url(#grid-pattern)"
-                    />
-                  </svg>
-                </div>
-                <div className="absolute left-1/2 top-1/2 -translate-x-1/2 -translate-y-1/2 rounded-sm p-2">
-                  <img
-                    src="/assets/logo/logo_full.png"
-                    alt="Since AI Logo"
-                    className=" w-auto object-contain"
-                  />
-                </div>
+              </div>
               </div>
 
               <InView
-                variants={{
-                  hidden: { opacity: 0, y: 100, filter: "blur(4px)" },
-                  visible: { opacity: 1, y: 0, filter: "blur(0px)" },
-                }}
-                viewOptions={{ margin: "0px 0px -200px 0px" }}
-                transition={{ duration: 0.3, ease: "easeInOut" }}
+              variants={{
+                hidden: { opacity: 0, y: 50, filter: "blur(4px)" },
+                visible: { opacity: 1, y: 0, filter: "blur(0px)" },
+              }}
+              viewOptions={{ margin: "0px 0px -150px 0px" }}
+              transition={{ duration: 0.8, ease: "easeOut" }}
               >
-                <span className="flex flex-col justify-center  inter-var font-light leading-8 tracking-wide max-w-[600px] gap-4">
-                  <p>
-                    SinceAI is more than just a hackathon—it's a launchpad for
-                    the next generation of AI innovators. Over one action-packed
-                    weekend, you'll join a vibrant community of engineers,
-                    students, and entrepreneurs, all driven by a shared vision
-                    to shape the future of artificial intelligence. Collaborate
-                    with ambitious creators, tackle real-world challenges, and
-                    push the boundaries of what's possible with access to
-                    cutting-edge GPUs, APIs, and expert mentors.
-                  </p>
-                  <p>
-                    Compete for over €10,000 in prizes, connect with industry
-                    partners, and be part of a movement that's building a unique
-                    AI ecosystem in Turku and beyond. Whether you're looking to
-                    learn, build, or make an impact, SinceAI is where ideas
-                    become reality and the future of AI begins.
-                  </p>
-                </span>
+              <div className="flex flex-col gap-8">
+                <div className="text-2xl md:text-3xl font-light text-white/90 leading-relaxed">
+                Where innovation meets possibility.
+                </div>
+                <div className="space-y-6 text-lg text-white/70 font-light leading-relaxed">
+                <p>
+                  SinceAI isn't just a hackathon. It's where the future of artificial intelligence begins. Join a carefully curated community of visionaries, engineers, and entrepreneurs in an environment designed for breakthrough innovation.
+                </p>
+                <p>
+                  Three days. Unlimited potential. €10,000+ in prizes. The tools, mentorship, and connections you need to transform ideas into reality.
+                </p>
+                </div>
+                <div className="flex items-center gap-4 pt-4">
+                <div className="w-12 h-px bg-gradient-to-r from-blue-400 to-transparent"></div>
+                <span className="text-sm text-white/50 font-medium">The future is built here</span>
+                </div>
+              </div>
               </InView>
             </section>
 
-            <section>
-              <div className="w-full flex justify-center">
+            <section className="py-16"></section>
+              <div className="relative overflow-hidden rounded-3xl bg-black/30 backdrop-blur-xl border border-white/10">
+              <div className="absolute inset-0 bg-gradient-to-r from-transparent via-white/5 to-transparent"></div>
+              <div className="relative p-8">
                 <video
-                  src="/assets/videos/ads.mp4"
-                  muted
-                  controls={false}
-                  autoPlay
-                  loop
-                  className="rounded-lg shadow-lg w-full max-w-3xl aspect-video bg-black"
-                  poster="/assets/logo/logo_full.png"
+                src="/assets/videos/ads.mp4"
+                muted
+                controls={false}
+                autoPlay
+                loop
+                className="w-full aspect-video rounded-2xl bg-black/50"
+                poster="/assets/logo/logo_full.png"
                 >
-                  Your browser does not support the video tag.
+                Your browser does not support the video tag.
                 </video>
               </div>
-            </section>
-          </div>
+              </div>
+            </div>
 
-          <div className="flex flex-col self-center w-full max-w-[1280px] gap-8 px-8">
-            <section className="flex flex-col gap-8">
-              <div className="flex flex-row items-center gap-4 mb-8">
-                <div className="max-w-9 bg-white h-1 flex-1" />
-                For Whom?
+          <div className="flex flex-col self-center w-full max-w-[1280px] gap-16 px-8">
+            <section className="flex flex-col items-center gap-12 py-24">
+              <div className="flex flex-col items-center gap-6">
+                <div className="text-sm font-medium text-white/50 uppercase tracking-[0.3em]">
+                  Who We're Looking For
+                </div>
+                <h2 className="text-4xl md:text-6xl font-light text-center leading-tight text-white max-w-4xl">
+                  Built for the bold.
+                  <br />
+                  <span className="text-white/70">Made for innovators.</span>
+                </h2>
+              </div>
+            </section>
+
+            <div className="grid grid-cols-1 md:grid-cols-2 gap-8">
+              <div className="group relative overflow-hidden rounded-2xl bg-white/5 backdrop-blur-xl border border-white/10 hover:border-white/20 transition-all duration-500">
+                <div className="absolute inset-0 bg-gradient-to-br from-blue-500/5 via-transparent to-transparent opacity-0 group-hover:opacity-100 transition-opacity duration-500"></div>
+                <div className="relative p-8 h-[280px] flex flex-col justify-between">
+                  <div className="flex items-center gap-3 mb-6">
+                    <div className="w-2 h-2 rounded-full bg-blue-400"></div>
+                    <span className="text-sm font-medium text-white/60 uppercase tracking-wider">Developers</span>
+                  </div>
+                  <div className="space-y-4">
+                    <h3 className="text-2xl font-light text-white">AI/ML Engineers</h3>
+                    <p className="text-white/70 font-light leading-relaxed">
+                      Passionate developers with hands-on experience in artificial intelligence and machine learning technologies.
+                    </p>
+                  </div>
+                </div>
               </div>
 
-              <div className="text-6xl text-balance">
-                Who should attend the Since AI Hackathon
+              <div className="group relative overflow-hidden rounded-2xl bg-white/5 backdrop-blur-xl border border-white/10 hover:border-white/20 transition-all duration-500">
+                <div className="absolute inset-0 bg-gradient-to-br from-purple-500/5 via-transparent to-transparent opacity-0 group-hover:opacity-100 transition-opacity duration-500"></div>
+                <div className="relative p-8 h-[280px] flex flex-col justify-between">
+                  <div className="flex items-center gap-3 mb-6">
+                    <div className="w-2 h-2 rounded-full bg-purple-400"></div>
+                    <span className="text-sm font-medium text-white/60 uppercase tracking-wider">Entrepreneurs</span>
+                  </div>
+                  <div className="space-y-4">
+                    <h3 className="text-2xl font-light text-white">Visionary Founders</h3>
+                    <p className="text-white/70 font-light leading-relaxed">
+                      Business minds ready to transform breakthrough ideas into market-ready solutions.
+                    </p>
+                  </div>
+                </div>
               </div>
-            </section>
 
-            <div className="relative aspect-video h-[200px] overflow-hidden rounded-xl bg-zinc-700/30 p-[2px]  min-w-80">
-              <Spotlight
-                className="from-blue-200 via-blue-300 to-blue-400 blur-3xl "
-                size={124}
-              />
-              <div className="relative h-full w-full rounded-xl bg-black p-8">
-                Anyone in the EU with AI/ML passion! You can apply solo or as a
-                team (up to 4). At least one team member must be technically
-                proficient in AI/ML.
+              <div className="group relative overflow-hidden rounded-2xl bg-white/5 backdrop-blur-xl border border-white/10 hover:border-white/20 transition-all duration-500">
+                <div className="absolute inset-0 bg-gradient-to-br from-green-500/5 via-transparent to-transparent opacity-0 group-hover:opacity-100 transition-opacity duration-500"></div>
+                <div className="relative p-8 h-[280px] flex flex-col justify-between">
+                  <div className="flex items-center gap-3 mb-6">
+                    <div className="w-2 h-2 rounded-full bg-green-400"></div>
+                    <span className="text-sm font-medium text-white/60 uppercase tracking-wider">Designers</span>
+                  </div>
+                  <div className="space-y-4">
+                    <h3 className="text-2xl font-light text-white">Creative Minds</h3>
+                    <p className="text-white/70 font-light leading-relaxed">
+                      UX/UI designers who understand how to make AI accessible and beautiful for everyone.
+                    </p>
+                  </div>
+                </div>
+              </div>
+
+              <div className="group relative overflow-hidden rounded-2xl bg-white/5 backdrop-blur-xl border border-white/10 hover:border-white/20 transition-all duration-500">
+                <div className="absolute inset-0 bg-gradient-to-br from-orange-500/5 via-transparent to-transparent opacity-0 group-hover:opacity-100 transition-opacity duration-500"></div>
+                <div className="relative p-8 h-[280px] flex flex-col justify-between">
+                  <div className="flex items-center gap-3 mb-6">
+                    <div className="w-2 h-2 rounded-full bg-orange-400"></div>
+                    <span className="text-sm font-medium text-white/60 uppercase tracking-wider">Teams</span>
+                  </div>
+                  <div className="space-y-4">
+                    <h3 className="text-2xl font-light text-white">Collaborative Spirit</h3>
+                    <p className="text-white/70 font-light leading-relaxed">
+                      Solo applicants welcome. Teams of up to 4 members. At least one technical AI/ML expert required.
+                    </p>
+                  </div>
+                </div>
+              </div>
+            </div>
+
+            <div className="text-center py-12">
+              <div className="inline-flex items-center gap-3 px-6 py-3 rounded-full bg-white/5 backdrop-blur-xl border border-white/10">
+                <div className="w-1.5 h-1.5 rounded-full bg-green-400 animate-pulse"></div>
+                <span className="text-sm font-medium text-white/80">Open to EU residents with AI/ML passion</span>
               </div>
             </div>
           </div>
 
-          <div className="flex flex-col self-center w-full max-w-[1280px] gap-8 px-8">
-            <section className="flex flex-col gap-8">
-              <div className="flex flex-row items-center gap-4 mb-8">
-                <div className="max-w-9 bg-white h-1 flex-1" />
-                Where?
-              </div>
-
-              <div className="text-6xl text-balance">
-                Edu city, Turku, Finland
+          <div className="flex flex-col self-center w-full max-w-[1280px] gap-24 px-8">
+            <section className="flex flex-col items-center gap-16 py-24">
+              <div className="flex flex-col items-center gap-6">
+                <div className="text-sm font-medium text-white/50 uppercase tracking-[0.3em]">
+                  Location
+                </div>
+                <h2 className="text-4xl md:text-6xl font-light text-center leading-tight text-white max-w-4xl">
+                  Where innovation
+                  <br />
+                  <span className="text-white/70">meets the future.</span>
+                </h2>
               </div>
             </section>
 
-            <Image
-              src="/assets/images/educity.jpg"
-              alt="Edu city, Turku, Finland"
-              className="max-h-[50vh]"
-              isBlurred
-              isZoomed
-            />
+            <div className="grid grid-cols-1 lg:grid-cols-2 gap-16 items-center">
+              <InView
+                variants={{
+                  hidden: { opacity: 0, x: -50, filter: "blur(4px)" },
+                  visible: { opacity: 1, x: 0, filter: "blur(0px)" },
+                }}
+                viewOptions={{ margin: "0px 0px -150px 0px" }}
+                transition={{ duration: 0.8, ease: "easeOut" }}
+              >
+                <div className="flex flex-col gap-8">
+                  <div className="text-3xl md:text-4xl font-light text-white/90 leading-relaxed">
+                    Edu City, Turku
+                  </div>
+                  <div className="space-y-6 text-lg text-white/70 font-light leading-relaxed">
+                    <p>
+                      Located in the heart of Finland's innovation ecosystem, Edu City represents the perfect fusion of academic excellence and entrepreneurial spirit.
+                    </p>
+                    <p>
+                      A state-of-the-art facility designed for breakthrough thinking, equipped with everything needed to transform ambitious ideas into reality.
+                    </p>
+                  </div>
+                  <div className="flex items-center gap-4 pt-4">
+                    <div className="w-12 h-px bg-gradient-to-r from-blue-400 to-transparent"></div>
+                    <span className="text-sm text-white/50 font-medium">Turku, Finland</span>
+                  </div>
+                </div>
+              </InView>
+
+              <InView
+                variants={{
+                  hidden: { opacity: 0, x: 50, filter: "blur(4px)" },
+                  visible: { opacity: 1, x: 0, filter: "blur(0px)" },
+                }}
+                viewOptions={{ margin: "0px 0px -150px 0px" }}
+                transition={{ duration: 0.8, ease: "easeOut", delay: 0.2 }}
+              >
+                <div className="relative overflow-hidden rounded-3xl bg-gradient-to-br from-zinc-900/50 to-black/50 backdrop-blur-xl border border-white/10">
+                  <div className="absolute inset-0 bg-gradient-to-br from-blue-500/10 via-transparent to-purple-500/10"></div>
+                  <div className="relative aspect-[4/3] overflow-hidden">
+                    <Image
+                      src="/assets/images/educity.jpg"
+                      alt="Edu City, Turku, Finland"
+                      className="w-full h-full object-cover hover:scale-105 transition-transform duration-700 ease-out"
+                      radius="none"
+                    />
+                    <div className="absolute inset-0 bg-gradient-to-t from-black/20 via-transparent to-transparent"></div>
+                  </div>
+                </div>
+              </InView>
+            </div>
           </div>
 
           <InfiniteSlider gap={24} className="my-16">
-            <div className="text-9xl text-center font-[450] text-white">
+            <div className="text-9xl text-center font-bold text-white">
               Innovation .
             </div>
-            <div className="text-9xl text-center font-[450] text-white">
+            <div className="text-9xl text-center font-bold text-white">
               Impact .
             </div>
-            <div className="text-9xl text-center font-[450] text-white">
+            <div className="text-9xl text-center font-bold text-white">
               Startup .
             </div>
-            <div className="text-9xl text-center font-[450] text-white">
+            <div className="text-9xl text-center font-bold text-white">
               Future .
             </div>
-            <div className="text-9xl text-center font-[450] text-white">
+            <div className="text-9xl text-center font-bold text-white">
               Next Gen .
             </div>
           </InfiniteSlider>
 
           <div className="flex flex-col self-center w-full max-w-[1280px] gap-8 px-8">
-            <section className="flex flex-col gap-8">
-              <div className="flex flex-row items-center gap-4 mb-8">
-                <div className="max-w-9 bg-white h-1 flex-1" />
-                Prices
+            <section className="flex flex-col items-center gap-16 py-32">
+              <div className="flex flex-col items-center gap-6">
+                <div className="text-sm font-medium text-white/50 uppercase tracking-[0.3em]">
+                  Prizes
+                </div>
+                <h2 className="text-4xl md:text-6xl font-light text-center leading-tight text-white max-w-4xl">
+                  Extraordinary rewards.
+                  <br />
+                  <span className="text-white/70">For extraordinary ideas.</span>
+                </h2>
               </div>
 
-              <div className="text-6xl text-balance">To be announced</div>
+              {/* <div className="grid grid-cols-1 md:grid-cols-3 gap-8 w-full max-w-6xl">
+                <div className="group relative overflow-hidden rounded-3xl bg-gradient-to-br from-white/10 to-white/5 backdrop-blur-xl border border-white/20 hover:border-white/30 transition-all duration-700">
+                  <div className="absolute inset-0 bg-gradient-to-br from-amber-500/10 via-transparent to-transparent opacity-0 group-hover:opacity-100 transition-opacity duration-700"></div>
+                  <div className="relative p-12 text-center">
+                    <div className="w-16 h-16 mx-auto mb-6 rounded-full bg-gradient-to-br from-amber-400 to-amber-600 flex items-center justify-center">
+                      <div className="w-8 h-8 rounded-full bg-white/20 backdrop-blur-sm"></div>
+                    </div>
+                    <div className="text-6xl font-light text-white mb-2">€5,000</div>
+                    <div className="text-white/60 font-light mb-8">Grand Prize</div>
+                    <div className="w-full h-px bg-gradient-to-r from-transparent via-white/20 to-transparent"></div>
+                  </div>
+                </div>
+
+                <div className="group relative overflow-hidden rounded-3xl bg-gradient-to-br from-white/8 to-white/3 backdrop-blur-xl border border-white/15 hover:border-white/25 transition-all duration-700">
+                  <div className="absolute inset-0 bg-gradient-to-br from-slate-400/10 via-transparent to-transparent opacity-0 group-hover:opacity-100 transition-opacity duration-700"></div>
+                  <div className="relative p-12 text-center">
+                    <div className="w-16 h-16 mx-auto mb-6 rounded-full bg-gradient-to-br from-slate-300 to-slate-500 flex items-center justify-center">
+                      <div className="w-8 h-8 rounded-full bg-white/20 backdrop-blur-sm"></div>
+                    </div>
+                    <div className="text-6xl font-light text-white mb-2">€3,000</div>
+                    <div className="text-white/60 font-light mb-8">Second Place</div>
+                    <div className="w-full h-px bg-gradient-to-r from-transparent via-white/20 to-transparent"></div>
+                  </div>
+                </div>
+
+                <div className="group relative overflow-hidden rounded-3xl bg-gradient-to-br from-white/6 to-white/2 backdrop-blur-xl border border-white/10 hover:border-white/20 transition-all duration-700">
+                  <div className="absolute inset-0 bg-gradient-to-br from-orange-500/10 via-transparent to-transparent opacity-0 group-hover:opacity-100 transition-opacity duration-700"></div>
+                  <div className="relative p-12 text-center">
+                    <div className="w-16 h-16 mx-auto mb-6 rounded-full bg-gradient-to-br from-orange-400 to-orange-600 flex items-center justify-center">
+                      <div className="w-8 h-8 rounded-full bg-white/20 backdrop-blur-sm"></div>
+                    </div>
+                    <div className="text-6xl font-light text-white mb-2">€2,000</div>
+                    <div className="text-white/60 font-light mb-8">Third Place</div>
+                    <div className="w-full h-px bg-gradient-to-r from-transparent via-white/20 to-transparent"></div>
+                  </div>
+                </div>
+              </div> */}
+
+              <div className="text-center mt-16">
+                <p className="text-lg text-white/70 font-light leading-relaxed max-w-2xl">
+                  Plus additional prizes for category winners, including best use of AI, most innovative solution, and people's choice award.
+                </p>
+              </div>
             </section>
 
             {/* <div className="relative aspect-video h-[200px] overflow-hidden rounded-xl bg-zinc-700/30 p-[2px]  min-w-80">
@@ -354,7 +481,7 @@ export default function GoogleGeminiEffectDemo() {
               </div>
 
               <div className="text-6xl text-balance">
-                Discover the Full Since AI Hackathon Agenda
+                Discover the Since AI Hackathon Agenda
               </div>
             </section>
 
@@ -590,7 +717,7 @@ export default function GoogleGeminiEffectDemo() {
               >
                 <button
                   type="button"
-                  className="inline-flex items-center rounded-xl border-2 border-zinc-900 bg-[#15f0c4]/80 px-8 py-4 text-xl font-semibold text-black transition-all duration-200 hover:bg-[#15f0c4]"
+                  className="group relative inline-flex items-center justify-center px-12 py-4 text-lg font-medium text-white bg-transparent border border-white/20 rounded-full transition-all duration-300 hover:border-white/40 hover:bg-white/5 backdrop-blur-sm"
                 >
                   <Magnetic
                     intensity={0.1}
@@ -598,8 +725,9 @@ export default function GoogleGeminiEffectDemo() {
                     actionArea="global"
                     range={200}
                   >
-                    <span>Apply</span>
+                    <span className="relative z-10">Apply</span>
                   </Magnetic>
+                  <div className="absolute inset-0 rounded-full bg-gradient-to-r from-white/0 via-white/5 to-white/0 opacity-0 group-hover:opacity-100 transition-opacity duration-300" />
                 </button>
               </Magnetic>
             </section>
@@ -607,31 +735,54 @@ export default function GoogleGeminiEffectDemo() {
 
           <div className="flex flex-col self-center w-full max-w-[1280px] gap-8 px-8">
             <section className="flex flex-col flex-1">
-              <div className="flex flex-row items-center gap-4 mb-8">
+              {/* <div className="flex flex-row items-center gap-4 mb-8">
                 <div className="max-w-9 bg-white h-1 flex-1" />
                 Contact
-              </div>
+              </div> */}
 
-              <div className="text-6xl text-balance leading-tight">
+              {/* <div className="text-6xl text-balance leading-tight">
                 Get in touch for questions or sponsorship!
-              </div>
+              </div> */}
             </section>
-            <div className="flex items-center gap-4">
-              <svg width="28" height="28" fill="none" viewBox="0 0 24 24">
+            <section className="flex flex-col flex-1 justify-center items-center">
+              <Magnetic
+                intensity={0.2}
+                springOptions={springOptions}
+                actionArea="global"
+                range={200}
+              >
+                <button
+                  type="button"
+                  className="group relative inline-flex items-center justify-center px-12 py-4 text-lg font-medium text-white bg-transparent border border-white/20 rounded-full transition-all duration-300 hover:border-white/40 hover:bg-white/5 backdrop-blur-sm"
+                >
+                  <Magnetic
+                    intensity={0.1}
+                    springOptions={springOptions}
+                    actionArea="global"
+                    range={200}
+                  >
+                    <span className="relative z-10">Contact</span>
+                  </Magnetic>
+                  <div className="absolute inset-0 rounded-full bg-gradient-to-r from-white/0 via-white/5 to-white/0 opacity-0 group-hover:opacity-100 transition-opacity duration-300" />
+                </button>
+              </Magnetic>
+            </section>
+            {/* <div className="flex items-center gap-4">
+                <svg width="28" height="28" fill="none" viewBox="0 0 24 24">
                 <path
                   d="M2 4.5A2.5 2.5 0 014.5 2h15A2.5 2.5 0 0122 4.5v15a2.5 2.5 0 01-2.5 2.5h-15A2.5 2.5 0 012 19.5v-15z"
                   stroke="#15f0c4"
                   strokeWidth="2"
                 />
                 <path d="M4 6l8 7 8-7" stroke="#15f0c4" strokeWidth="2" />
-              </svg>
-              <a
+                </svg>
+                <a
                 href="mailto:info@boostturku.com"
                 className="text-xl text-[#15f0c4] hover:underline"
-              >
+                >
                 info@boostturku.com
-              </a>
-            </div>
+                </a>
+              </div> */}
           </div>
 
           <div
@@ -701,7 +852,7 @@ export default function GoogleGeminiEffectDemo() {
                           Contact
                         </h3>
                         <p className="text-white">Boost Turku ry</p>
-                        
+
                         <p className="text-white">Business ID: 2321515-1</p>
                       </div>
                     </div>

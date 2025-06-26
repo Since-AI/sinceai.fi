@@ -106,11 +106,29 @@ export const Navbar = () => {
       </NavbarContent>
 
       <NavbarContent className="hidden sm:flex" justify="center">
-        <ButtonGroup variant="light">
-          <Button onPress={toDiscord}>Community</Button>
-          <Button onPress={toContact}>Contact</Button>
-          <Button onPress={toApply}>Apply</Button>
-        </ButtonGroup>
+        <div className="flex items-center gap-4">
+          <Button 
+            variant="light" 
+            onPress={toDiscord}
+            className="text-sm font-medium px-6 py-2 rounded-full hover:bg-white/[0.08] transition-all duration-300 ease-out text-foreground/80 hover:text-foreground"
+          >
+            Community
+          </Button>
+          <Button 
+            variant="light" 
+            onPress={toContact}
+            className="text-sm font-medium px-6 py-2 rounded-full hover:bg-white/[0.08] transition-all duration-300 ease-out text-foreground/80 hover:text-foreground"
+          >
+            Contact
+          </Button>
+          <Button 
+            variant="light" 
+            onPress={toApply}
+            className="text-sm font-medium px-6 py-2 rounded-full hover:bg-white/[0.08] transition-all duration-300 ease-out text-foreground/80 hover:text-foreground"
+          >
+            Apply
+          </Button>
+        </div>
       </NavbarContent>
 
       <NavbarContent justify="end" className="hidden sm:flex">
