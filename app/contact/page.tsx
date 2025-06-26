@@ -243,20 +243,7 @@ export default function GoogleGeminiEffectDemo() {
                   <p className="text-white/40 text-sm">
                     © 2025 Since AI. All rights reserved.
                   </p>
-                  <div className="flex gap-6">
-                    <a
-                      href="#"
-                      className="text-white/40 hover:text-white/60 transition-colors duration-200 text-sm"
-                    >
-                      Privacy Policy
-                    </a>
-                    <a
-                      href="#"
-                      className="text-white/40 hover:text-white/60 transition-colors duration-200 text-sm"
-                    >
-                      Terms of Service
-                    </a>
-                  </div>
+                  
                 </div>
               </div>
             </div>
