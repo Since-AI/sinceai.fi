@@ -911,56 +911,44 @@ export default function GoogleGeminiEffectDemo() {
             </section>
           </div>
 
-          <div className="flex flex-col self-center w-full max-w-[1280px] gap-8 px-8">
-            <section className="flex flex-col flex-1">
-              {/* <div className="flex flex-row items-center gap-4 mb-8">
-                <div className="max-w-9 bg-white h-1 flex-1" />
-                Contact
-              </div> */}
+          <div className="flex flex-col self-center w-full max-w-[1280px] gap-24 px-8 py-32">
+            <section className="flex flex-col items-center gap-16">
+              <div className="flex flex-col items-center gap-6">
+                <div className="text-sm font-medium text-white/50 uppercase tracking-[0.3em]">
+                  Connect
+                </div>
+                <h2 className="text-4xl md:text-6xl font-light text-center leading-tight text-white max-w-4xl">
+                  Questions?
+                  <br />
+                  <span className="text-white/70">We're here to help.</span>
+                </h2>
+              </div>
+              
+              <div className="text-center max-w-2xl">
+                <p className="text-lg text-white/70 font-light leading-relaxed">
+                  For questions, sponsorship opportunities, or partnership inquiries.
+                </p>
+              </div>
 
-              {/* <div className="text-6xl text-balance leading-tight">
-                Get in touch for questions or sponsorship!
-              </div> */}
-            </section>
-            <section className="flex flex-col flex-1 justify-center items-center">
-              <Magnetic
-                intensity={0.2}
-                springOptions={springOptions}
-                actionArea="global"
-                range={200}
-              >
-                <button
-                  type="button"
-                  className="group relative inline-flex items-center justify-center px-12 py-4 text-lg font-medium text-white bg-transparent border border-white/20 rounded-full transition-all duration-300 hover:border-white/40 hover:bg-white/5 backdrop-blur-sm"
+              <div className="flex flex-col items-center gap-8">
+                <Magnetic
+                  intensity={0.2}
+                  springOptions={springOptions}
+                  actionArea="global"
+                  range={200}
                 >
-                  <Magnetic
-                    intensity={0.1}
-                    springOptions={springOptions}
-                    actionArea="global"
-                    range={200}
+                  <a
+                    href="/contact"
+                    className="group relative inline-flex items-center justify-center px-16 py-5 text-lg font-medium text-white bg-white/5 backdrop-blur-xl border border-white/10 rounded-full transition-all duration-300 hover:border-white/20 hover:bg-white/10 hover:scale-105 transform"
                   >
-                    <span className="relative z-10">Contact</span>
-                  </Magnetic>
-                  <div className="absolute inset-0 rounded-full bg-gradient-to-r from-white/0 via-white/5 to-white/0 opacity-0 group-hover:opacity-100 transition-opacity duration-300" />
-                </button>
-              </Magnetic>
-            </section>
-            {/* <div className="flex items-center gap-4">
-                <svg width="28" height="28" fill="none" viewBox="0 0 24 24">
-                <path
-                  d="M2 4.5A2.5 2.5 0 014.5 2h15A2.5 2.5 0 0122 4.5v15a2.5 2.5 0 01-2.5 2.5h-15A2.5 2.5 0 012 19.5v-15z"
-                  stroke="#15f0c4"
-                  strokeWidth="2"
-                />
-                <path d="M4 6l8 7 8-7" stroke="#15f0c4" strokeWidth="2" />
-                </svg>
-                <a
-                href="mailto:info@boostturku.com"
-                className="text-xl text-[#15f0c4] hover:underline"
-                >
-                info@boostturku.com
-                </a>
-              </div> */}
+                    <span className="relative z-10 font-light">Get in touch</span>
+                    <div className="absolute inset-0 rounded-full bg-gradient-to-r from-white/5 via-white/10 to-white/5 opacity-0 group-hover:opacity-100 transition-opacity duration-300" />
+                  </a>
+                </Magnetic>
+                
+                
+              </div>
+            </section>2
           </div>
 
           <div className="bg-black border-t border-white/10">
