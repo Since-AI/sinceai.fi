@@ -200,7 +200,7 @@ export default function GoogleGeminiEffectDemo() {
                         LinkedIn
                       </a>
                       <a
-                        href="https://www.instagram.com/sinceai"
+                        href="https://www.instagram.com/since_ai"
                         target="_blank"
                         rel="noopener noreferrer"
                         className="block text-white/60 hover:text-white transition-colors duration-200 text-sm"
@@ -208,20 +208,28 @@ export default function GoogleGeminiEffectDemo() {
                         Instagram
                       </a>
                       <a
-                        href="https://twitter.com/sinceai"
+                        href="https://x.com/since_ai_"
                         target="_blank"
                         rel="noopener noreferrer"
                         className="block text-white/60 hover:text-white transition-colors duration-200 text-sm"
                       >
-                        X (Twitter)
+                        X
                       </a>
                       <a
-                        href="https://github.com/sinceai"
+                        href="https://github.com/since-ai"
                         target="_blank"
                         rel="noopener noreferrer"
                         className="block text-white/60 hover:text-white transition-colors duration-200 text-sm"
                       >
                         GitHub
+                      </a>
+                      <a
+                        href="https://www.facebook.com/sinceai"
+                        target="_blank"
+                        rel="noopener noreferrer"
+                        className="block text-white/60 hover:text-white transition-colors duration-200 text-sm"
+                      >
+                        Facebook
                       </a>
                     </div>
                   </div>
