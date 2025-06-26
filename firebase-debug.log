@@ -1,0 +1,55 @@
+[debug] [2025-06-18T16:36:07.569Z] ----------------------------------------------------------------------
+[debug] [2025-06-18T16:36:07.571Z] Command:       C:\Program Files\nodejs\node.exe C:\Users\yueha\AppData\Roaming\npm\node_modules\firebase-tools\lib\bin\firebase.js deploy
+[debug] [2025-06-18T16:36:07.571Z] CLI Version:   14.7.0
+[debug] [2025-06-18T16:36:07.571Z] Platform:      win32
+[debug] [2025-06-18T16:36:07.571Z] Node Version:  v22.11.0
+[debug] [2025-06-18T16:36:07.572Z] Time:          Wed Jun 18 2025 23:36:07 GMT+0700 (Indochina Time)
+[debug] [2025-06-18T16:36:07.572Z] ----------------------------------------------------------------------
+[debug] 
+[debug] [2025-06-18T16:36:07.770Z] > command requires scopes: ["email","openid","https://www.googleapis.com/auth/cloudplatformprojects.readonly","https://www.googleapis.com/auth/firebase","https://www.googleapis.com/auth/cloud-platform"]
+[debug] [2025-06-18T16:36:07.771Z] > authorizing via signed-in user (yuehan.dai.john@gmail.com)
+[debug] [2025-06-18T16:36:07.771Z] [iam] checking project since-ai for permissions ["firebase.projects.get","firebasehosting.sites.update"]
+[debug] [2025-06-18T16:36:07.772Z] Checked if tokens are valid: true, expires at: 1750265980727
+[debug] [2025-06-18T16:36:07.773Z] Checked if tokens are valid: true, expires at: 1750265980727
+[debug] [2025-06-18T16:36:07.773Z] >>> [apiv2][query] POST https://cloudresourcemanager.googleapis.com/v1/projects/since-ai:testIamPermissions [none]
+[debug] [2025-06-18T16:36:07.774Z] >>> [apiv2][(partial)header] POST https://cloudresourcemanager.googleapis.com/v1/projects/since-ai:testIamPermissions x-goog-quota-user=projects/since-ai
+[debug] [2025-06-18T16:36:07.774Z] >>> [apiv2][body] POST https://cloudresourcemanager.googleapis.com/v1/projects/since-ai:testIamPermissions {"permissions":["firebase.projects.get","firebasehosting.sites.update"]}
+[debug] [2025-06-18T16:36:08.983Z] <<< [apiv2][status] POST https://cloudresourcemanager.googleapis.com/v1/projects/since-ai:testIamPermissions 200
+[debug] [2025-06-18T16:36:08.983Z] <<< [apiv2][body] POST https://cloudresourcemanager.googleapis.com/v1/projects/since-ai:testIamPermissions {"permissions":["firebase.projects.get","firebasehosting.sites.update"]}
+[debug] [2025-06-18T16:36:08.984Z] Checked if tokens are valid: true, expires at: 1750265980727
+[debug] [2025-06-18T16:36:08.984Z] Checked if tokens are valid: true, expires at: 1750265980727
+[debug] [2025-06-18T16:36:08.985Z] >>> [apiv2][query] GET https://firebase.googleapis.com/v1beta1/projects/since-ai [none]
+[debug] [2025-06-18T16:36:09.493Z] <<< [apiv2][status] GET https://firebase.googleapis.com/v1beta1/projects/since-ai 200
+[debug] [2025-06-18T16:36:09.493Z] <<< [apiv2][body] GET https://firebase.googleapis.com/v1beta1/projects/since-ai {"projectId":"since-ai","projectNumber":"380714628703","displayName":"since ai","name":"projects/since-ai","resources":{"hostingSite":"since-ai"},"state":"ACTIVE","etag":"1_cdb87198-fb9f-49b4-a93a-e9f2dfd0de91"}
+[info] 
+   Thank you for trying our early preview of Next.js support on Firebase Hosting.
+   During the preview, support is best-effort and breaking changes can be expected. Proceed with caution.
+   The integration is known to work with Next.js version 12 - 15.0. You may encounter errors.
+
+   Documentation: https://firebase.google.com/docs/hosting/frameworks/nextjs
+   File a bug: https://github.com/firebase/firebase-tools/issues/new?template=bug_report.md
+   Submit a feature request: https://github.com/firebase/firebase-tools/issues/new?template=feature_request.md
+
+   We'd love to learn from you. Express your interest in helping us shape the future of Firebase Hosting: https://goo.gle/41enW5X
+
+[debug] [2025-06-18T16:36:23.208Z] Checked if tokens are valid: true, expires at: 1750265980727
+[debug] [2025-06-18T16:36:23.208Z] Checked if tokens are valid: true, expires at: 1750265980727
+[debug] [2025-06-18T16:36:23.209Z] >>> [apiv2][query] GET https://firebasehosting.googleapis.com/v1beta1/projects/since-ai/sites/since-ai [none]
+[debug] [2025-06-18T16:36:23.963Z] <<< [apiv2][status] GET https://firebasehosting.googleapis.com/v1beta1/projects/since-ai/sites/since-ai 200
+[debug] [2025-06-18T16:36:23.963Z] <<< [apiv2][body] GET https://firebasehosting.googleapis.com/v1beta1/projects/since-ai/sites/since-ai {"name":"projects/since-ai/sites/since-ai","defaultUrl":"https://since-ai.web.app","type":"DEFAULT_SITE"}
+[info]    ▲ Next.js 15.3.2
+
+[info] 
+
+[info]    Creating an optimized production build ...
+
+[info] uncaughtException [Error: EPERM: operation not permitted, open 'C:\Users\yueha\Desktop\Code\sinceai.github.io-1\.next\trace'] {
+  errno: -4048,
+  code: 'EPERM',
+  syscall: 'open',
+  path: 'C:\\Users\\yueha\\Desktop\\Code\\sinceai.github.io-1\\.next\\trace'
+}
+
+[debug] [2025-06-18T16:36:49.563Z] Error: ENOENT: no such file or directory, open 'C:\Users\yueha\Desktop\Code\sinceai.github.io-1\.next\export-marker.json'
+[error] 
+[error] Error: An unexpected error has occurred.
