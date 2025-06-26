@@ -867,39 +867,47 @@ export default function GoogleGeminiEffectDemo() {
             </div>
           </div>
 
-          <div className="flex flex-wrap self-center w-full max-w-[1280px] gap-16 px-8">
-            <section className="flex flex-col flex-1">
-              <div className="flex flex-row items-center gap-4 mb-8">
-                <div className="max-w-9 bg-white h-1 flex-1" />
-                Registration
+          <div className="flex flex-col self-center w-full max-w-[1280px] gap-24 px-8 py-32">
+            <section className="flex flex-col items-center gap-16">
+              <div className="flex flex-col items-center gap-6">
+                <div className="text-sm font-medium text-white/50 uppercase tracking-[0.3em]">
+                  Join the Future
+                </div>
+                <h2 className="text-4xl md:text-6xl font-light text-center leading-tight text-white max-w-4xl">
+                  Ready to build
+                  <br />
+                  <span className="text-white/70">something extraordinary?</span>
+                </h2>
+              </div>
+              
+              <div className="text-center max-w-2xl">
+                <p className="text-lg text-white/70 font-light leading-relaxed">
+                  Applications are now open for Since AI 2025. Join the most exclusive AI hackathon in Northern Europe.
+                </p>
               </div>
 
-              <div className="text-6xl text-balance leading-tight">
-                Secure Your Spot at Since AI Hackathon Today!
-              </div>
-            </section>
-            <section className="flex flex-col flex-1 justify-center items-center">
-              <Magnetic
-                intensity={0.2}
-                springOptions={springOptions}
-                actionArea="global"
-                range={200}
-              >
-                <button
-                  type="button"
-                  className="group relative inline-flex items-center justify-center px-12 py-4 text-lg font-medium text-white bg-transparent border border-white/20 rounded-full transition-all duration-300 hover:border-white/40 hover:bg-white/5 backdrop-blur-sm"
+              <div className="flex flex-col items-center gap-8">
+                <Magnetic
+                  intensity={0.2}
+                  springOptions={springOptions}
+                  actionArea="global"
+                  range={200}
                 >
-                  <Magnetic
-                    intensity={0.1}
-                    springOptions={springOptions}
-                    actionArea="global"
-                    range={200}
+                  <button
+                    type="button"
+                    className="group relative inline-flex items-center justify-center px-16 py-5 text-lg font-medium text-black bg-white rounded-full transition-all duration-300 hover:bg-white/90 hover:scale-105 transform"
                   >
-                    <span className="relative z-10">Apply</span>
-                  </Magnetic>
-                  <div className="absolute inset-0 rounded-full bg-gradient-to-r from-white/0 via-white/5 to-white/0 opacity-0 group-hover:opacity-100 transition-opacity duration-300" />
-                </button>
-              </Magnetic>
+                    <span className="relative z-10 font-medium">Apply Now</span>
+                    <div className="absolute inset-0 rounded-full bg-gradient-to-r from-white via-white to-white/90 opacity-0 group-hover:opacity-100 transition-opacity duration-300" />
+                  </button>
+                </Magnetic>
+                
+                <div className="text-center">
+                  <p className="text-sm text-white/50 font-light">
+                    Limited spots available • Rolling admissions
+                  </p>
+                </div>
+              </div>
             </section>
           </div>
 
