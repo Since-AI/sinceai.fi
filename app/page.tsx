@@ -86,15 +86,30 @@ export default function GoogleGeminiEffectDemo() {
 
               <div className="absolute inset-0 bg-gradient-to-b from-transparent via-transparent to-black/20"></div>
             </div>
-            <div className="flex flex-wrap h-fit w-full gap-4 items-center">
-              <p className="text-center w-full md:w-fit text-large">
-                21st - 23rd November 2025
-              </p>
-              <div className="min-w-[200px] bg-white h-1 flex-1 " />
-              <p className="text-center w-full md:w-fit text-large">
-                Turku, Finland
-              </p>
-              <div className="min-w-[200px] bg-white h-1 flex-1" />
+            <div className="flex flex-col items-center gap-8 mt-16">
+              <div className="flex items-center justify-center gap-6">
+                <div className="text-center">
+                  <div className="text-2xl md:text-3xl font-light text-white/90 tracking-tight">
+                    21–23 November
+                  </div>
+                  <div className="text-sm text-white/50 font-medium tracking-wider uppercase mt-1">
+                    2025
+                  </div>
+                </div>
+                
+                <div className="w-px h-16 bg-gradient-to-b from-transparent via-white/30 to-transparent"></div>
+                
+                <div className="text-center">
+                  <div className="text-2xl md:text-3xl font-light text-white/90 tracking-tight">
+                    Turku
+                  </div>
+                  <div className="text-sm text-white/50 font-medium tracking-wider uppercase mt-1">
+                    Finland
+                  </div>
+                </div>
+              </div>
+              
+              <div className="w-24 h-px bg-gradient-to-r from-transparent via-white/40 to-transparent"></div>
             </div>
           </div>
         </WavyBackground>
