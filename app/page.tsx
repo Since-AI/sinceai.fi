@@ -948,7 +948,7 @@ export default function GoogleGeminiEffectDemo() {
                 
                 
               </div>
-            </section>2
+            </section>
           </div>
 
           <div className="bg-black border-t border-white/10">
