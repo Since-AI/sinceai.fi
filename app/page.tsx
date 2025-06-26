@@ -420,20 +420,17 @@ export default function GoogleGeminiEffectDemo() {
           </div>
 
           <InfiniteSlider gap={24} className="my-16">
-            <div className="text-9xl text-center font-bold text-white">
-              Innovation .
+            <div className="text-6xl md:text-8xl lg:text-9xl text-center font-light text-white/90 tracking-tighter px-8">
+              Innovation
             </div>
-            <div className="text-9xl text-center font-bold text-white">
-              Impact .
+            <div className="text-6xl md:text-8xl lg:text-9xl text-center font-light text-white/90 tracking-tighter px-8">
+              Impact
             </div>
-            <div className="text-9xl text-center font-bold text-white">
-              Startup .
+            <div className="text-6xl md:text-8xl lg:text-9xl text-center font-light text-white/90 tracking-tighter px-8">
+              Future
             </div>
-            <div className="text-9xl text-center font-bold text-white">
-              Future .
-            </div>
-            <div className="text-9xl text-center font-bold text-white">
-              Next Gen .
+            <div className="text-6xl md:text-8xl lg:text-9xl text-center font-light text-white/90 tracking-tighter px-8">
+              Next Gen
             </div>
           </InfiniteSlider>
 
