@@ -219,21 +219,24 @@ export default function GoogleGeminiEffectDemo() {
             </section>
 
             <section className="py-16"></section>
-            <div className="relative overflow-hidden rounded-3xl bg-black/30 backdrop-blur-xl border border-white/10">
-              <div className="absolute inset-0 bg-gradient-to-r from-transparent via-white/5 to-transparent"></div>
-              <div className="relative p-8">
+            <div className="relative overflow-hidden rounded-[32px] bg-gradient-to-br from-black/10 via-black/5 to-transparent backdrop-blur-3xl border border-white/[0.08] shadow-2xl">
+              <div className="absolute inset-0 bg-gradient-to-br from-white/[0.02] via-transparent to-transparent"></div>
+              <div className="absolute inset-0 bg-gradient-to-t from-black/20 via-transparent to-transparent"></div>
+              <div className="relative p-12 md:p-16">
                 <video
                   src="/assets/videos/ads.mp4"
                   muted
                   controls={false}
                   autoPlay
                   loop
-                  className="w-full aspect-video rounded-2xl bg-black/50"
+                  playsInline
+                  className="w-full aspect-video rounded-[24px] bg-black/80 shadow-xl ring-1 ring-white/[0.05] transition-all duration-700 hover:scale-[1.02] hover:shadow-2xl"
                   poster="/assets/logo/logo_full.png"
                 >
                   Your browser does not support the video tag.
                 </video>
               </div>
+              <div className="absolute bottom-0 left-0 right-0 h-32 bg-gradient-to-t from-black/10 to-transparent pointer-events-none"></div>
             </div>
           </div>
 
