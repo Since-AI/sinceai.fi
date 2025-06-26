@@ -988,7 +988,7 @@ export default function GoogleGeminiEffectDemo() {
                         rel="noopener noreferrer"
                         className="block text-white/60 hover:text-white transition-colors duration-200 text-sm"
                       >
-                        X (Twitter)
+                        X
                       </a>
                       <a
                         href="https://github.com/sinceai"
