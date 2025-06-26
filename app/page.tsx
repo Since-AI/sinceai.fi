@@ -664,14 +664,7 @@ export default function GoogleGeminiEffectDemo() {
                 </div>
               </InView>
             </div>
-            <div className="text-center py-16">
-              <div className="inline-flex items-center gap-3 px-6 py-3 rounded-full bg-white/5 backdrop-blur-xl border border-white/10">
-                <div className="w-1.5 h-1.5 rounded-full bg-blue-400 animate-pulse"></div>
-                <span className="text-sm font-medium text-white/80">
-                  72 hours of innovation
-                </span>
-              </div>
-            </div>
+           
           </div>
 
           {/* <div className="flex flex-col self-center w-full max-w-[1280px] gap-8 px-8">
