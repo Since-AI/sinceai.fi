@@ -48,7 +48,7 @@ export default function GoogleGeminiEffectDemo() {
                   </h1>
                   <div className="h-px w-24 bg-gradient-to-r from-transparent via-white/40 to-transparent"></div>
                 </div>
-                
+
                 <div className="text-center">
                   <TextLoop
                     className="text-xl font-light tracking-wide text-white/80 md:text-2xl lg:text-3xl"
@@ -83,7 +83,7 @@ export default function GoogleGeminiEffectDemo() {
                   </TextLoop>
                 </div>
               </div>
-              
+
               <div className="absolute inset-0 bg-gradient-to-b from-transparent via-transparent to-black/20"></div>
             </div>
             <div className="flex flex-wrap h-fit w-full gap-4 items-center">
@@ -157,78 +157,85 @@ export default function GoogleGeminiEffectDemo() {
             />
           </InfiniteSlider> */}
 
-            <div className="flex flex-col self-center w-full max-w-[1280px] gap-24 px-8">
+          <div className="flex flex-col self-center w-full max-w-[1280px] gap-24 px-8">
             <section className="flex flex-col items-center gap-16 py-24">
               <div className="flex flex-col items-center gap-6">
-              <div className="text-sm font-medium text-white/50 uppercase tracking-[0.2em]">
-                About Since AI
-              </div>
-              <div className="text-5xl md:text-7xl font-semibold text-center leading-tight text-white">
-                Think different.
-                <br />
-                Build the future.
-              </div>
+                <div className="text-sm font-medium text-white/50 uppercase tracking-[0.2em]">
+                  About Since AI
+                </div>
+                <div className="text-5xl md:text-7xl font-semibold text-center leading-tight text-white">
+                  Think different.
+                  <br />
+                  Build the future.
+                </div>
               </div>
             </section>
 
             <section className="grid grid-cols-1 lg:grid-cols-2 gap-16 items-center">
               <div className="relative overflow-hidden rounded-3xl bg-gradient-to-br from-zinc-900/50 to-black/50 backdrop-blur-xl border border-white/10">
-              <div className="absolute inset-0 bg-gradient-to-br from-blue-500/10 via-transparent to-purple-500/10"></div>
-              <div className="relative p-12 h-[400px] flex items-center justify-center">
-                <img
-                src="/assets/logo/logo_full.png"
-                alt="Since AI Logo"
-                className="w-48 h-auto object-contain opacity-90"
-                />
-              </div>
+                <div className="absolute inset-0 bg-gradient-to-br from-blue-500/10 via-transparent to-purple-500/10"></div>
+                <div className="relative p-12 h-[400px] flex items-center justify-center">
+                  <img
+                    src="/assets/logo/logo_full.png"
+                    alt="Since AI Logo"
+                    className="w-48 h-auto object-contain opacity-90"
+                  />
+                </div>
               </div>
 
               <InView
-              variants={{
-                hidden: { opacity: 0, y: 50, filter: "blur(4px)" },
-                visible: { opacity: 1, y: 0, filter: "blur(0px)" },
-              }}
-              viewOptions={{ margin: "0px 0px -150px 0px" }}
-              transition={{ duration: 0.8, ease: "easeOut" }}
+                variants={{
+                  hidden: { opacity: 0, y: 50, filter: "blur(4px)" },
+                  visible: { opacity: 1, y: 0, filter: "blur(0px)" },
+                }}
+                viewOptions={{ margin: "0px 0px -150px 0px" }}
+                transition={{ duration: 0.8, ease: "easeOut" }}
               >
-              <div className="flex flex-col gap-8">
-                <div className="text-2xl md:text-3xl font-light text-white/90 leading-relaxed">
-                Where innovation meets possibility.
+                <div className="flex flex-col gap-8">
+                  <div className="text-2xl md:text-3xl font-light text-white/90 leading-relaxed">
+                    Where innovation meets possibility.
+                  </div>
+                  <div className="space-y-6 text-lg text-white/70 font-light leading-relaxed">
+                    <p>
+                      SinceAI isn't just a hackathon. It's where the future of
+                      artificial intelligence begins. Join a carefully curated
+                      community of visionaries, engineers, and entrepreneurs in
+                      an environment designed for breakthrough innovation.
+                    </p>
+                    <p>
+                      Three days. Unlimited potential. €10,000+ in prizes. The
+                      tools, mentorship, and connections you need to transform
+                      ideas into reality.
+                    </p>
+                  </div>
+                  <div className="flex items-center gap-4 pt-4">
+                    <div className="w-12 h-px bg-gradient-to-r from-blue-400 to-transparent"></div>
+                    <span className="text-sm text-white/50 font-medium">
+                      The future is built here
+                    </span>
+                  </div>
                 </div>
-                <div className="space-y-6 text-lg text-white/70 font-light leading-relaxed">
-                <p>
-                  SinceAI isn't just a hackathon. It's where the future of artificial intelligence begins. Join a carefully curated community of visionaries, engineers, and entrepreneurs in an environment designed for breakthrough innovation.
-                </p>
-                <p>
-                  Three days. Unlimited potential. €10,000+ in prizes. The tools, mentorship, and connections you need to transform ideas into reality.
-                </p>
-                </div>
-                <div className="flex items-center gap-4 pt-4">
-                <div className="w-12 h-px bg-gradient-to-r from-blue-400 to-transparent"></div>
-                <span className="text-sm text-white/50 font-medium">The future is built here</span>
-                </div>
-              </div>
               </InView>
             </section>
 
             <section className="py-16"></section>
-              <div className="relative overflow-hidden rounded-3xl bg-black/30 backdrop-blur-xl border border-white/10">
+            <div className="relative overflow-hidden rounded-3xl bg-black/30 backdrop-blur-xl border border-white/10">
               <div className="absolute inset-0 bg-gradient-to-r from-transparent via-white/5 to-transparent"></div>
               <div className="relative p-8">
                 <video
-                src="/assets/videos/ads.mp4"
-                muted
-                controls={false}
-                autoPlay
-                loop
-                className="w-full aspect-video rounded-2xl bg-black/50"
-                poster="/assets/logo/logo_full.png"
+                  src="/assets/videos/ads.mp4"
+                  muted
+                  controls={false}
+                  autoPlay
+                  loop
+                  className="w-full aspect-video rounded-2xl bg-black/50"
+                  poster="/assets/logo/logo_full.png"
                 >
-                Your browser does not support the video tag.
+                  Your browser does not support the video tag.
                 </video>
               </div>
-              </div>
             </div>
+          </div>
 
           <div className="flex flex-col self-center w-full max-w-[1280px] gap-16 px-8">
             <section className="flex flex-col items-center gap-12 py-24">
@@ -250,12 +257,17 @@ export default function GoogleGeminiEffectDemo() {
                 <div className="relative p-8 h-[280px] flex flex-col justify-between">
                   <div className="flex items-center gap-3 mb-6">
                     <div className="w-2 h-2 rounded-full bg-blue-400"></div>
-                    <span className="text-sm font-medium text-white/60 uppercase tracking-wider">Developers</span>
+                    <span className="text-sm font-medium text-white/60 uppercase tracking-wider">
+                      Developers
+                    </span>
                   </div>
                   <div className="space-y-4">
-                    <h3 className="text-2xl font-light text-white">AI/ML Engineers</h3>
+                    <h3 className="text-2xl font-light text-white">
+                      AI/ML Engineers
+                    </h3>
                     <p className="text-white/70 font-light leading-relaxed">
-                      Passionate developers with hands-on experience in artificial intelligence and machine learning technologies.
+                      Passionate developers with hands-on experience in
+                      artificial intelligence and machine learning technologies.
                     </p>
                   </div>
                 </div>
@@ -266,12 +278,17 @@ export default function GoogleGeminiEffectDemo() {
                 <div className="relative p-8 h-[280px] flex flex-col justify-between">
                   <div className="flex items-center gap-3 mb-6">
                     <div className="w-2 h-2 rounded-full bg-purple-400"></div>
-                    <span className="text-sm font-medium text-white/60 uppercase tracking-wider">Entrepreneurs</span>
+                    <span className="text-sm font-medium text-white/60 uppercase tracking-wider">
+                      Entrepreneurs
+                    </span>
                   </div>
                   <div className="space-y-4">
-                    <h3 className="text-2xl font-light text-white">Visionary Founders</h3>
+                    <h3 className="text-2xl font-light text-white">
+                      Visionary Founders
+                    </h3>
                     <p className="text-white/70 font-light leading-relaxed">
-                      Business minds ready to transform breakthrough ideas into market-ready solutions.
+                      Business minds ready to transform breakthrough ideas into
+                      market-ready solutions.
                     </p>
                   </div>
                 </div>
@@ -282,12 +299,17 @@ export default function GoogleGeminiEffectDemo() {
                 <div className="relative p-8 h-[280px] flex flex-col justify-between">
                   <div className="flex items-center gap-3 mb-6">
                     <div className="w-2 h-2 rounded-full bg-green-400"></div>
-                    <span className="text-sm font-medium text-white/60 uppercase tracking-wider">Designers</span>
+                    <span className="text-sm font-medium text-white/60 uppercase tracking-wider">
+                      Designers
+                    </span>
                   </div>
                   <div className="space-y-4">
-                    <h3 className="text-2xl font-light text-white">Creative Minds</h3>
+                    <h3 className="text-2xl font-light text-white">
+                      Creative Minds
+                    </h3>
                     <p className="text-white/70 font-light leading-relaxed">
-                      UX/UI designers who understand how to make AI accessible and beautiful for everyone.
+                      UX/UI designers who understand how to make AI accessible
+                      and beautiful for everyone.
                     </p>
                   </div>
                 </div>
@@ -298,12 +320,17 @@ export default function GoogleGeminiEffectDemo() {
                 <div className="relative p-8 h-[280px] flex flex-col justify-between">
                   <div className="flex items-center gap-3 mb-6">
                     <div className="w-2 h-2 rounded-full bg-orange-400"></div>
-                    <span className="text-sm font-medium text-white/60 uppercase tracking-wider">Teams</span>
+                    <span className="text-sm font-medium text-white/60 uppercase tracking-wider">
+                      Teams
+                    </span>
                   </div>
                   <div className="space-y-4">
-                    <h3 className="text-2xl font-light text-white">Collaborative Spirit</h3>
+                    <h3 className="text-2xl font-light text-white">
+                      Collaborative Spirit
+                    </h3>
                     <p className="text-white/70 font-light leading-relaxed">
-                      Solo applicants welcome. Teams of up to 4 members. At least one technical AI/ML expert required.
+                      Solo applicants welcome. Teams of up to 4 members. At
+                      least one technical AI/ML expert required.
                     </p>
                   </div>
                 </div>
@@ -313,7 +340,9 @@ export default function GoogleGeminiEffectDemo() {
             <div className="text-center py-12">
               <div className="inline-flex items-center gap-3 px-6 py-3 rounded-full bg-white/5 backdrop-blur-xl border border-white/10">
                 <div className="w-1.5 h-1.5 rounded-full bg-green-400 animate-pulse"></div>
-                <span className="text-sm font-medium text-white/80">Open to EU residents with AI/ML passion</span>
+                <span className="text-sm font-medium text-white/80">
+                  Open to EU residents with AI/ML passion
+                </span>
               </div>
             </div>
           </div>
@@ -347,15 +376,21 @@ export default function GoogleGeminiEffectDemo() {
                   </div>
                   <div className="space-y-6 text-lg text-white/70 font-light leading-relaxed">
                     <p>
-                      Located in the heart of Finland's innovation ecosystem, Edu City represents the perfect fusion of academic excellence and entrepreneurial spirit.
+                      Located in the heart of Finland's innovation ecosystem,
+                      Edu City represents the perfect fusion of academic
+                      excellence and entrepreneurial spirit.
                     </p>
                     <p>
-                      A state-of-the-art facility designed for breakthrough thinking, equipped with everything needed to transform ambitious ideas into reality.
+                      A state-of-the-art facility designed for breakthrough
+                      thinking, equipped with everything needed to transform
+                      ambitious ideas into reality.
                     </p>
                   </div>
                   <div className="flex items-center gap-4 pt-4">
                     <div className="w-12 h-px bg-gradient-to-r from-blue-400 to-transparent"></div>
-                    <span className="text-sm text-white/50 font-medium">Turku, Finland</span>
+                    <span className="text-sm text-white/50 font-medium">
+                      Turku, Finland
+                    </span>
                   </div>
                 </div>
               </InView>
@@ -411,7 +446,9 @@ export default function GoogleGeminiEffectDemo() {
                 <h2 className="text-4xl md:text-6xl font-light text-center leading-tight text-white max-w-4xl">
                   Extraordinary rewards.
                   <br />
-                  <span className="text-white/70">For extraordinary ideas.</span>
+                  <span className="text-white/70">
+                    For extraordinary ideas.
+                  </span>
                 </h2>
               </div>
 
@@ -455,7 +492,9 @@ export default function GoogleGeminiEffectDemo() {
 
               <div className="text-center mt-16">
                 <p className="text-lg text-white/70 font-light leading-relaxed max-w-2xl">
-                  Plus additional prizes for category winners, including best use of AI, most innovative solution, and people's choice award.
+                  Plus additional prizes for category winners, including best
+                  use of AI, most innovative solution, and people's choice
+                  award.
                 </p>
               </div>
             </section>
@@ -473,100 +512,147 @@ export default function GoogleGeminiEffectDemo() {
             </div> */}
           </div>
 
-          <div className="flex flex-col self-center w-full max-w-[1280px] gap-8 px-8">
-            <section className="flex flex-col gap-8">
-              <div className="flex flex-row items-center gap-4 mb-8">
-                <div className="max-w-9 bg-white h-1 flex-1" />
-                Agenda
-              </div>
-
-              <div className="text-6xl text-balance">
-                Discover the Since AI Hackathon Agenda
+          <div className="flex flex-col self-center w-full max-w-[1280px] gap-24 px-8">
+            <section className="flex flex-col items-center gap-16 py-24">
+              <div className="flex flex-col items-center gap-6">
+                <div className="text-sm font-medium text-white/50 uppercase tracking-[0.3em]">
+                  Event Schedule
+                </div>
+                <h2 className="text-4xl md:text-6xl font-light text-center leading-tight text-white max-w-4xl">
+                  Three days.
+                  <br />
+                  <span className="text-white/70">Endless possibilities.</span>
+                </h2>
               </div>
             </section>
 
-            <div className="flex flex-row rounded-xl overflow-hidden mt-8 text-4xl">
-              <div className="flex p-4 bg-[#15f0c4] w-44 text-black ">
-                Kick off
-              </div>
-              <div className="flex p-4 bg-content1 flex-1">Day1</div>
-            </div>
-
-            <div className="flex flex-wrap gap-8">
-              <div className="flex p-4 text-2xl w-[150px]">4:00 PM</div>
-              <div className="relative flex flex-1 h-fit overflow-hidden rounded-xl bg-zinc-700/30 p-[2px] min-w-80">
-                <Spotlight
-                  className="from-blue-200 via-blue-300 to-blue-400 blur-3xl "
-                  size={124}
-                />
-                <div className="relative h-fit w-full rounded-xl bg-content1 p-8">
-                  <div className="text-2xl font-bold mb-4">
-                    Kickoff + Team forming
+            <div className="grid grid-cols-1 gap-16">
+              {/* Day 1 */}
+              <InView
+                variants={{
+                  hidden: { opacity: 0, y: 30, filter: "blur(4px)" },
+                  visible: { opacity: 1, y: 0, filter: "blur(0px)" },
+                }}
+                viewOptions={{ margin: "0px 0px -100px 0px" }}
+                transition={{ duration: 0.6, ease: "easeOut" }}
+              >
+                <div className="group relative overflow-hidden rounded-3xl bg-white/5 backdrop-blur-xl border border-white/10 hover:border-white/20 transition-all duration-500">
+                  <div className="absolute inset-0 bg-gradient-to-br from-blue-500/5 via-transparent to-transparent opacity-0 group-hover:opacity-100 transition-opacity duration-500"></div>
+                  <div className="relative p-12">
+                    <div className="flex items-center justify-between mb-8">
+                      <div className="flex items-center gap-4">
+                        <div className="w-3 h-3 rounded-full bg-blue-400"></div>
+                        <span className="text-sm font-medium text-white/60 uppercase tracking-wider">
+                          November 21
+                        </span>
+                      </div>
+                      <span className="text-sm font-medium text-white/40">Day 01</span>
+                    </div>
+                    
+                    <div className="space-y-8">
+                      <div>
+                        <h3 className="text-3xl font-light text-white mb-2">Kickoff</h3>
+                        <p className="text-white/70 font-light leading-relaxed">
+                          Welcome presentation, challenge announcement, and team formation
+                        </p>
+                      </div>
+                      
+                      <div className="flex items-center gap-6">
+                        <div className="text-lg font-medium text-white/80">4:00 PM</div>
+                        <div className="flex-1 h-px bg-gradient-to-r from-white/20 via-transparent to-transparent"></div>
+                        <div className="text-sm text-white/50">Start</div>
+                      </div>
+                    </div>
                   </div>
-                  <ul className="list-disc pl-6 space-y-1">
-                    <li>Welcome presentation</li>
-                    <li>Challenge announcement</li>
-                    <li>Team formation activities</li>
-                    <li>Initial brainstorming</li>
-                  </ul>
                 </div>
-              </div>
-            </div>
+              </InView>
 
-            <div className="flex flex-row rounded-xl overflow-hidden mt-8 text-4xl">
-              <div className="flex p-4 bg-[#15f0c4] w-44 text-black ">
-                Hacking
-              </div>
-              <div className="flex p-4 bg-content1 flex-1">Day2</div>
-            </div>
-
-            <div className="flex flex-wrap gap-8">
-              <div className="flex p-4 text-2xl w-[150px]">All Day</div>
-              <div className="relative flex flex-1 h-fit overflow-hidden rounded-xl bg-zinc-700/30 p-[2px]  min-w-80">
-                <Spotlight
-                  className="from-blue-200 via-blue-300 to-blue-400 blur-3xl "
-                  size={124}
-                />
-                <div className="relative h-fit w-full rounded-xl bg-content1 p-8">
-                  <div className="text-2xl font-bold mb-4">
-                    Hacking + Workshops
+              {/* Day 2 */}
+              <InView
+                variants={{
+                  hidden: { opacity: 0, y: 30, filter: "blur(4px)" },
+                  visible: { opacity: 1, y: 0, filter: "blur(0px)" },
+                }}
+                viewOptions={{ margin: "0px 0px -100px 0px" }}
+                transition={{ duration: 0.6, ease: "easeOut", delay: 0.1 }}
+              >
+                <div className="group relative overflow-hidden rounded-3xl bg-white/5 backdrop-blur-xl border border-white/10 hover:border-white/20 transition-all duration-500">
+                  <div className="absolute inset-0 bg-gradient-to-br from-purple-500/5 via-transparent to-transparent opacity-0 group-hover:opacity-100 transition-opacity duration-500"></div>
+                  <div className="relative p-12">
+                    <div className="flex items-center justify-between mb-8">
+                      <div className="flex items-center gap-4">
+                        <div className="w-3 h-3 rounded-full bg-purple-400"></div>
+                        <span className="text-sm font-medium text-white/60 uppercase tracking-wider">
+                          November 22
+                        </span>
+                      </div>
+                      <span className="text-sm font-medium text-white/40">Day 02</span>
+                    </div>
+                    
+                    <div className="space-y-8">
+                      <div>
+                        <h3 className="text-3xl font-light text-white mb-2">Build</h3>
+                        <p className="text-white/70 font-light leading-relaxed">
+                          Full day of development with mentor support and technical workshops
+                        </p>
+                      </div>
+                      
+                      <div className="flex items-center gap-6">
+                        <div className="text-lg font-medium text-white/80">All Day</div>
+                        <div className="flex-1 h-px bg-gradient-to-r from-white/20 via-transparent to-transparent"></div>
+                        <div className="text-sm text-white/50">Continuous</div>
+                      </div>
+                    </div>
                   </div>
-                  <ul className="list-disc pl-6 space-y-1">
-                    <li>Hands-on hacking sessions</li>
-                    <li>Mentor support available</li>
-                    <li>Technical workshops</li>
-                    <li>Midway project check-in</li>
-                  </ul>
                 </div>
-              </div>
-            </div>
+              </InView>
 
-            <div className="flex flex-row rounded-xl overflow-hidden mt-8 text-4xl">
-              <div className="flex p-4 bg-[#15f0c4] w-44 text-black ">
-                Final
-              </div>
-              <div className="flex p-4 bg-content1 flex-1">Day3</div>
-            </div>
-
-            <div className="flex flex-wrap gap-8">
-              <div className="flex p-4 text-2xl w-[150px]">5:00 PM</div>
-              <div className="relative flex flex-1 h-fit overflow-hidden rounded-xl bg-zinc-700/30 p-[2px]  min-w-80">
-                <Spotlight
-                  className="from-blue-200 via-blue-300 to-blue-400 blur-3xl "
-                  size={124}
-                />
-                <div className="relative h-fit w-full rounded-xl bg-content1 p-8">
-                  <div className="text-2xl font-bold mb-4">
-                    Final presentations + Awards
+              {/* Day 3 */}
+              <InView
+                variants={{
+                  hidden: { opacity: 0, y: 30, filter: "blur(4px)" },
+                  visible: { opacity: 1, y: 0, filter: "blur(0px)" },
+                }}
+                viewOptions={{ margin: "0px 0px -100px 0px" }}
+                transition={{ duration: 0.6, ease: "easeOut", delay: 0.2 }}
+              >
+                <div className="group relative overflow-hidden rounded-3xl bg-white/5 backdrop-blur-xl border border-white/10 hover:border-white/20 transition-all duration-500">
+                  <div className="absolute inset-0 bg-gradient-to-br from-green-500/5 via-transparent to-transparent opacity-0 group-hover:opacity-100 transition-opacity duration-500"></div>
+                  <div className="relative p-12">
+                    <div className="flex items-center justify-between mb-8">
+                      <div className="flex items-center gap-4">
+                        <div className="w-3 h-3 rounded-full bg-green-400"></div>
+                        <span className="text-sm font-medium text-white/60 uppercase tracking-wider">
+                          November 23
+                        </span>
+                      </div>
+                      <span className="text-sm font-medium text-white/40">Day 03</span>
+                    </div>
+                    
+                    <div className="space-y-8">
+                      <div>
+                        <h3 className="text-3xl font-light text-white mb-2">Present</h3>
+                        <p className="text-white/70 font-light leading-relaxed">
+                          Final presentations, judging, and awards ceremony
+                        </p>
+                      </div>
+                      
+                      <div className="flex items-center gap-6">
+                        <div className="text-lg font-medium text-white/80">5:00 PM</div>
+                        <div className="flex-1 h-px bg-gradient-to-r from-white/20 via-transparent to-transparent"></div>
+                        <div className="text-sm text-white/50">Finals</div>
+                      </div>
+                    </div>
                   </div>
-                  <ul className="list-disc pl-6 space-y-1">
-                    <li>Project submissions</li>
-                    <li>Demo presentations</li>
-                    <li>Judging</li>
-                    <li>Awards ceremony</li>
-                    <li>Networking & celebration</li>
-                  </ul>
                 </div>
+              </InView>
+            </div>
+            <div className="text-center py-16">
+              <div className="inline-flex items-center gap-3 px-6 py-3 rounded-full bg-white/5 backdrop-blur-xl border border-white/10">
+                <div className="w-1.5 h-1.5 rounded-full bg-blue-400 animate-pulse"></div>
+                <span className="text-sm font-medium text-white/80">
+                  72 hours of innovation
+                </span>
               </div>
             </div>
           </div>
@@ -872,3 +958,8 @@ export default function GoogleGeminiEffectDemo() {
     </SmoothScroll>
   );
 }
+
+
+
+
+// make it look apple style, billion dollar company looking, minimalist, modern
