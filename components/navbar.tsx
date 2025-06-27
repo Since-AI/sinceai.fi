@@ -87,7 +87,13 @@ export const Navbar = () => {
   };
 
   return (
-    <HeroUINavbar shouldHideOnScroll maxWidth="xl" >
+    <HeroUINavbar 
+      shouldHideOnScroll 
+      maxWidth="full"
+      className="bg-black/70 backdrop-blur-xl border-b border-gray-800/20"
+      height="60px"
+    >
+      {/* Mobile Layout */}
       <NavbarContent className="sm:hidden" justify="start">
         <NavbarBrand>
           <Logo />
@@ -96,72 +102,121 @@ export const Navbar = () => {
       <NavbarContent className="sm:hidden" justify="end">
         <NavbarMenuToggle
           aria-label={isMenuOpen ? "Close menu" : "Open menu"}
+          className="text-gray-300"
         />
       </NavbarContent>
 
-      <NavbarContent className="hidden sm:flex" justify="start">
+      {/* Desktop Layout */}
+      <NavbarContent className="hidden sm:flex max-w-7xl mx-auto w-full" justify="start">
         <NavbarBrand onClick={toHome} className="cursor-pointer">
           <Logo />
         </NavbarBrand>
       </NavbarContent>
 
-      <NavbarContent className="hidden sm:flex" justify="center">
-        <div className="flex items-center gap-4">
+      <NavbarContent className="hidden sm:flex max-w-7xl mx-auto" justify="center">
+        <div className="flex items-center gap-1">
           <Button 
             variant="light" 
             onPress={toDiscord}
-            className="text-sm font-medium px-6 py-2 rounded-full hover:bg-white/[0.08] transition-all duration-300 ease-out text-foreground/80 hover:text-foreground"
+            className="text-sm font-normal px-4 py-1.5 rounded-full hover:bg-gray-800/50 transition-all duration-200 text-gray-400 hover:text-gray-100 min-w-0"
           >
             Community
           </Button>
           <Button 
             variant="light" 
             onPress={toContact}
-            className="text-sm font-medium px-6 py-2 rounded-full hover:bg-white/[0.08] transition-all duration-300 ease-out text-foreground/80 hover:text-foreground"
+            className="text-sm font-normal px-4 py-1.5 rounded-full hover:bg-gray-800/50 transition-all duration-200 text-gray-400 hover:text-gray-100 min-w-0"
           >
             Contact
           </Button>
           <Button 
-            variant="light" 
+            variant="solid" 
             onPress={toApply}
-            className="text-sm font-medium px-6 py-2 rounded-full hover:bg-white/[0.08] transition-all duration-300 ease-out text-foreground/80 hover:text-foreground"
+            className="text-sm font-medium px-6 py-1.5 rounded-full bg-white text-black hover:bg-gray-200 transition-all duration-200 ml-4 min-w-0"
           >
             Apply
           </Button>
         </div>
       </NavbarContent>
 
-      <NavbarContent justify="end" className="hidden sm:flex">
-        <div className="flex flex-row items-center gap-4">
-          <Button variant="light" isIconOnly onPress={toInstagram}>
-            <FaInstagram size={24} />
+      <NavbarContent justify="end" className="hidden sm:flex max-w-7xl mx-auto">
+        <div className="flex flex-row items-center gap-2">
+          <Button 
+            variant="light" 
+            isIconOnly 
+            onPress={toInstagram}
+            className="text-gray-400 hover:text-gray-100 hover:bg-gray-800/50 transition-all duration-200 w-8 h-8 min-w-8"
+          >
+            <FaInstagram size={16} />
           </Button>
-          <Button variant="light" isIconOnly onPress={toDiscord}>
-            <FaDiscord size={24} />
+          <Button 
+            variant="light" 
+            isIconOnly 
+            onPress={toDiscord}
+            className="text-gray-400 hover:text-gray-100 hover:bg-gray-800/50 transition-all duration-200 w-8 h-8 min-w-8"
+          >
+            <FaDiscord size={16} />
           </Button>
-          <Button variant="light" isIconOnly onPress={toLinkedin}>
-            <FaLinkedin size={24} />
+          <Button 
+            variant="light" 
+            isIconOnly 
+            onPress={toLinkedin}
+            className="text-gray-400 hover:text-gray-100 hover:bg-gray-800/50 transition-all duration-200 w-8 h-8 min-w-8"
+          >
+            <FaLinkedin size={16} />
           </Button>
         </div>
       </NavbarContent>
 
-      <NavbarMenu>
-        <>
-          <NavbarMenuItem onClick={toHome}>Home</NavbarMenuItem>
-          <NavbarMenuItem onClick={toDiscord}>Community</NavbarMenuItem>
-          <NavbarMenuItem onClick={toContact}>Contact</NavbarMenuItem>
-          <NavbarMenuItem onClick={toApply}>Apply</NavbarMenuItem>
-
-          <NavbarMenuItem className="color-primary" onClick={toDiscord}>
-            Discord
+      {/* Mobile Menu */}
+      <NavbarMenu className="bg-black/95 backdrop-blur-xl border-none pt-8">
+        <div className="flex flex-col gap-4">
+          <NavbarMenuItem 
+            onClick={toHome}
+            className="text-lg font-normal text-gray-300 hover:text-white transition-colors duration-200 cursor-pointer py-2"
+          >
+            Home
           </NavbarMenuItem>
-          <NavbarMenuItem className="color-primary" onClick={toInstagram}>
-            Instagram
+          <NavbarMenuItem 
+            onClick={toDiscord}
+            className="text-lg font-normal text-gray-300 hover:text-white transition-colors duration-200 cursor-pointer py-2"
+          >
+            Community
           </NavbarMenuItem>
-          <NavbarMenuItem className="color-primary" onClick={toLinkedin}>
-            Linkedin
+          <NavbarMenuItem 
+            onClick={toContact}
+            className="text-lg font-normal text-gray-300 hover:text-white transition-colors duration-200 cursor-pointer py-2"
+          >
+            Contact
           </NavbarMenuItem>
-        </>
+          <NavbarMenuItem 
+            onClick={toApply}
+            className="text-lg font-medium text-white hover:text-gray-400 transition-colors duration-200 cursor-pointer py-2"
+          >
+            Apply
+          </NavbarMenuItem>
+          
+          <div className="border-t border-gray-800 mt-4 pt-4">
+            <NavbarMenuItem 
+              onClick={toDiscord}
+              className="text-base font-normal text-gray-500 hover:text-gray-300 transition-colors duration-200 cursor-pointer py-2"
+            >
+              Discord
+            </NavbarMenuItem>
+            <NavbarMenuItem 
+              onClick={toInstagram}
+              className="text-base font-normal text-gray-500 hover:text-gray-300 transition-colors duration-200 cursor-pointer py-2"
+            >
+              Instagram
+            </NavbarMenuItem>
+            <NavbarMenuItem 
+              onClick={toLinkedin}
+              className="text-base font-normal text-gray-500 hover:text-gray-300 transition-colors duration-200 cursor-pointer py-2"
+            >
+              LinkedIn
+            </NavbarMenuItem>
+          </div>
+        </div>
       </NavbarMenu>
     </HeroUINavbar>
   );

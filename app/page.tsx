@@ -37,7 +37,7 @@ export default function GoogleGeminiEffectDemo() {
       <AnimatePresence mode="wait">
         {isLoading && <Preloader />}
       </AnimatePresence>
-      <div className="flex flex-col w-full">
+      <div className="flex flex-col w-full overflow-hidden">
         <WavyBackground className="flex w-full h-screen p-16 my-32">
           <div className="w-full flex flex-col h-full">
             <div className="relative flex h-full w-full flex-col items-center justify-center">
