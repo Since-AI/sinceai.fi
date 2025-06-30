@@ -1,19 +1,16 @@
 "use client";
-import React from "react";
-import SmoothScroll from "@/components/smoothScroll";
-import { useEffect, useState } from "react";
-import Preloader from "@/components/utils/Preloader";
+import React, { useEffect, useState } from "react";
+
 import { AnimatePresence } from "framer-motion";
+
 import { InView } from "@/components/motion-primitives/in-view";
 import { InfiniteSlider } from "@/components/motion-primitives/infinite-slider";
-import { WavyBackground } from "@/components/ui/wavy-background";
-import { Spotlight } from "@/components/motion-primitives/spotlight";
-import { AnimatedBackground } from "@/components/motion-primitives/animated-background";
-import { Accordion, AccordionItem } from "@heroui/react";
 import { Magnetic } from "@/components/motion-primitives/magnetic";
 import { TextLoop } from "@/components/motion-primitives/text-loop";
+import SmoothScroll from "@/components/smoothScroll";
+import { WavyBackground } from "@/components/ui/wavy-background";
+import Preloader from "@/components/utils/Preloader";
 import { Image } from "@heroui/react";
-import Educity from "@/public/assets/images/educity.jpg";
 
 export default function GoogleGeminiEffectDemo() {
   const ref = React.useRef(null);
@@ -46,6 +43,9 @@ export default function GoogleGeminiEffectDemo() {
                   <h1 className="bg-gradient-to-b from-white to-white/60 bg-clip-text text-6xl font-medium tracking-tight text-transparent md:text-8xl lg:text-[12rem] xl:text-[14rem]">
                     Since AI
                   </h1>
+                  <p className="text-2xl md:text-3xl lg:text-4xl font-light text-white/80">
+                    The AI Hackathon
+                  </p>
                   <div className="h-px w-24 bg-gradient-to-r from-transparent via-white/40 to-transparent"></div>
                 </div>
 
@@ -76,10 +76,10 @@ export default function GoogleGeminiEffectDemo() {
                       },
                     }}
                   >
+                    <span>For AI Enthusiasts</span>
                     <span>For Founders</span>
                     <span>For Developers</span>
                     <span>For Designers</span>
-                    <span>For AI Enthusiasts</span>
                   </TextLoop>
                 </div>
               </div>
@@ -96,19 +96,19 @@ export default function GoogleGeminiEffectDemo() {
                     2025
                   </div>
                 </div>
-                
+
                 <div className="w-px h-16 bg-gradient-to-b from-transparent via-white/30 to-transparent"></div>
-                
+
                 <div className="text-center">
                   <div className="text-2xl md:text-3xl font-light text-white/90 tracking-tight">
-                    Turku
+                    Turku, Finland
                   </div>
-                  <div className="text-sm text-white/50 font-medium tracking-wider uppercase mt-1">
-                    Finland
+                  <div className="text-sm text-white/50 uppercase tracking-wider">
+                    Edu City
                   </div>
                 </div>
               </div>
-              
+
               <div className="w-24 h-px bg-gradient-to-r from-transparent via-white/40 to-transparent"></div>
             </div>
           </div>
@@ -212,7 +212,7 @@ export default function GoogleGeminiEffectDemo() {
                   </div>
                   <div className="space-y-6 text-lg text-white/70 font-light leading-relaxed">
                     <p>
-                      SinceAI isn't just a hackathon. It's where the future of
+                      Since AI isn't just a hackathon. It's where the future of
                       artificial intelligence begins. Join a carefully curated
                       community of visionaries, engineers, and entrepreneurs in
                       an environment designed for breakthrough innovation.
@@ -682,7 +682,6 @@ export default function GoogleGeminiEffectDemo() {
                 </div>
               </InView>
             </div>
-           
           </div>
 
           {/* <div className="flex flex-col self-center w-full max-w-[1280px] gap-8 px-8">
@@ -884,13 +883,16 @@ export default function GoogleGeminiEffectDemo() {
                 <h2 className="text-4xl md:text-6xl font-light text-center leading-tight text-white max-w-4xl">
                   Ready to build
                   <br />
-                  <span className="text-white/70">something extraordinary?</span>
+                  <span className="text-white/70">
+                    something extraordinary?
+                  </span>
                 </h2>
               </div>
-              
+
               <div className="text-center max-w-2xl">
                 <p className="text-lg text-white/70 font-light leading-relaxed">
-                  Applications are now open for Since AI 2025. Join the most exclusive AI hackathon in Northern Europe.
+                  Applications are now open for Since AI 2025. Join the most
+                  exclusive AI hackathon in Northern Europe.
                 </p>
               </div>
 
@@ -909,7 +911,7 @@ export default function GoogleGeminiEffectDemo() {
                     <div className="absolute inset-0 rounded-full bg-gradient-to-r from-white via-white to-white/90 opacity-0 group-hover:opacity-100 transition-opacity duration-300" />
                   </button>
                 </Magnetic>
-                
+
                 <div className="text-center">
                   <p className="text-sm text-white/50 font-light">
                     Limited spots available • Rolling admissions
@@ -931,10 +933,11 @@ export default function GoogleGeminiEffectDemo() {
                   <span className="text-white/70">We're here to help.</span>
                 </h2>
               </div>
-              
+
               <div className="text-center max-w-2xl">
                 <p className="text-lg text-white/70 font-light leading-relaxed">
-                  For questions, sponsorship opportunities, or partnership inquiries.
+                  For questions, sponsorship opportunities, or partnership
+                  inquiries.
                 </p>
               </div>
 
@@ -949,98 +952,97 @@ export default function GoogleGeminiEffectDemo() {
                     href="/contact"
                     className="group relative inline-flex items-center justify-center px-16 py-5 text-lg font-medium text-white bg-white/5 backdrop-blur-xl border border-white/10 rounded-full transition-all duration-300 hover:border-white/20 hover:bg-white/10 hover:scale-105 transform"
                   >
-                    <span className="relative z-10 font-light">Get in touch</span>
+                    <span className="relative z-10 font-light">
+                      Get in touch
+                    </span>
                     <div className="absolute inset-0 rounded-full bg-gradient-to-r from-white/5 via-white/10 to-white/5 opacity-0 group-hover:opacity-100 transition-opacity duration-300" />
                   </a>
                 </Magnetic>
-                
-                
               </div>
             </section>
           </div>
 
           <div className="bg-black border-t border-white/10">
-              <div className="max-w-[1280px] mx-auto px-8 py-16">
-                <div className="grid grid-cols-1 md:grid-cols-4 gap-12 mb-16">
-                  <div className="col-span-1 md:col-span-2">
-                    <h2 className="text-4xl md:text-5xl font-light text-white mb-4">
-                      Since AI
-                    </h2>
-                    <p className="text-white/60 text-lg font-light max-w-md">
-                      Pioneering the future of artificial intelligence with
-                      innovation and purpose.
+            <div className="max-w-[1280px] mx-auto px-8 py-16">
+              <div className="grid grid-cols-1 md:grid-cols-4 gap-12 mb-16">
+                <div className="col-span-1 md:col-span-2">
+                  <h2 className="text-4xl md:text-5xl font-light text-white mb-4">
+                    Since AI
+                  </h2>
+                  <p className="text-white/60 text-lg font-light max-w-md">
+                    Pioneering the future of artificial intelligence with
+                    innovation and purpose.
+                  </p>
+                </div>
+
+                <div className="space-y-4">
+                  <h3 className="text-white font-medium text-sm uppercase tracking-wider">
+                    Connect
+                  </h3>
+                  <div className="space-y-3">
+                    <a
+                      href="https://www.linkedin.com/company/sinceai"
+                      target="_blank"
+                      rel="noopener noreferrer"
+                      className="block text-white/60 hover:text-white transition-colors duration-200 text-sm"
+                    >
+                      LinkedIn
+                    </a>
+                    <a
+                      href="https://www.instagram.com/since_ai"
+                      target="_blank"
+                      rel="noopener noreferrer"
+                      className="block text-white/60 hover:text-white transition-colors duration-200 text-sm"
+                    >
+                      Instagram
+                    </a>
+                    <a
+                      href="https://x.com/since_ai_"
+                      target="_blank"
+                      rel="noopener noreferrer"
+                      className="block text-white/60 hover:text-white transition-colors duration-200 text-sm"
+                    >
+                      X
+                    </a>
+                    <a
+                      href="https://github.com/since-ai"
+                      target="_blank"
+                      rel="noopener noreferrer"
+                      className="block text-white/60 hover:text-white transition-colors duration-200 text-sm"
+                    >
+                      GitHub
+                    </a>
+                    <a
+                      href="https://www.facebook.com/sinceai"
+                      target="_blank"
+                      rel="noopener noreferrer"
+                      className="block text-white/60 hover:text-white transition-colors duration-200 text-sm"
+                    >
+                      Facebook
+                    </a>
+                  </div>
+                </div>
+
+                <div className="space-y-4">
+                  <h3 className="text-white font-medium text-sm uppercase tracking-wider">
+                    Legal
+                  </h3>
+                  <div className="space-y-3">
+                    <p className="text-white/60 text-sm">Boost Turku ry</p>
+                    <p className="text-white/60 text-sm">
+                      Business ID: 2321515-1
                     </p>
                   </div>
-
-                  <div className="space-y-4">
-                    <h3 className="text-white font-medium text-sm uppercase tracking-wider">
-                      Connect
-                    </h3>
-                    <div className="space-y-3">
-                      <a
-                        href="https://www.linkedin.com/company/sinceai"
-                        target="_blank"
-                        rel="noopener noreferrer"
-                        className="block text-white/60 hover:text-white transition-colors duration-200 text-sm"
-                      >
-                        LinkedIn
-                      </a>
-                      <a
-                        href="https://www.instagram.com/since_ai"
-                        target="_blank"
-                        rel="noopener noreferrer"
-                        className="block text-white/60 hover:text-white transition-colors duration-200 text-sm"
-                      >
-                        Instagram
-                      </a>
-                      <a
-                        href="https://x.com/since_ai_"
-                        target="_blank"
-                        rel="noopener noreferrer"
-                        className="block text-white/60 hover:text-white transition-colors duration-200 text-sm"
-                      >
-                        X
-                      </a>
-                      <a
-                        href="https://github.com/since-ai"
-                        target="_blank"
-                        rel="noopener noreferrer"
-                        className="block text-white/60 hover:text-white transition-colors duration-200 text-sm"
-                      >
-                        GitHub
-                      </a>
-                      <a
-                        href="https://www.facebook.com/sinceai"
-                        target="_blank"
-                        rel="noopener noreferrer"
-                        className="block text-white/60 hover:text-white transition-colors duration-200 text-sm"
-                      >
-                        Facebook
-                      </a>
-                    </div>
-                  </div>
-
-                  <div className="space-y-4">
-                    <h3 className="text-white font-medium text-sm uppercase tracking-wider">
-                      Legal
-                    </h3>
-                    <div className="space-y-3">
-                      <p className="text-white/60 text-sm">Boost Turku ry</p>
-                      <p className="text-white/60 text-sm">
-                        Business ID: 2321515-1
-                      </p>
-                    </div>
-                  </div>
-                </div>
-
-                <div className="pt-8 border-t border-white/10 flex flex-col md:flex-row justify-between items-center gap-4">
-                  <p className="text-white/40 text-sm">
-                    © 2025 Since AI. All rights reserved.
-                  </p>
-                  
                 </div>
               </div>
+
+              <div className="pt-8 border-t border-white/10 flex flex-col md:flex-row justify-between items-center gap-4">
+                <p className="text-white/40 text-sm">
+                  © 2025 Since AI. All rights reserved.
+                </p>
+              </div>
             </div>
+          </div>
         </div>
       </div>
     </SmoothScroll>

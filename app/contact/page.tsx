@@ -1,25 +1,11 @@
 "use client";
-import React from "react";
-import SmoothScroll from "@/components/smoothScroll";
-import { useEffect, useState } from "react";
-import Preloader from "@/components/utils/Preloader";
-import { AnimatePresence } from "framer-motion";
-import { InView } from "@/components/motion-primitives/in-view";
-import { InfiniteSlider } from "@/components/motion-primitives/infinite-slider";
-import { WavyBackground } from "@/components/ui/wavy-background";
-import { Spotlight } from "@/components/motion-primitives/spotlight";
-import { Accordion, AccordionItem } from "@heroui/react";
-import { Magnetic } from "@/components/motion-primitives/magnetic";
-import {
-  Card,
-  CardBody,
-  CardHeader,
-  CardFooter,
-  Divider,
-  Button,
-  Link,
-} from "@heroui/react";
+import React, { useEffect, useState } from "react";
+
 import { FaLinkedin } from "react-icons/fa";
+
+import { InfiniteSlider } from "@/components/motion-primitives/infinite-slider";
+import SmoothScroll from "@/components/smoothScroll";
+import { WavyBackground } from "@/components/ui/wavy-background";
 
 export default function GoogleGeminiEffectDemo() {
   const ref = React.useRef(null);
@@ -58,7 +44,7 @@ export default function GoogleGeminiEffectDemo() {
               <h1 className="text-4xl md:text-6xl lg:text-8xl text-white font-extralight tracking-tight text-center leading-[0.9]">
                 Let's build the
                 <span className="block text-transparent bg-clip-text bg-gradient-to-r from-white via-white/90 to-white/70">
-                  future together
+                  future
                 </span>
               </h1>
               <p className="text-white/60 text-lg md:text-xl font-light text-center max-w-2xl leading-relaxed mb-16">
@@ -89,26 +75,100 @@ export default function GoogleGeminiEffectDemo() {
                   },
                   {
                     name: "Riku Lauttia",
-                    role: "Head of Partnerships",
+                    role: "Head of Operations",
                     email: "riku@boostturku.com",
                     linkedin: "https://www.linkedin.com/in/rikulauttia/",
                   },
-                  { name: "Vishaka Salpiumi", role: "Head of Community" },
-                  { name: "Juho Salmi", role: "Head of Sales" },
-                  { name: "Joonas Ukkonen", role: "Sales Manager" },
-                  { name: "Julius Kraapo", role: "Sales Manager" },
-                  { name: "Immu Koskinen", role: "Sales Manager" },
-                  { name: "Aapo Peräkorpi", role: "Partnerships Manager" },
-                  { name: "Arttu Myyryläinen", role: "Sales Manager" },
-                  { name: "Anton Tuuli", role: "Sales Manager" },
-                  { name: "Juhani Tanskanen", role: "Sales Manager" },
-                  { name: "Kaper Hakala", role: "Sales Manager" },
-                  { name: "Eemeli Piiroinen", role: "Sales Manager" },
-                  { name: "Aarne Ollila", role: "Head of Partnerships" },
-                  { name: "Olli Jartti", role: "Sales Manager" },
-                  { name: "Vyas Aman", role: "Sales Manager" },
-                  { name: "Uruj Sarwar", role: "Program Manager" },
-                  { name: "Janina Paasila", role: "Art Director" },
+                  {
+                    name: "Vishaka Salpiumi",
+                    role: "Head of Community",
+                    linkedin:
+                      "https://www.linkedin.com/in/vishaka-salpiumi-3b6578349/",
+                  },
+                  {
+                    name: "Juho Salmi",
+                    role: "Head of Sales",
+                    linkedin: "https://www.linkedin.com/",
+                  },
+                  {
+                    name: "Joonas Ukkonen",
+                    role: "Sales Manager",
+                    linkedin:
+                      "https://www.linkedin.com/in/joonas-ukkonen-29844022b/",
+                  },
+                  {
+                    name: "Julius Kraapo",
+                    role: "Sales Manager",
+                    linkedin: "https://www.linkedin.com/in/julius-k-816698304/",
+                  },
+                  {
+                    name: "Immu Koskinen",
+                    role: "Head of Sales",
+                    linkedin:
+                      "https://www.linkedin.com/in/immu-koskinen-79244525b/",
+                  },
+                  {
+                    name: "Aapo Peräkorpi",
+                    role: "Head of Partnerships",
+                    linkedin:
+                      "https://www.linkedin.com/in/aapo-per%C3%A4korpi-bb7321298/",
+                  },
+                  {
+                    name: "Arttu Myyryläinen",
+                    role: "Sales Manager",
+                    linkedin:
+                      "https://www.linkedin.com/in/arttu-myyryl%C3%A4inen/",
+                  },
+                  {
+                    name: "Anton Tuuli",
+                    role: "Partnerships Manager",
+                    linkedin:
+                      "https://www.linkedin.com/in/anton-tuuli-a62838278/",
+                  },
+                  {
+                    name: "Juhani Tanskanen",
+                    role: "Partnerships Manager",
+                    linkedin:
+                      "https://www.linkedin.com/in/juhani-tanskanen-249923294/",
+                  },
+                  {
+                    name: "Kaper Hakala",
+                    role: "Sales Manager",
+                    linkedin:
+                      "https://www.linkedin.com/in/kasper-hakala-6b2605262/",
+                  },
+                  {
+                    name: "Eemeli Piiroinen",
+                    role: "Sales Manager",
+                    linkedin: "https://www.linkedin.com/",
+                  },
+                  {
+                    name: "Aarne Ollila",
+                    role: "Head of Partnerships",
+                    linkedin:
+                      "https://www.linkedin.com/in/aarne-ollila-53429028b/",
+                  },
+                  {
+                    name: "Olli Jartti",
+                    role: "Sales Manager",
+                    linkedin: "https://www.linkedin.com/in/ollijartti/",
+                  },
+                  {
+                    name: "Aman Vyas",
+                    role: "Sales Manager",
+                    linkedin:
+                      "https://www.linkedin.com/in/aman-vyas-21b674133/",
+                  },
+                  {
+                    name: "Uruj Sarwar",
+                    role: "Program Manager",
+                    linkedin: "https://www.linkedin.com/in/uruj-sarwar/",
+                  },
+                  {
+                    name: "Janina Paasila",
+                    role: "Creative Director",
+                    linkedin: "https://www.linkedin.com/in/janinapaasila/",
+                  },
                 ].map((person, index) => (
                   <div
                     key={index}
@@ -251,7 +311,6 @@ export default function GoogleGeminiEffectDemo() {
                   <p className="text-white/40 text-sm">
                     © 2025 Since AI. All rights reserved.
                   </p>
-                  
                 </div>
               </div>
             </div>
