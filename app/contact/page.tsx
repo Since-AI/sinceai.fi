@@ -42,7 +42,7 @@ export default function GoogleGeminiEffectDemo() {
                 <div className="w-12 h-[1px] bg-gradient-to-l from-transparent to-white/60" />
               </div>
               <h1 className="text-4xl md:text-6xl lg:text-8xl text-white font-extralight tracking-tight text-center leading-[0.9]">
-                Let's build the
+                Let's build the{" "}
                 <span className="block text-transparent bg-clip-text bg-gradient-to-r from-white via-white/90 to-white/70">
                   future
                 </span>
@@ -80,26 +80,16 @@ export default function GoogleGeminiEffectDemo() {
                     linkedin: "https://www.linkedin.com/in/rikulauttia/",
                   },
                   {
-                    name: "Vishaka Salpiumi",
-                    role: "Head of Community",
+                    name: "Aarne Ollila",
+                    role: "Head of Partnerships",
+                    email: "aarne@boostturku.com",
                     linkedin:
-                      "https://www.linkedin.com/in/vishaka-salpiumi-3b6578349/",
+                      "https://www.linkedin.com/in/aarne-ollila-53429028b/",
                   },
                   {
                     name: "Juho Salmi",
                     role: "Head of Sales",
                     linkedin: "https://www.linkedin.com/",
-                  },
-                  {
-                    name: "Joonas Ukkonen",
-                    role: "Sales Manager",
-                    linkedin:
-                      "https://www.linkedin.com/in/joonas-ukkonen-29844022b/",
-                  },
-                  {
-                    name: "Julius Kraapo",
-                    role: "Sales Manager",
-                    linkedin: "https://www.linkedin.com/in/julius-k-816698304/",
                   },
                   {
                     name: "Immu Koskinen",
@@ -114,59 +104,67 @@ export default function GoogleGeminiEffectDemo() {
                       "https://www.linkedin.com/in/aapo-per%C3%A4korpi-bb7321298/",
                   },
                   {
-                    name: "Arttu Myyryläinen",
-                    role: "Sales Manager",
-                    linkedin:
-                      "https://www.linkedin.com/in/arttu-myyryl%C3%A4inen/",
+                    name: "Julius Kraapo",
+                    role: "Strategic Sales & Partnerships",
+                    email: "julius@boostturku.com",
+                    linkedin: "https://www.linkedin.com/in/julius-k-816698304/",
                   },
                   {
-                    name: "Anton Tuuli",
-                    role: "Partnerships Manager",
+                    name: "Joonas Ukkonen",
+                    role: "Strategic Sales & Partnerships",
                     linkedin:
-                      "https://www.linkedin.com/in/anton-tuuli-a62838278/",
+                      "https://www.linkedin.com/in/joonas-ukkonen-29844022b/",
                   },
                   {
                     name: "Juhani Tanskanen",
-                    role: "Partnerships Manager",
+                    role: "Strategic Sales & Partnerships",
                     linkedin:
                       "https://www.linkedin.com/in/juhani-tanskanen-249923294/",
                   },
                   {
-                    name: "Kaper Hakala",
-                    role: "Sales Manager",
+                    name: "Kasper Hakala",
+                    role: "Strategic Sales & Partnerships",
                     linkedin:
                       "https://www.linkedin.com/in/kasper-hakala-6b2605262/",
                   },
                   {
                     name: "Eemeli Piiroinen",
-                    role: "Sales Manager",
+                    role: "Strategic Sales & Partnerships",
                     linkedin: "https://www.linkedin.com/",
                   },
                   {
-                    name: "Aarne Ollila",
-                    role: "Head of Partnerships",
-                    linkedin:
-                      "https://www.linkedin.com/in/aarne-ollila-53429028b/",
-                  },
-                  {
                     name: "Olli Jartti",
-                    role: "Sales Manager",
+                    role: "Strategic Sales & Partnerships",
                     linkedin: "https://www.linkedin.com/in/ollijartti/",
                   },
                   {
                     name: "Aman Vyas",
-                    role: "Sales Manager",
+                    role: "Head of International Sales & Partnerships",
                     linkedin:
                       "https://www.linkedin.com/in/aman-vyas-21b674133/",
                   },
                   {
-                    name: "Uruj Sarwar",
-                    role: "Program Manager",
-                    linkedin: "https://www.linkedin.com/in/uruj-sarwar/",
+                    name: "Arttu Myyryläinen",
+                    role: "Head of Marketing & Commercial Partnerships",
+                    email: "arttu@boostturku.com",
+                    linkedin:
+                      "https://www.linkedin.com/in/arttu-myyryl%C3%A4inen/",
+                  },
+                  {
+                    name: "Anton Tuuli",
+                    role: "Head of Technology",
+                    linkedin:
+                      "https://www.linkedin.com/in/anton-tuuli-a62838278/",
+                  },
+                  {
+                    name: "Vishaka Salpiumi",
+                    role: "Head of Community",
+                    linkedin:
+                      "https://www.linkedin.com/in/vishaka-salpiumi-3b6578349/",
                   },
                   {
                     name: "Janina Paasila",
-                    role: "Creative Director",
+                    role: "Head of Creative",
                     linkedin: "https://www.linkedin.com/in/janinapaasila/",
                   },
                 ].map((person, index) => (
