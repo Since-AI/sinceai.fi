@@ -154,7 +154,7 @@ export default function GoogleGeminiEffectDemo() {
                   },
                   {
                     name: "Aman Vyas",
-                    role: "Head of International Sales & Partnerships",
+                    role: "Head of International Partnerships",
                     email: "aman@boostturku.com",
                     linkedin:
                       "https://www.linkedin.com/in/aman-vyas-21b674133/",
