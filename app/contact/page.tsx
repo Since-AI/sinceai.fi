@@ -87,21 +87,11 @@ export default function GoogleGeminiEffectDemo() {
                       "https://www.linkedin.com/in/aarne-ollila-53429028b/",
                   },
                   {
-                    name: "Juho Salmi",
-                    role: "Head of Sales",
-                    linkedin: "https://www.linkedin.com/",
-                  },
-                  {
-                    name: "Immu Koskinen",
-                    role: "Head of Sales",
+                    name: "Arttu Myyryläinen",
+                    role: "Head of Marketing & Partnerships",
+                    email: "arttu@boostturku.com",
                     linkedin:
-                      "https://www.linkedin.com/in/immu-koskinen-79244525b/",
-                  },
-                  {
-                    name: "Aapo Peräkorpi",
-                    role: "Head of Partnerships",
-                    linkedin:
-                      "https://www.linkedin.com/in/aapo-per%C3%A4korpi-bb7321298/",
+                      "https://www.linkedin.com/in/arttu-myyryl%C3%A4inen/",
                   },
                   {
                     name: "Julius Kraapo",
@@ -110,57 +100,77 @@ export default function GoogleGeminiEffectDemo() {
                     linkedin: "https://www.linkedin.com/in/julius-k-816698304/",
                   },
                   {
-                    name: "Joonas Ukkonen",
-                    role: "Strategic Sales & Partnerships",
-                    linkedin:
-                      "https://www.linkedin.com/in/joonas-ukkonen-29844022b/",
-                  },
-                  {
-                    name: "Juhani Tanskanen",
-                    role: "Strategic Sales & Partnerships",
-                    linkedin:
-                      "https://www.linkedin.com/in/juhani-tanskanen-249923294/",
-                  },
-                  {
                     name: "Kasper Hakala",
                     role: "Strategic Sales & Partnerships",
+                    email: "kasper@boostturku.com",
                     linkedin:
                       "https://www.linkedin.com/in/kasper-hakala-6b2605262/",
                   },
                   {
                     name: "Eemeli Piiroinen",
                     role: "Strategic Sales & Partnerships",
+                    email: "eemeli@boostturku.com",
                     linkedin: "https://www.linkedin.com/",
+                  },
+                  {
+                    name: "Juho Salmi",
+                    role: "Head of Sales",
+                    email: "juho@@boostturku.com",
+                    linkedin: "https://www.linkedin.com/",
+                  },
+                  {
+                    name: "Joonas Ukkonen",
+                    role: "Strategic Sales & Partnerships",
+                    email: "joonas@boostturku.com",
+                    linkedin:
+                      "https://www.linkedin.com/in/joonas-ukkonen-29844022b/",
+                  },
+                  {
+                    name: "Immu Koskinen",
+                    role: "Head of Sales",
+                    email: "immu@boostturku.com",
+                    linkedin:
+                      "https://www.linkedin.com/in/immu-koskinen-79244525b/",
+                  },
+                  {
+                    name: "Aapo Peräkorpi",
+                    role: "Head of Partnerships",
+                    email: "aapo@boostturku.com",
+                    linkedin:
+                      "https://www.linkedin.com/in/aapo-per%C3%A4korpi-bb7321298/",
+                  },
+                  {
+                    name: "Juhani Tanskanen",
+                    role: "Strategic Sales & Partnerships",
+                    email: "juhani@boostturku.com",
+                    linkedin:
+                      "https://www.linkedin.com/in/juhani-tanskanen-249923294/",
                   },
                   {
                     name: "Olli Jartti",
                     role: "Strategic Sales & Partnerships",
+                    email: "olli@boostturku.com",
                     linkedin: "https://www.linkedin.com/in/ollijartti/",
                   },
                   {
                     name: "Aman Vyas",
                     role: "Head of International Sales & Partnerships",
+                    email: "aman@boostturku.com",
                     linkedin:
                       "https://www.linkedin.com/in/aman-vyas-21b674133/",
                   },
                   {
-                    name: "Arttu Myyryläinen",
-                    role: "Head of Marketing & Commercial Partnerships",
-                    email: "arttu@boostturku.com",
+                    name: "Vishaka Salpiumi",
+                    role: "Head of Community",
+                    email: "vishaka@boostturku.com",
                     linkedin:
-                      "https://www.linkedin.com/in/arttu-myyryl%C3%A4inen/",
+                      "https://www.linkedin.com/in/vishaka-salpiumi-3b6578349/",
                   },
                   {
                     name: "Anton Tuuli",
                     role: "Head of Technology",
                     linkedin:
                       "https://www.linkedin.com/in/anton-tuuli-a62838278/",
-                  },
-                  {
-                    name: "Vishaka Salpiumi",
-                    role: "Head of Community",
-                    linkedin:
-                      "https://www.linkedin.com/in/vishaka-salpiumi-3b6578349/",
                   },
                   {
                     name: "Janina Paasila",
