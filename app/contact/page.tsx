@@ -84,6 +84,14 @@ export default function GoogleGeminiEffectDemo() {
                       "https://www.linkedin.com/in/arttu-myyryl%C3%A4inen/",
                   },
                   {
+                    name: "Aman Vyas",
+                    role: "Head of International Partnerships",
+                    email: "aman@boostturku.com",
+                    number: "044 238 9052",
+                    linkedin:
+                      "https://www.linkedin.com/in/aman-vyas-21b674133/",
+                  },
+                  {
                     name: "Yuehan John",
                     role: "Head of Growth",
                     email: "yuehan.john@boostturku.com",
@@ -95,13 +103,6 @@ export default function GoogleGeminiEffectDemo() {
                     role: "Head of Operations",
                     email: "riku@boostturku.com",
                     linkedin: "https://www.linkedin.com/in/rikulauttia/",
-                  },
-                  {
-                    name: "Aman Vyas",
-                    role: "Head of International Partnerships",
-                    email: "aman@boostturku.com",
-                    linkedin:
-                      "https://www.linkedin.com/in/aman-vyas-21b674133/",
                   },
                   {
                     name: "Julius Kraapo",
