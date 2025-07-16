@@ -121,7 +121,16 @@ export default function GoogleGeminiEffectDemo() {
                     name: "Eemeli Piiroinen",
                     role: "Partnerships",
                     email: "eemeli@boostturku.com",
-                    linkedin: "https://www.linkedin.com/",
+                    linkedin:
+                      "https://www.linkedin.com/in/eemeli-piironen-932947370/",
+                  },
+                  {
+                    name: "Aapo Peräkorpi",
+                    role: "Partnerships",
+                    email: "aapo@boostturku.com",
+                    number: "044 565 6145",
+                    linkedin:
+                      "https://www.linkedin.com/in/aapo-per%C3%A4korpi-bb7321298/",
                   },
                   {
                     name: "Juho Salmi",
@@ -142,14 +151,6 @@ export default function GoogleGeminiEffectDemo() {
                     email: "immu@boostturku.com",
                     linkedin:
                       "https://www.linkedin.com/in/immu-koskinen-79244525b/",
-                  },
-                  {
-                    name: "Aapo Peräkorpi",
-                    role: "Partnerships",
-                    email: "aapo@boostturku.com",
-                    number: "044 565 6145",
-                    linkedin:
-                      "https://www.linkedin.com/in/aapo-per%C3%A4korpi-bb7321298/",
                   },
                   // {
                   //   name: "Juhani Tanskanen",
