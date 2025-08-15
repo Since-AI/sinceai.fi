@@ -906,6 +906,7 @@ export default function GoogleGeminiEffectDemo() {
                   <button
                     type="button"
                     className="group relative inline-flex items-center justify-center px-16 py-5 text-lg font-medium text-black bg-white rounded-full transition-all duration-300 hover:bg-white/90 hover:scale-105 transform"
+                    onClick={() => window.open("https://lu.ma/2vs4wsjr", "_blank")}
                   >
                     <span className="relative z-10 font-medium">Apply Now</span>
                     <div className="absolute inset-0 rounded-full bg-gradient-to-r from-white via-white to-white/90 opacity-0 group-hover:opacity-100 transition-opacity duration-300" />
