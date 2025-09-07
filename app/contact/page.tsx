@@ -1,11 +1,14 @@
 "use client";
-import React, { useEffect, useState } from "react";
+import React, {
+  useEffect,
+  useState,
+} from 'react';
 
-import { FaLinkedin } from "react-icons/fa";
+import { FaLinkedin } from 'react-icons/fa';
 
-import { InfiniteSlider } from "@/components/motion-primitives/infinite-slider";
-import SmoothScroll from "@/components/smoothScroll";
-import { WavyBackground } from "@/components/ui/wavy-background";
+import { InfiniteSlider } from '@/components/motion-primitives/infinite-slider';
+import SmoothScroll from '@/components/smoothScroll';
+import { WavyBackground } from '@/components/ui/wavy-background';
 
 export default function GoogleGeminiEffectDemo() {
   const ref = React.useRef(null);
@@ -84,19 +87,10 @@ export default function GoogleGeminiEffectDemo() {
                       "https://www.linkedin.com/in/arttu-myyryl%C3%A4inen/",
                   },
                   {
-                    name: "Julius Kraapo",
-                    role: "Sales",
-                    email: "julius@boostturku.com",
-                    number: "044 219 8099",
-                    linkedin: "https://www.linkedin.com/in/julius-k-816698304/",
-                  },
-                  {
-                    name: "Kasper Hakala",
-                    role: "Strategic Partnerships",
-                    email: "kasper@boostturku.com",
-                    number: "044 514 1364",
-                    linkedin:
-                      "https://www.linkedin.com/in/kasper-hakala-6b2605262/",
+                    name: "Riku Lauttia",
+                    role: "Head of Operations",
+                    email: "riku@boostturku.com",
+                    linkedin: "https://www.linkedin.com/in/rikulauttia/",
                   },
                   {
                     name: "Aman Vyas",
@@ -107,25 +101,32 @@ export default function GoogleGeminiEffectDemo() {
                       "https://www.linkedin.com/in/aman-vyas-21b674133/",
                   },
                   {
-                    name: "Aapo Peräkorpi",
-                    role: "Partnerships",
-                    email: "aapo@boostturku.com",
-                    number: "044 565 6145",
+                    name: "Kasper Hakala",
+                    role: "Strategic Partnerships",
+                    email: "kasper@boostturku.com",
+                    number: "044 514 1364",
                     linkedin:
-                      "https://www.linkedin.com/in/aapo-per%C3%A4korpi-bb7321298/",
+                      "https://www.linkedin.com/in/kasper-hakala-6b2605262/",
+                  },
+                  {
+                    name: "Yuehan John",
+                    role: "Head of Growth",
+                    email: "yuehan.john@boostturku.com",
+                    number: "040 363 3893",
+                    linkedin: "https://www.linkedin.com/in/yuehanjohn/",
+                  },
+                  {
+                    name: "Julius Kraapo",
+                    role: "Sales",
+                    email: "julius@boostturku.com",
+                    number: "044 219 8099",
+                    linkedin: "https://www.linkedin.com/in/julius-k-816698304/",
                   },
                   {
                     name: "Juho Salmi",
                     role: "Sales",
                     email: "juho@@boostturku.com",
                     linkedin: "https://www.linkedin.com/",
-                  },
-                  {
-                    name: "Eemeli Piiroinen",
-                    role: "Partnerships",
-                    email: "eemeli@boostturku.com",
-                    linkedin:
-                      "https://www.linkedin.com/in/eemeli-piironen-932947370/",
                   },
                   {
                     name: "Joonas Ukkonen",
@@ -140,19 +141,6 @@ export default function GoogleGeminiEffectDemo() {
                     email: "immu@boostturku.com",
                     linkedin:
                       "https://www.linkedin.com/in/immu-koskinen-79244525b/",
-                  },
-                  {
-                    name: "Yuehan John",
-                    role: "Head of Growth",
-                    email: "yuehan.john@boostturku.com",
-                    number: "040 363 3893",
-                    linkedin: "https://www.linkedin.com/in/yuehanjohn/",
-                  },
-                  {
-                    name: "Riku Lauttia",
-                    role: "Head of Operations",
-                    email: "riku@boostturku.com",
-                    linkedin: "https://www.linkedin.com/in/rikulauttia/",
                   },
                   {
                     name: "Vishaka Salpiumi",
