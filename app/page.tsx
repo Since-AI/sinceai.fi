@@ -218,7 +218,7 @@ export default function GoogleGeminiEffectDemo() {
                       an environment designed for breakthrough innovation.
                     </p>
                     <p>
-                      Three days. Unlimited potential. €10,000+ in prizes. The
+                      Three days. Unlimited potential. The
                       tools, mentorship, and connections you need to transform
                       ideas into reality.
                     </p>
