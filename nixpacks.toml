@@ -1,8 +1,11 @@
 [phases.install]
-cmds = ['npm ci --legacy-peer-deps']
+cmds = [
+  "rm -rf node_modules/.cache",
+  "npm ci --legacy-peer-deps"
+]
 
 [phases.build]
-cmds = ['npm run build']
+cmds = ["npm run build"]
 
 [start]
-cmd = 'npm run start'
+cmd = "npm run start"
