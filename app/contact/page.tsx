@@ -1,14 +1,11 @@
 "use client";
-import React, {
-  useEffect,
-  useState,
-} from 'react';
+import React, { useEffect, useState } from "react";
 
-import { FaLinkedin } from 'react-icons/fa';
+import { FaInstagram, FaLinkedin } from "react-icons/fa";
 
-import { InfiniteSlider } from '@/components/motion-primitives/infinite-slider';
-import SmoothScroll from '@/components/smoothScroll';
-import { WavyBackground } from '@/components/ui/wavy-background';
+import { InfiniteSlider } from "@/components/motion-primitives/infinite-slider";
+import SmoothScroll from "@/components/smoothScroll";
+import { WavyBackground } from "@/components/ui/wavy-background";
 
 export default function GoogleGeminiEffectDemo() {
   const ref = React.useRef(null);
@@ -129,18 +126,11 @@ export default function GoogleGeminiEffectDemo() {
                     linkedin: "https://www.linkedin.com/",
                   },
                   {
-                    name: "Joonas Ukkonen",
-                    role: "Sales",
-                    email: "joonas@boostturku.com",
+                    name: "Vishaka Salpiumi",
+                    role: "Community Outreach",
+                    email: "vishaka@boostturku.com",
                     linkedin:
-                      "https://www.linkedin.com/in/joonas-ukkonen-29844022b/",
-                  },
-                  {
-                    name: "Immu Koskinen",
-                    role: "Sales",
-                    email: "immu@boostturku.com",
-                    linkedin:
-                      "https://www.linkedin.com/in/immu-koskinen-79244525b/",
+                      "https://www.linkedin.com/in/vishaka-salpiumi-3b6578349/",
                   },
                   {
                     name: "Vishaka Salpiumi",
@@ -148,6 +138,17 @@ export default function GoogleGeminiEffectDemo() {
                     email: "vishaka@boostturku.com",
                     linkedin:
                       "https://www.linkedin.com/in/vishaka-salpiumi-3b6578349/",
+                  },
+                  {
+                    name: "Abdul Wasay",
+                    role: "Head of Content",
+                    linkedin: "https://www.linkedin.com/in/abdulwasaymuhammad/",
+                  },
+                  {
+                    name: "Teodor Hiidenlampi",
+                    role: "Community Outreach",
+                    email: "teodor@mesembria.fi",
+                    instagram: "https://www.instagram.com/teodor._pavel/",
                   },
                 ].map((person, index) => (
                   <div
@@ -195,6 +196,17 @@ export default function GoogleGeminiEffectDemo() {
                           className="inline-flex items-center justify-center w-8 h-8 bg-white/10 hover:bg-white/20 rounded-full transition-all duration-200 group-hover:scale-110"
                         >
                           <FaLinkedin size={14} className="text-white/70" />
+                        </button>
+                      )}
+                      {person.instagram && (
+                        <button
+                          onClick={() =>
+                            window.open(person.instagram, "_blank")
+                          }
+                          className="inline-flex items-center justify-center w-8 h-8 bg-white/10 hover:bg-white/20 rounded-full transition-all duration-200 group-hover:scale-110 ml-2"
+                          aria-label="Open Instagram"
+                        >
+                          <FaInstagram size={14} className="text-white/70" />
                         </button>
                       )}
                     </div>
