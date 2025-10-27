@@ -122,19 +122,12 @@ export default function GoogleGeminiEffectDemo() {
                   {
                     name: "Juho Salmi",
                     role: "Sales",
-                    email: "juho@@boostturku.com",
+                    email: "juho@boostturku.com",
                     linkedin: "https://www.linkedin.com/",
                   },
                   {
                     name: "Vishaka Salpiumi",
-                    role: "Community Outreach",
-                    email: "vishaka@boostturku.com",
-                    linkedin:
-                      "https://www.linkedin.com/in/vishaka-salpiumi-3b6578349/",
-                  },
-                  {
-                    name: "Vishaka Salpiumi",
-                    role: "Community Outreach",
+                    role: "Social Media Manager",
                     email: "vishaka@boostturku.com",
                     linkedin:
                       "https://www.linkedin.com/in/vishaka-salpiumi-3b6578349/",
@@ -146,7 +139,7 @@ export default function GoogleGeminiEffectDemo() {
                   },
                   {
                     name: "Teodor Hiidenlampi",
-                    role: "Community Outreach",
+                    role: "Content Creator",
                     email: "teodor@mesembria.fi",
                     instagram: "https://www.instagram.com/teodor._pavel/",
                   },
