@@ -31,7 +31,6 @@
     "class-variance-authority": "^0.7.1",
     "clsx": "^2.1.1",
     "framer-motion": "^11.13.1",
-    "framer-motion-3d": "^12.4.13",
     "intl-messageformat": "^10.5.0",
     "leva": "^0.10.0",
     "lucide-react": "^0.511.0",
