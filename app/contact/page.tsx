@@ -1,25 +1,14 @@
 "use client";
-import React from "react";
-import SmoothScroll from "@/components/smoothScroll";
-import { useEffect, useState } from "react";
-import Preloader from "@/components/utils/Preloader";
-import { AnimatePresence } from "framer-motion";
-import { InView } from "@/components/motion-primitives/in-view";
-import { InfiniteSlider } from "@/components/motion-primitives/infinite-slider";
-import { WavyBackground } from "@/components/ui/wavy-background";
-import { Spotlight } from "@/components/motion-primitives/spotlight";
-import { Accordion, AccordionItem } from "@heroui/react";
-import { Magnetic } from "@/components/motion-primitives/magnetic";
-import {
-  Card,
-  CardBody,
-  CardHeader,
-  CardFooter,
-  Divider,
-  Button,
-  Link,
-} from "@heroui/react";
-import { FaLinkedin } from "react-icons/fa";
+import React, {
+  useEffect,
+  useState,
+} from 'react';
+
+import { FaLinkedin } from 'react-icons/fa';
+
+import { InfiniteSlider } from '@/components/motion-primitives/infinite-slider';
+import SmoothScroll from '@/components/smoothScroll';
+import { WavyBackground } from '@/components/ui/wavy-background';
 
 export default function GoogleGeminiEffectDemo() {
   const ref = React.useRef(null);
@@ -56,9 +45,9 @@ export default function GoogleGeminiEffectDemo() {
                 <div className="w-12 h-[1px] bg-gradient-to-l from-transparent to-white/60" />
               </div>
               <h1 className="text-4xl md:text-6xl lg:text-8xl text-white font-extralight tracking-tight text-center leading-[0.9]">
-                Let's build the
+                Let's build the{" "}
                 <span className="block text-transparent bg-clip-text bg-gradient-to-r from-white via-white/90 to-white/70">
-                  future together
+                  future
                 </span>
               </h1>
               <p className="text-white/60 text-lg md:text-xl font-light text-center max-w-2xl leading-relaxed mb-16">
@@ -82,33 +71,84 @@ export default function GoogleGeminiEffectDemo() {
               <section className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 xl:grid-cols-4 gap-6 max-w-[1280px] px-6 mb-8">
                 {[
                   {
-                    name: "Yuehan John",
-                    role: "Head of Growth",
-                    email: "yuehan.john@boostturku.com",
-                    linkedin: "https://www.linkedin.com/in/yuehanjohn/",
+                    name: "Aarne Ollila",
+                    role: "Head of Partnerships",
+                    email: "aarne@boostturku.com",
+                    number: "045 652 5605",
+                    linkedin:
+                      "https://www.linkedin.com/in/aarne-ollila-53429028b/",
+                  },
+                  {
+                    name: "Arttu Myyryläinen",
+                    role: "Head of Strategic Outreach",
+                    email: "arttu@boostturku.com",
+                    number: "044 985 6522",
+                    linkedin:
+                      "https://www.linkedin.com/in/arttu-myyryl%C3%A4inen/",
                   },
                   {
                     name: "Riku Lauttia",
-                    role: "Head of Partnerships",
+                    role: "Head of Operations",
                     email: "riku@boostturku.com",
                     linkedin: "https://www.linkedin.com/in/rikulauttia/",
                   },
-                  { name: "Vishaka Salpiumi", role: "Head of Community" },
-                  { name: "Juho Salmi", role: "Head of Sales" },
-                  { name: "Joonas Ukkonen", role: "Sales Manager" },
-                  { name: "Julius Kraapo", role: "Sales Manager" },
-                  { name: "Immu Koskinen", role: "Sales Manager" },
-                  { name: "Aapo Peräkorpi", role: "Partnerships Manager" },
-                  { name: "Arttu Myyryläinen", role: "Sales Manager" },
-                  { name: "Anton Tuuli", role: "Sales Manager" },
-                  { name: "Juhani Tanskanen", role: "Sales Manager" },
-                  { name: "Kaper Hakala", role: "Sales Manager" },
-                  { name: "Eemeli Piiroinen", role: "Sales Manager" },
-                  { name: "Aarne Ollila", role: "Head of Partnerships" },
-                  { name: "Olli Jartti", role: "Sales Manager" },
-                  { name: "Vyas Aman", role: "Sales Manager" },
-                  { name: "Uruj Sarwar", role: "Program Manager" },
-                  { name: "Janina Paasila", role: "Art Director" },
+                  {
+                    name: "Aman Vyas",
+                    role: "Head of International Partnerships",
+                    email: "aman@boostturku.com",
+                    number: "044 238 9052",
+                    linkedin:
+                      "https://www.linkedin.com/in/aman-vyas-21b674133/",
+                  },
+                  {
+                    name: "Kasper Hakala",
+                    role: "Strategic Partnerships",
+                    email: "kasper@boostturku.com",
+                    number: "044 514 1364",
+                    linkedin:
+                      "https://www.linkedin.com/in/kasper-hakala-6b2605262/",
+                  },
+                  {
+                    name: "Yuehan John",
+                    role: "Head of Growth",
+                    email: "yuehan.john@boostturku.com",
+                    number: "040 363 3893",
+                    linkedin: "https://www.linkedin.com/in/yuehanjohn/",
+                  },
+                  {
+                    name: "Julius Kraapo",
+                    role: "Sales",
+                    email: "julius@boostturku.com",
+                    number: "044 219 8099",
+                    linkedin: "https://www.linkedin.com/in/julius-k-816698304/",
+                  },
+                  {
+                    name: "Juho Salmi",
+                    role: "Sales",
+                    email: "juho@@boostturku.com",
+                    linkedin: "https://www.linkedin.com/",
+                  },
+                  {
+                    name: "Joonas Ukkonen",
+                    role: "Sales",
+                    email: "joonas@boostturku.com",
+                    linkedin:
+                      "https://www.linkedin.com/in/joonas-ukkonen-29844022b/",
+                  },
+                  {
+                    name: "Immu Koskinen",
+                    role: "Sales",
+                    email: "immu@boostturku.com",
+                    linkedin:
+                      "https://www.linkedin.com/in/immu-koskinen-79244525b/",
+                  },
+                  {
+                    name: "Vishaka Salpiumi",
+                    role: "Community Outreach",
+                    email: "vishaka@boostturku.com",
+                    linkedin:
+                      "https://www.linkedin.com/in/vishaka-salpiumi-3b6578349/",
+                  },
                 ].map((person, index) => (
                   <div
                     key={index}
@@ -137,6 +177,15 @@ export default function GoogleGeminiEffectDemo() {
                           className="text-white/40 hover:text-white/70 text-xs font-light transition-colors duration-200 block mb-3 truncate"
                         >
                           {person.email}
+                        </a>
+                      )}
+
+                      {person.number && (
+                        <a
+                          href={`tel:${person.number}`}
+                          className="text-white/40 hover:text-white/70 text-xs font-light transition-colors duration-200 block mb-3 truncate"
+                        >
+                          {person.number}
                         </a>
                       )}
 
@@ -251,7 +300,6 @@ export default function GoogleGeminiEffectDemo() {
                   <p className="text-white/40 text-sm">
                     © 2025 Since AI. All rights reserved.
                   </p>
-                  
                 </div>
               </div>
             </div>
