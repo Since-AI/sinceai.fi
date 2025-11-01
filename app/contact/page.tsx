@@ -1,11 +1,17 @@
 "use client";
-import React, { useEffect, useState } from "react";
+import React, {
+  useEffect,
+  useState,
+} from 'react';
 
-import { FaInstagram, FaLinkedin } from "react-icons/fa";
+import {
+  FaInstagram,
+  FaLinkedin,
+} from 'react-icons/fa';
 
-import { InfiniteSlider } from "@/components/motion-primitives/infinite-slider";
-import SmoothScroll from "@/components/smoothScroll";
-import { WavyBackground } from "@/components/ui/wavy-background";
+import { InfiniteSlider } from '@/components/motion-primitives/infinite-slider';
+import SmoothScroll from '@/components/smoothScroll';
+import { WavyBackground } from '@/components/ui/wavy-background';
 
 export default function GoogleGeminiEffectDemo() {
   const ref = React.useRef(null);
@@ -111,19 +117,6 @@ export default function GoogleGeminiEffectDemo() {
                     email: "yuehan.john@boostturku.com",
                     number: "040 363 3893",
                     linkedin: "https://www.linkedin.com/in/yuehanjohn/",
-                  },
-                  {
-                    name: "Julius Kraapo",
-                    role: "Sales",
-                    email: "julius@boostturku.com",
-                    number: "044 219 8099",
-                    linkedin: "https://www.linkedin.com/in/julius-k-816698304/",
-                  },
-                  {
-                    name: "Juho Salmi",
-                    role: "Sales",
-                    email: "juho@boostturku.com",
-                    linkedin: "https://www.linkedin.com/",
                   },
                   {
                     name: "Vishaka Salpiumi",
