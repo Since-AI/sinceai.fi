@@ -184,12 +184,12 @@ export default function GoogleGeminiEffectDemo() {
               <div className="w-full max-w-[1280px] px-6">
                 <div className="grid grid-cols-2 sm:grid-cols-3 md:grid-cols-4 lg:grid-cols-6 gap-8 items-center justify-center">
                   {[
+                    "/assets/sponsors/valmet.png",
+                    "/assets/sponsors/sandvik.png",
+                    "/assets/sponsors/elevenlabs.png",
                     "/assets/sponsors/apelago.png",
                     "/assets/sponsors/eisko.svg",
-                    "/assets/sponsors/elevenlabs.png",
                     "/assets/sponsors/featherless.svg",
-                    "/assets/sponsors/sandvik.png",
-                    "/assets/sponsors/valmet.png",
                   ].map((src, i) => (
                     <div
                       key={i}
@@ -199,7 +199,7 @@ export default function GoogleGeminiEffectDemo() {
                       <img
                         src={src}
                         alt={`Sponsor logo ${i + 1}`}
-                        className="max-h-12 object-contain grayscale opacity-90 hover:grayscale-0 hover:opacity-100 transition-all duration-300"
+                        className="max-h-12 object-contain opacity-90 hover:grayscale-0 hover:opacity-100 transition-all duration-300"
                       />
                     </div>
                   ))}
