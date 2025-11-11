@@ -172,6 +172,44 @@ export default function GoogleGeminiEffectDemo() {
             />
           </InfiniteSlider> */}
 
+          <div>
+            <section className="flex flex-col items-center gap-8 py-16 min-h-screen justify-center">
+              <div className="text-sm font-medium text-white/50 uppercase tracking-[0.3em]">
+                Partners
+              </div>
+              <h3 className="text-3xl md:text-4xl font-light text-center leading-tight text-white max-w-4xl">
+                Proud sponsors
+              </h3>
+
+              <div className="w-full max-w-[1280px] px-6">
+                <div className="grid grid-cols-2 sm:grid-cols-3 md:grid-cols-4 lg:grid-cols-6 gap-8 items-center justify-center">
+                  {[
+                    "/assets/sponsors/apelago.png",
+                    "/assets/sponsors/eisko.svg",
+                    "/assets/sponsors/elevenlabs.png",
+                    "/assets/sponsors/featherless.svg",
+                    "/assets/sponsors/sandvik.png",
+                    "/assets/sponsors/valmet.png",
+                  ].map((src, i) => (
+                    <div
+                      key={i}
+                      className="flex items-center justify-center p-4 bg-white/3 rounded-2xl"
+                      aria-hidden={false}
+                    >
+                      <img
+                        src={src}
+                        alt={`Sponsor logo ${i + 1}`}
+                        className="max-h-12 object-contain grayscale opacity-90 hover:grayscale-0 hover:opacity-100 transition-all duration-300"
+                      />
+                    </div>
+                  ))}
+                </div>
+
+                
+              </div>
+            </section>
+          </div>
+
           <div className="flex flex-col self-center w-full max-w-[1280px] gap-24 px-8">
             <section className="flex flex-col items-center gap-16 py-24">
               <div className="flex flex-col items-center gap-6">
@@ -218,9 +256,8 @@ export default function GoogleGeminiEffectDemo() {
                       an environment designed for breakthrough innovation.
                     </p>
                     <p>
-                      Three days. Unlimited potential. The
-                      tools, mentorship, and connections you need to transform
-                      ideas into reality.
+                      Three days. Unlimited potential. The tools, mentorship,
+                      and connections you need to transform ideas into reality.
                     </p>
                   </div>
                   <div className="flex items-center gap-4 pt-4">
@@ -906,7 +943,9 @@ export default function GoogleGeminiEffectDemo() {
                   <button
                     type="button"
                     className="group relative inline-flex items-center justify-center px-16 py-5 text-lg font-medium text-black bg-white rounded-full transition-all duration-300 hover:bg-white/90 hover:scale-105 transform"
-                    onClick={() => window.open("https://lu.ma/2vs4wsjr", "_blank")}
+                    onClick={() =>
+                      window.open("https://lu.ma/2vs4wsjr", "_blank")
+                    }
                   >
                     <span className="relative z-10 font-medium">Apply Now</span>
                     <div className="absolute inset-0 rounded-full bg-gradient-to-r from-white via-white to-white/90 opacity-0 group-hover:opacity-100 transition-opacity duration-300" />
