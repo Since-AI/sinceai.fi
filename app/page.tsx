@@ -32,14 +32,76 @@ export default function GoogleGeminiEffectDemo() {
   // Sponsor data: src, target url and alt text.
   // NOTE: I made reasonable guesses for the official websites — update any urls below if you have the exact links.
   const sponsors = [
-    { src: "/assets/sponsors/valmet.png", url: "https://www.valmet.com", alt: "Valmet" },
-    { src: "/assets/sponsors/sandvik.png", url: "https://www.sandvik.com", alt: "Sandvik" },
-    { src: "/assets/sponsors/elevenlabs.png", url: "https://www.elevenlabs.io", alt: "ElevenLabs" },
-    { src: "/assets/sponsors/apelago.png", url: "https://www.apelago.fi", alt: "Apelago" },
-    { src: "/assets/sponsors/eisko.svg", url: "https://eisko.fi", alt: "Eisko" },
-    { src: "/assets/sponsors/featherless.svg", url: "https://featherless.ai", alt: "Featherless" },
-    { src: "/assets/sponsors/Skillio.png", url: "https://skillio.ai", alt: "Skillio" },
+    {
+      src: "/assets/sponsors/valmet.png",
+      url: "https://www.valmet.com",
+      alt: "Valmet",
+    },
+    {
+      src: "/assets/sponsors/sandvik.png",
+      url: "https://www.sandvik.com",
+      alt: "Sandvik",
+    },
+    {
+      src: "/assets/sponsors/elevenlabs.png",
+      url: "https://www.elevenlabs.io",
+      alt: "ElevenLabs",
+    },
+    {
+      src: "/assets/sponsors/apelago.png",
+      url: "https://www.apelago.fi",
+      alt: "Apelago",
+    },
+    {
+      src: "/assets/sponsors/eisko.svg",
+      url: "https://eisko.fi",
+      alt: "Eisko",
+    },
+    {
+      src: "/assets/sponsors/featherless.svg",
+      url: "https://featherless.ai",
+      alt: "Featherless",
+    },
+    {
+      src: "/assets/sponsors/Skillio.png",
+      url: "https://skillio.ai",
+      alt: "Skillio",
+    },
   ];
+
+  const supports = [
+    {
+      src: "/assets/supports/boost.svg",
+      url: "https://boostturku.com/",
+      alt: "Boost Turku",
+    },
+    // {
+    //   src: "/assets/supports/businessturku.png",
+    //   url: "https://businessturku.fi/",
+    //   alt: "Business Turku",
+    // },
+    // {
+    //   src: "/assets/supports/startupfoundation.webp",
+    //   url: "https://startup-saatio.fi/",
+    //   alt: "Startup Foundation",
+    // },
+    {
+      src: "/assets/supports/turkuamk.png",
+      url: "https://turkuamk.fi",
+      alt: "Turku University of Applied Sciences",
+    },
+    {
+      src: "/assets/supports/aimadlab.svg",
+      url: "https://aimadlab.com/",
+      alt: "AI Mad Lab",
+    },
+    {
+      src: "/assets/supports/aaltoai.png",
+      url: "https://aaltoai.com/",
+      alt: "Aalto AI",
+    },
+  ];
+
 
   return (
     <SmoothScroll>
@@ -126,66 +188,8 @@ export default function GoogleGeminiEffectDemo() {
           </div>
         </WavyBackground>
         <div className="flex flex-col gap-32">
-          {/* <InfiniteSlider gap={68}>
-            <img
-              src="assets\logo\logo_full.png"
-              alt="logo"
-              className="h-[48px] w-auto"
-            />
-            <img
-              src="assets\logo\logo_full.png"
-              alt="logo"
-              className="h-[48px] w-auto"
-            />
-            <img
-              src="assets\logo\logo_full.png"
-              alt="logo"
-              className="h-[48px] w-auto"
-            />
-            <img
-              src="assets\logo\logo_full.png"
-              alt="logo"
-              className="h-[48px] w-auto"
-            />
-            <img
-              src="assets\logo\logo_full.png"
-              alt="logo"
-              className="h-[48px] w-auto"
-            />
-            <img
-              src="assets\logo\logo_full.png"
-              alt="logo"
-              className="h-[48px] w-auto"
-            />
-            <img
-              src="assets\logo\logo_full.png"
-              alt="logo"
-              className="h-[48px] w-auto"
-            />
-            <img
-              src="assets\logo\logo_full.png"
-              alt="logo"
-              className="h-[48px] w-auto"
-            />
-            <img
-              src="assets\logo\logo_full.png"
-              alt="logo"
-              className="h-[48px] w-auto"
-            />
-            <img
-              src="assets\logo\logo_full.png"
-              alt="logo"
-              className="h-[48px] w-auto"
-            />
-            <img
-              src="assets\logo\logo_full.png"
-              alt="logo"
-              className="h-[48px] w-auto"
-            />
-          </InfiniteSlider> */}
-
           <div>
-            <section className="flex flex-col items-center gap-8 py-16 min-h-screen justify-center">
+            <section className="flex flex-col items-center gap-8 py-16 justify-center">
               <div className="text-sm font-medium text-white/50 uppercase tracking-[0.3em]">
                 Partners
               </div>
@@ -193,8 +197,8 @@ export default function GoogleGeminiEffectDemo() {
                 Proud sponsors
               </h3>
 
-              <div className="w-full max-w-[1280px] px-6">
-                <div className="grid grid-cols-2 sm:grid-cols-3 md:grid-cols-4 lg:grid-cols-5 gap-8 items-center justify-center">
+              <div className="w-full max-w-[1000px] px-6">
+                <div className="flex flex-wrap items-center justify-center gap-8">
                   {sponsors.map((s, i) => (
                     <div
                       key={i}
@@ -211,17 +215,53 @@ export default function GoogleGeminiEffectDemo() {
                         <img
                           src={s.src}
                           alt={s.alt}
-                          className="max-h-12 object-contain opacity-90 hover:grayscale-0 hover:opacity-100 transition-all duration-300"
+                          className="max-w-32 object-contain opacity-90 hover:grayscale-0 hover:opacity-100 transition-all duration-300"
                         />
                       </a>
                     </div>
                   ))}
                 </div>
-
-                
               </div>
             </section>
           </div>
+
+          <div>
+            <section className="flex flex-col items-center gap-8 py-16 justify-center">
+              <div className="text-sm font-medium text-white/50 uppercase tracking-[0.3em]">
+                Supported by
+              </div>
+              <h3 className="text-3xl md:text-4xl font-light text-center leading-tight text-white max-w-4xl">
+                Special Thanks
+              </h3>
+
+              <div className="w-full max-w-[1000px] px-6">
+                <div className="flex flex-wrap items-center justify-center gap-8">
+                  {supports.map((s, i) => (
+                    <div
+                      key={i}
+                      className="flex items-center justify-center p-4 bg-white/3 rounded-2xl"
+                      aria-hidden={false}
+                    >
+                      <a
+                        href={s.url}
+                        target="_blank"
+                        rel="noopener noreferrer"
+                        aria-label={s.alt}
+                        className="w-full flex items-center justify-center"
+                      >
+                        <img
+                          src={s.src}
+                          alt={s.alt}
+                          className="max-w-32 object-contain opacity-90 hover:grayscale-0 hover:opacity-100 transition-all duration-300"
+                        />
+                      </a>
+                    </div>
+                  ))}
+                </div>
+              </div>
+            </section>
+          </div>
+          
 
           <div className="flex flex-col self-center w-full max-w-[1280px] gap-24 px-8">
             <section className="flex flex-col items-center gap-16 py-24">
