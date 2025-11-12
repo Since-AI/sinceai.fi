@@ -29,6 +29,18 @@ export default function GoogleGeminiEffectDemo() {
 
   const springOptions = { bounce: 0.1 };
 
+  // Sponsor data: src, target url and alt text.
+  // NOTE: I made reasonable guesses for the official websites — update any urls below if you have the exact links.
+  const sponsors = [
+    { src: "/assets/sponsors/valmet.png", url: "https://www.valmet.com", alt: "Valmet" },
+    { src: "/assets/sponsors/sandvik.png", url: "https://www.sandvik.com", alt: "Sandvik" },
+    { src: "/assets/sponsors/elevenlabs.png", url: "https://www.elevenlabs.io", alt: "ElevenLabs" },
+    { src: "/assets/sponsors/apelago.png", url: "https://www.apelago.fi", alt: "Apelago" },
+    { src: "/assets/sponsors/eisko.svg", url: "https://eisko.fi", alt: "Eisko" },
+    { src: "/assets/sponsors/featherless.svg", url: "https://featherless.ai", alt: "Featherless" },
+    { src: "/assets/sponsors/Skillio.png", url: "https://skillio.ai", alt: "Skillio" },
+  ];
+
   return (
     <SmoothScroll>
       <AnimatePresence mode="wait">
@@ -182,25 +194,26 @@ export default function GoogleGeminiEffectDemo() {
               </h3>
 
               <div className="w-full max-w-[1280px] px-6">
-                <div className="grid grid-cols-2 sm:grid-cols-3 md:grid-cols-4 lg:grid-cols-6 gap-8 items-center justify-center">
-                  {[
-                    "/assets/sponsors/valmet.png",
-                    "/assets/sponsors/sandvik.png",
-                    "/assets/sponsors/elevenlabs.png",
-                    "/assets/sponsors/apelago.png",
-                    "/assets/sponsors/eisko.svg",
-                    "/assets/sponsors/featherless.svg",
-                  ].map((src, i) => (
+                <div className="grid grid-cols-2 sm:grid-cols-3 md:grid-cols-4 lg:grid-cols-5 gap-8 items-center justify-center">
+                  {sponsors.map((s, i) => (
                     <div
                       key={i}
                       className="flex items-center justify-center p-4 bg-white/3 rounded-2xl"
                       aria-hidden={false}
                     >
-                      <img
-                        src={src}
-                        alt={`Sponsor logo ${i + 1}`}
-                        className="max-h-12 object-contain opacity-90 hover:grayscale-0 hover:opacity-100 transition-all duration-300"
-                      />
+                      <a
+                        href={s.url}
+                        target="_blank"
+                        rel="noopener noreferrer"
+                        aria-label={s.alt}
+                        className="w-full flex items-center justify-center"
+                      >
+                        <img
+                          src={s.src}
+                          alt={s.alt}
+                          className="max-h-12 object-contain opacity-90 hover:grayscale-0 hover:opacity-100 transition-all duration-300"
+                        />
+                      </a>
                     </div>
                   ))}
                 </div>
