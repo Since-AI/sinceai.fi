@@ -33,6 +33,11 @@ export default function GoogleGeminiEffectDemo() {
   // NOTE: I made reasonable guesses for the official websites — update any urls below if you have the exact links.
   const sponsors = [
     {
+      src: "/assets/sponsors/businessturku.png",
+      url: "https://businessturku.fi/",
+      alt: "Business Turku",
+    },
+    {
       src: "/assets/sponsors/valmet.png",
       url: "https://www.valmet.com",
       alt: "Valmet",
@@ -67,6 +72,16 @@ export default function GoogleGeminiEffectDemo() {
       url: "https://skillio.ai",
       alt: "Skillio",
     },
+    {
+      src: "/assets/sponsors/kongsberg.png",
+      url: "https://www.kongsberg.com/",
+      alt: "Kongsberg",
+    },
+    {
+      src: "/assets/sponsors/antler.png",
+      url: "https://www.antler.co/",
+      alt: "Antler",
+    },
   ];
 
   const supports = [
@@ -75,20 +90,20 @@ export default function GoogleGeminiEffectDemo() {
       url: "https://boostturku.com/",
       alt: "Boost Turku",
     },
-    // {
-    //   src: "/assets/supports/businessturku.png",
-    //   url: "https://businessturku.fi/",
-    //   alt: "Business Turku",
-    // },
-    // {
-    //   src: "/assets/supports/startupfoundation.webp",
-    //   url: "https://startup-saatio.fi/",
-    //   alt: "Startup Foundation",
-    // },
     {
       src: "/assets/supports/turkuamk.png",
       url: "https://turkuamk.fi",
       alt: "Turku University of Applied Sciences",
+    },
+    {
+      src: "/assets/supports/cityofturku.png",
+      url: "https://turku.fi/",
+      alt: "City of Turku",
+    },
+    {
+      src: "/assets/supports/universityofturku.png",
+      url: "https://utu.fi/",
+      alt: "University of Turku",
     },
     {
       src: "/assets/supports/aimadlab.svg",
@@ -101,7 +116,6 @@ export default function GoogleGeminiEffectDemo() {
       alt: "Aalto AI",
     },
   ];
-
 
   return (
     <SmoothScroll>
@@ -234,7 +248,7 @@ export default function GoogleGeminiEffectDemo() {
                 Special Thanks
               </h3>
 
-              <div className="w-full max-w-[1000px] px-6">
+              <div className="w-full max-w-[1200px] px-6">
                 <div className="flex flex-wrap items-center justify-center gap-8">
                   {supports.map((s, i) => (
                     <div
@@ -261,7 +275,6 @@ export default function GoogleGeminiEffectDemo() {
               </div>
             </section>
           </div>
-          
 
           <div className="flex flex-col self-center w-full max-w-[1280px] gap-24 px-8">
             <section className="flex flex-col items-center gap-16 py-24">
