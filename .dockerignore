@@ -1,0 +1,16 @@
+node_modules
+.next
+.env
+.env.local
+.env.*
+.git
+.github
+dist
+build
+.DS_Store
+nixpacks* 
+.nixpacks
+.nvmrc
+npm-debug.log
+pnpm-lock.yaml
+yarn.lock

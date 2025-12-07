@@ -2,6 +2,9 @@
   "name": "next-app-template",
   "version": "0.0.1",
   "private": true,
+  "engines": {
+    "node": ">=20.9.0"
+  },
   "scripts": {
     "dev": "next dev --turbopack",
     "build": "npm install --legacy-peer-deps && next build",
