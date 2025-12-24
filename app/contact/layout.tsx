@@ -11,7 +11,7 @@ export const metadata: Metadata = {
     "sponsorship",
     "hackathon",
     "AI community",
-    "Turku Finland",
+    "Turku Finland", 
   ],
   openGraph: {
     title: "Contact Since AI - Partnerships, Sponsorships, Community",
