@@ -1,56 +1,69 @@
-import "@/styles/globals.css";
-import { Metadata, Viewport } from "next";
-import { Link } from "@heroui/link";
-import clsx from "clsx";
+import type { Metadata } from "next";
+import { Geist, Geist_Mono } from "next/font/google";
+import "./globals.css";
 
-import { Providers } from "./providers";
+const geistSans = Geist({
+  variable: "--font-geist-sans",
+  subsets: ["latin"],
+});
 
-import { siteConfig } from "@/config/site";
-import { fontSans } from "@/config/fonts";
-import { Navbar } from "@/components/navbar";
+const geistMono = Geist_Mono({
+  variable: "--font-geist-mono",
+  subsets: ["latin"],
+});
 
 export const metadata: Metadata = {
-  title: {
-    default: siteConfig.name,
-    template: `Since AI Hackathon | Europe's Premier AI Innovation Event`,
+  metadataBase: new URL("https://sinceai.fi"),
+  title: "Since AI Community - AI Developers & Hackathon Partnerships",
+  description: "Join 500+ AI developers in Finland's most vibrant AI community. Partner with innovation leaders. Custom partnerships, real results.",
+  keywords: ["AI community", "hackathon", "Finland", "developers", "machine learning", "artificial intelligence", "partnership"],
+  authors: [{ name: "Since AI" }],
+  openGraph: {
+    title: "Since AI Community - AI Developers & Hackathon Partnerships",
+    description: "Join 500+ AI developers. Partner with innovation leaders.",
+    url: "https://sinceai.fi",
+    siteName: "Since AI",
+    locale: "en_US",
+    type: "website",
+    images: [
+      {
+        url: "/assets/logo/logo_full.png",
+        width: 1200,
+        height: 630,
+        alt: "Since AI Community",
+      },
+    ],
   },
-  description: '3-day AI hackathon bringing together AI enthusiasts to innovate and develop groundbreaking AI projects.',
-  icons: {
-    icon: "/favicon.ico",
+  twitter: {
+    card: "summary_large_image",
+    title: "Since AI Community - AI Developers & Hackathon Partnerships",
+    description: "Join 500+ AI developers. Partner with innovation leaders.",
+    images: ["/assets/logo/logo_full.png"],
   },
-};
-
-export const viewport: Viewport = {
-  themeColor: [
-    { media: "(prefers-color-scheme: light)", color: "white" },
-    { media: "(prefers-color-scheme: dark)", color: "black" },
-  ],
+  robots: {
+    index: true,
+    follow: true,
+    googleBot: {
+      index: true,
+      follow: true,
+      "max-video-preview": -1,
+      "max-image-preview": "large",
+      "max-snippet": -1,
+    },
+  },
 };
 
 export default function RootLayout({
   children,
-}: {
+}: Readonly<{
   children: React.ReactNode;
-}) {
+}>) {
   return (
-    <html suppressHydrationWarning lang="en">
-      <head />
+    <html lang="en">
       <body
-        className={clsx(
-          "min-h-screen bg-background font-sans antialiased",
-          fontSans.variable,
-        )}
+        className={`${geistSans.variable} ${geistMono.variable} antialiased bg-black`}
       >
-        <Providers themeProps={{ attribute: "class", defaultTheme: "dark" }}>
-          <div className="relative flex flex-col h-screen">
-            <Navbar />
-            <main className="w-full pt-16 flex-grow">
-              {children}
-            </main>
-            <footer className="w-full flex items-center justify-center py-3">
-            </footer>
-          </div>
-        </Providers>
+        {children}
       </body>
     </html>
   );

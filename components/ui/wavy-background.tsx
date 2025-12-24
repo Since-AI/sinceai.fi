@@ -1,6 +1,6 @@
 "use client";
 import { cn } from "@/lib/utils";
-import React, { useEffect, useRef, useState } from "react";
+import React, { useEffect, useRef, useState, useCallback, useMemo } from "react";
 import { createNoise3D } from "simplex-noise";
 
 export const WavyBackground = ({
@@ -26,16 +26,16 @@ export const WavyBackground = ({
   waveOpacity?: number;
   [key: string]: any;
 }) => {
-  const noise = createNoise3D();
-  let w: number,
-    h: number,
-    nt: number,
-    i: number,
-    x: number,
-    ctx: any,
-    canvas: any;
+  const noise = useRef(createNoise3D()).current;
   const canvasRef = useRef<HTMLCanvasElement>(null);
-  const getSpeed = () => {
+  const containerRef = useRef<HTMLDivElement>(null);
+  const animationIdRef = useRef<number>(0);
+  const isVisibleRef = useRef(true);
+  const ctxRef = useRef<CanvasRenderingContext2D | null>(null);
+  const dimensionsRef = useRef({ w: 0, h: 0 });
+  const ntRef = useRef(0);
+  
+  const speedValue = useMemo(() => {
     switch (speed) {
       case "slow":
         return 0.001;
@@ -44,60 +44,88 @@ export const WavyBackground = ({
       default:
         return 0.001;
     }
-  };
+  }, [speed]);
 
-  const init = () => {
-    canvas = canvasRef.current;
-    ctx = canvas.getContext("2d");
-    w = ctx.canvas.width = window.innerWidth;
-    h = ctx.canvas.height = window.innerHeight;
-    ctx.filter = `blur(${blur}px)`;
-    nt = 0;
-    window.onresize = function () {
-      w = ctx.canvas.width = window.innerWidth;
-      h = ctx.canvas.height = window.innerHeight;
-      ctx.filter = `blur(${blur}px)`;
-    };
-    render();
-  };
-
-  const waveColors = colors ?? [
+  const waveColors = useMemo(() => colors ?? [
     "#38bdf8",
     "#818cf8",
     "#c084fc",
     "#e879f9",
     "#22d3ee",
-  ];
-  const drawWave = (n: number) => {
-    nt += getSpeed();
-    for (i = 0; i < n; i++) {
-      ctx.beginPath();
-      ctx.lineWidth = waveWidth || 50;
-      ctx.strokeStyle = waveColors[i % waveColors.length];
-      for (x = 0; x < w; x += 5) {
-        var y = noise(x / 800, 0.3 * i, nt) * 100;
-        ctx.lineTo(x, y + h * 0.5); // adjust for height, currently at 50% of the container
-      }
-      ctx.stroke();
-      ctx.closePath();
-    }
-  };
-
-  let animationId: number;
-  const render = () => {
-    ctx.fillStyle = backgroundFill || "black";
-    ctx.globalAlpha = waveOpacity || 0.5;
-    ctx.fillRect(0, 0, w, h);
-    drawWave(5);
-    animationId = requestAnimationFrame(render);
-  };
+  ], [colors]);
 
   useEffect(() => {
-    init();
-    return () => {
-      cancelAnimationFrame(animationId);
+    const canvas = canvasRef.current;
+    if (!canvas) return;
+    
+    const ctx = canvas.getContext("2d", { alpha: false });
+    if (!ctx) return;
+    ctxRef.current = ctx;
+    
+    const updateSize = () => {
+      dimensionsRef.current.w = canvas.width = window.innerWidth;
+      dimensionsRef.current.h = canvas.height = window.innerHeight;
+      ctx.filter = `blur(${blur}px)`;
     };
-  }, []);
+    
+    updateSize();
+    
+    const drawWave = (n: number) => {
+      const { w, h } = dimensionsRef.current;
+      ntRef.current += speedValue;
+      for (let i = 0; i < n; i++) {
+        ctx.beginPath();
+        ctx.lineWidth = waveWidth || 50;
+        ctx.strokeStyle = waveColors[i % waveColors.length];
+        // Increase step size for better performance (from 5 to 10)
+        for (let x = 0; x < w; x += 10) {
+          const y = noise(x / 800, 0.3 * i, ntRef.current) * 100;
+          ctx.lineTo(x, y + h * 0.5);
+        }
+        ctx.stroke();
+        ctx.closePath();
+      }
+    };
+    
+    const render = () => {
+      if (!isVisibleRef.current) {
+        animationIdRef.current = requestAnimationFrame(render);
+        return;
+      }
+      
+      const { w, h } = dimensionsRef.current;
+      ctx.fillStyle = backgroundFill || "black";
+      ctx.globalAlpha = waveOpacity || 0.5;
+      ctx.fillRect(0, 0, w, h);
+      drawWave(5);
+      animationIdRef.current = requestAnimationFrame(render);
+    };
+    
+    // Use Intersection Observer to pause animation when not visible
+    const observer = new IntersectionObserver(
+      (entries) => {
+        isVisibleRef.current = entries[0]?.isIntersecting ?? true;
+      },
+      { threshold: 0 }
+    );
+    
+    if (containerRef.current) {
+      observer.observe(containerRef.current);
+    }
+    
+    const handleResize = () => {
+      updateSize();
+    };
+    
+    window.addEventListener('resize', handleResize, { passive: true });
+    animationIdRef.current = requestAnimationFrame(render);
+    
+    return () => {
+      cancelAnimationFrame(animationIdRef.current);
+      window.removeEventListener('resize', handleResize);
+      observer.disconnect();
+    };
+  }, [blur, backgroundFill, waveOpacity, waveWidth, speedValue, waveColors, noise]);
 
   const [isSafari, setIsSafari] = useState(false);
   useEffect(() => {
@@ -111,6 +139,7 @@ export const WavyBackground = ({
 
   return (
     <div
+      ref={containerRef}
       className={cn(
         "h-screen flex flex-col items-center justify-center",
         containerClassName

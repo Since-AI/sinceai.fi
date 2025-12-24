@@ -1,309 +1,279 @@
 "use client";
-import React, {
-  useEffect,
-  useState,
-} from 'react';
+import React, { useRef, useEffect, useState, Suspense } from "react";
+import { useSearchParams } from "next/navigation";
+import { motion } from "framer-motion";
+import { FaInstagram, FaLinkedin } from "react-icons/fa";
 
+import SmoothScroll from "@/components/smoothScroll";
+import { Navbar } from "@/components/navbar";
+import { Footer } from "@/components/sections/Footer";
 import {
-  FaInstagram,
-  FaLinkedin,
-} from 'react-icons/fa';
+  ContactHero,
+  ContactForm,
+  ContactRoutes,
+  ContactFAQ,
+  DirectContact,
+  ResponseTime,
+} from "@/components/sections/contact";
 
-import { InfiniteSlider } from '@/components/motion-primitives/infinite-slider';
-import SmoothScroll from '@/components/smoothScroll';
-import { WavyBackground } from '@/components/ui/wavy-background';
+// Team members data
+const teamMembers = [
+  {
+    name: "Aarne Ollila",
+    role: "Head of Partnerships",
+    email: "aarne@boostturku.com",
+    number: "045 652 5605",
+    linkedin: "https://www.linkedin.com/in/aarne-ollila-53429028b/",
+  },
+  {
+    name: "Arttu Myyryläinen",
+    role: "Head of Strategic Outreach",
+    email: "arttu@boostturku.com",
+    number: "044 985 6522",
+    linkedin: "https://www.linkedin.com/in/arttu-myyryl%C3%A4inen/",
+  },
+  {
+    name: "Riku Lauttia",
+    role: "Head of Operations",
+    email: "riku@boostturku.com",
+    linkedin: "https://www.linkedin.com/in/rikulauttia/",
+  },
+  {
+    name: "Aman Vyas",
+    role: "Head of International Partnerships",
+    email: "aman@boostturku.com",
+    number: "044 238 9052",
+    linkedin: "https://www.linkedin.com/in/aman-vyas-21b674133/",
+  },
+  {
+    name: "Kasper Hakala",
+    role: "Strategic Partnerships",
+    email: "kasper@boostturku.com",
+    number: "044 514 1364",
+    linkedin: "https://www.linkedin.com/in/kasper-hakala-6b2605262/",
+  },
+  {
+    name: "Yuehan John",
+    role: "Head of Growth",
+    email: "yuehan.john@boostturku.com",
+    number: "040 363 3893",
+    linkedin: "https://www.linkedin.com/in/yuehanjohn/",
+  },
+  {
+    name: "Vishaka Salpiumi",
+    role: "Social Media Manager",
+    email: "vishaka@boostturku.com",
+    linkedin: "https://www.linkedin.com/in/vishaka-salpiumi-3b6578349/",
+  },
+  {
+    name: "Abdul Wasay",
+    role: "Head of Content",
+    linkedin: "https://www.linkedin.com/in/abdulwasaymuhammad/",
+  },
+];
 
-export default function GoogleGeminiEffectDemo() {
-  const ref = React.useRef(null);
+// Configuration
+const config = {
+  discordUrl: "https://discord.gg/6PC74zW68v",
+};
 
-  const [isLoading, setIsLoading] = useState(true);
+// Team member type
+interface TeamMember {
+  name: string;
+  role: string;
+  email?: string;
+  number?: string;
+  linkedin?: string;
+  instagram?: string;
+}
 
+// Team Card Component
+const TeamCard: React.FC<{ person: TeamMember; index: number }> = ({ person, index }) => (
+  <motion.div
+    initial={{ opacity: 0, y: 20 }}
+    animate={{ opacity: 1, y: 0 }}
+    transition={{ duration: 0.4, delay: index * 0.05 }}
+    className="group relative bg-white/5 backdrop-blur-sm border border-white/10 rounded-2xl p-6 hover:bg-white/10 hover:border-white/20 transition-all duration-300 overflow-hidden"
+  >
+    <div className="absolute inset-0 bg-gradient-to-br from-white/5 to-transparent opacity-0 group-hover:opacity-100 transition-opacity duration-300" />
+
+    <div className="relative z-10">
+      <h3 className="text-white font-medium text-lg mb-2 leading-tight">
+        {person.name}
+      </h3>
+
+      <p className="text-white/60 text-sm font-light mb-4">
+        {person.role}
+      </p>
+
+      {person.email && (
+        <a
+          href={`mailto:${person.email}`}
+          className="text-white/40 hover:text-white/70 text-xs font-light transition-colors duration-200 block mb-3 truncate"
+        >
+          {person.email}
+        </a>
+      )}
+
+      {person.number && (
+        <a
+          href={`tel:${person.number}`}
+          className="text-white/40 hover:text-white/70 text-xs font-light transition-colors duration-200 block mb-3 truncate"
+        >
+          {person.number}
+        </a>
+      )}
+
+      <div className="flex gap-2">
+        {person.linkedin && (
+          <button
+            onClick={() => window.open(person.linkedin, "_blank")}
+            className="inline-flex items-center justify-center w-8 h-8 bg-white/10 hover:bg-white/20 rounded-full transition-all duration-200 group-hover:scale-110"
+            aria-label={`View ${person.name}'s LinkedIn profile`}
+          >
+            <FaLinkedin size={14} className="text-white/70" />
+          </button>
+        )}
+        {person.instagram && (
+          <button
+            onClick={() => window.open(person.instagram, "_blank")}
+            className="inline-flex items-center justify-center w-8 h-8 bg-white/10 hover:bg-white/20 rounded-full transition-all duration-200 group-hover:scale-110"
+            aria-label={`View ${person.name}'s Instagram profile`}
+          >
+            <FaInstagram size={14} className="text-white/70" />
+          </button>
+        )}
+      </div>
+    </div>
+
+    <div className="absolute top-0 right-0 w-20 h-20 bg-gradient-to-br from-white/5 to-transparent rounded-full -translate-y-10 translate-x-10 group-hover:scale-150 transition-transform duration-500" />
+  </motion.div>
+);
+
+// Contact Page Content Component (uses useSearchParams)
+function ContactPageContent() {
+  const formRef = useRef<HTMLDivElement>(null);
+  const teamRef = useRef<HTMLDivElement>(null);
+  const searchParams = useSearchParams();
+  const [preselectedSubject, setPreselectedSubject] = useState<string>("");
+
+  // Handle preselected subject from URL params
   useEffect(() => {
-    if (typeof window !== "undefined") {
-      (async () => {
-        setTimeout(() => {
-          setIsLoading(false);
-        }, 2500);
-      })();
+    const subject = searchParams.get("subject");
+    if (subject) {
+      setPreselectedSubject(subject);
+      // Scroll to form after a short delay
+      setTimeout(() => {
+        formRef.current?.scrollIntoView({ behavior: "smooth", block: "start" });
+      }, 500);
     }
-  }, []);
+  }, [searchParams]);
 
-  const springOptions = { bounce: 0.1 };
+  // Handle partnership click from route cards
+  const handlePartnerClick = () => {
+    setPreselectedSubject("partnership");
+    formRef.current?.scrollIntoView({ behavior: "smooth", block: "start" });
+  };
+
+  // Handle team section navigation
+  const handleTeamClick = () => {
+    teamRef.current?.scrollIntoView({ behavior: "smooth", block: "start" });
+  };
 
   return (
-    <SmoothScroll>
-      {/* <AnimatePresence mode="wait">
-        {isLoading && <Preloader />}
-      </AnimatePresence> */}
-      <div className="flex flex-col w-full">
-        <WavyBackground className="flex flex-col w-full h-screen ">
-          <div className="w-full flex flex-col h-full items-center justify-center relative">
-            <div className="absolute inset-0 bg-gradient-to-b from-transparent via-black/20 to-black/40" />
-            <div className="relative z-10 flex flex-col items-center gap-8 max-w-4xl mx-auto px-8">
-              <div className="flex items-center gap-4 mb-4">
-                <div className="w-12 h-[1px] bg-gradient-to-r from-transparent to-white/60" />
-                <span className="text-white/60 text-sm font-light tracking-[0.2em] uppercase">
-                  Get in touch
-                </span>
-                <div className="w-12 h-[1px] bg-gradient-to-l from-transparent to-white/60" />
-              </div>
-              <h1 className="text-4xl md:text-6xl lg:text-8xl text-white font-extralight tracking-tight text-center leading-[0.9]">
-                Let's build the{" "}
-                <span className="block text-transparent bg-clip-text bg-gradient-to-r from-white via-white/90 to-white/70">
-                  future
-                </span>
-              </h1>
-              <p className="text-white/60 text-lg md:text-xl font-light text-center max-w-2xl leading-relaxed mb-16">
-                Connect with our team of visionaries and innovators who are
-                shaping tomorrow's AI landscape.
-              </p>
-            </div>
-          </div>
-          <div className="flex flex-col bg-black/80 gap-32 pt-16">
-            <div className="flex flex-col self-center w-full max-w-[1280px] gap-8 px-8">
-              {/* <section className="flex flex-col gap-8">
-                <div className="flex flex-row items-center gap-4 mb-8">
-                  <div className="max-w-9 bg-white h-1 flex-1" />
-                  Contact us
-                </div>
+    <>
+      {/* Hero Section */}
+      <ContactHero />
 
-                <div className="text-6xl text-balance">
-                  Would love to hear from you!
-                </div>
-              </section> */}
-              <section className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 xl:grid-cols-4 gap-6 max-w-[1280px] px-6 mb-8">
-                {[
-                  {
-                    name: "Aarne Ollila",
-                    role: "Head of Partnerships",
-                    email: "aarne@boostturku.com",
-                    number: "045 652 5605",
-                    linkedin:
-                      "https://www.linkedin.com/in/aarne-ollila-53429028b/",
-                  },
-                  {
-                    name: "Arttu Myyryläinen",
-                    role: "Head of Strategic Outreach",
-                    email: "arttu@boostturku.com",
-                    number: "044 985 6522",
-                    linkedin:
-                      "https://www.linkedin.com/in/arttu-myyryl%C3%A4inen/",
-                  },
-                  {
-                    name: "Riku Lauttia",
-                    role: "Head of Operations",
-                    email: "riku@boostturku.com",
-                    linkedin: "https://www.linkedin.com/in/rikulauttia/",
-                  },
-                  {
-                    name: "Aman Vyas",
-                    role: "Head of International Partnerships",
-                    email: "aman@boostturku.com",
-                    number: "044 238 9052",
-                    linkedin:
-                      "https://www.linkedin.com/in/aman-vyas-21b674133/",
-                  },
-                  {
-                    name: "Kasper Hakala",
-                    role: "Strategic Partnerships",
-                    email: "kasper@boostturku.com",
-                    number: "044 514 1364",
-                    linkedin:
-                      "https://www.linkedin.com/in/kasper-hakala-6b2605262/",
-                  },
-                  {
-                    name: "Yuehan John",
-                    role: "Head of Growth",
-                    email: "yuehan.john@boostturku.com",
-                    number: "040 363 3893",
-                    linkedin: "https://www.linkedin.com/in/yuehanjohn/",
-                  },
-                  {
-                    name: "Vishaka Salpiumi",
-                    role: "Social Media Manager",
-                    email: "vishaka@boostturku.com",
-                    linkedin:
-                      "https://www.linkedin.com/in/vishaka-salpiumi-3b6578349/",
-                  },
-                  {
-                    name: "Abdul Wasay",
-                    role: "Head of Content",
-                    linkedin: "https://www.linkedin.com/in/abdulwasaymuhammad/",
-                  },
-                  {
-                    name: "Teodor Hiidenlampi",
-                    role: "Content Creator",
-                    email: "teodor@mesembria.fi",
-                    instagram: "https://www.instagram.com/teodor._pavel/",
-                  },
-                ].map((person, index) => (
-                  <div
-                    key={index}
-                    className="group relative bg-white/5 backdrop-blur-sm border border-white/10 rounded-2xl p-6 hover:bg-white/10 hover:border-white/20 transition-all duration-300 cursor-pointer overflow-hidden"
-                  >
-                    <div className="absolute inset-0 bg-gradient-to-br from-white/5 to-transparent opacity-0 group-hover:opacity-100 transition-opacity duration-300" />
+      {/* Quick Routes Section */}
+      <ContactRoutes 
+        onPartnerClick={handlePartnerClick}
+        onTeamClick={handleTeamClick}
+        discordUrl={config.discordUrl}
+      />
 
-                    <div className="relative z-10">
-                      {/* <div className="w-12 h-12 bg-gradient-to-br from-white/20 to-white/10 rounded-full flex items-center justify-center mb-4">
-                        <span className="text-white font-medium text-lg">
-                          {person.name.split(' ').map(n => n[0]).join('')}
-                        </span>
-                      </div> */}
-
-                      <h3 className="text-white font-medium text-lg mb-2 leading-tight">
-                        {person.name}
-                      </h3>
-
-                      <p className="text-white/60 text-sm font-light mb-4">
-                        {person.role}
-                      </p>
-
-                      {person.email && (
-                        <a
-                          href={`mailto:${person.email}`}
-                          className="text-white/40 hover:text-white/70 text-xs font-light transition-colors duration-200 block mb-3 truncate"
-                        >
-                          {person.email}
-                        </a>
-                      )}
-
-                      {person.number && (
-                        <a
-                          href={`tel:${person.number}`}
-                          className="text-white/40 hover:text-white/70 text-xs font-light transition-colors duration-200 block mb-3 truncate"
-                        >
-                          {person.number}
-                        </a>
-                      )}
-
-                      {person.linkedin && (
-                        <button
-                          onClick={() => window.open(person.linkedin, "_blank")}
-                          className="inline-flex items-center justify-center w-8 h-8 bg-white/10 hover:bg-white/20 rounded-full transition-all duration-200 group-hover:scale-110"
-                        >
-                          <FaLinkedin size={14} className="text-white/70" />
-                        </button>
-                      )}
-                      {person.instagram && (
-                        <button
-                          onClick={() =>
-                            window.open(person.instagram, "_blank")
-                          }
-                          className="inline-flex items-center justify-center w-8 h-8 bg-white/10 hover:bg-white/20 rounded-full transition-all duration-200 group-hover:scale-110 ml-2"
-                          aria-label="Open Instagram"
-                        >
-                          <FaInstagram size={14} className="text-white/70" />
-                        </button>
-                      )}
-                    </div>
-
-                    <div className="absolute top-0 right-0 w-20 h-20 bg-gradient-to-br from-white/5 to-transparent rounded-full -translate-y-10 translate-x-10 group-hover:scale-150 transition-transform duration-500" />
-                  </div>
-                ))}
-              </section>
-            </div>
-
-            <InfiniteSlider gap={24} className="my-16">
-              <div className="text-6xl md:text-8xl lg:text-9xl font-light text-white/90 tracking-tight mr-28">
-                Innovation
-              </div>
-              <div className="text-6xl md:text-8xl lg:text-9xl font-light text-white/90 tracking-tight mr-28">
-                Impact
-              </div>
-              <div className="text-6xl md:text-8xl lg:text-9xl font-light text-white/90 tracking-tight mr-28">
-                Startup
-              </div>
-              <div className="text-6xl md:text-8xl lg:text-9xl font-light text-white/90 tracking-tight mr-28">
-                Future
-              </div>
-              <div className="text-6xl md:text-8xl lg:text-9xl font-light text-white/90 tracking-tight mr-28">
-                Next Gen
-              </div>
-            </InfiniteSlider>
-            <div className="bg-black border-t border-white/10">
-              <div className="max-w-[1280px] mx-auto px-8 py-16">
-                <div className="grid grid-cols-1 md:grid-cols-4 gap-12 mb-16">
-                  <div className="col-span-1 md:col-span-2">
-                    <h2 className="text-4xl md:text-5xl font-light text-white mb-4">
-                      Since AI
-                    </h2>
-                    <p className="text-white/60 text-lg font-light max-w-md">
-                      Pioneering the future of artificial intelligence with
-                      innovation and purpose.
-                    </p>
-                  </div>
-
-                  <div className="space-y-4">
-                    <h3 className="text-white font-medium text-sm uppercase tracking-wider">
-                      Connect
-                    </h3>
-                    <div className="space-y-3">
-                      <a
-                        href="https://www.linkedin.com/company/sinceai"
-                        target="_blank"
-                        rel="noopener noreferrer"
-                        className="block text-white/60 hover:text-white transition-colors duration-200 text-sm"
-                      >
-                        LinkedIn
-                      </a>
-                      <a
-                        href="https://www.instagram.com/since_ai"
-                        target="_blank"
-                        rel="noopener noreferrer"
-                        className="block text-white/60 hover:text-white transition-colors duration-200 text-sm"
-                      >
-                        Instagram
-                      </a>
-                      <a
-                        href="https://x.com/since_ai_"
-                        target="_blank"
-                        rel="noopener noreferrer"
-                        className="block text-white/60 hover:text-white transition-colors duration-200 text-sm"
-                      >
-                        X
-                      </a>
-                      <a
-                        href="https://github.com/since-ai"
-                        target="_blank"
-                        rel="noopener noreferrer"
-                        className="block text-white/60 hover:text-white transition-colors duration-200 text-sm"
-                      >
-                        GitHub
-                      </a>
-                      <a
-                        href="https://www.facebook.com/sinceai"
-                        target="_blank"
-                        rel="noopener noreferrer"
-                        className="block text-white/60 hover:text-white transition-colors duration-200 text-sm"
-                      >
-                        Facebook
-                      </a>
-                    </div>
-                  </div>
-
-                  <div className="space-y-4">
-                    <h3 className="text-white font-medium text-sm uppercase tracking-wider">
-                      Legal
-                    </h3>
-                    <div className="space-y-3">
-                      <p className="text-white/60 text-sm">Boost Turku ry</p>
-                      <p className="text-white/60 text-sm">
-                        Business ID: 2321515-1
-                      </p>
-                    </div>
-                  </div>
-                </div>
-
-                <div className="pt-8 border-t border-white/10 flex flex-col md:flex-row justify-between items-center gap-4">
-                  <p className="text-white/40 text-sm">
-                    © 2025 Since AI. All rights reserved.
-                  </p>
-                </div>
-              </div>
-            </div>
-          </div>
-        </WavyBackground>
+      {/* Divider */}
+      <div className="w-full max-w-5xl mx-auto px-6">
+        <div className="h-px bg-gradient-to-r from-transparent via-white/10 to-transparent" />
       </div>
+
+      {/* Response Time Banner */}
+      <ResponseTime />
+
+      {/* Contact Form Section */}
+      {/* <div ref={formRef}>
+        <ContactForm preselectedSubject={preselectedSubject} />
+      </div> */}
+
+      {/* Divider */}
+      <div className="w-full max-w-5xl mx-auto px-6">
+        <div className="h-px bg-gradient-to-r from-transparent via-white/10 to-transparent" />
+      </div>
+
+      {/* Team Members Section */}
+      <section ref={teamRef} className="w-full bg-black py-16 px-6">
+        <div className="max-w-[1280px] mx-auto">
+          {/* Section header */}
+          <motion.div 
+            className="text-center mb-12"
+            initial={{ opacity: 0, y: 20 }}
+            animate={{ opacity: 1, y: 0 }}
+            transition={{ duration: 0.5 }}
+          >
+            <h2 className="text-2xl md:text-3xl font-semibold text-white mb-3">
+              Meet the Team
+            </h2>
+            <p className="text-white/60 font-light max-w-xl mx-auto">
+              Have a specific question? Reach out directly to our team members.
+            </p>
+          </motion.div>
+
+          {/* Team grid */}
+          <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 xl:grid-cols-4 gap-6">
+            {teamMembers.map((person, index) => (
+              <TeamCard key={index} person={person} index={index} />
+            ))}
+          </div>
+        </div>
+      </section>
+
+      {/* Divider */}
+      <div className="w-full max-w-5xl mx-auto px-6">
+        <div className="h-px bg-gradient-to-r from-transparent via-white/10 to-transparent" />
+      </div>
+
+      {/* FAQ Section */}
+      <ContactFAQ discordUrl={config.discordUrl} />
+
+      {/* Divider */}
+      <div className="w-full max-w-5xl mx-auto px-6">
+        <div className="h-px bg-gradient-to-r from-transparent via-white/10 to-transparent" />
+      </div>
+
+      {/* Direct Contact Section */}
+      <DirectContact discordUrl={config.discordUrl} />
+    </>
+  );
+}
+
+// Main Contact Page Component
+export default function ContactPage() {
+  return (
+    <SmoothScroll>
+      <Navbar />
+      
+      <main className="flex flex-col w-full bg-black min-h-screen">
+        <Suspense fallback={
+          <div className="flex items-center justify-center min-h-screen">
+            <div className="w-8 h-8 border-2 border-white/20 border-t-white rounded-full animate-spin" />
+          </div>
+        }>
+          <ContactPageContent />
+        </Suspense>
+
+        {/* Footer */}
+        <Footer discordUrl={config.discordUrl} />
+      </main>
     </SmoothScroll>
   );
 }

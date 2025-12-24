@@ -31,12 +31,11 @@ export function InView({
   transition,
   viewOptions,
   as = 'div',
-  once
+  once = true // Default to true for better performance
 }: InViewProps) {
   const ref = useRef(null);
-  const isInView = useInView(ref, viewOptions);
-
-  const [isViewed, setIsViewed] = useState(false)
+  // Use the built-in once option from useInView for better performance
+  const isInView = useInView(ref, { ...viewOptions, once });
 
   const MotionComponent = motion[as as keyof typeof motion] as typeof as;
 
@@ -44,13 +43,10 @@ export function InView({
     <MotionComponent
       ref={ref}
       initial='hidden'
-      onAnimationComplete={() => {
-        if (once) setIsViewed(true)
-      }}
-      animate={(isInView || isViewed) ? "visible" : "hidden"}
-
+      animate={isInView ? "visible" : "hidden"}
       variants={variants}
       transition={transition}
+      style={{ willChange: 'opacity, transform' }}
     >
       {children}
     </MotionComponent>

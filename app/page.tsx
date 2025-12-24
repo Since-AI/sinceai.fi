@@ -1,119 +1,130 @@
 "use client";
 import React, { useEffect, useState } from "react";
-
 import { AnimatePresence } from "framer-motion";
 
-import { InView } from "@/components/motion-primitives/in-view";
-import { InfiniteSlider } from "@/components/motion-primitives/infinite-slider";
-import { Magnetic } from "@/components/motion-primitives/magnetic";
-import { TextLoop } from "@/components/motion-primitives/text-loop";
 import SmoothScroll from "@/components/smoothScroll";
-import { WavyBackground } from "@/components/ui/wavy-background";
 import Preloader from "@/components/utils/Preloader";
-import { Image } from "@heroui/react";
+import { Navbar } from "@/components/navbar";
 
-export default function GoogleGeminiEffectDemo() {
-  const ref = React.useRef(null);
+import {
+  HeroSection,
+  StatsSection,
+  ValuePropsSection,
+  FeaturedProjects,
+  SponsorSection,
+  CommunityEngagement,
+  Testimonials,
+  NewsletterCTA,
+  Footer,
+  PastSponsors,
+} from "@/components/sections";
 
+export default function HomePage() {
   const [isLoading, setIsLoading] = useState(true);
 
   useEffect(() => {
     if (typeof window !== "undefined") {
-      (async () => {
-        setTimeout(() => {
-          setIsLoading(false);
-        }, 2500);
-      })();
+      setTimeout(() => {
+        setIsLoading(false);
+      }, 2000);
     }
   }, []);
 
-  const springOptions = { bounce: 0.1 };
+  // Configuration - Update these values with your actual data
+  const config = {
+    discordUrl: "https://discord.gg/6PC74zW68v",
+    calendlyUrl: "https://calendly.com/sinceai",
+    contactEmail: "riku@boostturku.com",
+    nextHackathonDate: "November 21-23, 2025",
+    jobBoardUrl: "#jobs",
+    viewAllProjectsUrl: "/contact",
+  };
 
-  // Sponsor data: src, target url and alt text.
-  // NOTE: I made reasonable guesses for the official websites — update any urls below if you have the exact links.
-  const sponsors = [
+  // Hackathon metrics - Update with actual numbers
+  const metrics = {
+    participants: "200+",
+    projects: "30+",
+    companies: "15+",
+  };
+
+  // Featured projects - Update with actual projects from hackathon
+  const featuredProjects = [
     {
-      src: "/assets/sponsors/businessturku.png",
-      url: "https://businessturku.fi/",
-      alt: "Business Turku",
+      title: "Sound Watch",
+      description:
+        "SoundWatch provides autonomous vessels with the sense of hearing. We developed a CNN-based classifier (AudioResNet-18) that detects and interprets COLREGs whistle signals in real-time, specifically designed to operate in noisy maritime environments.",
+      team: ["Theo W.", "Toki T.", "Lassi R."],
+      gradient: "from-blue-500/10",
     },
     {
-      src: "/assets/sponsors/valmet.png",
-      url: "https://www.valmet.com",
-      alt: "Valmet",
+      title: "NLCAR Smart Message Router",
+      description:
+        "A Customer Support Smart Message router using fine-tuned model and ai pipeline.",
+      team: ["Juhana K.", "Vargha C.", "Erdős P.", "Kirill N."],
+      gradient: "from-purple-500/10",
     },
     {
-      src: "/assets/sponsors/sandvik.png",
-      url: "https://www.sandvik.com",
-      alt: "Sandvik",
+      title: "Switchboard diagram analyzer",
+      description:
+        "Switchboard diagram analyzer using machine vision and OCR for data extraction.",
+      team: ["Andre M.", "Linards L.", "Safiul A.", "Youngim G."],
+      gradient: "from-green-500/10",
     },
     {
-      src: "/assets/sponsors/elevenlabs.png",
-      url: "https://www.elevenlabs.io",
-      alt: "ElevenLabs",
-    },
-    {
-      src: "/assets/sponsors/apelago.png",
-      url: "https://www.apelago.fi",
-      alt: "Apelago",
-    },
-    {
-      src: "/assets/sponsors/eisko.svg",
-      url: "https://eisko.fi",
-      alt: "Eisko",
-    },
-    {
-      src: "/assets/sponsors/featherless.svg",
-      url: "https://featherless.ai",
-      alt: "Featherless",
-    },
-    {
-      src: "/assets/sponsors/Skillio.png",
-      url: "https://skillio.ai",
-      alt: "Skillio",
-    },
-    {
-      src: "/assets/sponsors/kongsberg.png",
-      url: "https://www.kongsberg.com/",
-      alt: "Kongsberg",
-    },
-    {
-      src: "/assets/sponsors/antler.png",
-      url: "https://www.antler.co/",
-      alt: "Antler",
+      title: "COLREG Sound Signal Classifier",
+      description:
+        "A robust, containerized Machine Learning system designed to detect and classify maritime sound signals according to the International Regulations for Preventing Collisions at Sea (COLREGs), specifically Rules 34 & 35.",
+      team: ["Hannu K.", "Eduard R.", "Oleksandr Y."],
+      gradient: "from-orange-500/10",
     },
   ];
 
-  const supports = [
+  // Testimonials - Update with actual feedback
+  const testimonials = [
     {
-      src: "/assets/supports/boost.svg",
-      url: "https://boostturku.com/",
-      alt: "Boost Turku",
+      type: "participant" as const,
+      name: "Abhishek Roy",
+      role: "Software Engineer",
+      photo: "/assets/images/testimonials/placeholder.jpg",
+      quote:
+        "Keep doing it. Would love to participate next year. 🤩🤩🤩",
+      rating: 5,
     },
     {
-      src: "/assets/supports/turkuamk.png",
-      url: "https://turkuamk.fi",
-      alt: "Turku University of Applied Sciences",
+      type: "participant" as const,
+      name: "Youngim Gwock",
+      role: "Technical Founder",
+      photo: "/assets/images/testimonials/placeholder.jpg",
+      quote:
+        "I think the company cases really good for us and they prepared a lot and stayed a lot with us. I take it as because they really have lots of problems to solve. I think big companies are good to be there for marketing purposes but SMEs can truly benefit from this and good chance to connect with foreign students.",
+      rating: 5,
     },
     {
-      src: "/assets/supports/cityofturku.png",
-      url: "https://turku.fi/",
-      alt: "City of Turku",
+      type: "partner" as const,
+      contactName: "Partner Representative",
+      title: "Head of Talent",
+      companyLogo: "/assets/sponsors/valmet.png",
+      companyName: "Partner Company",
+      quote:
+        "We hired 3 exceptional developers. Best recruiting investment we made this year.",
     },
     {
-      src: "/assets/supports/universityofturku.png",
-      url: "https://utu.fi/",
-      alt: "University of Turku",
+      type: "participant" as const,
+      name: "Arthur Lagerlöf",
+      role: "Software Engineer",
+      photo: "/assets/images/testimonials/placeholder.jpg",
+      quote:
+        "I had a great time participating. Thanks to all you event organizers.",
+      rating: 5,
     },
     {
-      src: "/assets/supports/aimadlab.svg",
-      url: "https://aimadlab.com/",
-      alt: "AI Mad Lab",
-    },
-    {
-      src: "/assets/supports/aaltoai.png",
-      url: "https://aaltoai.com/",
-      alt: "Aalto AI",
+      type: "partner" as const,
+      contactName: "Partner Contact",
+      title: "Innovation Lead",
+      companyLogo: "/assets/sponsors/kongsberg.png",
+      companyName: "Partner Company",
+      quote:
+        "Partnership exceeded expectations. The community is engaged, talented, and genuinely passionate about AI.",
     },
   ];
 
@@ -122,1037 +133,58 @@ export default function GoogleGeminiEffectDemo() {
       <AnimatePresence mode="wait">
         {isLoading && <Preloader />}
       </AnimatePresence>
+
       <div className="flex flex-col w-full overflow-hidden">
-        <WavyBackground className="flex w-full h-screen p-16 my-32">
-          <div className="w-full flex flex-col h-full">
-            <div className="relative flex h-full w-full flex-col items-center justify-center">
-              <div className="relative z-10 flex flex-col items-center space-y-8">
-                <div className="flex flex-col items-center space-y-4">
-                  <h1 className="bg-gradient-to-b from-white to-white/60 bg-clip-text text-6xl font-medium tracking-tight text-transparent md:text-8xl lg:text-[12rem] xl:text-[14rem]">
-                    Since AI
-                  </h1>
-                  <p className="text-2xl md:text-3xl lg:text-4xl font-light text-white/80">
-                    The AI Hackathon
-                  </p>
-                  <div className="h-px w-24 bg-gradient-to-r from-transparent via-white/40 to-transparent"></div>
-                </div>
+        <Navbar />
 
-                <div className="text-center">
-                  <TextLoop
-                    className="text-xl font-light tracking-wide text-white/80 md:text-2xl lg:text-3xl"
-                    transition={{
-                      type: "spring",
-                      stiffness: 300,
-                      damping: 30,
-                      mass: 1,
-                    }}
-                    variants={{
-                      initial: {
-                        y: 10,
-                        opacity: 0,
-                        filter: "blur(2px)",
-                      },
-                      animate: {
-                        y: 0,
-                        opacity: 1,
-                        filter: "blur(0px)",
-                      },
-                      exit: {
-                        y: -10,
-                        opacity: 0,
-                        filter: "blur(2px)",
-                      },
-                    }}
-                  >
-                    <span>For AI Enthusiasts</span>
-                    <span>For Founders</span>
-                    <span>For Developers</span>
-                    <span>For Designers</span>
-                  </TextLoop>
-                </div>
-              </div>
+        {/* Hero Section */}
+        <HeroSection discordUrl={config.discordUrl} />
 
-              <div className="absolute inset-0 bg-gradient-to-b from-transparent via-transparent to-black/20"></div>
-            </div>
-            <div className="flex flex-col items-center gap-8 mt-16">
-              <div className="flex items-center justify-center gap-6">
-                <div className="text-center">
-                  <div className="text-2xl md:text-3xl font-light text-white/90 tracking-tight">
-                    21–23 November
-                  </div>
-                  <div className="text-sm text-white/50 font-medium tracking-wider uppercase mt-1">
-                    2025
-                  </div>
-                </div>
+        {/* Stats Section */}
+        <StatsSection
+          participants={metrics.participants}
+          projects={metrics.projects}
+          companies={metrics.companies}
+        />
 
-                <div className="w-px h-16 bg-gradient-to-b from-transparent via-white/30 to-transparent"></div>
+        {/* Value Props */}
+        <ValuePropsSection />
 
-                <div className="text-center">
-                  <div className="text-2xl md:text-3xl font-light text-white/90 tracking-tight">
-                    Turku, Finland
-                  </div>
-                  <div className="text-sm text-white/50 uppercase tracking-wider">
-                    Edu City
-                  </div>
-                </div>
-              </div>
+        {/* Featured Projects */}
+        <FeaturedProjects
+          projects={featuredProjects}
+          viewAllUrl={config.viewAllProjectsUrl}
+        />
 
-              <div className="w-24 h-px bg-gradient-to-r from-transparent via-white/40 to-transparent"></div>
-            </div>
-          </div>
-        </WavyBackground>
-        <div className="flex flex-col gap-32">
-          <div>
-            <section className="flex flex-col items-center gap-8 py-16 justify-center">
-              <div className="text-sm font-medium text-white/50 uppercase tracking-[0.3em]">
-                Partners
-              </div>
-              <h3 className="text-3xl md:text-4xl font-light text-center leading-tight text-white max-w-4xl">
-                Proud sponsors
-              </h3>
+        {/* Past Sponsors - Social Proof */}
+        <PastSponsors />
 
-              <div className="w-full max-w-[1000px] px-6">
-                <div className="flex flex-wrap items-center justify-center gap-8">
-                  {sponsors.map((s, i) => (
-                    <div
-                      key={i}
-                      className="flex items-center justify-center p-4 bg-white/3 rounded-2xl"
-                      aria-hidden={false}
-                    >
-                      <a
-                        href={s.url}
-                        target="_blank"
-                        rel="noopener noreferrer"
-                        aria-label={s.alt}
-                        className="w-full flex items-center justify-center"
-                      >
-                        <img
-                          src={s.src}
-                          alt={s.alt}
-                          className="max-w-32 object-contain opacity-90 hover:grayscale-0 hover:opacity-100 transition-all duration-300"
-                        />
-                      </a>
-                    </div>
-                  ))}
-                </div>
-              </div>
-            </section>
-          </div>
+        {/* Sponsor/Partner Section */}
+        <SponsorSection
+          calendlyUrl={config.calendlyUrl}
+          contactEmail={config.contactEmail}
+        />
 
-          <div>
-            <section className="flex flex-col items-center gap-8 py-16 justify-center">
-              <div className="text-sm font-medium text-white/50 uppercase tracking-[0.3em]">
-                Supported by
-              </div>
-              <h3 className="text-3xl md:text-4xl font-light text-center leading-tight text-white max-w-4xl">
-                Special Thanks
-              </h3>
+        {/* Community Engagement */}
+        {/* <CommunityEngagement
+          discordUrl={config.discordUrl}
+          nextHackathonDate={config.nextHackathonDate}
+          jobBoardUrl={config.jobBoardUrl}
+        /> */}
 
-              <div className="w-full max-w-[1200px] px-6">
-                <div className="flex flex-wrap items-center justify-center gap-8">
-                  {supports.map((s, i) => (
-                    <div
-                      key={i}
-                      className="flex items-center justify-center p-4 bg-white/3 rounded-2xl"
-                      aria-hidden={false}
-                    >
-                      <a
-                        href={s.url}
-                        target="_blank"
-                        rel="noopener noreferrer"
-                        aria-label={s.alt}
-                        className="w-full flex items-center justify-center"
-                      >
-                        <img
-                          src={s.src}
-                          alt={s.alt}
-                          className="max-w-32 object-contain opacity-90 hover:grayscale-0 hover:opacity-100 transition-all duration-300"
-                        />
-                      </a>
-                    </div>
-                  ))}
-                </div>
-              </div>
-            </section>
-          </div>
+        {/* Testimonials */}
+        <Testimonials testimonials={testimonials} />
 
-          <div className="flex flex-col self-center w-full max-w-[1280px] gap-24 px-8">
-            <section className="flex flex-col items-center gap-16 py-24">
-              <div className="flex flex-col items-center gap-6">
-                <div className="text-sm font-medium text-white/50 uppercase tracking-[0.2em]">
-                  About Since AI
-                </div>
-                <div className="text-5xl md:text-7xl font-semibold text-center leading-tight text-white">
-                  Think different.
-                  <br />
-                  Build the future.
-                </div>
-              </div>
-            </section>
+        {/* Newsletter CTA */}
+        <NewsletterCTA discordUrl={config.discordUrl} />
 
-            <section className="grid grid-cols-1 lg:grid-cols-2 gap-16 items-center">
-              <div className="relative overflow-hidden rounded-3xl bg-gradient-to-br from-zinc-900/50 to-black/50 backdrop-blur-xl border border-white/10">
-                <div className="absolute inset-0 bg-gradient-to-br from-blue-500/10 via-transparent to-purple-500/10"></div>
-                <div className="relative p-12 h-[400px] flex items-center justify-center">
-                  <img
-                    src="/assets/logo/logo_full.png"
-                    alt="Since AI Logo"
-                    className="w-48 h-auto object-contain opacity-90"
-                  />
-                </div>
-              </div>
-
-              <InView
-                variants={{
-                  hidden: { opacity: 0, y: 50, filter: "blur(4px)" },
-                  visible: { opacity: 1, y: 0, filter: "blur(0px)" },
-                }}
-                viewOptions={{ margin: "0px 0px -150px 0px" }}
-                transition={{ duration: 0.8, ease: "easeOut" }}
-              >
-                <div className="flex flex-col gap-8">
-                  <div className="text-2xl md:text-3xl font-light text-white/90 leading-relaxed">
-                    Where innovation meets possibility.
-                  </div>
-                  <div className="space-y-6 text-lg text-white/70 font-light leading-relaxed">
-                    <p>
-                      Since AI isn't just a hackathon. It's where the future of
-                      artificial intelligence begins. Join a carefully curated
-                      community of visionaries, engineers, and entrepreneurs in
-                      an environment designed for breakthrough innovation.
-                    </p>
-                    <p>
-                      Three days. Unlimited potential. The tools, mentorship,
-                      and connections you need to transform ideas into reality.
-                    </p>
-                  </div>
-                  <div className="flex items-center gap-4 pt-4">
-                    <div className="w-12 h-px bg-gradient-to-r from-blue-400 to-transparent"></div>
-                    <span className="text-sm text-white/50 font-medium">
-                      The future is built here
-                    </span>
-                  </div>
-                </div>
-              </InView>
-            </section>
-
-            <section className="py-16"></section>
-            <div className="relative overflow-hidden rounded-[32px] bg-gradient-to-br from-black/10 via-black/5 to-transparent backdrop-blur-3xl border border-white/[0.08] shadow-2xl">
-              <div className="absolute inset-0 bg-gradient-to-br from-white/[0.02] via-transparent to-transparent"></div>
-              <div className="absolute inset-0 bg-gradient-to-t from-black/20 via-transparent to-transparent"></div>
-              <div className="relative p-12 md:p-16">
-                <video
-                  src="/assets/videos/ads.mp4"
-                  muted
-                  controls={false}
-                  autoPlay
-                  loop
-                  playsInline
-                  className="w-full aspect-video rounded-[24px] bg-black/80 shadow-xl ring-1 ring-white/[0.05] transition-all duration-700 hover:scale-[1.02] hover:shadow-2xl"
-                  poster="/assets/logo/logo_full.png"
-                >
-                  Your browser does not support the video tag.
-                </video>
-              </div>
-              <div className="absolute bottom-0 left-0 right-0 h-32 bg-gradient-to-t from-black/10 to-transparent pointer-events-none"></div>
-            </div>
-          </div>
-
-          <div className="flex flex-col self-center w-full max-w-[1280px] gap-16 px-8">
-            <section className="flex flex-col items-center gap-12 py-24">
-              <div className="flex flex-col items-center gap-6">
-                <div className="text-sm font-medium text-white/50 uppercase tracking-[0.3em]">
-                  Who We're Looking For
-                </div>
-                <h2 className="text-4xl md:text-6xl font-light text-center leading-tight text-white max-w-4xl">
-                  Built for the bold.
-                  <br />
-                  <span className="text-white/70">Made for innovators.</span>
-                </h2>
-              </div>
-            </section>
-
-            <div className="grid grid-cols-1 md:grid-cols-2 gap-8">
-              <div className="group relative overflow-hidden rounded-2xl bg-white/5 backdrop-blur-xl border border-white/10 hover:border-white/20 transition-all duration-500">
-                <div className="absolute inset-0 bg-gradient-to-br from-blue-500/5 via-transparent to-transparent opacity-0 group-hover:opacity-100 transition-opacity duration-500"></div>
-                <div className="relative p-8 h-[280px] flex flex-col justify-between">
-                  <div className="flex items-center gap-3 mb-6">
-                    <div className="w-2 h-2 rounded-full bg-blue-400"></div>
-                    <span className="text-sm font-medium text-white/60 uppercase tracking-wider">
-                      Developers
-                    </span>
-                  </div>
-                  <div className="space-y-4">
-                    <h3 className="text-2xl font-light text-white">
-                      AI/ML Engineers
-                    </h3>
-                    <p className="text-white/70 font-light leading-relaxed">
-                      Passionate developers with hands-on experience in
-                      artificial intelligence and machine learning technologies.
-                    </p>
-                  </div>
-                </div>
-              </div>
-
-              <div className="group relative overflow-hidden rounded-2xl bg-white/5 backdrop-blur-xl border border-white/10 hover:border-white/20 transition-all duration-500">
-                <div className="absolute inset-0 bg-gradient-to-br from-purple-500/5 via-transparent to-transparent opacity-0 group-hover:opacity-100 transition-opacity duration-500"></div>
-                <div className="relative p-8 h-[280px] flex flex-col justify-between">
-                  <div className="flex items-center gap-3 mb-6">
-                    <div className="w-2 h-2 rounded-full bg-purple-400"></div>
-                    <span className="text-sm font-medium text-white/60 uppercase tracking-wider">
-                      Entrepreneurs
-                    </span>
-                  </div>
-                  <div className="space-y-4">
-                    <h3 className="text-2xl font-light text-white">
-                      Visionary Founders
-                    </h3>
-                    <p className="text-white/70 font-light leading-relaxed">
-                      Business minds ready to transform breakthrough ideas into
-                      market-ready solutions.
-                    </p>
-                  </div>
-                </div>
-              </div>
-
-              <div className="group relative overflow-hidden rounded-2xl bg-white/5 backdrop-blur-xl border border-white/10 hover:border-white/20 transition-all duration-500">
-                <div className="absolute inset-0 bg-gradient-to-br from-green-500/5 via-transparent to-transparent opacity-0 group-hover:opacity-100 transition-opacity duration-500"></div>
-                <div className="relative p-8 h-[280px] flex flex-col justify-between">
-                  <div className="flex items-center gap-3 mb-6">
-                    <div className="w-2 h-2 rounded-full bg-green-400"></div>
-                    <span className="text-sm font-medium text-white/60 uppercase tracking-wider">
-                      Designers
-                    </span>
-                  </div>
-                  <div className="space-y-4">
-                    <h3 className="text-2xl font-light text-white">
-                      Creative Minds
-                    </h3>
-                    <p className="text-white/70 font-light leading-relaxed">
-                      UX/UI designers who understand how to make AI accessible
-                      and beautiful for everyone.
-                    </p>
-                  </div>
-                </div>
-              </div>
-
-              <div className="group relative overflow-hidden rounded-2xl bg-white/5 backdrop-blur-xl border border-white/10 hover:border-white/20 transition-all duration-500">
-                <div className="absolute inset-0 bg-gradient-to-br from-orange-500/5 via-transparent to-transparent opacity-0 group-hover:opacity-100 transition-opacity duration-500"></div>
-                <div className="relative p-8 h-[280px] flex flex-col justify-between">
-                  <div className="flex items-center gap-3 mb-6">
-                    <div className="w-2 h-2 rounded-full bg-orange-400"></div>
-                    <span className="text-sm font-medium text-white/60 uppercase tracking-wider">
-                      Teams
-                    </span>
-                  </div>
-                  <div className="space-y-4">
-                    <h3 className="text-2xl font-light text-white">
-                      Collaborative Spirit
-                    </h3>
-                    <p className="text-white/70 font-light leading-relaxed">
-                      Solo applicants welcome. Teams of up to 4 members. At
-                      least one technical AI/ML expert required.
-                    </p>
-                  </div>
-                </div>
-              </div>
-            </div>
-
-            <div className="text-center py-12">
-              <div className="inline-flex items-center gap-3 px-6 py-3 rounded-full bg-white/5 backdrop-blur-xl border border-white/10">
-                <div className="w-1.5 h-1.5 rounded-full bg-green-400 animate-pulse"></div>
-                <span className="text-sm font-medium text-white/80">
-                  Open to EU residents with AI/ML passion
-                </span>
-              </div>
-            </div>
-          </div>
-
-          <div className="flex flex-col self-center w-full max-w-[1280px] gap-24 px-8">
-            <section className="flex flex-col items-center gap-16 py-24">
-              <div className="flex flex-col items-center gap-6">
-                <div className="text-sm font-medium text-white/50 uppercase tracking-[0.3em]">
-                  Location
-                </div>
-                <h2 className="text-4xl md:text-6xl font-light text-center leading-tight text-white max-w-4xl">
-                  Where innovation
-                  <br />
-                  <span className="text-white/70">meets the future.</span>
-                </h2>
-              </div>
-            </section>
-
-            <div className="grid grid-cols-1 lg:grid-cols-2 gap-16 items-center">
-              <InView
-                variants={{
-                  hidden: { opacity: 0, x: -50, filter: "blur(4px)" },
-                  visible: { opacity: 1, x: 0, filter: "blur(0px)" },
-                }}
-                viewOptions={{ margin: "0px 0px -150px 0px" }}
-                transition={{ duration: 0.8, ease: "easeOut" }}
-              >
-                <div className="flex flex-col gap-8">
-                  <div className="text-3xl md:text-4xl font-light text-white/90 leading-relaxed">
-                    Edu City, Turku
-                  </div>
-                  <div className="space-y-6 text-lg text-white/70 font-light leading-relaxed">
-                    <p>
-                      Located in the heart of Finland's innovation ecosystem,
-                      Edu City represents the perfect fusion of academic
-                      excellence and entrepreneurial spirit.
-                    </p>
-                    <p>
-                      A state-of-the-art facility designed for breakthrough
-                      thinking, equipped with everything needed to transform
-                      ambitious ideas into reality.
-                    </p>
-                  </div>
-                  <div className="flex items-center gap-4 pt-4">
-                    <div className="w-12 h-px bg-gradient-to-r from-blue-400 to-transparent"></div>
-                    <span className="text-sm text-white/50 font-medium">
-                      Turku, Finland
-                    </span>
-                  </div>
-                </div>
-              </InView>
-
-              <InView
-                variants={{
-                  hidden: { opacity: 0, x: 50, filter: "blur(4px)" },
-                  visible: { opacity: 1, x: 0, filter: "blur(0px)" },
-                }}
-                viewOptions={{ margin: "0px 0px -150px 0px" }}
-                transition={{ duration: 0.8, ease: "easeOut", delay: 0.2 }}
-              >
-                <div className="relative overflow-hidden rounded-3xl bg-gradient-to-br from-zinc-900/50 to-black/50 backdrop-blur-xl border border-white/10">
-                  <div className="absolute inset-0 bg-gradient-to-br from-blue-500/10 via-transparent to-purple-500/10"></div>
-                  <div className="relative aspect-[4/3] overflow-hidden">
-                    <Image
-                      src="/assets/images/educity.jpg"
-                      alt="Edu City, Turku, Finland"
-                      className="w-full h-full object-cover hover:scale-105 transition-transform duration-700 ease-out"
-                      radius="none"
-                    />
-                    <div className="absolute inset-0 bg-gradient-to-t from-black/20 via-transparent to-transparent"></div>
-                  </div>
-                </div>
-              </InView>
-            </div>
-          </div>
-
-          <InfiniteSlider gap={24} className="my-16">
-            <div className="text-6xl md:text-8xl lg:text-9xl text-center font-light text-white/90 tracking-tighter px-8">
-              Innovation
-            </div>
-            <div className="text-6xl md:text-8xl lg:text-9xl text-center font-light text-white/90 tracking-tighter px-8">
-              Impact
-            </div>
-            <div className="text-6xl md:text-8xl lg:text-9xl text-center font-light text-white/90 tracking-tighter px-8">
-              Future
-            </div>
-            <div className="text-6xl md:text-8xl lg:text-9xl text-center font-light text-white/90 tracking-tighter px-8">
-              Next Gen
-            </div>
-          </InfiniteSlider>
-
-          <div className="flex flex-col self-center w-full max-w-[1280px] gap-8 px-8">
-            <section className="flex flex-col items-center gap-16 py-32">
-              <div className="flex flex-col items-center gap-6">
-                <div className="text-sm font-medium text-white/50 uppercase tracking-[0.3em]">
-                  Prizes
-                </div>
-                <h2 className="text-4xl md:text-6xl font-light text-center leading-tight text-white max-w-4xl">
-                  Extraordinary rewards.
-                  <br />
-                  <span className="text-white/70">
-                    For extraordinary ideas.
-                  </span>
-                </h2>
-              </div>
-
-              {/* <div className="grid grid-cols-1 md:grid-cols-3 gap-8 w-full max-w-6xl">
-                <div className="group relative overflow-hidden rounded-3xl bg-gradient-to-br from-white/10 to-white/5 backdrop-blur-xl border border-white/20 hover:border-white/30 transition-all duration-700">
-                  <div className="absolute inset-0 bg-gradient-to-br from-amber-500/10 via-transparent to-transparent opacity-0 group-hover:opacity-100 transition-opacity duration-700"></div>
-                  <div className="relative p-12 text-center">
-                    <div className="w-16 h-16 mx-auto mb-6 rounded-full bg-gradient-to-br from-amber-400 to-amber-600 flex items-center justify-center">
-                      <div className="w-8 h-8 rounded-full bg-white/20 backdrop-blur-sm"></div>
-                    </div>
-                    <div className="text-6xl font-light text-white mb-2">€5,000</div>
-                    <div className="text-white/60 font-light mb-8">Grand Prize</div>
-                    <div className="w-full h-px bg-gradient-to-r from-transparent via-white/20 to-transparent"></div>
-                  </div>
-                </div>
-
-                <div className="group relative overflow-hidden rounded-3xl bg-gradient-to-br from-white/8 to-white/3 backdrop-blur-xl border border-white/15 hover:border-white/25 transition-all duration-700">
-                  <div className="absolute inset-0 bg-gradient-to-br from-slate-400/10 via-transparent to-transparent opacity-0 group-hover:opacity-100 transition-opacity duration-700"></div>
-                  <div className="relative p-12 text-center">
-                    <div className="w-16 h-16 mx-auto mb-6 rounded-full bg-gradient-to-br from-slate-300 to-slate-500 flex items-center justify-center">
-                      <div className="w-8 h-8 rounded-full bg-white/20 backdrop-blur-sm"></div>
-                    </div>
-                    <div className="text-6xl font-light text-white mb-2">€3,000</div>
-                    <div className="text-white/60 font-light mb-8">Second Place</div>
-                    <div className="w-full h-px bg-gradient-to-r from-transparent via-white/20 to-transparent"></div>
-                  </div>
-                </div>
-
-                <div className="group relative overflow-hidden rounded-3xl bg-gradient-to-br from-white/6 to-white/2 backdrop-blur-xl border border-white/10 hover:border-white/20 transition-all duration-700">
-                  <div className="absolute inset-0 bg-gradient-to-br from-orange-500/10 via-transparent to-transparent opacity-0 group-hover:opacity-100 transition-opacity duration-700"></div>
-                  <div className="relative p-12 text-center">
-                    <div className="w-16 h-16 mx-auto mb-6 rounded-full bg-gradient-to-br from-orange-400 to-orange-600 flex items-center justify-center">
-                      <div className="w-8 h-8 rounded-full bg-white/20 backdrop-blur-sm"></div>
-                    </div>
-                    <div className="text-6xl font-light text-white mb-2">€2,000</div>
-                    <div className="text-white/60 font-light mb-8">Third Place</div>
-                    <div className="w-full h-px bg-gradient-to-r from-transparent via-white/20 to-transparent"></div>
-                  </div>
-                </div>
-              </div> */}
-
-              <div className="text-center mt-16">
-                <p className="text-lg text-white/70 font-light leading-relaxed max-w-2xl">
-                  Plus additional prizes for category winners, including best
-                  use of AI, most innovative solution, and people's choice
-                  award.
-                </p>
-              </div>
-            </section>
-
-            {/* <div className="relative aspect-video h-[200px] overflow-hidden rounded-xl bg-zinc-700/30 p-[2px]  min-w-80">
-              <Spotlight
-                className="from-blue-200 via-blue-300 to-blue-400 blur-3xl "
-                size={124}
-              />
-              <div className="relative h-full w-full rounded-xl bg-black p-8">
-                Anyone in the EU with AI/ML passion! You can apply solo or as a
-                team (up to 4). At least one team member must be technically
-                proficient in AI/ML.
-              </div>
-            </div> */}
-          </div>
-
-          <div className="flex flex-col self-center w-full max-w-[1280px] gap-24 px-8">
-            <section className="flex flex-col items-center gap-16 py-24">
-              <div className="flex flex-col items-center gap-6">
-                <div className="text-sm font-medium text-white/50 uppercase tracking-[0.3em]">
-                  Event Schedule
-                </div>
-                <h2 className="text-4xl md:text-6xl font-light text-center leading-tight text-white max-w-4xl">
-                  Three days.
-                  <br />
-                  <span className="text-white/70">Endless possibilities.</span>
-                </h2>
-              </div>
-            </section>
-
-            <div className="grid grid-cols-1 gap-16">
-              {/* Day 1 */}
-              <InView
-                variants={{
-                  hidden: { opacity: 0, y: 30, filter: "blur(4px)" },
-                  visible: { opacity: 1, y: 0, filter: "blur(0px)" },
-                }}
-                viewOptions={{ margin: "0px 0px -100px 0px" }}
-                transition={{ duration: 0.6, ease: "easeOut" }}
-              >
-                <div className="group relative overflow-hidden rounded-3xl bg-white/5 backdrop-blur-xl border border-white/10 hover:border-white/20 transition-all duration-500">
-                  <div className="absolute inset-0 bg-gradient-to-br from-blue-500/5 via-transparent to-transparent opacity-0 group-hover:opacity-100 transition-opacity duration-500"></div>
-                  <div className="relative p-12">
-                    <div className="flex items-center justify-between mb-8">
-                      <div className="flex items-center gap-4">
-                        <div className="w-3 h-3 rounded-full bg-blue-400"></div>
-                        <span className="text-sm font-medium text-white/60 uppercase tracking-wider">
-                          November 21
-                        </span>
-                      </div>
-                      <span className="text-sm font-medium text-white/40">
-                        Day 01
-                      </span>
-                    </div>
-
-                    <div className="space-y-8">
-                      <div>
-                        <h3 className="text-3xl font-light text-white mb-2">
-                          Kickoff
-                        </h3>
-                        <p className="text-white/70 font-light leading-relaxed">
-                          Welcome presentation, challenge announcement, and team
-                          formation
-                        </p>
-                      </div>
-
-                      <div className="flex items-center gap-6">
-                        <div className="text-lg font-medium text-white/80">
-                          4:00 PM
-                        </div>
-                        <div className="flex-1 h-px bg-gradient-to-r from-white/20 via-transparent to-transparent"></div>
-                        <div className="text-sm text-white/50">Start</div>
-                      </div>
-                    </div>
-                  </div>
-                </div>
-              </InView>
-
-              {/* Day 2 */}
-              <InView
-                variants={{
-                  hidden: { opacity: 0, y: 30, filter: "blur(4px)" },
-                  visible: { opacity: 1, y: 0, filter: "blur(0px)" },
-                }}
-                viewOptions={{ margin: "0px 0px -100px 0px" }}
-                transition={{ duration: 0.6, ease: "easeOut", delay: 0.1 }}
-              >
-                <div className="group relative overflow-hidden rounded-3xl bg-white/5 backdrop-blur-xl border border-white/10 hover:border-white/20 transition-all duration-500">
-                  <div className="absolute inset-0 bg-gradient-to-br from-purple-500/5 via-transparent to-transparent opacity-0 group-hover:opacity-100 transition-opacity duration-500"></div>
-                  <div className="relative p-12">
-                    <div className="flex items-center justify-between mb-8">
-                      <div className="flex items-center gap-4">
-                        <div className="w-3 h-3 rounded-full bg-purple-400"></div>
-                        <span className="text-sm font-medium text-white/60 uppercase tracking-wider">
-                          November 22
-                        </span>
-                      </div>
-                      <span className="text-sm font-medium text-white/40">
-                        Day 02
-                      </span>
-                    </div>
-
-                    <div className="space-y-8">
-                      <div>
-                        <h3 className="text-3xl font-light text-white mb-2">
-                          Build
-                        </h3>
-                        <p className="text-white/70 font-light leading-relaxed">
-                          Full day of development with mentor support and
-                          technical workshops
-                        </p>
-                      </div>
-
-                      <div className="flex items-center gap-6">
-                        <div className="text-lg font-medium text-white/80">
-                          All Day
-                        </div>
-                        <div className="flex-1 h-px bg-gradient-to-r from-white/20 via-transparent to-transparent"></div>
-                        <div className="text-sm text-white/50">Continuous</div>
-                      </div>
-                    </div>
-                  </div>
-                </div>
-              </InView>
-
-              {/* Day 3 */}
-              <InView
-                variants={{
-                  hidden: { opacity: 0, y: 30, filter: "blur(4px)" },
-                  visible: { opacity: 1, y: 0, filter: "blur(0px)" },
-                }}
-                viewOptions={{ margin: "0px 0px -100px 0px" }}
-                transition={{ duration: 0.6, ease: "easeOut", delay: 0.2 }}
-              >
-                <div className="group relative overflow-hidden rounded-3xl bg-white/5 backdrop-blur-xl border border-white/10 hover:border-white/20 transition-all duration-500">
-                  <div className="absolute inset-0 bg-gradient-to-br from-green-500/5 via-transparent to-transparent opacity-0 group-hover:opacity-100 transition-opacity duration-500"></div>
-                  <div className="relative p-12">
-                    <div className="flex items-center justify-between mb-8">
-                      <div className="flex items-center gap-4">
-                        <div className="w-3 h-3 rounded-full bg-green-400"></div>
-                        <span className="text-sm font-medium text-white/60 uppercase tracking-wider">
-                          November 23
-                        </span>
-                      </div>
-                      <span className="text-sm font-medium text-white/40">
-                        Day 03
-                      </span>
-                    </div>
-
-                    <div className="space-y-8">
-                      <div>
-                        <h3 className="text-3xl font-light text-white mb-2">
-                          Present
-                        </h3>
-                        <p className="text-white/70 font-light leading-relaxed">
-                          Final presentations, judging, and awards ceremony
-                        </p>
-                      </div>
-
-                      <div className="flex items-center gap-6">
-                        <div className="text-lg font-medium text-white/80">
-                          5:00 PM
-                        </div>
-                        <div className="flex-1 h-px bg-gradient-to-r from-white/20 via-transparent to-transparent"></div>
-                        <div className="text-sm text-white/50">Finals</div>
-                      </div>
-                    </div>
-                  </div>
-                </div>
-              </InView>
-            </div>
-          </div>
-
-          {/* <div className="flex flex-col self-center w-full max-w-[1280px] gap-8 px-8">
-            <section className="flex flex-col gap-8">
-              <div className="flex flex-row items-center gap-4 mb-8">
-                <div className="max-w-9 bg-white h-1 flex-1" />
-                Partners
-              </div>
-
-              <div className="text-6xl text-balance">
-                Meet our partners who help making this event happen
-              </div>
-            </section>
-            <section>
-              <div className="grid grid-cols-2 p-10 md:grid-cols-4">
-                <AnimatedBackground
-                  className="rounded-lg bg-zinc-800"
-                  transition={{
-                    type: "spring",
-                    bounce: 0.2,
-                    duration: 0.6,
-                  }}
-                  enableHover
-                >
-                  <div data-id={`card-1`}>
-                    <div className="flex select-none flex-col space-y-1">
-                      <img src="assets/logo/logo_full.png" alt="logo"/>
-                    </div>
-                  </div>
-                  <div data-id={`card-2`}>
-                    <div className="flex select-none flex-col space-y-1">
-                      <img src="assets/logo/logo_full.png" alt="logo"/>
-                    </div>
-                  </div>
-                  <div data-id={`card-3`}>
-                    <div className="flex select-none flex-col space-y-1">
-                      <img src="assets/logo/logo_full.png" alt="logo"/>
-                    </div>
-                  </div>
-                  <div data-id={`card-4`}>
-                    <div className="flex select-none flex-col space-y-1">
-                      <img src="assets/logo/logo_full.png" alt="logo"/>
-                    </div>
-                  </div>
-                  <div data-id={`card-5`}>
-                    <div className="flex select-none flex-col space-y-1">
-                      <img src="assets/logo/logo_full.png" alt="logo"/>
-                    </div>
-                  </div>
-                  <div data-id={`card-6`}>
-                    <div className="flex select-none flex-col space-y-1">
-                      <img src="assets/logo/logo_full.png" alt="logo"/>
-                    </div>
-                  </div>
-                  <div data-id={`card-7`}>
-                    <div className="flex select-none flex-col space-y-1">
-                      <img src="assets/logo/logo_full.png" alt="logo"/>
-                    </div>
-                  </div>
-                  <div data-id={`card-8`}>
-                    <div className="flex select-none flex-col space-y-1">
-                      <img src="assets/logo/logo_full.png" alt="logo"/>
-                    </div>
-                  </div>
-                </AnimatedBackground>
-              </div>
-            </section>
-          </div> */}
-
-          <div className="flex flex-col self-center w-full max-w-[1280px] gap-24 px-8">
-            <section className="flex flex-col items-center gap-16 py-24">
-              <div className="flex flex-col items-center gap-6">
-                <div className="text-sm font-medium text-white/50 uppercase tracking-[0.3em]">
-                  Questions
-                </div>
-                <h2 className="text-4xl md:text-6xl font-light text-center leading-tight text-white max-w-4xl">
-                  Everything you need
-                  <br />
-                  <span className="text-white/70">to know.</span>
-                </h2>
-              </div>
-            </section>
-
-            <div className="space-y-6">
-              <div className="group relative overflow-hidden rounded-2xl bg-white/5 backdrop-blur-xl border border-white/10 hover:border-white/20 transition-all duration-300">
-                <details className="peer">
-                  <summary className="flex items-center justify-between p-8 cursor-pointer list-none">
-                    <span className="text-xl font-light text-white">
-                      Do I need to know how to code?
-                    </span>
-                    <div className="w-6 h-6 rounded-full bg-white/10 flex items-center justify-center transition-transform duration-300 group-open:rotate-45">
-                      <div className="w-3 h-px bg-white/60"></div>
-                      <div className="w-px h-3 bg-white/60 absolute"></div>
-                    </div>
-                  </summary>
-                  <div className="px-8 pb-8">
-                    <div className="w-full h-px bg-gradient-to-r from-white/10 via-white/20 to-white/10 mb-6"></div>
-                    <p className="text-white/70 font-light leading-relaxed">
-                      If you're applying as a hacker — yes, at least one person
-                      on your team needs solid AI/ML experience. If you're not
-                      technical, check out the showroom instead!
-                    </p>
-                  </div>
-                </details>
-              </div>
-
-              <div className="group relative overflow-hidden rounded-2xl bg-white/5 backdrop-blur-xl border border-white/10 hover:border-white/20 transition-all duration-300">
-                <details className="peer">
-                  <summary className="flex items-center justify-between p-8 cursor-pointer list-none">
-                    <span className="text-xl font-light text-white">
-                      Can I apply solo?
-                    </span>
-                    <div className="w-6 h-6 rounded-full bg-white/10 flex items-center justify-center transition-transform duration-300 group-open:rotate-45">
-                      <div className="w-3 h-px bg-white/60"></div>
-                      <div className="w-px h-3 bg-white/60 absolute"></div>
-                    </div>
-                  </summary>
-                  <div className="px-8 pb-8">
-                    <div className="w-full h-px bg-gradient-to-r from-white/10 via-white/20 to-white/10 mb-6"></div>
-                    <p className="text-white/70 font-light leading-relaxed">
-                      Absolutely. We'll help you find a team before and during
-                      the event.
-                    </p>
-                  </div>
-                </details>
-              </div>
-
-              <div className="group relative overflow-hidden rounded-2xl bg-white/5 backdrop-blur-xl border border-white/10 hover:border-white/20 transition-all duration-300">
-                <details className="peer">
-                  <summary className="flex items-center justify-between p-8 cursor-pointer list-none">
-                    <span className="text-xl font-light text-white">
-                      Where is the event?
-                    </span>
-                    <div className="w-6 h-6 rounded-full bg-white/10 flex items-center justify-center transition-transform duration-300 group-open:rotate-45">
-                      <div className="w-3 h-px bg-white/60"></div>
-                      <div className="w-px h-3 bg-white/60 absolute"></div>
-                    </div>
-                  </summary>
-                  <div className="px-8 pb-8">
-                    <div className="w-full h-px bg-gradient-to-r from-white/10 via-white/20 to-white/10 mb-6"></div>
-                    <p className="text-white/70 font-light leading-relaxed">
-                      In Turku, Finland. The exact location will be shared with
-                      approved participants.
-                    </p>
-                  </div>
-                </details>
-              </div>
-
-              <div className="group relative overflow-hidden rounded-2xl bg-white/5 backdrop-blur-xl border border-white/10 hover:border-white/20 transition-all duration-300">
-                <details className="peer">
-                  <summary className="flex items-center justify-between p-8 cursor-pointer list-none">
-                    <span className="text-xl font-light text-white">
-                      Is it really free?
-                    </span>
-                    <div className="w-6 h-6 rounded-full bg-white/10 flex items-center justify-center transition-transform duration-300 group-open:rotate-45">
-                      <div className="w-3 h-px bg-white/60"></div>
-                      <div className="w-px h-3 bg-white/60 absolute"></div>
-                    </div>
-                  </summary>
-                  <div className="px-8 pb-8">
-                    <div className="w-full h-px bg-gradient-to-r from-white/10 via-white/20 to-white/10 mb-6"></div>
-                    <p className="text-white/70 font-light leading-relaxed">
-                      Yes. We cover everything — food, drinks, space, swag, and
-                      compute.
-                    </p>
-                  </div>
-                </details>
-              </div>
-
-              <div className="group relative overflow-hidden rounded-2xl bg-white/5 backdrop-blur-xl border border-white/10 hover:border-white/20 transition-all duration-300">
-                <details className="peer">
-                  <summary className="flex items-center justify-between p-8 cursor-pointer list-none">
-                    <span className="text-xl font-light text-white">
-                      How do I know if I got in?
-                    </span>
-                    <div className="w-6 h-6 rounded-full bg-white/10 flex items-center justify-center transition-transform duration-300 group-open:rotate-45">
-                      <div className="w-3 h-px bg-white/60"></div>
-                      <div className="w-px h-3 bg-white/60 absolute"></div>
-                    </div>
-                  </summary>
-                  <div className="px-8 pb-8">
-                    <div className="w-full h-px bg-gradient-to-r from-white/10 via-white/20 to-white/10 mb-6"></div>
-                    <p className="text-white/70 font-light leading-relaxed">
-                      All applications are reviewed. You'll receive an approval
-                      email if selected.
-                    </p>
-                  </div>
-                </details>
-              </div>
-            </div>
-          </div>
-
-          <div className="flex flex-col self-center w-full max-w-[1280px] gap-24 px-8 py-32">
-            <section className="flex flex-col items-center gap-16">
-              <div className="flex flex-col items-center gap-6">
-                <div className="text-sm font-medium text-white/50 uppercase tracking-[0.3em]">
-                  Join the Future
-                </div>
-                <h2 className="text-4xl md:text-6xl font-light text-center leading-tight text-white max-w-4xl">
-                  Ready to build
-                  <br />
-                  <span className="text-white/70">
-                    something extraordinary?
-                  </span>
-                </h2>
-              </div>
-
-              <div className="text-center max-w-2xl">
-                <p className="text-lg text-white/70 font-light leading-relaxed">
-                  Applications are now open for Since AI 2025. Join the most
-                  exclusive AI hackathon in Northern Europe.
-                </p>
-              </div>
-
-              <div className="flex flex-col items-center gap-8">
-                <Magnetic
-                  intensity={0.2}
-                  springOptions={springOptions}
-                  actionArea="global"
-                  range={200}
-                >
-                  <button
-                    type="button"
-                    className="group relative inline-flex items-center justify-center px-16 py-5 text-lg font-medium text-black bg-white rounded-full transition-all duration-300 hover:bg-white/90 hover:scale-105 transform"
-                    onClick={() =>
-                      window.open("https://lu.ma/2vs4wsjr", "_blank")
-                    }
-                  >
-                    <span className="relative z-10 font-medium">Apply Now</span>
-                    <div className="absolute inset-0 rounded-full bg-gradient-to-r from-white via-white to-white/90 opacity-0 group-hover:opacity-100 transition-opacity duration-300" />
-                  </button>
-                </Magnetic>
-
-                <div className="text-center">
-                  <p className="text-sm text-white/50 font-light">
-                    Limited spots available • Rolling admissions
-                  </p>
-                </div>
-              </div>
-            </section>
-          </div>
-
-          <div className="flex flex-col self-center w-full max-w-[1280px] gap-24 px-8 py-32">
-            <section className="flex flex-col items-center gap-16">
-              <div className="flex flex-col items-center gap-6">
-                <div className="text-sm font-medium text-white/50 uppercase tracking-[0.3em]">
-                  Connect
-                </div>
-                <h2 className="text-4xl md:text-6xl font-light text-center leading-tight text-white max-w-4xl">
-                  Questions?
-                  <br />
-                  <span className="text-white/70">We're here to help.</span>
-                </h2>
-              </div>
-
-              <div className="text-center max-w-2xl">
-                <p className="text-lg text-white/70 font-light leading-relaxed">
-                  For questions, sponsorship opportunities, or partnership
-                  inquiries.
-                </p>
-              </div>
-
-              <div className="flex flex-col items-center gap-8">
-                <Magnetic
-                  intensity={0.2}
-                  springOptions={springOptions}
-                  actionArea="global"
-                  range={200}
-                >
-                  <a
-                    href="/contact"
-                    className="group relative inline-flex items-center justify-center px-16 py-5 text-lg font-medium text-white bg-white/5 backdrop-blur-xl border border-white/10 rounded-full transition-all duration-300 hover:border-white/20 hover:bg-white/10 hover:scale-105 transform"
-                  >
-                    <span className="relative z-10 font-light">
-                      Get in touch
-                    </span>
-                    <div className="absolute inset-0 rounded-full bg-gradient-to-r from-white/5 via-white/10 to-white/5 opacity-0 group-hover:opacity-100 transition-opacity duration-300" />
-                  </a>
-                </Magnetic>
-              </div>
-            </section>
-          </div>
-
-          <div className="bg-black border-t border-white/10">
-            <div className="max-w-[1280px] mx-auto px-8 py-16">
-              <div className="grid grid-cols-1 md:grid-cols-4 gap-12 mb-16">
-                <div className="col-span-1 md:col-span-2">
-                  <h2 className="text-4xl md:text-5xl font-light text-white mb-4">
-                    Since AI
-                  </h2>
-                  <p className="text-white/60 text-lg font-light max-w-md">
-                    Pioneering the future of artificial intelligence with
-                    innovation and purpose.
-                  </p>
-                </div>
-
-                <div className="space-y-4">
-                  <h3 className="text-white font-medium text-sm uppercase tracking-wider">
-                    Connect
-                  </h3>
-                  <div className="space-y-3">
-                    <a
-                      href="https://www.linkedin.com/company/sinceai"
-                      target="_blank"
-                      rel="noopener noreferrer"
-                      className="block text-white/60 hover:text-white transition-colors duration-200 text-sm"
-                    >
-                      LinkedIn
-                    </a>
-                    <a
-                      href="https://www.instagram.com/since_ai"
-                      target="_blank"
-                      rel="noopener noreferrer"
-                      className="block text-white/60 hover:text-white transition-colors duration-200 text-sm"
-                    >
-                      Instagram
-                    </a>
-                    <a
-                      href="https://x.com/since_ai_"
-                      target="_blank"
-                      rel="noopener noreferrer"
-                      className="block text-white/60 hover:text-white transition-colors duration-200 text-sm"
-                    >
-                      X
-                    </a>
-                    <a
-                      href="https://github.com/since-ai"
-                      target="_blank"
-                      rel="noopener noreferrer"
-                      className="block text-white/60 hover:text-white transition-colors duration-200 text-sm"
-                    >
-                      GitHub
-                    </a>
-                    <a
-                      href="https://www.facebook.com/sinceai"
-                      target="_blank"
-                      rel="noopener noreferrer"
-                      className="block text-white/60 hover:text-white transition-colors duration-200 text-sm"
-                    >
-                      Facebook
-                    </a>
-                  </div>
-                </div>
-
-                <div className="space-y-4">
-                  <h3 className="text-white font-medium text-sm uppercase tracking-wider">
-                    Legal
-                  </h3>
-                  <div className="space-y-3">
-                    <p className="text-white/60 text-sm">Boost Turku ry</p>
-                    <p className="text-white/60 text-sm">
-                      Business ID: 2321515-1
-                    </p>
-                  </div>
-                </div>
-              </div>
-
-              <div className="pt-8 border-t border-white/10 flex flex-col md:flex-row justify-between items-center gap-4">
-                <p className="text-white/40 text-sm">
-                  © 2025 Since AI. All rights reserved.
-                </p>
-              </div>
-            </div>
-          </div>
-        </div>
+        {/* Footer */}
+        <Footer
+          discordUrl={config.discordUrl}
+          newsletterUrl="#newsletter"
+          partnerUrl="#partner-section"
+        />
       </div>
     </SmoothScroll>
   );
 }
-
-// make it look apple style, billion dollar company looking, minimalist, modern
