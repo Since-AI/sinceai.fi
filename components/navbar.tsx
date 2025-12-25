@@ -46,11 +46,12 @@ export const Navbar = () => {
     contact: "/contact",
     partner: "#partner-section",
     instagram: "https://www.instagram.com/since_ai/",
-    linkedin: "https://www.linkedin.com/company/sinceai/about/?viewAsMember=true",
+    linkedin:
+      "https://www.linkedin.com/company/sinceai/about/?viewAsMember=true",
   };
 
   return (
-    <header className="fixed top-0 left-0 right-0 z-50 w-full bg-transparent">
+    <header className="fixed top-0 left-0 right-0 z-50 w-full bg-gradient-to-b from-black to-black/10 backdrop-blur-xs">
       <div className="flex h-[60px] items-center justify-between px-4 max-w-7xl mx-auto">
         {/* Mobile Layout */}
         <div className="flex sm:hidden items-center justify-between w-full">
@@ -128,21 +129,21 @@ export const Navbar = () => {
 
         {/* Desktop Layout */}
         <div className="hidden sm:flex items-center justify-between w-full">
-          {/* Logo */}
-          <Link href="/" className="cursor-pointer">
-            <Logo />
-          </Link>
-
           {/* Navigation Menu */}
-          <NavigationMenu className="mx-auto">
-            <NavigationMenuList className="gap-1">
+          <NavigationMenu className="mx-0 px-0">
+            <NavigationMenuList className="gap-4">
+              {/* Logo */}
+              <Link href="/" className="cursor-pointer">
+                <Logo />
+              </Link>
+
               <NavigationMenuItem>
                 <NavigationMenuLink asChild>
                   <button
                     onClick={() => handleNavigation(links.community)}
-                    className="text-sm font-normal px-4 py-1.5 rounded-full hover:bg-gray-800/50 transition-all duration-200 text-gray-400 hover:text-gray-100 bg-transparent border-none cursor-pointer"
+                    className="tracking-wider text-sm font-normal px-4 py-1.5 rounded-full hover:bg-gray-800/50 transition-all duration-200 text-gray-400 hover:text-gray-100 bg-transparent border-none cursor-pointer"
                   >
-                    Community
+                    COMMUNITY
                   </button>
                 </NavigationMenuLink>
               </NavigationMenuItem>
@@ -150,9 +151,9 @@ export const Navbar = () => {
                 <NavigationMenuLink asChild>
                   <button
                     onClick={() => handleNavigation(links.partner)}
-                    className="text-sm font-normal px-4 py-1.5 rounded-full hover:bg-gray-800/50 transition-all duration-200 text-gray-400 hover:text-gray-100 bg-transparent border-none cursor-pointer"
+                    className="tracking-wider text-sm font-normal px-4 py-1.5 rounded-full hover:bg-gray-800/50 transition-all duration-200 text-gray-400 hover:text-gray-100 bg-transparent border-none cursor-pointer"
                   >
-                    Partner
+                    PARTNER
                   </button>
                 </NavigationMenuLink>
               </NavigationMenuItem>
@@ -160,19 +161,11 @@ export const Navbar = () => {
                 <NavigationMenuLink asChild>
                   <button
                     onClick={() => handleNavigation(links.contact)}
-                    className="text-sm font-normal px-4 py-1.5 rounded-full hover:bg-gray-800/50 transition-all duration-200 text-gray-400 hover:text-gray-100 bg-transparent border-none cursor-pointer"
+                    className="tracking-wider text-sm font-normal px-4 py-1.5 rounded-full hover:bg-gray-800/50 transition-all duration-200 text-gray-400 hover:text-gray-100 bg-transparent border-none cursor-pointer"
                   >
-                    Contact
+                    CONTACT
                   </button>
                 </NavigationMenuLink>
-              </NavigationMenuItem>
-              <NavigationMenuItem>
-                <Button
-                  onClick={() => handleNavigation(links.community)}
-                  className="text-sm font-medium px-6 py-1.5 rounded-full bg-white text-black hover:bg-gray-200 transition-all duration-200 ml-4"
-                >
-                  Join Community
-                </Button>
               </NavigationMenuItem>
             </NavigationMenuList>
           </NavigationMenu>
@@ -180,28 +173,10 @@ export const Navbar = () => {
           {/* Social Icons */}
           <div className="flex flex-row items-center gap-2">
             <Button
-              variant="ghost"
-              size="icon"
-              onClick={() => handleNavigation(links.instagram)}
-              className="text-gray-400 hover:text-gray-100 hover:bg-gray-800/50 transition-all duration-200 w-8 h-8"
-            >
-              <FaInstagram size={16} />
-            </Button>
-            <Button
-              variant="ghost"
-              size="icon"
               onClick={() => handleNavigation(links.community)}
-              className="text-gray-400 hover:text-gray-100 hover:bg-gray-800/50 transition-all duration-200 w-8 h-8"
+              className="text-sm px-6 py-1.5 rounded-full bg-transparent text-gray-300 font-normal border border-border/20 hover:backdrop-blur-lg transition-all duration-200"
             >
-              <FaDiscord size={16} />
-            </Button>
-            <Button
-              variant="ghost"
-              size="icon"
-              onClick={() => handleNavigation(links.linkedin)}
-              className="text-gray-400 hover:text-gray-100 hover:bg-gray-800/50 transition-all duration-200 w-8 h-8"
-            >
-              <FaLinkedin size={16} />
+              JOIN COMMUNITY
             </Button>
           </div>
         </div>

@@ -25,17 +25,17 @@ export const StatsSection: React.FC<StatsSectionProps> = ({
 }) => {
   const stats: StatItem[] = [
     {
-      icon: <Users className="w-8 h-8 text-blue-400" />,
+      icon: <Users className="w-8 h-8 text-white/50" />,
       value: participants,
       label: "Participants",
     },
     {
-      icon: <FolderGit2 className="w-8 h-8 text-purple-400" />,
+      icon: <FolderGit2 className="w-8 h-8 text-white/50" />,
       value: projects,
       label: "Projects Completed",
     },
     {
-      icon: <Briefcase className="w-8 h-8 text-green-400" />,
+      icon: <Briefcase className="w-8 h-8 text-white/50" />,
       value: companies,
       label: "Partnered Companies",
     },

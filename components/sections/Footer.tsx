@@ -1,7 +1,13 @@
 "use client";
 import React from "react";
 import { InView } from "@/components/motion-primitives/in-view";
-import { FaDiscord, FaInstagram, FaLinkedin, FaGithub, FaFacebook } from "react-icons/fa";
+import {
+  FaDiscord,
+  FaInstagram,
+  FaLinkedin,
+  FaGithub,
+  FaFacebook,
+} from "react-icons/fa";
 import { FaXTwitter } from "react-icons/fa6";
 
 interface FooterProps {
@@ -17,11 +23,23 @@ export const Footer: React.FC<FooterProps> = ({
 }) => {
   const socialLinks = [
     { name: "Discord", href: discordUrl, icon: FaDiscord },
-    { name: "LinkedIn", href: "https://www.linkedin.com/company/sinceai", icon: FaLinkedin },
-    { name: "Instagram", href: "https://www.instagram.com/since_ai", icon: FaInstagram },
+    {
+      name: "LinkedIn",
+      href: "https://www.linkedin.com/company/sinceai",
+      icon: FaLinkedin,
+    },
+    {
+      name: "Instagram",
+      href: "https://www.instagram.com/since_ai",
+      icon: FaInstagram,
+    },
     { name: "X", href: "https://x.com/since_ai_", icon: FaXTwitter },
     { name: "GitHub", href: "https://github.com/since-ai", icon: FaGithub },
-    { name: "Facebook", href: "https://www.facebook.com/sinceai", icon: FaFacebook },
+    {
+      name: "Facebook",
+      href: "https://www.facebook.com/sinceai",
+      icon: FaFacebook,
+    },
   ];
 
   const quickLinks = [
@@ -41,46 +59,47 @@ export const Footer: React.FC<FooterProps> = ({
         transition={{ duration: 0.6, ease: "easeOut" }}
         once
       >
-        <div className="max-w-[1280px] mx-auto px-6 md:px-8 py-16">
-          <div className="grid grid-cols-1 md:grid-cols-4 gap-12 mb-16">
-            {/* Brand */}
-            <div className="col-span-1 md:col-span-2">
-              <h2 className="text-4xl md:text-5xl font-light text-white mb-4">
-                Since AI
-              </h2>
-              <p className="text-white/60 text-lg font-light max-w-md mb-6">
-                Building a thriving community of AI developers and innovators. 
-                Join AI builders pushing the future forward.
-              </p>
-              
-              {/* Social Icons */}
-              <div className="flex items-center gap-3">
+        <div className="pointer-events-none absolute left-1/2 transform -translate-x-1/2 translate-y-32 bottom-0 w-full h-[700px] rounded-full blur-3xl opacity-80 z-0 bg-[radial-gradient(ellipse_at_center_bottom,_rgba(255,210,120,0.95),_rgba(255,150,90,0.7),_rgba(255,110,120,0.10),_transparent_80%)]" />
+        <div className="max-w-[1280px] mx-auto px-6 md:px-8 py-32 pb-96 relative">
+          {/* Sunrise gradient (center-bottom, rounded and spread) */}
+          
+
+          <div className="grid grid-cols-1 md:grid-cols-4 gap-12 relative z-10">
+            {/* Socials */}
+            <div className="space-y-4">
+              <h3 className="text-white/50 uppercase tracking-widest">
+                Socials
+              </h3>
+              <nav
+                className="flex flex-col gap-6"
+                aria-label="Footer navigation"
+              >
                 {socialLinks.map((social) => (
                   <a
                     key={social.name}
                     href={social.href}
-                    target="_blank"
-                    rel="noopener noreferrer"
-                    className="p-2.5 rounded-full bg-white/5 border border-white/10 text-white/60 hover:text-white hover:bg-white/10 hover:border-white/20 transition-all duration-200"
-                    aria-label={`Follow us on ${social.name}`}
+                    className="text-white hover:underline transition-colors duration-200"
                   >
-                    <social.icon className="w-4 h-4" />
+                    {social.name}
                   </a>
                 ))}
-              </div>
+              </nav>
             </div>
 
             {/* Quick Links */}
             <div className="space-y-4">
-              <h3 className="text-white font-medium text-sm uppercase tracking-wider">
+              <h3 className="text-white/50 uppercase tracking-widest">
                 Quick Links
               </h3>
-              <nav className="flex flex-col gap-3" aria-label="Footer navigation">
+              <nav
+                className="flex flex-col gap-6"
+                aria-label="Footer navigation"
+              >
                 {quickLinks.map((link) => (
                   <a
                     key={link.name}
                     href={link.href}
-                    className="text-white/60 hover:text-white transition-colors duration-200 text-sm"
+                    className="text-white hover:underline transition-colors duration-200"
                   >
                     {link.name}
                   </a>
@@ -90,21 +109,19 @@ export const Footer: React.FC<FooterProps> = ({
 
             {/* Legal */}
             <div className="space-y-4">
-              <h3 className="text-white font-medium text-sm uppercase tracking-wider">
-                Legal
-              </h3>
-              <div className="space-y-3">
-                <p className="text-white/60 text-sm">Boost Turku ry</p>
-                <p className="text-white/60 text-sm">Business ID: 2321515-1</p>
+              <h3 className="text-white/50 uppercase tracking-widest">Legal</h3>
+              <div className="gap-6 flex flex-col">
+                <p className="text-white">Boost Turku ry</p>
+                <p className="text-white">Business ID: 2321515-1</p>
                 <a
                   href="/privacy"
-                  className="block text-white/60 hover:text-white transition-colors duration-200 text-sm"
+                  className="block text-white hover:underline transition-colors duration-200"
                 >
                   Privacy Policy
                 </a>
                 <a
                   href="/terms"
-                  className="block text-white/60 hover:text-white transition-colors duration-200 text-sm"
+                  className="block text-white hover:underline transition-colors duration-200"
                 >
                   Terms of Service
                 </a>
@@ -113,14 +130,14 @@ export const Footer: React.FC<FooterProps> = ({
           </div>
 
           {/* Bottom Bar */}
-          <div className="pt-8 border-t border-white/10 flex flex-col md:flex-row justify-between items-center gap-4">
+          {/* <div className="pt-8 border-t border-white/10 flex flex-col md:flex-row justify-between items-center gap-4">
             <p className="text-white/40 text-sm">
               © {new Date().getFullYear()} Since AI. All rights reserved.
             </p>
             <p className="text-white/40 text-sm">
               Made with ❤️ in Turku, Finland
             </p>
-          </div>
+          </div> */}
         </div>
       </InView>
     </footer>

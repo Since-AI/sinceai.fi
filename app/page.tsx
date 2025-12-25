@@ -86,8 +86,7 @@ export default function HomePage() {
       name: "Abhishek Roy",
       role: "Software Engineer",
       photo: "/assets/images/testimonials/placeholder.jpg",
-      quote:
-        "Keep doing it. Would love to participate next year. 🤩🤩🤩",
+      quote: "Keep doing it. Would love to participate next year. 🤩🤩🤩",
       rating: 5,
     },
     {
@@ -129,62 +128,63 @@ export default function HomePage() {
   ];
 
   return (
-    <SmoothScroll>
-      <AnimatePresence mode="wait">
-        {isLoading && <Preloader />}
-      </AnimatePresence>
+    <>
+      <Navbar />
+      <SmoothScroll>
+        <AnimatePresence mode="wait">
+          {isLoading && <Preloader />}
+        </AnimatePresence>
 
-      <div className="flex flex-col w-full overflow-hidden">
-        <Navbar />
+        <div className="flex flex-col w-full overflow-hidden">
+          {/* Hero Section */}
+          <HeroSection discordUrl={config.discordUrl} />
 
-        {/* Hero Section */}
-        <HeroSection discordUrl={config.discordUrl} />
+          {/* Stats Section */}
+          <StatsSection
+            participants={metrics.participants}
+            projects={metrics.projects}
+            companies={metrics.companies}
+          />
 
-        {/* Stats Section */}
-        <StatsSection
-          participants={metrics.participants}
-          projects={metrics.projects}
-          companies={metrics.companies}
-        />
+          {/* Value Props */}
+          <ValuePropsSection />
 
-        {/* Value Props */}
-        <ValuePropsSection />
+          {/* Featured Projects */}
+          <FeaturedProjects
+            projects={featuredProjects}
+            viewAllUrl={config.viewAllProjectsUrl}
+          />
 
-        {/* Featured Projects */}
-        <FeaturedProjects
-          projects={featuredProjects}
-          viewAllUrl={config.viewAllProjectsUrl}
-        />
+          {/* Past Sponsors - Social Proof */}
+          <PastSponsors />
 
-        {/* Past Sponsors - Social Proof */}
-        <PastSponsors />
+          {/* Sponsor/Partner Section */}
+          <SponsorSection
+            calendlyUrl={config.calendlyUrl}
+            contactEmail={config.contactEmail}
+          />
 
-        {/* Sponsor/Partner Section */}
-        <SponsorSection
-          calendlyUrl={config.calendlyUrl}
-          contactEmail={config.contactEmail}
-        />
-
-        {/* Community Engagement */}
-        {/* <CommunityEngagement
+          {/* Community Engagement */}
+          {/* <CommunityEngagement
           discordUrl={config.discordUrl}
           nextHackathonDate={config.nextHackathonDate}
           jobBoardUrl={config.jobBoardUrl}
         /> */}
 
-        {/* Testimonials */}
-        <Testimonials testimonials={testimonials} />
+          {/* Testimonials */}
+          <Testimonials testimonials={testimonials} />
 
-        {/* Newsletter CTA */}
-        <NewsletterCTA discordUrl={config.discordUrl} />
+          {/* Newsletter CTA */}
+          <NewsletterCTA discordUrl={config.discordUrl} />
 
-        {/* Footer */}
-        <Footer
-          discordUrl={config.discordUrl}
-          newsletterUrl="#newsletter"
-          partnerUrl="#partner-section"
-        />
-      </div>
-    </SmoothScroll>
+          {/* Footer */}
+          <Footer
+            discordUrl={config.discordUrl}
+            newsletterUrl="#newsletter"
+            partnerUrl="#partner-section"
+          />
+        </div>
+      </SmoothScroll>
+    </>
   );
 }
