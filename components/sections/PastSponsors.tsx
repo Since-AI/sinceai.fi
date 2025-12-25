@@ -71,7 +71,7 @@ export const PastSponsors: React.FC<PastSponsorsProps> = ({
                 href={sponsor.url}
                 target="_blank"
                 rel="noopener noreferrer"
-                className="flex items-center justify-center p-4 rounded-2xl hover:bg-white/5 transition-all duration-300 min-w-[150px]"
+                className="flex items-center justify-center p-4 rounded-2xl transition-all duration-300 min-w-[150px]"
                 aria-label={sponsor.alt}
               >
                 <img
@@ -109,7 +109,7 @@ export const PastSponsors: React.FC<PastSponsorsProps> = ({
               href={support.url}
               target="_blank"
               rel="noopener noreferrer"
-              className="flex items-center justify-center p-4 rounded-2xl hover:bg-white/5 transition-all duration-300"
+              className="flex items-center justify-center p-4 rounded-2xl transition-all duration-300"
               aria-label={support.alt}
             >
               <img

@@ -63,7 +63,7 @@ export const NewsletterCTA: React.FC<NewsletterCTAProps> = ({
           transition={{ duration: 0.6, ease: "easeOut" }}
           once
         >
-          <div className="relative overflow-hidden rounded-3xl bg-gradient-to-br from-white/10 to-white/5 backdrop-blur-xl border border-white/20 p-8 md:p-16">
+          <div className="relative overflow-hidden rounded-3xl border border-white/20 p-8 md:p-16">
             <div className="absolute inset-0 bg-gradient-to-br from-blue-500/5 via-transparent to-purple-500/5" />
             <div className="absolute top-0 right-0 w-64 h-64 bg-blue-500/10 rounded-full blur-3xl -translate-y-1/2 translate-x-1/2" />
             <div className="absolute bottom-0 left-0 w-64 h-64 bg-purple-500/10 rounded-full blur-3xl translate-y-1/2 -translate-x-1/2" />
@@ -90,7 +90,7 @@ export const NewsletterCTA: React.FC<NewsletterCTAProps> = ({
                 <button
                   type="submit"
                   disabled={status === "loading"}
-                  className="inline-flex items-center justify-center px-8 py-4 text-base font-medium text-black bg-white rounded-full transition-all duration-300 hover:bg-white/90 hover:scale-105 transform disabled:opacity-50 disabled:cursor-not-allowed whitespace-nowrap min-h-12"
+                  className="group relative inline-flex items-center justify-center px-12 py-4 text-base font-medium text-white border border-white/50 bg-transparent rounded-full transition-all duration-300 hover:bg-white/5 hover:backdrop-blur-lg hover:scale-105 transform disabled:opacity-50 disabled:cursor-not-allowed min-h-12"
                 >
                   {status === "loading" ? (
                     <Loader2 className="w-5 h-5 animate-spin" />

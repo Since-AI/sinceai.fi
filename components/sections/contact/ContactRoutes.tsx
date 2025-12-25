@@ -33,7 +33,7 @@ export const ContactRoutes: React.FC<ContactRoutesProps> = ({
     {
       icon: Users,
       title: "Join the Community",
-      description: "Want to connect with 500+ AI developers? Join our Discord.",
+      description: "Want to connect with AI developers? Join our Discord.",
       cta: "Join Discord",
       action: () => window.open(discordUrl, "_blank"),
     },
@@ -104,7 +104,7 @@ export const ContactRoutes: React.FC<ContactRoutesProps> = ({
             <motion.button
               key={index}
               onClick={route.action}
-              className="group relative bg-white/5 backdrop-blur-sm border border-white/10 rounded-2xl p-6 text-left hover:bg-white/10 hover:border-white/20 transition-all duration-300 cursor-pointer overflow-hidden focus:outline-none focus:ring-2 focus:ring-white/30 focus:ring-offset-2 focus:ring-offset-black"
+              className="group relative rounded-2xl p-6 text-left hover:bg-white/10 hover:border-white/20 transition-all duration-300 cursor-pointer overflow-hidden focus:outline-none focus:ring-2 focus:ring-white/30 focus:ring-offset-2 focus:ring-offset-black"
               whileHover={{ y: -4 }}
               whileTap={{ scale: 0.98 }}
             >
@@ -116,7 +116,7 @@ export const ContactRoutes: React.FC<ContactRoutesProps> = ({
 
               <div className="relative z-10">
                 {/* Icon */}
-                <div className="w-12 h-12 bg-white/10 rounded-xl flex items-center justify-center mb-4 group-hover:bg-white/20 transition-colors duration-300">
+                <div className="w-12 h-12 rounded-xl flex items-center justify-center mb-4 transition-colors duration-300">
                   <route.icon className="w-6 h-6 text-white" />
                 </div>
 

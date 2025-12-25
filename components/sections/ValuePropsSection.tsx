@@ -14,22 +14,22 @@ interface ValueProp {
 export const ValuePropsSection: React.FC = () => {
   const valueProps: ValueProp[] = [
     {
-      icon: <Zap className="w-6 h-6" />,
+      icon: <Zap className="w-6 h-6 text-white/50 group-hover:text-blue-500 transition-all duration-300" />,
       title: "Access",
       description: "Direct pipeline to AI developers actively building the future of technology.",
-      gradient: "from-blue-500/10",
+      gradient: "from-gray-500/10",
     },
     {
-      icon: <Handshake className="w-6 h-6" />,
+      icon: <Handshake className="w-6 h-6 text-white/50 group-hover:text-purple-500 transition-all duration-300" />,
       title: "Build",
       description: "Lasting partnerships with aligned goals and shared vision for innovation.",
-      gradient: "from-purple-500/10",
+      gradient: "from-gray-500/10",
     },
     {
-      icon: <TrendingUp className="w-6 h-6" />,
+      icon: <TrendingUp className="w-6 h-6 text-white/50 group-hover:text-green-500 transition-all duration-300" />,
       title: "Thrive",
       description: "200+ attendees on our first event ever starting from zero, and we're growing fast.",
-      gradient: "from-green-500/10",
+      gradient: "from-gray-500/10",
     },
   ];
 
@@ -74,12 +74,12 @@ export const ValuePropsSection: React.FC = () => {
               <motion.div
                 whileHover={{ scale: 1.02 }}
                 transition={{ duration: 0.3 }}
-                className="group relative h-full overflow-hidden rounded-3xl bg-white/5 backdrop-blur-xl border border-white/10 hover:border-white/20 transition-all duration-500"
+                className="group relative h-full overflow-hidden rounded-3xl backdrop-blur-xl transition-all duration-500"
               >
                 <div className={`absolute inset-0 bg-gradient-to-br ${prop.gradient} via-transparent to-transparent opacity-0 group-hover:opacity-100 transition-opacity duration-500`} />
                 
                 <div className="relative p-8 md:p-10 flex flex-col gap-6">
-                  <div className={`inline-flex items-center justify-center w-14 h-14 rounded-2xl bg-white/5 border border-white/10 ${iconColors[index]}`}>
+                  <div className={`inline-flex items-center justify-center w-14 h-14 rounded-2xl ${iconColors[index]}`}>
                     {prop.icon}
                   </div>
                   

@@ -90,7 +90,7 @@ export const FeaturedProjects: React.FC<FeaturedProjectsProps> = ({
               <motion.div
                 whileHover={{ scale: 1.01 }}
                 transition={{ duration: 0.3 }}
-                className="group relative h-full overflow-hidden rounded-3xl bg-white/5 backdrop-blur-xl border border-white/10 hover:border-white/20 transition-all duration-500"
+                className="group relative h-full overflow-hidden rounded-3xl backdrop-blur-xl transition-all duration-500"
               >
                 <div className={`absolute inset-0 bg-gradient-to-br ${project.gradient} via-transparent to-transparent opacity-0 group-hover:opacity-100 transition-opacity duration-500`} />
                 

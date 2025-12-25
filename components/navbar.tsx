@@ -141,7 +141,7 @@ export const Navbar = () => {
                 <NavigationMenuLink asChild>
                   <button
                     onClick={() => handleNavigation(links.community)}
-                    className="tracking-wider text-sm font-normal px-4 py-1.5 rounded-full hover:bg-gray-800/50 transition-all duration-200 text-gray-400 hover:text-gray-100 bg-transparent border-none cursor-pointer"
+                    className="tracking-wider text-sm font-normal px-4 py-1.5 rounded-full transition-all duration-200 text-gray-400 hover:text-white hover:bg-transparent bg-transparent border-none cursor-pointer"
                   >
                     COMMUNITY
                   </button>
@@ -151,7 +151,7 @@ export const Navbar = () => {
                 <NavigationMenuLink asChild>
                   <button
                     onClick={() => handleNavigation(links.partner)}
-                    className="tracking-wider text-sm font-normal px-4 py-1.5 rounded-full hover:bg-gray-800/50 transition-all duration-200 text-gray-400 hover:text-gray-100 bg-transparent border-none cursor-pointer"
+                    className="tracking-wider text-sm font-normal px-4 py-1.5 rounded-full transition-all duration-200 text-gray-400 hover:text-white hover:bg-transparent bg-transparent border-none cursor-pointer"
                   >
                     PARTNER
                   </button>
@@ -161,7 +161,7 @@ export const Navbar = () => {
                 <NavigationMenuLink asChild>
                   <button
                     onClick={() => handleNavigation(links.contact)}
-                    className="tracking-wider text-sm font-normal px-4 py-1.5 rounded-full hover:bg-gray-800/50 transition-all duration-200 text-gray-400 hover:text-gray-100 bg-transparent border-none cursor-pointer"
+                    className="tracking-wider text-sm font-normal px-4 py-1.5 rounded-full transition-all duration-200 text-gray-400 hover:text-white hover:bg-transparent bg-transparent border-none cursor-pointer"
                   >
                     CONTACT
                   </button>

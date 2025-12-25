@@ -42,7 +42,7 @@ export const SponsorSection: React.FC<SponsorSectionProps> = ({
       description:
         "Access to pre-vetted AI developers in a thriving community. No data harvesting, real relationships.",
       gradient: "from-blue-500/10",
-      color: "text-blue-400",
+      color: "group-hover:text-blue-400",
     },
     {
       icon: <Lightbulb className="w-6 h-6" />,
@@ -50,7 +50,7 @@ export const SponsorSection: React.FC<SponsorSectionProps> = ({
       description:
         "Custom partnership options tailored to your hiring, R&D, or growth goals. We work with you.",
       gradient: "from-purple-500/10",
-      color: "text-purple-400",
+      color: "group-hover:text-purple-400",
     },
     {
       icon: <Target className="w-6 h-6" />,
@@ -58,7 +58,7 @@ export const SponsorSection: React.FC<SponsorSectionProps> = ({
       description:
         "80% of partners stayed connected with our developers after the event. Track record of successful hires and meaningful partnerships.",
       gradient: "from-green-500/10",
-      color: "text-green-400",
+      color: "group-hover:text-green-400",
     },
   ];
 
@@ -133,7 +133,7 @@ export const SponsorSection: React.FC<SponsorSectionProps> = ({
               <motion.div
                 whileHover={{ scale: 1.02 }}
                 transition={{ duration: 0.3 }}
-                className="group relative h-full overflow-hidden rounded-3xl bg-white/5 backdrop-blur-xl border border-white/10 hover:border-white/20 transition-all duration-500"
+                className="group relative h-full overflow-hidden rounded-3xl backdrop-blur-xl transition-all duration-500"
               >
                 <div
                   className={`absolute inset-0 bg-gradient-to-br ${prop.gradient} via-transparent to-transparent opacity-0 group-hover:opacity-100 transition-opacity duration-500`}
@@ -141,7 +141,7 @@ export const SponsorSection: React.FC<SponsorSectionProps> = ({
 
                 <div className="relative p-8 md:p-10 flex flex-col gap-6">
                   <div
-                    className={`inline-flex items-center justify-center w-14 h-14 rounded-2xl bg-white/5 border border-white/10 ${prop.color}`}
+                    className={`inline-flex items-center justify-center w-14 h-14 rounded-2xl text-white/50 ${prop.color} transition-all duration-300`}
                   >
                     {prop.icon}
                   </div>
@@ -210,7 +210,7 @@ export const SponsorSection: React.FC<SponsorSectionProps> = ({
           transition={{ duration: 0.6, ease: "easeOut" }}
           once
         >
-          <div className="relative overflow-hidden rounded-3xl bg-gradient-to-br from-white/10 to-white/5 backdrop-blur-xl border border-white/20 p-8 md:p-16">
+          <div className="relative overflow-hidden rounded-3xl backdrop-blur-xl border border-white/20 p-8 md:p-16">
             <div className="absolute inset-0 bg-gradient-to-br from-blue-500/5 via-transparent to-purple-500/5" />
 
             <div className="relative">
@@ -219,7 +219,8 @@ export const SponsorSection: React.FC<SponsorSectionProps> = ({
                   Let's Create Something Great Together
                 </h3>
                 <p className="text-lg text-white/60 font-light max-w-2xl mx-auto">
-                  Every partnership is different. Tell us your goals—we'll reach it with you
+                  Every partnership is different. Tell us your goals—we'll reach
+                  it with you
                 </p>
               </div>
               <div className="flex flex-col sm:flex-row items-center justify-center gap-4 pt-4">
@@ -230,7 +231,7 @@ export const SponsorSection: React.FC<SponsorSectionProps> = ({
                   range={200}
                 >
                   <a
-                    className="group relative inline-flex items-center justify-center px-12 py-4 text-base font-medium text-black bg-white rounded-full transition-all duration-300 hover:bg-white/90 hover:scale-105 transform disabled:opacity-50 disabled:cursor-not-allowed min-h-12"
+                    className="group relative inline-flex items-center justify-center px-12 py-4 text-base font-medium text-white border border-white/50 bg-transparent rounded-full transition-all duration-300 hover:bg-white/5 hover:backdrop-blur-lg hover:scale-105 transform disabled:opacity-50 disabled:cursor-not-allowed min-h-12"
                     href="/contact"
                   >
                     <span>Let's Talk</span>

@@ -137,7 +137,7 @@ export const Testimonials: React.FC<TestimonialsProps> = ({
                   initial={{ opacity: 0, y: 20 }}
                   animate={{ opacity: 1, y: 0 }}
                   transition={{ duration: 0.5, delay: index * 0.1 }}
-                  className="group relative overflow-hidden rounded-3xl bg-white/5 backdrop-blur-xl border border-white/10 hover:border-white/20 transition-all duration-500 p-8"
+                  className="group relative overflow-hidden rounded-3xl transition-all duration-500 p-8"
                 >
                   <div className="absolute top-6 right-6 text-white/5">
                     <Quote className="w-12 h-12" />
@@ -181,7 +181,7 @@ export const Testimonials: React.FC<TestimonialsProps> = ({
                     animate={{ opacity: 1, x: 0 }}
                     exit={{ opacity: 0, x: -50 }}
                     transition={{ duration: 0.3 }}
-                    className="relative overflow-hidden rounded-3xl bg-white/5 backdrop-blur-xl border border-white/10 p-8"
+                    className="relative overflow-hidden rounded-3xl p-8"
                   >
                     <div className="absolute top-6 right-6 text-white/5">
                       <Quote className="w-12 h-12" />

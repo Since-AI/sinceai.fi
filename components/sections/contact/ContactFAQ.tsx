@@ -99,7 +99,7 @@ export const ContactFAQ: React.FC<ContactFAQProps> = ({
               <AccordionItem
                 key={index}
                 value={`item-${index}`}
-                className="bg-white/5 border border-white/10 rounded-xl px-6 data-[state=open]:bg-white/[0.07] transition-colors duration-200"
+                className="rounded-xl px-6 border-none data-[state=open]:bg-white/[0.07] transition-colors duration-200"
               >
                 <AccordionTrigger className="text-left text-white font-medium hover:no-underline py-5">
                   {faq.question}
