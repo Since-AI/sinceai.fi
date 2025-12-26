@@ -48,7 +48,7 @@ export const ContactFAQ: React.FC<ContactFAQProps> = ({
     //   answer: "Yes! Companies can post jobs to our community job board through Discord, or you can sponsor the hackathon for dedicated recruiting access. We have 500+ AI-focused developers, designers, and founders in our community looking for their next opportunity.",
     //   link: {
     //     text: "Email us about job postings",
-    //     href: "mailto:hello@sinceai.fi?subject=Job%20Posting%20Inquiry",
+    //     href: "mailto:riku@boostturku.com?subject=Job%20Posting%20Inquiry",
     //   },
     // },
     {

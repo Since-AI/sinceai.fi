@@ -197,7 +197,7 @@ IP: ${ip}
     //   from: 'noreply@sinceai.fi',
     //   to: subject === 'partnership' || subject === 'sponsorship' 
     //     ? 'partners@sinceai.fi' 
-    //     : 'hello@sinceai.fi',
+    //     : 'riku@boostturku.com',
     //   subject: `[Since AI Contact] ${getSubjectLabel(subject)} from ${name}`,
     //   text: emailContent,
     // });

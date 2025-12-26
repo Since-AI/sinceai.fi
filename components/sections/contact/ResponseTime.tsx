@@ -23,7 +23,7 @@ export const ResponseTime: React.FC = () => {
             <p className="text-white/60 text-sm font-light">
               For urgent inquiries, please mention it in your message or email us directly at{" "}
               <a 
-                href="mailto:hello@sinceai.fi" 
+                href="mailto:riku@boostturku.com" 
                 className="text-white hover:text-white/80 transition-colors inline-flex items-center gap-1"
               >
                 riku@boostturku.com
