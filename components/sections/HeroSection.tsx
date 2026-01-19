@@ -49,7 +49,7 @@ export const HeroSection: React.FC<HeroSectionProps> = ({
       {/* Hero Section */}
       <section className="relative w-full min-h-screen flex flex-col items-center justify-center">
         {/* Background with overlay */}
-        <div className="absolute inset-0 z-0">
+        {/* <div className="absolute inset-0 z-0">
           <div className="absolute inset-0 bg-gradient-to-b from-black/60 via-black/40 to-black z-10" />
           <video
             src="/assets/videos/ads.mp4"
@@ -60,7 +60,7 @@ export const HeroSection: React.FC<HeroSectionProps> = ({
             className="w-full h-full object-cover opacity-40"
             poster="/assets/logo/logo_full.png"
           />
-        </div>
+        </div> */}
 
         {/* Content */}
         <div className="relative z-20 flex flex-col items-center space-y-8 px-4 text-center max-w-5xl mt-16">
