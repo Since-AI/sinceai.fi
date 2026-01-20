@@ -1,4 +1,3 @@
-// @ts-ignore: Missing types for 'schema-dts'
 import { Organization, WithContext, FAQPage, Event } from 'schema-dts'
 import { ORG } from './org'
 import { FOUNDING_YEAR, FIRST_EVENT, UPCOMING_EVENT_2026, getEventStatus, LINKS } from './sinceai'
@@ -14,7 +13,7 @@ export function getOrganizationSchema(): WithContext<Organization> {
     name: ORG.name,
     legalName: ORG.legalName,
     url: ORG.baseUrl,
-    logo: `${ORG.baseUrl}/assets/logo/SINCE AI white.png`,
+    logo: `${ORG.baseUrl}/assets/logo/SINCE AI full black.png`,
     identifier: {
       '@type': 'PropertyValue',
       propertyID: 'Business ID',

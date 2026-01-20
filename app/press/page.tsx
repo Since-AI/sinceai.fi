@@ -15,30 +15,10 @@ export default function PressPage() {
   ];
 
   const pressKit = [
-    {
-      name: "Since AI Logo — Full (PNG)",
-      variant: "primary",
-      use: "Website",
-      file: "/assets/logo/SINCE AI full white.png",
-    },
-    {
-      name: "Since AI Logo — Full (Black) (PNG)",
-      variant: "black",
-      use: "Press / Media kit",
-      file: "/assets/logo/SINCE AI full black.png",
-    },
-    {
-      name: "Since AI Logo — Full (Black, Background) (PNG)",
-      variant: "black_bg",
-      use: "Press / Media kit",
-      file: "/assets/logo/SINCE AI black.png",
-    },
-    {
-      name: "Since AI Logo — Full (White) (PNG)",
-      variant: "white",
-      use: "Press / Media kit",
-      file: "/assets/logo/SINCE AI white.png",
-    },
+    { name: "Since AI Full Logo (Black)", file: "/assets/logo/SINCE AI full black.png" },
+    { name: "Since AI Full Logo (White)", file: "/assets/logo/SINCE AI full white.png" },
+    { name: "Since AI Logo Mark (Black)", file: "/assets/logo/SINCE AI black.png" },
+    { name: "Since AI Logo Mark (White)", file: "/assets/logo/SINCE AI white.png" },
   ];
 
   return (

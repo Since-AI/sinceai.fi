@@ -31,7 +31,7 @@ export const metadata: Metadata = {
     type: "website",
     images: [
       {
-        url: "/assets/logo/SINCE AI white.png",
+        url: "/assets/logo/SINCE AI full black.png",
         width: 1200,
         height: 630,
         alt: "Since AI Community",
@@ -42,7 +42,7 @@ export const metadata: Metadata = {
     card: "summary_large_image",
     title: "Since AI Community - AI Developers & Hackathon Partnerships",
     description: "Join 500+ AI developers. Partner with innovation leaders.",
-    images: ["/assets/logo/logo_full.png"],
+    images: ["/assets/logo/SINCE AI full black.png"],
   },
   robots: {
     index: true,
