@@ -52,53 +52,41 @@ export const NewsletterCTA: React.FC<NewsletterCTAProps> = ({
   };
 
   return (
-    <section className="py-24 md:py-32 px-4">
-      <div className="max-w-4xl mx-auto">
+    <section className="py-32 md:py-40 px-6">
+      <div className="max-w-5xl mx-auto">
         <InView
           variants={{
-            hidden: { opacity: 0, y: 30 },
+            hidden: { opacity: 0, y: 40 },
             visible: { opacity: 1, y: 0 },
           }}
           viewOptions={{ margin: "0px 0px -100px 0px" }}
-          transition={{ duration: 0.6, ease: "easeOut" }}
+          transition={{ duration: 0.8, ease: [0.22, 1, 0.36, 1] }}
           once
         >
-          <div className="relative overflow-hidden rounded-3xl border border-white/20 p-8 md:p-16">
-            <div className="absolute inset-0 bg-gradient-to-br from-blue-500/5 via-transparent to-purple-500/5" />
-            <div className="absolute top-0 right-0 w-64 h-64 bg-blue-500/10 rounded-full blur-3xl -translate-y-1/2 translate-x-1/2" />
-            <div className="absolute bottom-0 left-0 w-64 h-64 bg-purple-500/10 rounded-full blur-3xl translate-y-1/2 -translate-x-1/2" />
+          <div className="relative overflow-hidden rounded-3xl border border-white/10 p-12 md:p-20">
+            <div className="absolute inset-0 bg-gradient-to-br from-white/[0.02] via-transparent to-white/[0.01]" />
 
             <div className="relative text-center">
-              {/* <div className="inline-flex items-center justify-center w-16 h-16 rounded-2xl bg-white/5 border border-white/10 mb-8">
-                <Mail className="w-8 h-8 text-blue-400" />
-              </div> */}
-
-              <h2 className="text-3xl md:text-4xl lg:text-5xl font-light text-white mb-4">
+              <h2 className="text-4xl md:text-5xl lg:text-6xl font-bold text-white mb-6 tracking-tight">
                 Stay connected.
               </h2>
-              <p className="text-lg text-white/60 font-light max-w-xl mx-auto mb-8">
+              <p className="text-lg md:text-xl text-neutral-400 font-normal max-w-2xl mx-auto mb-12">
                 Get updates on events, job opportunities, and community
-                highlights. No spam, promise.
+                highlights.
               </p>
 
-              <Magnetic
-                intensity={0.2}
-                springOptions={springOptions}
-                actionArea="global"
-                range={150}
+              <button
+                type="button"
+                onClick={() => window.open(discordUrl, "_blank")}
+                disabled={status === "loading"}
+                className="group relative inline-flex items-center justify-center px-8 py-3.5 text-sm font-semibold text-black bg-white rounded-full transition-all duration-500 hover:bg-neutral-100 hover:scale-[1.02] transform disabled:opacity-50 disabled:cursor-not-allowed"
               >
-                <button
-                  type="submit"
-                  disabled={status === "loading"}
-                  className="group relative inline-flex items-center justify-center px-12 py-4 text-base font-medium text-white border border-white/50 bg-transparent rounded-full transition-all duration-300 hover:bg-white/5 hover:backdrop-blur-lg hover:scale-105 transform disabled:opacity-50 disabled:cursor-not-allowed min-h-12"
-                >
-                  {status === "loading" ? (
-                    <Loader2 className="w-5 h-5 animate-spin" />
-                  ) : (
-                    "Join Community"
-                  )}
-                </button>
-              </Magnetic>
+                {status === "loading" ? (
+                  <Loader2 className="w-5 h-5 animate-spin" />
+                ) : (
+                  "Join Community"
+                )}
+              </button>
             </div>
           </div>
         </InView>

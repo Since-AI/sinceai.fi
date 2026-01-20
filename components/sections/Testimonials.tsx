@@ -90,26 +90,26 @@ export const Testimonials: React.FC<TestimonialsProps> = ({
   };
 
   return (
-    <section className="py-24 md:py-32 px-4">
-      <div className="max-w-6xl mx-auto">
+    <section className="py-32 md:py-40 px-6">
+      <div className="max-w-7xl mx-auto">
         {/* Section Header */}
         <InView
           variants={{
-            hidden: { opacity: 0, y: 30 },
+            hidden: { opacity: 0, y: 40 },
             visible: { opacity: 1, y: 0 },
           }}
           viewOptions={{ margin: "0px 0px -100px 0px" }}
-          transition={{ duration: 0.6, ease: "easeOut" }}
+          transition={{ duration: 0.8, ease: [0.22, 1, 0.36, 1] }}
           once
         >
-          <div className="flex flex-col items-center gap-6 mb-16">
-            <div className="text-sm font-medium text-white/50 uppercase tracking-[0.3em]">
+          <div className="flex flex-col items-center gap-8 mb-24">
+            <div className="text-xs md:text-sm font-medium text-neutral-500 tracking-wider">
               Testimonials
             </div>
-            <h2 className="text-4xl md:text-5xl lg:text-6xl font-light text-center leading-tight text-white max-w-4xl">
+            <h2 className="text-5xl md:text-6xl lg:text-7xl font-bold text-center leading-[1.1] tracking-tight text-white max-w-4xl">
               Hear from our
               <br />
-              <span className="text-white/70">community.</span>
+              <span className="bg-gradient-to-b from-white to-neutral-500 bg-clip-text text-transparent">community.</span>
             </h2>
           </div>
         </InView>
@@ -124,8 +124,8 @@ export const Testimonials: React.FC<TestimonialsProps> = ({
           transition={{ duration: 0.6, ease: "easeOut" }}
           once
         >
-          <div className="mb-16">
-            <h3 className="text-sm font-medium text-white/40 uppercase tracking-wider mb-8 text-center">
+          <div className="mb-20">
+            <h3 className="text-sm font-medium text-neutral-600 tracking-wide mb-12 text-center">
               From Participants
             </h3>
             
@@ -134,37 +134,33 @@ export const Testimonials: React.FC<TestimonialsProps> = ({
               {participantTestimonials.slice(0, 3).map((testimonial, index) => (
                 <motion.div
                   key={testimonial.name}
-                  initial={{ opacity: 0, y: 20 }}
+                  initial={{ opacity: 0, y: 30 }}
                   animate={{ opacity: 1, y: 0 }}
-                  transition={{ duration: 0.5, delay: index * 0.1 }}
-                  className="group relative overflow-hidden rounded-3xl transition-all duration-500 p-8"
+                  transition={{ 
+                    duration: 0.8, 
+                    delay: index * 0.15,
+                    ease: [0.22, 1, 0.36, 1]
+                  }}
+                  className="group relative overflow-hidden rounded-2xl transition-all duration-500 p-10 border border-white/5 hover:border-white/10"
                 >
-                  <div className="absolute top-6 right-6 text-white/5">
-                    <Quote className="w-12 h-12" />
-                  </div>
+                  <div className="absolute inset-0 bg-gradient-to-br from-white/[0.02] via-transparent to-transparent opacity-0 group-hover:opacity-100 transition-opacity duration-700" />
                   
                   <div className="relative">
-                    <div className="flex items-center gap-4 mb-6">
-                      <div className="w-16 h-16 rounded-full bg-gradient-to-br from-white/20 to-white/5 flex items-center justify-center text-2xl font-medium text-white/60">
+                    <p className="text-neutral-300 font-normal leading-relaxed mb-8 text-base">
+                      "{testimonial.quote}"
+                    </p>
+                    
+                    <div className="flex items-center gap-4">
+                      <div className="w-12 h-12 rounded-full bg-gradient-to-br from-white/10 to-white/5 flex items-center justify-center text-lg font-semibold text-neutral-400">
                         {testimonial.name.charAt(0)}
                       </div>
                       <div>
-                        <div className="font-medium text-white">{testimonial.name}</div>
-                        <div className="text-sm text-white/50">
+                        <div className="font-semibold text-white text-sm">{testimonial.name}</div>
+                        <div className="text-xs text-neutral-500">
                           {testimonial.role}
                           {testimonial.company && ` @ ${testimonial.company}`}
                         </div>
                       </div>
-                    </div>
-                    
-                    <p className="text-white/70 font-light leading-relaxed italic mb-6">
-                      "{testimonial.quote}"
-                    </p>
-                    
-                    <div className="flex items-center gap-1">
-                      {[...Array(testimonial.rating)].map((_, i) => (
-                        <Star key={i} className="w-4 h-4 text-yellow-400 fill-yellow-400" />
-                      ))}
                     </div>
                   </div>
                 </motion.div>
@@ -180,59 +176,49 @@ export const Testimonials: React.FC<TestimonialsProps> = ({
                     initial={{ opacity: 0, x: 50 }}
                     animate={{ opacity: 1, x: 0 }}
                     exit={{ opacity: 0, x: -50 }}
-                    transition={{ duration: 0.3 }}
-                    className="relative overflow-hidden rounded-3xl p-8"
+                    transition={{ duration: 0.4, ease: [0.22, 1, 0.36, 1] }}
+                    className="relative overflow-hidden rounded-2xl p-10 border border-white/5"
                   >
-                    <div className="absolute top-6 right-6 text-white/5">
-                      <Quote className="w-12 h-12" />
-                    </div>
-                    
                     <div className="relative">
-                      <div className="flex items-center gap-4 mb-6">
-                        <div className="w-16 h-16 rounded-full bg-gradient-to-br from-white/20 to-white/5 flex items-center justify-center text-2xl font-medium text-white/60">
+                      <p className="text-neutral-300 font-normal leading-relaxed mb-8 text-base">
+                        "{participantTestimonials[activeIndex].quote}"
+                      </p>
+                      
+                      <div className="flex items-center gap-4">
+                        <div className="w-12 h-12 rounded-full bg-gradient-to-br from-white/10 to-white/5 flex items-center justify-center text-lg font-semibold text-neutral-400">
                           {participantTestimonials[activeIndex].name.charAt(0)}
                         </div>
                         <div>
-                          <div className="font-medium text-white">
+                          <div className="font-semibold text-white text-sm">
                             {participantTestimonials[activeIndex].name}
                           </div>
-                          <div className="text-sm text-white/50">
+                          <div className="text-xs text-neutral-500">
                             {participantTestimonials[activeIndex].role}
                             {participantTestimonials[activeIndex].company && 
                               ` @ ${participantTestimonials[activeIndex].company}`}
                           </div>
                         </div>
                       </div>
-                      
-                      <p className="text-white/70 font-light leading-relaxed italic mb-6">
-                        "{participantTestimonials[activeIndex].quote}"
-                      </p>
-                      
-                      <div className="flex items-center gap-1">
-                        {[...Array(participantTestimonials[activeIndex].rating)].map((_, i) => (
-                          <Star key={i} className="w-4 h-4 text-yellow-400 fill-yellow-400" />
-                        ))}
-                      </div>
                     </div>
                   </motion.div>
                 </AnimatePresence>
               </div>
               
-              <div className="flex items-center justify-center gap-4 mt-6">
+              <div className="flex items-center justify-center gap-4 mt-8">
                 <button
                   onClick={prevSlide}
-                  className="p-2 rounded-full bg-white/5 border border-white/10 hover:bg-white/10 transition-colors"
+                  className="p-2.5 rounded-full bg-white/5 border border-white/10 hover:bg-white/10 transition-all duration-300"
                   aria-label="Previous testimonial"
                 >
-                  <ChevronLeft className="w-5 h-5 text-white/60" />
+                  <ChevronLeft className="w-5 h-5 text-neutral-400" />
                 </button>
                 <div className="flex items-center gap-2">
                   {participantTestimonials.map((_, i) => (
                     <button
                       key={i}
                       onClick={() => setActiveIndex(i)}
-                      className={`w-2 h-2 rounded-full transition-colors ${
-                        i === activeIndex ? "bg-white" : "bg-white/20"
+                      className={`w-2 h-2 rounded-full transition-all duration-300 ${
+                        i === activeIndex ? "bg-white w-8" : "bg-white/20"
                       }`}
                       aria-label={`Go to testimonial ${i + 1}`}
                     />
@@ -240,10 +226,10 @@ export const Testimonials: React.FC<TestimonialsProps> = ({
                 </div>
                 <button
                   onClick={nextSlide}
-                  className="p-2 rounded-full bg-white/5 border border-white/10 hover:bg-white/10 transition-colors"
+                  className="p-2.5 rounded-full bg-white/5 border border-white/10 hover:bg-white/10 transition-all duration-300"
                   aria-label="Next testimonial"
                 >
-                  <ChevronRight className="w-5 h-5 text-white/60" />
+                  <ChevronRight className="w-5 h-5 text-neutral-400" />
                 </button>
               </div>
             </div>

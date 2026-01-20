@@ -90,67 +90,60 @@ export const SponsorSection: React.FC<SponsorSectionProps> = ({
   };
 
   return (
-    <section id="partner-section" className="py-24 md:py-32 px-4">
-      <div className="max-w-6xl mx-auto">
+    <section id="partner-section" className="py-32 md:py-40 px-6">
+      <div className="max-w-7xl mx-auto">
         {/* Section Header */}
         <InView
           variants={{
-            hidden: { opacity: 0, y: 30 },
+            hidden: { opacity: 0, y: 40 },
             visible: { opacity: 1, y: 0 },
           }}
           viewOptions={{ margin: "0px 0px -100px 0px" }}
-          transition={{ duration: 0.6, ease: "easeOut" }}
+          transition={{ duration: 0.8, ease: [0.22, 1, 0.36, 1] }}
           once
         >
-          <div className="flex flex-col items-center gap-6 mb-16">
-            <div className="text-sm font-medium text-white/50 uppercase tracking-[0.3em]">
+          <div className="flex flex-col items-center gap-8 mb-24">
+            <div className="text-xs md:text-sm font-medium text-neutral-500 tracking-wider">
               Partner With Us
             </div>
-            <h2 className="text-4xl md:text-5xl lg:text-6xl font-light text-center leading-tight text-white max-w-4xl">
+            <h2 className="text-5xl md:text-6xl lg:text-7xl font-bold text-center leading-[1.1] tracking-tight text-white max-w-4xl">
               Partner With Our
               <br />
-              <span className="text-white/70">Community.</span>
+              <span className="bg-gradient-to-b from-white to-neutral-500 bg-clip-text text-transparent">Community.</span>
             </h2>
-            <p className="text-lg text-white/60 font-light text-center max-w-2xl">
-              {/* Some text here */}
-            </p>
           </div>
         </InView>
 
         {/* Value Props */}
-        <div className="grid grid-cols-1 md:grid-cols-3 gap-6 md:gap-8 mb-24">
+        <div className="grid grid-cols-1 md:grid-cols-3 gap-8 md:gap-6 mb-32">
           {valueProps.map((prop, index) => (
             <InView
               key={prop.title}
               variants={{
-                hidden: { opacity: 0, y: 30 },
+                hidden: { opacity: 0, y: 40 },
                 visible: { opacity: 1, y: 0 },
               }}
               viewOptions={{ margin: "0px 0px -50px 0px" }}
-              transition={{ duration: 0.5, delay: index * 0.1 }}
+              transition={{ 
+                duration: 0.8, 
+                delay: index * 0.15,
+                ease: [0.22, 1, 0.36, 1]
+              }}
               once
             >
               <motion.div
-                whileHover={{ scale: 1.02 }}
-                transition={{ duration: 0.3 }}
-                className="group relative h-full overflow-hidden rounded-3xl backdrop-blur-xl transition-all duration-500"
+                whileHover={{ y: -4 }}
+                transition={{ duration: 0.4, ease: [0.22, 1, 0.36, 1] }}
+                className="group relative h-full overflow-hidden rounded-2xl transition-all duration-500 border border-white/5 hover:border-white/10"
               >
-                <div
-                  className={`absolute inset-0 bg-gradient-to-br ${prop.gradient} via-transparent to-transparent opacity-0 group-hover:opacity-100 transition-opacity duration-500`}
-                />
+                <div className="absolute inset-0 bg-gradient-to-br from-white/[0.03] via-transparent to-transparent opacity-0 group-hover:opacity-100 transition-opacity duration-700" />
 
-                <div className="relative p-8 md:p-10 flex flex-col gap-6">
-                  <div
-                    className={`inline-flex items-center justify-center w-14 h-14 rounded-2xl text-white/50 ${prop.color} transition-all duration-300`}
-                  >
-                    {prop.icon}
-                  </div>
-
-                  <div className="space-y-3">
-                    <h3 className="text-2xl md:text-3xl font-medium text-white">
+                <div className="relative p-10 md:p-12 flex flex-col gap-8">
+                  <div className="space-y-4">
+                    <h3 className="text-3xl md:text-4xl font-bold text-white tracking-tight">
                       {prop.title}
                     </h3>
-                    <p className="text-white/60 font-light leading-relaxed">
+                    <p className="text-neutral-400 font-normal leading-relaxed text-base md:text-lg">
                       {prop.description}
                     </p>
                   </div>
@@ -203,40 +196,33 @@ export const SponsorSection: React.FC<SponsorSectionProps> = ({
         {/* CTA Section */}
         <InView
           variants={{
-            hidden: { opacity: 0, y: 30 },
+            hidden: { opacity: 0, y: 40 },
             visible: { opacity: 1, y: 0 },
           }}
           viewOptions={{ margin: "0px 0px -100px 0px" }}
-          transition={{ duration: 0.6, ease: "easeOut" }}
+          transition={{ duration: 0.8, ease: [0.22, 1, 0.36, 1] }}
           once
         >
-          <div className="relative overflow-hidden rounded-3xl backdrop-blur-xl border border-white/20 p-8 md:p-16">
-            <div className="absolute inset-0 bg-gradient-to-br from-blue-500/5 via-transparent to-purple-500/5" />
+          <div className="relative overflow-hidden rounded-3xl border border-white/10 p-12 md:p-20">
+            <div className="absolute inset-0 bg-gradient-to-br from-white/[0.02] via-transparent to-white/[0.01]" />
 
             <div className="relative">
               <div className="text-center mb-12">
-                <h3 className="text-3xl md:text-4xl font-light text-white mb-4">
+                <h3 className="text-4xl md:text-5xl lg:text-6xl font-bold text-white mb-6 tracking-tight">
                   Let's Create Something Great Together
                 </h3>
-                <p className="text-lg text-white/60 font-light max-w-2xl mx-auto">
+                <p className="text-lg md:text-xl text-neutral-400 font-normal max-w-2xl mx-auto">
                   Every partnership is different. Tell us your goals—we'll reach
                   it with you
                 </p>
               </div>
               <div className="flex flex-col sm:flex-row items-center justify-center gap-4 pt-4">
-                <Magnetic
-                  intensity={0.2}
-                  springOptions={springOptions}
-                  actionArea="global"
-                  range={200}
+                <a
+                  className="group relative inline-flex items-center justify-center px-8 py-3.5 text-sm font-semibold text-black bg-white rounded-full transition-all duration-500 hover:bg-neutral-100 hover:scale-[1.02] transform"
+                  href="/contact"
                 >
-                  <a
-                    className="group relative inline-flex items-center justify-center px-12 py-4 text-base font-medium text-white border border-white/50 bg-transparent rounded-full transition-all duration-300 hover:bg-white/5 hover:backdrop-blur-lg hover:scale-105 transform disabled:opacity-50 disabled:cursor-not-allowed min-h-12"
-                    href="/contact"
-                  >
-                    <span>Let's Talk</span>
-                  </a>
-                </Magnetic>
+                  <span>Let's Talk</span>
+                </a>
               </div>
             </div>
           </div>

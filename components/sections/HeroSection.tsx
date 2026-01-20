@@ -1,9 +1,7 @@
 "use client";
-import React, { useEffect, useState } from "react";
+import React from "react";
 import { motion } from "framer-motion";
 import { TextLoop } from "@/components/motion-primitives/text-loop";
-import { Magnetic } from "@/components/motion-primitives/magnetic";
-import { Button } from "@/components/ui/button";
 
 interface HeroSectionProps {
   discordUrl?: string;
@@ -12,109 +10,65 @@ interface HeroSectionProps {
 export const HeroSection: React.FC<HeroSectionProps> = ({
   discordUrl = "https://discord.gg/6PC74zW68v",
 }) => {
-  const [showStickyCTA, setShowStickyCTA] = useState(false);
-  const springOptions = { bounce: 0.1 };
-
-  useEffect(() => {
-    const handleScroll = () => {
-      setShowStickyCTA(window.scrollY > 300);
-    };
-
-    window.addEventListener("scroll", handleScroll);
-    return () => window.removeEventListener("scroll", handleScroll);
-  }, []);
-
   return (
     <>
-      {/* Sticky CTA */}
-      <motion.div
-        initial={{ opacity: 0, y: -20 }}
-        animate={{
-          opacity: showStickyCTA ? 1 : 0,
-          y: showStickyCTA ? 0 : -20,
-        }}
-        transition={{ duration: 0.3 }}
-        className={`fixed top-20 right-4 md:right-8 z-40 ${
-          showStickyCTA ? "pointer-events-auto" : "pointer-events-none"
-        }`}
-      >
-        <Button
-          onClick={() => window.open(discordUrl, "_blank")}
-          className="bg-white text-black hover:bg-white/90 rounded-full px-6 py-2 text-sm font-medium shadow-lg"
-        >
-          Join Community
-        </Button>
-      </motion.div>
 
       {/* Hero Section */}
-      <section className="relative w-full min-h-screen flex flex-col items-center justify-center">
-        {/* Background with overlay */}
-        {/* <div className="absolute inset-0 z-0">
-          <div className="absolute inset-0 bg-gradient-to-b from-black/60 via-black/40 to-black z-10" />
-          <video
-            src="/assets/videos/ads.mp4"
-            autoPlay
-            muted
-            loop
-            playsInline
-            className="w-full h-full object-cover opacity-40"
-            poster="/assets/logo/logo_full.png"
-          />
-        </div> */}
+      <section className="relative w-full min-h-screen flex flex-col items-center justify-center px-6 py-24">
+        {/* Subtle gradient background */}
+        <div className="absolute inset-0 z-0">
+          <div className="absolute inset-0 bg-gradient-to-b from-black via-neutral-950 to-black" />
+          <div className="absolute inset-0 bg-[radial-gradient(circle_at_center,rgba(255,255,255,0.03)_0%,transparent_65%)]" />
+        </div>
 
         {/* Content */}
-        <div className="relative z-20 flex flex-col items-center space-y-8 px-4 text-center max-w-5xl mt-16">
-          {/* Logo */}
-          {/* <motion.img
-            src="/assets/logo/logo_full.png"
-            alt="Since AI Logo"
-            className="w-32 md:w-40 h-auto object-contain mb-4"
-            initial={{ opacity: 0, scale: 0.9 }}
-            animate={{ opacity: 1, scale: 1 }}
-            transition={{ duration: 0.8, ease: "easeOut" }}
-          /> */}
-
-          {/* Main Headline */}
+        <div className="relative z-20 flex flex-col items-center space-y-6 text-center max-w-6xl mx-auto">
+          {/* Main Headline - Apple-style large typography */}
           <motion.div
-            className="flex flex-col items-center space-y-4"
-            initial={{ opacity: 0, y: 20 }}
+            className="flex flex-col items-center space-y-4 pb-8"
+            initial={{ opacity: 0, y: 30 }}
             animate={{ opacity: 1, y: 0 }}
-            transition={{ duration: 0.8, delay: 0.2 }}
+            transition={{ duration: 1, delay: 0.2, ease: [0.22, 1, 0.36, 1] }}
           >
-            <h1 className="text-4xl md:text-6xl lg:text-7xl font-semibold tracking-tight text-white leading-tight">
-              <span className="text-white/80">1 Thriving AI Community.</span>
+            <h1 className="text-5xl sm:text-6xl md:text-7xl lg:text-8xl xl:text-9xl font-bold tracking-tighter leading-[1.15] text-white">
+              1 Thriving
+            </h1>
+            <h1 className="text-5xl sm:text-6xl md:text-7xl lg:text-8xl xl:text-9xl font-bold tracking-tighter leading-[1.15] bg-gradient-to-b from-white to-neutral-400 bg-clip-text text-transparent pb-4">
+              AI Community.
             </h1>
           </motion.div>
 
           {/* Subheading */}
           <motion.p
-            className="text-lg md:text-xl lg:text-2xl font-light text-white/70 max-w-2xl"
-            initial={{ opacity: 0, y: 20 }}
+            className="text-xl sm:text-2xl md:text-3xl lg:text-4xl font-light text-neutral-400 max-w-3xl mt-8 leading-tight"
+            initial={{ opacity: 0, y: 30 }}
             animate={{ opacity: 1, y: 0 }}
-            transition={{ duration: 0.8, delay: 0.4 }}
+            transition={{ duration: 1, delay: 0.4, ease: [0.22, 1, 0.36, 1] }}
           >
-            Stay connected with builders pushing AI forward.
+            Stay connected with builders
+            <br className="hidden sm:block" />
+            pushing AI forward.
           </motion.p>
 
-          {/* Text Loop */}
+          {/* Text Loop - More subtle */}
           <motion.div
             initial={{ opacity: 0 }}
             animate={{ opacity: 1 }}
-            transition={{ duration: 0.8, delay: 0.6 }}
-            className="mt-4"
+            transition={{ duration: 1, delay: 0.6, ease: [0.22, 1, 0.36, 1] }}
+            className="mt-6"
           >
             <TextLoop
-              className="text-base md:text-lg font-light tracking-wide text-white/60"
+              className="text-sm sm:text-base md:text-lg font-normal tracking-wide text-neutral-500"
               transition={{
                 type: "spring",
-                stiffness: 300,
-                damping: 30,
+                stiffness: 200,
+                damping: 35,
                 mass: 1,
               }}
               variants={{
-                initial: { y: 10, opacity: 0 },
-                animate: { y: 0, opacity: 1 },
-                exit: { y: -10, opacity: 0 },
+                initial: { y: 20, opacity: 0, filter: "blur(4px)" },
+                animate: { y: 0, opacity: 1, filter: "blur(0px)" },
+                exit: { y: -20, opacity: 0, filter: "blur(4px)" },
               }}
             >
               <span>For AI Enthusiasts</span>
@@ -124,49 +78,45 @@ export const HeroSection: React.FC<HeroSectionProps> = ({
             </TextLoop>
           </motion.div>
 
-          {/* CTA Button */}
+          {/* CTA Button - Apple-style */}
           <motion.div
-            className="pt-8"
-            initial={{ opacity: 0, y: 20 }}
+            className="pt-12"
+            initial={{ opacity: 0, y: 30 }}
             animate={{ opacity: 1, y: 0 }}
-            transition={{ duration: 0.8, delay: 0.8 }}
+            transition={{ duration: 1, delay: 0.8, ease: [0.22, 1, 0.36, 1] }}
           >
-            <Magnetic
-              intensity={0.2}
-              springOptions={springOptions}
-              actionArea="global"
-              range={200}
+            <button
+              type="button"
+              onClick={() => window.open(discordUrl, "_blank")}
+              className="group relative inline-flex items-center justify-center px-8 py-3.5 text-sm font-semibold text-white bg-white/10 rounded-full transition-all duration-500 hover:bg-white/15 backdrop-blur-xl border border-white/20 hover:border-white/30 hover:scale-[1.02] transform disabled:opacity-50 disabled:cursor-not-allowed"
+              aria-label="Join Our Community on Discord"
             >
-              <button
-                type="button"
-                onClick={() => window.open(discordUrl, "_blank")}
-                className="group relative inline-flex items-center justify-center px-12 py-4 text-base font-medium text-white border border-white/50 bg-transparent rounded-full transition-all duration-300 hover:bg-white/5 hover:backdrop-blur-lg hover:scale-105 transform disabled:opacity-50 disabled:cursor-not-allowed min-h-12"
-                aria-label="Join Our Community on Discord"
-              >
-                <span className="relative z-10 font-medium">
-                  JOIN OUR COMMUNITY
-                </span>
-              </button>
-            </Magnetic>
+              <span className="relative z-10 tracking-wide">
+                Join Community
+              </span>
+              <div className="absolute inset-0 rounded-full bg-gradient-to-r from-white/0 via-white/5 to-white/0 opacity-0 group-hover:opacity-100 transition-opacity duration-500" />
+            </button>
           </motion.div>
         </div>
-        {/* Scroll indicator */}
+
+        {/* Scroll indicator - More minimal */}
         <motion.div
-          className="absolute bottom-8 left-1/2 transform -translate-x-1/2"
+          className="absolute bottom-12 left-1/2 transform -translate-x-1/2"
           initial={{ opacity: 0 }}
           animate={{ opacity: 1 }}
-          transition={{ duration: 0.8, delay: 1.2 }}
+          transition={{ duration: 1, delay: 1.4, ease: [0.22, 1, 0.36, 1] }}
         >
-          <div className="flex flex-col items-center gap-2">
-            <span className="text-xs text-white/40 uppercase tracking-widest">
-              Scroll
-            </span>
-            <motion.div
-              animate={{ y: [0, 8, 0] }}
-              transition={{ duration: 1.5, repeat: Infinity }}
-              className="w-px h-8 bg-gradient-to-b from-white/40 to-transparent"
-            />
-          </div>
+          <motion.div
+            animate={{ y: [0, 12, 0] }}
+            transition={{ 
+              duration: 2, 
+              repeat: Infinity,
+              ease: [0.22, 1, 0.36, 1]
+            }}
+            className="w-5 h-8 rounded-full border border-neutral-700 flex items-start justify-center p-1.5"
+          >
+            <div className="w-1 h-2 bg-neutral-600 rounded-full" />
+          </motion.div>
         </motion.div>
       </section>
     </>

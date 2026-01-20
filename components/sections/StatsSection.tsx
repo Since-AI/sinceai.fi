@@ -70,37 +70,37 @@ export const StatsSection: React.FC<StatsSectionProps> = ({
   const allLogos = [...sponsors, ...supporters];
 
   return (
-    <section className="py-24 md:py-32 px-4">
-      <div className="flex flex-col gap-32 max-w-6xl mx-auto">
+    <section className="py-32 md:py-40 px-6">
+      <div className="flex flex-col gap-40 max-w-7xl mx-auto">
         {/* Partner & Supporter Logos Slider */}
         <InView
           variants={{
-            hidden: { opacity: 0, y: 20 },
+            hidden: { opacity: 0, y: 30 },
             visible: { opacity: 1, y: 0 },
           }}
           viewOptions={{ margin: "0px 0px -50px 0px" }}
-          transition={{ duration: 0.6, ease: "easeOut", delay: 0.3 }}
+          transition={{ duration: 0.8, ease: [0.22, 1, 0.36, 1], delay: 0.2 }}
           once
         >
-          <div className="mt-20 md:mt-28">
-            <p className="text-center text-white/40 text-sm uppercase tracking-widest mb-8">
+          <div>
+            <p className="text-center text-neutral-500 text-xs md:text-sm font-medium tracking-wider mb-12">
               Trusted & supported by
             </p>
             <div className="relative">
-              <div className="absolute left-0 top-0 bottom-0 w-24 bg-gradient-to-r from-black to-transparent z-10" />
-              <div className="absolute right-0 top-0 bottom-0 w-24 bg-gradient-to-l from-black to-transparent z-10" />
-              <InfiniteSlider speed={30} gap={48}>
+              <div className="absolute left-0 top-0 bottom-0 w-32 bg-gradient-to-r from-black via-black/80 to-transparent z-10 pointer-events-none" />
+              <div className="absolute right-0 top-0 bottom-0 w-32 bg-gradient-to-l from-black via-black/80 to-transparent z-10 pointer-events-none" />
+              <InfiniteSlider speed={25} gap={64}>
                 {allLogos.map((item) => (
                   <div
                     key={item.name}
-                    className="flex items-center justify-center h-12 w-32 opacity-60 hover:opacity-100 transition-all duration-300"
+                    className="flex items-center justify-center h-16 w-40 opacity-40 hover:opacity-100 transition-all duration-500 group"
                   >
                     <Image
                       src={item.logo}
                       alt={item.name}
-                      width={120}
-                      height={48}
-                      className="object-contain max-h-full"
+                      width={140}
+                      height={60}
+                      className="object-contain max-h-full filter grayscale group-hover:grayscale-0 transition-all duration-500"
                     />
                   </div>
                 ))}
@@ -110,32 +110,34 @@ export const StatsSection: React.FC<StatsSectionProps> = ({
         </InView>
         <InView
           variants={{
-            hidden: { opacity: 0, y: 30 },
+            hidden: { opacity: 0, y: 40 },
             visible: { opacity: 1, y: 0 },
           }}
           viewOptions={{ margin: "0px 0px -100px 0px" }}
-          transition={{ duration: 0.6, ease: "easeOut" }}
+          transition={{ duration: 0.8, ease: [0.22, 1, 0.36, 1] }}
           once
         >
-          <div className="grid grid-cols-1 md:grid-cols-3 gap-8 md:gap-12">
+          <div className="grid grid-cols-1 md:grid-cols-3 gap-12 md:gap-16">
             {stats.map((stat, index) => (
               <motion.div
                 key={stat.label}
-                initial={{ opacity: 0, y: 20 }}
+                initial={{ opacity: 0, y: 30 }}
                 animate={{ opacity: 1, y: 0 }}
-                transition={{ duration: 0.5, delay: index * 0.1 }}
-                className="group relative overflow-hidden rounded-3xl backdrop-blur-xl transition-all duration-500 p-8 md:p-10 text-center"
+                transition={{ 
+                  duration: 0.8, 
+                  delay: index * 0.15,
+                  ease: [0.22, 1, 0.36, 1]
+                }}
+                className="group relative overflow-hidden rounded-2xl transition-all duration-500 p-10 md:p-12 text-center border border-white/5 hover:border-white/10"
               >
-                <div className="absolute inset-0 bg-gradient-to-br from-white/5 via-transparent to-transparent opacity-0 group-hover:opacity-100 transition-opacity duration-500" />
+                <div className="absolute inset-0 bg-gradient-to-br from-white/[0.02] via-transparent to-transparent opacity-0 group-hover:opacity-100 transition-opacity duration-700" />
 
-                <div className="relative flex flex-col items-center gap-4">
-                  <div className="p-4 rounded-2xl ">{stat.icon}</div>
-
-                  <div className="text-5xl md:text-6xl lg:text-7xl font-semibold text-white tracking-tight">
+                <div className="relative flex flex-col items-center gap-6">
+                  <div className="text-6xl md:text-7xl lg:text-8xl font-bold text-white tracking-tighter">
                     {stat.value}
                   </div>
 
-                  <div className="text-sm md:text-base text-white/60 font-light uppercase tracking-wider">
+                  <div className="text-sm md:text-base text-neutral-500 font-medium tracking-wide">
                     {stat.label}
                   </div>
                 </div>

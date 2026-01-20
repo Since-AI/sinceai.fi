@@ -51,8 +51,8 @@ export const Navbar = () => {
   };
 
   return (
-    <header className="fixed top-0 left-0 right-0 z-50 w-full bg-gradient-to-b from-black to-black/10 backdrop-blur-xs">
-      <div className="flex h-[60px] items-center justify-between px-4 max-w-7xl mx-auto">
+    <header className="fixed top-0 left-0 right-0 z-50 w-full glass-dark">
+      <div className="flex h-[72px] items-center justify-between px-6 max-w-7xl mx-auto">
         {/* Mobile Layout */}
         <div className="flex sm:hidden items-center justify-between w-full">
           <Link href="/" className="cursor-pointer">
@@ -71,53 +71,53 @@ export const Navbar = () => {
             </SheetTrigger>
             <SheetContent
               side="right"
-              className="bg-black/5 backdrop-blur-xl border-white/10"
+              className="bg-neutral-950/95 backdrop-blur-2xl border-white/5"
             >
               <SheetHeader>
-                <SheetTitle className="text-white/50">Menu</SheetTitle>
+                <SheetTitle className="text-neutral-400 text-sm font-medium">Menu</SheetTitle>
               </SheetHeader>
-              <div className="flex flex-col gap-4 pt-8 px-4">
+              <div className="flex flex-col gap-1 pt-8 px-2">
                 <button
                   onClick={() => handleNavigation(links.home)}
-                  className="text-lg font-normal text-gray-300 hover:text-white transition-colors duration-200 cursor-pointer py-2 text-left"
+                  className="text-base font-medium text-neutral-300 hover:text-white transition-colors duration-300 cursor-pointer py-3 px-4 text-left rounded-xl hover:bg-white/5"
                 >
                   Home
                 </button>
                 <button
                   onClick={() => handleNavigation(links.community)}
-                  className="text-lg font-normal text-gray-300 hover:text-white transition-colors duration-200 cursor-pointer py-2 text-left"
+                  className="text-base font-medium text-neutral-300 hover:text-white transition-colors duration-300 cursor-pointer py-3 px-4 text-left rounded-xl hover:bg-white/5"
                 >
                   Community
                 </button>
                 <button
                   onClick={() => handleNavigation(links.partner)}
-                  className="text-lg font-normal text-gray-300 hover:text-white transition-colors duration-200 cursor-pointer py-2 text-left"
+                  className="text-base font-medium text-neutral-300 hover:text-white transition-colors duration-300 cursor-pointer py-3 px-4 text-left rounded-xl hover:bg-white/5"
                 >
                   Partner
                 </button>
                 <button
                   onClick={() => handleNavigation(links.contact)}
-                  className="text-lg font-normal text-gray-300 hover:text-white transition-colors duration-200 cursor-pointer py-2 text-left"
+                  className="text-base font-medium text-neutral-300 hover:text-white transition-colors duration-300 cursor-pointer py-3 px-4 text-left rounded-xl hover:bg-white/5"
                 >
                   Contact
                 </button>
 
-                <div className="border-t border-white/10 mt-4 pt-4">
+                <div className="border-t border-white/5 mt-6 pt-6">
                   <button
                     onClick={() => handleNavigation(links.community)}
-                    className="text-base font-normal text-gray-500 hover:text-gray-300 transition-colors duration-200 cursor-pointer py-2 block text-left w-full"
+                    className="text-sm font-normal text-neutral-500 hover:text-neutral-300 transition-colors duration-300 cursor-pointer py-2 px-4 block text-left w-full rounded-lg hover:bg-white/5"
                   >
                     Discord
                   </button>
                   <button
                     onClick={() => handleNavigation(links.instagram)}
-                    className="text-base font-normal text-gray-500 hover:text-gray-300 transition-colors duration-200 cursor-pointer py-2 block text-left w-full"
+                    className="text-sm font-normal text-neutral-500 hover:text-neutral-300 transition-colors duration-300 cursor-pointer py-2 px-4 block text-left w-full rounded-lg hover:bg-white/5"
                   >
                     Instagram
                   </button>
                   <button
                     onClick={() => handleNavigation(links.linkedin)}
-                    className="text-base font-normal text-gray-500 hover:text-gray-300 transition-colors duration-200 cursor-pointer py-2 block text-left w-full"
+                    className="text-sm font-normal text-neutral-500 hover:text-neutral-300 transition-colors duration-300 cursor-pointer py-2 px-4 block text-left w-full rounded-lg hover:bg-white/5"
                   >
                     LinkedIn
                   </button>
@@ -141,9 +141,9 @@ export const Navbar = () => {
                 <NavigationMenuLink asChild>
                   <button
                     onClick={() => handleNavigation(links.community)}
-                    className="tracking-wider text-sm font-normal px-4 py-1.5 rounded-full transition-all duration-200 text-gray-400 hover:text-white hover:bg-transparent bg-transparent border-none cursor-pointer"
+                    className="text-sm font-medium px-3 py-1.5 rounded-lg transition-all duration-300 text-neutral-400 hover:text-white hover:bg-white/5 bg-transparent border-none cursor-pointer"
                   >
-                    COMMUNITY
+                    Community
                   </button>
                 </NavigationMenuLink>
               </NavigationMenuItem>
@@ -151,9 +151,9 @@ export const Navbar = () => {
                 <NavigationMenuLink asChild>
                   <button
                     onClick={() => handleNavigation(links.partner)}
-                    className="tracking-wider text-sm font-normal px-4 py-1.5 rounded-full transition-all duration-200 text-gray-400 hover:text-white hover:bg-transparent bg-transparent border-none cursor-pointer"
+                    className="text-sm font-medium px-3 py-1.5 rounded-lg transition-all duration-300 text-neutral-400 hover:text-white hover:bg-white/5 bg-transparent border-none cursor-pointer"
                   >
-                    PARTNER
+                    Partner
                   </button>
                 </NavigationMenuLink>
               </NavigationMenuItem>
@@ -161,22 +161,22 @@ export const Navbar = () => {
                 <NavigationMenuLink asChild>
                   <button
                     onClick={() => handleNavigation(links.contact)}
-                    className="tracking-wider text-sm font-normal px-4 py-1.5 rounded-full transition-all duration-200 text-gray-400 hover:text-white hover:bg-transparent bg-transparent border-none cursor-pointer"
+                    className="text-sm font-medium px-3 py-1.5 rounded-lg transition-all duration-300 text-neutral-400 hover:text-white hover:bg-white/5 bg-transparent border-none cursor-pointer"
                   >
-                    CONTACT
+                    Contact
                   </button>
                 </NavigationMenuLink>
               </NavigationMenuItem>
             </NavigationMenuList>
           </NavigationMenu>
 
-          {/* Social Icons */}
+          {/* CTA Button */}
           <div className="flex flex-row items-center gap-2">
             <Button
               onClick={() => handleNavigation(links.community)}
-              className="text-sm px-6 py-1.5 rounded-full bg-transparent text-gray-300 font-normal border border-border/20 hover:backdrop-blur-lg transition-all duration-200"
+              className="text-sm px-5 py-2 rounded-full bg-white text-black font-semibold hover:bg-neutral-100 transition-all duration-300 border-none"
             >
-              JOIN COMMUNITY
+              Join Community
             </Button>
           </div>
         </div>

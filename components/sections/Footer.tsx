@@ -49,36 +49,33 @@ export const Footer: React.FC<FooterProps> = ({
   ];
 
   return (
-    <footer className="bg-black border-t border-white/10">
+    <footer className="bg-black border-t border-white/5">
       <InView
         variants={{
-          hidden: { opacity: 0, y: 20 },
+          hidden: { opacity: 0, y: 30 },
           visible: { opacity: 1, y: 0 },
         }}
         viewOptions={{ margin: "0px 0px -50px 0px" }}
-        transition={{ duration: 0.6, ease: "easeOut" }}
+        transition={{ duration: 0.8, ease: [0.22, 1, 0.36, 1] }}
         once
       >
-        <div className="pointer-events-none absolute left-1/2 transform -translate-x-1/2 translate-y-32 bottom-0 w-full h-[700px] rounded-full blur-3xl opacity-80 z-0 bg-[radial-gradient(ellipse_at_center_bottom,_rgba(255,210,120,0.95),_rgba(255,150,90,0.7),_rgba(255,110,120,0.10),_transparent_80%)]" />
-        <div className="max-w-[1280px] mx-auto px-6 md:px-8 py-32 pb-96 relative">
-          {/* Sunrise gradient (center-bottom, rounded and spread) */}
-          
-
-          <div className="grid grid-cols-1 md:grid-cols-4 gap-12 relative z-10">
+        <div className="pointer-events-none absolute left-1/2 transform -translate-x-1/2 translate-y-32 bottom-0 w-full h-[700px] rounded-full blur-3xl opacity-60 z-0 bg-[radial-gradient(ellipse_at_center_bottom,_rgba(255,210,120,0.5),_rgba(255,150,90,0.3),_rgba(255,110,120,0.05),_transparent_80%)]" />
+        <div className="max-w-7xl mx-auto px-6 md:px-8 py-24 pb-80 relative">
+          <div className="grid grid-cols-1 md:grid-cols-4 gap-16 relative z-10">
             {/* Socials */}
-            <div className="space-y-4">
-              <h3 className="text-white/50 uppercase tracking-widest">
+            <div className="space-y-6">
+              <h3 className="text-neutral-600 text-xs font-semibold tracking-wider uppercase">
                 Socials
               </h3>
               <nav
-                className="flex flex-col gap-6"
+                className="flex flex-col gap-4"
                 aria-label="Footer navigation"
               >
                 {socialLinks.map((social) => (
                   <a
                     key={social.name}
                     href={social.href}
-                    className="text-white hover:underline transition-colors duration-200"
+                    className="text-neutral-400 hover:text-white transition-colors duration-300 text-sm font-medium"
                   >
                     {social.name}
                   </a>
@@ -87,19 +84,19 @@ export const Footer: React.FC<FooterProps> = ({
             </div>
 
             {/* Quick Links */}
-            <div className="space-y-4">
-              <h3 className="text-white/50 uppercase tracking-widest">
+            <div className="space-y-6">
+              <h3 className="text-neutral-600 text-xs font-semibold tracking-wider uppercase">
                 Quick Links
               </h3>
               <nav
-                className="flex flex-col gap-6"
+                className="flex flex-col gap-4"
                 aria-label="Footer navigation"
               >
                 {quickLinks.map((link) => (
                   <a
                     key={link.name}
                     href={link.href}
-                    className="text-white hover:underline transition-colors duration-200"
+                    className="text-neutral-400 hover:text-white transition-colors duration-300 text-sm font-medium"
                   >
                     {link.name}
                   </a>
@@ -108,36 +105,26 @@ export const Footer: React.FC<FooterProps> = ({
             </div>
 
             {/* Legal */}
-            <div className="space-y-4">
-              <h3 className="text-white/50 uppercase tracking-widest">Legal</h3>
-              <div className="gap-6 flex flex-col">
-                <p className="text-white">Boost Turku ry</p>
-                <p className="text-white">Business ID: 2321515-1</p>
+            <div className="space-y-6">
+              <h3 className="text-neutral-600 text-xs font-semibold tracking-wider uppercase">Legal</h3>
+              <div className="gap-4 flex flex-col">
+                <p className="text-neutral-400 text-sm">Boost Turku ry</p>
+                <p className="text-neutral-500 text-xs">Business ID: 2321515-1</p>
                 <a
                   href="/privacy"
-                  className="block text-white hover:underline transition-colors duration-200"
+                  className="block text-neutral-400 hover:text-white transition-colors duration-300 text-sm font-medium"
                 >
                   Privacy Policy
                 </a>
                 <a
                   href="/terms"
-                  className="block text-white hover:underline transition-colors duration-200"
+                  className="block text-neutral-400 hover:text-white transition-colors duration-300 text-sm font-medium"
                 >
                   Terms of Service
                 </a>
               </div>
             </div>
           </div>
-
-          {/* Bottom Bar */}
-          {/* <div className="pt-8 border-t border-white/10 flex flex-col md:flex-row justify-between items-center gap-4">
-            <p className="text-white/40 text-sm">
-              © {new Date().getFullYear()} Since AI. All rights reserved.
-            </p>
-            <p className="text-white/40 text-sm">
-              Made with ❤️ in Turku, Finland
-            </p>
-          </div> */}
         </div>
       </InView>
     </footer>
