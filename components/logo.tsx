@@ -8,7 +8,7 @@ const Logo: React.FC<LogoProps> = ({ className }) => {
     <>
       
       <img
-        src="assets/logo/logo.png"
+        src="assets/logo/SINCE AI white.png"
         className={className ? className : "w-auto h-[28px]"}
         alt="Since AI Logo"
       />

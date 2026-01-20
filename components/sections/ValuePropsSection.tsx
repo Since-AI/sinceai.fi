@@ -2,7 +2,7 @@
 import React from "react";
 import { motion } from "framer-motion";
 import { InView } from "@/components/motion-primitives/in-view";
-import { Zap, Handshake, TrendingUp } from "lucide-react";
+import { Users, CheckCircle, Briefcase } from "lucide-react";
 
 interface ValueProp {
   icon: React.ReactNode;
@@ -14,21 +14,21 @@ interface ValueProp {
 export const ValuePropsSection: React.FC = () => {
   const valueProps: ValueProp[] = [
     {
-      icon: <Zap className="w-6 h-6 text-white/50 group-hover:text-blue-500 transition-all duration-300" />,
-      title: "Access",
-      description: "Direct pipeline to AI developers actively building the future of technology.",
+      icon: <Users className="w-6 h-6 text-white/50 group-hover:text-blue-500 transition-all duration-300" />,
+      title: "Build with world-class peers",
+      description: "Hackathons and meetups for people who actually ship — research-to-product, not theory-only.",
       gradient: "from-gray-500/10",
     },
     {
-      icon: <Handshake className="w-6 h-6 text-white/50 group-hover:text-purple-500 transition-all duration-300" />,
-      title: "Build",
-      description: "Lasting partnerships with aligned goals and shared vision for innovation.",
+      icon: <CheckCircle className="w-6 h-6 text-white/50 group-hover:text-green-500 transition-all duration-300" />,
+      title: "Proof you can verify",
+      description: "Every featured project has GitHub links, demos, and post-event reports. No 'vibes-only' communities.",
       gradient: "from-gray-500/10",
     },
     {
-      icon: <TrendingUp className="w-6 h-6 text-white/50 group-hover:text-green-500 transition-all duration-300" />,
-      title: "Thrive",
-      description: "200+ attendees on our first event ever starting from zero, and we're growing fast.",
+      icon: <Briefcase className="w-6 h-6 text-white/50 group-hover:text-purple-500 transition-all duration-300" />,
+      title: "Direct access to high-quality opportunities",
+      description: "Partners sponsor challenges, run workshops, and recruit — with a community built for signal, not noise.",
       gradient: "from-gray-500/10",
     },
   ];
@@ -49,12 +49,12 @@ export const ValuePropsSection: React.FC = () => {
         >
           <div className="flex flex-col items-center gap-8 mb-24">
             <div className="text-xs md:text-sm font-medium text-neutral-500 tracking-wider">
-              Why Partner With Us
+              Why Since AI
             </div>
             <h2 className="text-5xl md:text-6xl lg:text-7xl font-bold text-center leading-[1.1] tracking-tight text-white max-w-4xl">
-              AI focused.
+              High-signal builders.
               <br />
-              <span className="bg-gradient-to-b from-white to-neutral-500 bg-clip-text text-transparent">Success track record.</span>
+              <span className="bg-gradient-to-b from-white to-neutral-500 bg-clip-text text-transparent">Real outcomes.</span>
             </h2>
           </div>
         </InView>
@@ -82,12 +82,12 @@ export const ValuePropsSection: React.FC = () => {
               >
                 <div className="absolute inset-0 bg-gradient-to-br from-white/[0.03] via-transparent to-transparent opacity-0 group-hover:opacity-100 transition-opacity duration-700" />
                 
-                <div className="relative p-10 md:p-12 flex flex-col gap-8">
+                <div className="relative p-10 md:p-12 flex flex-col gap-6">
                   <div className="space-y-4">
-                    <h3 className="text-3xl md:text-4xl font-bold text-white tracking-tight">
+                    <h3 className="text-2xl md:text-3xl font-bold text-white tracking-tight leading-tight">
                       {prop.title}
                     </h3>
-                    <p className="text-neutral-400 font-normal leading-relaxed text-base md:text-lg">
+                    <p className="text-neutral-400 font-normal leading-relaxed text-base">
                       {prop.description}
                     </p>
                   </div>

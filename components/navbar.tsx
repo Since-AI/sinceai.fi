@@ -18,6 +18,7 @@ import {
   SheetContent,
   SheetHeader,
   SheetTitle,
+  SheetDescription,
 } from "./ui/sheet";
 
 import Logo from "./logo";
@@ -43,6 +44,9 @@ export const Navbar = () => {
   const links = {
     home: "/",
     community: "https://discord.gg/6PC74zW68v",
+    events: "/events",
+    projects: "/projects",
+    partners: "/partners",
     contact: "/contact",
     partner: "#partner-section",
     instagram: "https://www.instagram.com/since_ai/",
@@ -75,6 +79,9 @@ export const Navbar = () => {
             >
               <SheetHeader>
                 <SheetTitle className="text-neutral-400 text-sm font-medium">Menu</SheetTitle>
+                <SheetDescription className="sr-only">
+                  Navigate to different sections of Since AI website
+                </SheetDescription>
               </SheetHeader>
               <div className="flex flex-col gap-1 pt-8 px-2">
                 <button
@@ -90,10 +97,22 @@ export const Navbar = () => {
                   Community
                 </button>
                 <button
-                  onClick={() => handleNavigation(links.partner)}
+                  onClick={() => handleNavigation(links.events)}
                   className="text-base font-medium text-neutral-300 hover:text-white transition-colors duration-300 cursor-pointer py-3 px-4 text-left rounded-xl hover:bg-white/5"
                 >
-                  Partner
+                  Events
+                </button>
+                <button
+                  onClick={() => handleNavigation(links.projects)}
+                  className="text-base font-medium text-neutral-300 hover:text-white transition-colors duration-300 cursor-pointer py-3 px-4 text-left rounded-xl hover:bg-white/5"
+                >
+                  Projects
+                </button>
+                <button
+                  onClick={() => handleNavigation(links.partners)}
+                  className="text-base font-medium text-neutral-300 hover:text-white transition-colors duration-300 cursor-pointer py-3 px-4 text-left rounded-xl hover:bg-white/5"
+                >
+                  Partners
                 </button>
                 <button
                   onClick={() => handleNavigation(links.contact)}
@@ -150,10 +169,30 @@ export const Navbar = () => {
               <NavigationMenuItem>
                 <NavigationMenuLink asChild>
                   <button
-                    onClick={() => handleNavigation(links.partner)}
+                    onClick={() => handleNavigation(links.events)}
                     className="text-sm font-medium px-3 py-1.5 rounded-lg transition-all duration-300 text-neutral-400 hover:text-white hover:bg-white/5 bg-transparent border-none cursor-pointer"
                   >
-                    Partner
+                    Events
+                  </button>
+                </NavigationMenuLink>
+              </NavigationMenuItem>
+              <NavigationMenuItem>
+                <NavigationMenuLink asChild>
+                  <button
+                    onClick={() => handleNavigation(links.projects)}
+                    className="text-sm font-medium px-3 py-1.5 rounded-lg transition-all duration-300 text-neutral-400 hover:text-white hover:bg-white/5 bg-transparent border-none cursor-pointer"
+                  >
+                    Projects
+                  </button>
+                </NavigationMenuLink>
+              </NavigationMenuItem>
+              <NavigationMenuItem>
+                <NavigationMenuLink asChild>
+                  <button
+                    onClick={() => handleNavigation(links.partners)}
+                    className="text-sm font-medium px-3 py-1.5 rounded-lg transition-all duration-300 text-neutral-400 hover:text-white hover:bg-white/5 bg-transparent border-none cursor-pointer"
+                  >
+                    Partners
                   </button>
                 </NavigationMenuLink>
               </NavigationMenuItem>

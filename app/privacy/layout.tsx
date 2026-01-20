@@ -1,0 +1,31 @@
+import { Metadata } from "next";
+
+export const metadata: Metadata = {
+  title: "Privacy Policy - Since AI",
+  description:
+    "Learn how Since AI collects, uses, and protects your personal information. GDPR-compliant privacy policy for our AI community.",
+  alternates: {
+    canonical: "/privacy",
+  },
+  openGraph: {
+    title: "Privacy Policy - Since AI",
+    description:
+      "Learn how Since AI collects, uses, and protects your personal information.",
+    type: "website",
+    locale: "en_US",
+    siteName: "Since AI",
+    url: "/privacy",
+  },
+  robots: {
+    index: true,
+    follow: true,
+  },
+};
+
+export default function PrivacyLayout({
+  children,
+}: {
+  children: React.ReactNode;
+}) {
+  return children;
+}

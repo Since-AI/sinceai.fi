@@ -1,0 +1,232 @@
+"use client";
+import React from "react";
+import Link from "next/link";
+import SmoothScroll from "@/components/smoothScroll";
+import { Navbar } from "@/components/navbar";
+import { Footer } from "@/components/sections/Footer";
+import { motion } from "framer-motion";
+import {
+  Accordion,
+  AccordionContent,
+  AccordionItem,
+  AccordionTrigger,
+} from "@/components/ui/accordion";
+import { LINKS } from "@/lib/sinceai";
+
+export default function FAQPage() {
+  const faqs = [
+    {
+      category: "General",
+      questions: [
+        {
+          q: "What is Since AI?",
+          a: "Since AI is Europe's AI builders community with 500+ members, based in Turku. We organize hackathons and networking events that bring together AI developers, researchers, and companies. Founded in 2025, our flagship hackathon brought together 260 builders who produced 30+ AI projects.",
+        },
+        {
+          q: "Where is Since AI based?",
+          a: "Since AI is based in Turku, Finland. We're a registered non-profit organization (Since AI ry, Business ID: 3593920-2). While our events are typically held in Turku, our Discord community is global with members across Finland and internationally.",
+        },
+        {
+          q: "Who can join Since AI?",
+          a: "Anyone interested in AI is welcome! Our community includes ML engineers, full-stack developers, researchers, designers, founders, and students. Whether you're a beginner learning AI or an experienced practitioner, you'll find value in our events and community discussions.",
+        },
+      ],
+    },
+    {
+      category: "Community & Events",
+      questions: [
+        {
+          q: "How do I join the community?",
+          a: "Join our Discord server for free at discord.gg/6PC74zW68v. You'll get access to member-only channels, job board, event updates, technical discussions, and networking opportunities with 500+ AI developers and founders.",
+        },
+        {
+          q: "What happens at Since AI hackathons?",
+          a: "Our hackathons are multi-day events where teams of 3-5 people build AI solutions for real company challenges. You'll receive mentorship from industry experts, access to compute credits and APIs, and the chance to showcase your work. Past projects include maritime sound classification, customer support automation, and switchboard diagram analysis.",
+        },
+        {
+          q: "When is the next hackathon?",
+          a: `Since AI Hackathon 2026 will be held in November 2026. Exact dates will be announced soon. Get updates on our Luma page (${LINKS.lumaOrg}) or join our Discord community. Follow us on LinkedIn and Instagram (@since_ai) for announcements.`,
+        },
+        {
+          q: "Do I need a team to participate?",
+          a: "No! You can join as an individual and we'll help you find teammates during the event kickoff. Many successful projects have been built by teams that formed at the hackathon.",
+        },
+      ],
+    },
+    {
+      category: "Partnerships & Sponsorships",
+      questions: [
+        {
+          q: "What sponsorship options are available?",
+          a: "Every partnership is custom-tailored to your goals. Whether you're looking to recruit talent, build brand awareness, or support the AI community, we'll create a solution that works. Options include event sponsorships, workshop hosting, job board access, and custom partnership packages. Email us at riku@boostturku.com with your objectives.",
+        },
+        {
+          q: "What do partners get?",
+          a: "Partners get direct access to 500+ AI developers through hackathon challenges, recruiting events, logo placement, speaking opportunities, and Discord job board access. 80% of our partner companies have hired developers from our community. We can provide custom packages based on your hiring or brand goals.",
+        },
+        {
+          q: "How much does partnership cost?",
+          a: "Partnership packages vary based on scope and goals. Contact our partnerships team at aarne@boostturku.com for pricing and custom packages tailored to your needs.",
+        },
+      ],
+    },
+    {
+      category: "Projects & Learning",
+      questions: [
+        {
+          q: "What kind of projects are built at hackathons?",
+          a: "Recent projects include: SoundWatch (maritime sound classification using CNN), NLCAR Smart Message Router (fine-tuned LLM for customer support), Switchboard Diagram Analyzer (computer vision + OCR), and COLREG Sound Signal Classifier (audio ML for ship safety). All projects solve real company challenges.",
+        },
+        {
+          q: "Can I showcase my project?",
+          a: "Yes! Hackathon projects are presented to judges and attendees. Top projects are featured on our website and social media. If you've built an AI project outside our events, share it in our Discord #showcase channel.",
+        },
+        {
+          q: "What resources are provided?",
+          a: "Hackathon participants receive: compute credits (ElevenLabs, Featherless.ai), API access, datasets from partner companies, mentorship from industry experts, food and drinks, and networking opportunities. Plus, access to our Discord community for ongoing support.",
+        },
+      ],
+    },
+    {
+      category: "Contact & Support",
+      questions: [
+        {
+          q: "How do I contact Since AI?",
+          a: "For general inquiries: riku@boostturku.com. For partnerships: aarne@boostturku.com. For urgent matters, check our contact page for specific team members and their areas. We typically respond within 24 hours.",
+        },
+        {
+          q: "Can I volunteer or contribute?",
+          a: "Yes! We're always looking for passionate individuals to help with events, content creation, community management, and more. Join our Discord and let us know you're interested in contributing. We'll find a way to get you involved.",
+        },
+        {
+          q: "Is there a code of conduct?",
+          a: "Yes. We're committed to creating a safe, inclusive environment for all community members. View our full Code of Conduct at /code-of-conduct. In brief: be respectful, be inclusive, no harassment, and help us build a positive community.",
+        },
+      ],
+    },
+  ];
+
+  return (
+    <SmoothScroll>
+      <Navbar />
+      
+      <main className="flex flex-col w-full bg-black min-h-screen">
+        <div className="max-w-4xl mx-auto px-6 py-32 md:py-40">
+          <motion.div
+            initial={{ opacity: 0, y: 30 }}
+            animate={{ opacity: 1, y: 0 }}
+            transition={{ duration: 0.8, ease: [0.22, 1, 0.36, 1] }}
+          >
+            <h1 className="text-5xl md:text-6xl lg:text-7xl font-bold text-white mb-6 tracking-tight leading-tight">
+              Frequently Asked Questions
+            </h1>
+            
+            <p className="text-xl text-neutral-400 leading-relaxed mb-12">
+              Everything you need to know about Since AI, Finland's largest AI community with 500+ members 
+              based in Turku. Can't find your answer?{" "}
+              <Link href="/contact" className="text-white hover:text-neutral-300 underline">
+                Contact our team
+              </Link>.
+            </p>
+
+            {/* GEO Facts Block */}
+            <div className="mb-12 p-8 rounded-2xl border border-white/10 bg-white/[0.02]">
+              <h2 className="text-2xl font-bold text-white mb-6 tracking-tight">
+                Quick Facts
+              </h2>
+              <dl className="grid grid-cols-1 sm:grid-cols-2 gap-x-8 gap-y-4 text-base">
+                <div>
+                  <dt className="text-sm font-semibold text-neutral-500 uppercase tracking-wider mb-1">Base</dt>
+                  <dd className="text-neutral-300">Turku, Finland (EU)</dd>
+                </div>
+                <div>
+                  <dt className="text-sm font-semibold text-neutral-500 uppercase tracking-wider mb-1">Community</dt>
+                  <dd className="text-neutral-300">500+ members (builders, researchers, founders)</dd>
+                </div>
+                <div>
+                  <dt className="text-sm font-semibold text-neutral-500 uppercase tracking-wider mb-1">Focus</dt>
+                  <dd className="text-neutral-300">Applied AI, ML engineering, product-building</dd>
+                </div>
+                <div>
+                  <dt className="text-sm font-semibold text-neutral-500 uppercase tracking-wider mb-1">What we do</dt>
+                  <dd className="text-neutral-300">Hackathons, meetups, workshops, partner challenges</dd>
+                </div>
+                <div>
+                  <dt className="text-sm font-semibold text-neutral-500 uppercase tracking-wider mb-1">Why we exist</dt>
+                  <dd className="text-neutral-300">Connect the strongest builders and companies to ship real AI systems</dd>
+                </div>
+                <div>
+                  <dt className="text-sm font-semibold text-neutral-500 uppercase tracking-wider mb-1">Legal entity</dt>
+                  <dd className="text-neutral-300">Since AI ry</dd>
+                </div>
+                <div className="sm:col-span-2">
+                  <dt className="text-sm font-semibold text-neutral-500 uppercase tracking-wider mb-2">Official links</dt>
+                  <dd className="flex flex-wrap gap-3">
+                    <a href="https://discord.gg/6PC74zW68v" target="_blank" rel="noopener noreferrer" className="text-neutral-400 hover:text-white underline">Discord</a>
+                    <a href="https://www.linkedin.com/company/sinceai" target="_blank" rel="noopener noreferrer" className="text-neutral-400 hover:text-white underline">LinkedIn</a>
+                    <a href="https://github.com/since-ai" target="_blank" rel="noopener noreferrer" className="text-neutral-400 hover:text-white underline">GitHub</a>
+                    <a href="https://x.com/since_ai_" target="_blank" rel="noopener noreferrer" className="text-neutral-400 hover:text-white underline">X</a>
+                    <a href="https://www.instagram.com/since_ai/" target="_blank" rel="noopener noreferrer" className="text-neutral-400 hover:text-white underline">Instagram</a>
+                    <a href="https://www.facebook.com/sinceai" target="_blank" rel="noopener noreferrer" className="text-neutral-400 hover:text-white underline">Facebook</a>
+                  </dd>
+                </div>
+              </dl>
+            </div>
+
+            {faqs.map((category, categoryIndex) => (
+              <div key={categoryIndex} className="mb-12">
+                <h2 className="text-2xl md:text-3xl font-bold text-white mb-6 tracking-tight">
+                  {category.category}
+                </h2>
+                
+                <Accordion type="single" collapsible className="w-full space-y-2">
+                  {category.questions.map((faq, index) => (
+                    <AccordionItem
+                      key={index}
+                      value={`item-${categoryIndex}-${index}`}
+                      className="rounded-xl px-6 border border-white/5 data-[state=open]:bg-white/[0.03] transition-colors duration-200"
+                    >
+                      <AccordionTrigger className="text-left text-white font-semibold hover:no-underline py-5 text-lg">
+                        {faq.q}
+                      </AccordionTrigger>
+                      <AccordionContent className="text-neutral-400 font-normal leading-relaxed pb-5 text-base">
+                        {faq.a}
+                      </AccordionContent>
+                    </AccordionItem>
+                  ))}
+                </Accordion>
+              </div>
+            ))}
+
+            <div className="mt-16 p-8 rounded-2xl border border-white/10 bg-white/[0.02]">
+              <h2 className="text-2xl font-bold text-white mb-4">
+                Still have questions?
+              </h2>
+              <p className="text-neutral-400 mb-6">
+                Join our Discord community to ask questions directly, or contact our team for 
+                partnership and sponsorship inquiries.
+              </p>
+              <div className="flex flex-wrap gap-4">
+                <Link
+                  href="https://discord.gg/6PC74zW68v"
+                  target="_blank"
+                  className="px-6 py-3 bg-white text-black rounded-full font-semibold hover:bg-neutral-100 transition-colors"
+                >
+                  Join Discord
+                </Link>
+                <Link
+                  href="/contact"
+                  className="px-6 py-3 bg-white/10 text-white rounded-full font-semibold hover:bg-white/15 transition-colors border border-white/20"
+                >
+                  Contact Team
+                </Link>
+              </div>
+            </div>
+          </motion.div>
+        </div>
+
+        <Footer discordUrl="https://discord.gg/6PC74zW68v" />
+      </main>
+    </SmoothScroll>
+  );
+}

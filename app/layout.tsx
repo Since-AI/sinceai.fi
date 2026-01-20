@@ -1,6 +1,7 @@
 import type { Metadata } from "next";
 import { Geist, Geist_Mono } from "next/font/google";
 import "./globals.css";
+import { getOrganizationSchema } from "@/lib/schema";
 
 const geistSans = Geist({
   variable: "--font-geist-sans",
@@ -18,6 +19,9 @@ export const metadata: Metadata = {
   description: "Join 500+ AI developers in Finland's most vibrant AI community. Partner with innovation leaders. Custom partnerships, real results.",
   keywords: ["AI community", "hackathon", "Finland", "developers", "machine learning", "artificial intelligence", "partnership"],
   authors: [{ name: "Since AI" }],
+  alternates: {
+    canonical: "/",
+  },
   openGraph: {
     title: "Since AI Community - AI Developers & Hackathon Partnerships",
     description: "Join 500+ AI developers. Partner with innovation leaders.",
@@ -27,7 +31,7 @@ export const metadata: Metadata = {
     type: "website",
     images: [
       {
-        url: "/assets/logo/logo_full.png",
+        url: "/assets/logo/SINCE AI white.png",
         width: 1200,
         height: 630,
         alt: "Since AI Community",
@@ -58,8 +62,18 @@ export default function RootLayout({
 }: Readonly<{
   children: React.ReactNode;
 }>) {
+  const organizationSchema = getOrganizationSchema();
+
   return (
     <html lang="en">
+      <head>
+        <script
+          type="application/ld+json"
+          dangerouslySetInnerHTML={{
+            __html: JSON.stringify(organizationSchema),
+          }}
+        />
+      </head>
       <body
         className={`${geistSans.variable} ${geistMono.variable} antialiased bg-black`}
       >

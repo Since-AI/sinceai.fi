@@ -20,54 +20,37 @@ import {
 const teamMembers = [
   {
     name: "Aarne Ollila",
-    role: "Head of Partnerships",
+    role: "Partnerships",
     email: "aarne@boostturku.com",
-    number: "045 652 5605",
     linkedin: "https://www.linkedin.com/in/aarne-ollila-53429028b/",
   },
   {
-    name: "Arttu Myyryläinen",
-    role: "Head of Strategic Outreach",
-    email: "arttu@boostturku.com",
-    number: "044 985 6522",
-    linkedin: "https://www.linkedin.com/in/arttu-myyryl%C3%A4inen/",
-  },
-  {
     name: "Riku Lauttia",
-    role: "Head of Operations",
+    role: "Operations",
     email: "riku@boostturku.com",
     linkedin: "https://www.linkedin.com/in/rikulauttia/",
   },
   {
+    name: "Arttu Myyryläinen",
+    role: "Strategic Outreach",
+    email: "arttu@boostturku.com",
+    linkedin: "https://www.linkedin.com/in/arttu-myyryl%C3%A4inen/",
+  },
+  {
     name: "Aman Vyas",
-    role: "Head of International Partnerships",
+    role: "International",
     email: "aman@boostturku.com",
-    number: "044 238 9052",
     linkedin: "https://www.linkedin.com/in/aman-vyas-21b674133/",
   },
   {
-    name: "Kasper Hakala",
-    role: "Strategic Partnerships",
-    email: "kasper@boostturku.com",
-    number: "044 514 1364",
-    linkedin: "https://www.linkedin.com/in/kasper-hakala-6b2605262/",
-  },
-  {
-    name: "Yuehan John",
-    role: "Head of Growth",
-    email: "yuehan.john@boostturku.com",
-    number: "040 363 3893",
-    linkedin: "https://www.linkedin.com/in/yuehanjohn/",
-  },
-  {
     name: "Vishaka Salpiumi",
-    role: "Social Media Manager",
+    role: "Social Media",
     email: "vishaka@boostturku.com",
     linkedin: "https://www.linkedin.com/in/vishaka-salpiumi-3b6578349/",
   },
   {
     name: "Abdul Wasay",
-    role: "Head of Content",
+    role: "Content",
     linkedin: "https://www.linkedin.com/in/abdulwasaymuhammad/",
   },
 ];
@@ -87,149 +70,122 @@ interface TeamMember {
   instagram?: string;
 }
 
-// Team Card Component
+// Team Card Component - Lean & Premium
 const TeamCard: React.FC<{ person: TeamMember; index: number }> = ({ person, index }) => (
   <motion.div
     initial={{ opacity: 0, y: 20 }}
-    animate={{ opacity: 1, y: 0 }}
-    transition={{ duration: 0.4, delay: index * 0.05 }}
-    className="group relative  backdrop-blur-sm rounded-2xl p-6 hover:bg-white/10 hover:border-white/20 transition-all duration-300 overflow-hidden"
+    whileInView={{ opacity: 1, y: 0 }}
+    viewport={{ once: true }}
+    transition={{ duration: 0.5, delay: index * 0.05 }}
+    className="group relative border border-white/5 rounded-xl p-6 hover:border-white/10 hover:bg-white/[0.02] transition-all duration-300"
   >
-    <div className="absolute inset-0 bg-gradient-to-br from-white/5 to-transparent opacity-0 group-hover:opacity-100 transition-opacity duration-300" />
-
-    <div className="relative z-10">
-      <h3 className="text-white font-medium text-lg mb-2 leading-tight">
-        {person.name}
-      </h3>
-
-      <p className="text-white/60 text-sm font-light mb-4">
-        {person.role}
-      </p>
+    <div className="space-y-3">
+      <div>
+        <h3 className="text-white font-semibold text-lg tracking-tight">
+          {person.name}
+        </h3>
+        <p className="text-neutral-500 text-sm mt-1">
+          {person.role}
+        </p>
+      </div>
 
       {person.email && (
         <a
           href={`mailto:${person.email}`}
-          className="text-white/40 hover:text-white/70 text-xs font-light transition-colors duration-200 block mb-3 truncate"
+          className="text-sm text-neutral-600 hover:text-white transition-colors block"
         >
           {person.email}
         </a>
       )}
 
-      {person.number && (
+      {person.linkedin && (
         <a
-          href={`tel:${person.number}`}
-          className="text-white/40 hover:text-white/70 text-xs font-light transition-colors duration-200 block mb-3 truncate"
+          href={person.linkedin}
+          target="_blank"
+          rel="noopener noreferrer"
+          className="inline-flex items-center gap-2 text-sm text-neutral-600 hover:text-white transition-colors"
         >
-          {person.number}
+          <FaLinkedin size={16} />
+          <span>LinkedIn</span>
         </a>
       )}
-
-      <div className="flex gap-2">
-        {person.linkedin && (
-          <button
-            onClick={() => window.open(person.linkedin, "_blank")}
-            className="inline-flex items-center justify-center w-8 h-8 bg-white/10 hover:bg-white/20 rounded-full transition-all duration-200 group-hover:scale-110"
-            aria-label={`View ${person.name}'s LinkedIn profile`}
-          >
-            <FaLinkedin size={14} className="text-white/70" />
-          </button>
-        )}
-        {person.instagram && (
-          <button
-            onClick={() => window.open(person.instagram, "_blank")}
-            className="inline-flex items-center justify-center w-8 h-8 bg-white/10 hover:bg-white/20 rounded-full transition-all duration-200 group-hover:scale-110"
-            aria-label={`View ${person.name}'s Instagram profile`}
-          >
-            <FaInstagram size={14} className="text-white/70" />
-          </button>
-        )}
-      </div>
     </div>
-
-    <div className="absolute top-0 right-0 w-20 h-20 bg-gradient-to-br from-white/5 to-transparent rounded-full -translate-y-10 translate-x-10 group-hover:scale-150 transition-transform duration-500" />
   </motion.div>
 );
 
 // Contact Page Content Component (uses useSearchParams)
 function ContactPageContent() {
-  const formRef = useRef<HTMLDivElement>(null);
-  const teamRef = useRef<HTMLDivElement>(null);
-  const searchParams = useSearchParams();
-  const [preselectedSubject, setPreselectedSubject] = useState<string>("");
-
-  // Handle preselected subject from URL params
-  useEffect(() => {
-    const subject = searchParams.get("subject");
-    if (subject) {
-      setPreselectedSubject(subject);
-      // Scroll to form after a short delay
-      setTimeout(() => {
-        formRef.current?.scrollIntoView({ behavior: "smooth", block: "start" });
-      }, 500);
-    }
-  }, [searchParams]);
-
-  // Handle partnership click from route cards
-  const handlePartnerClick = () => {
-    setPreselectedSubject("partnership");
-    formRef.current?.scrollIntoView({ behavior: "smooth", block: "start" });
-  };
-
-  // Handle team section navigation
-  const handleTeamClick = () => {
-    teamRef.current?.scrollIntoView({ behavior: "smooth", block: "start" });
-  };
-
   return (
     <>
-      {/* Hero Section */}
-      <ContactHero />
+      {/* Hero Section - Lean & Minimal */}
+      <section className="relative w-full min-h-[70vh] flex flex-col items-center justify-center px-6 py-32">
+        <div className="absolute inset-0 z-0">
+          <div className="absolute inset-0 bg-gradient-to-b from-black via-neutral-950 to-black" />
+          <div className="absolute inset-0 bg-[radial-gradient(circle_at_center,rgba(255,255,255,0.03)_0%,transparent_65%)]" />
+        </div>
 
-      {/* Quick Routes Section */}
-      <ContactRoutes 
-        onPartnerClick={handlePartnerClick}
-        onTeamClick={handleTeamClick}
-        discordUrl={config.discordUrl}
-      />
-
-      {/* Divider */}
-      <div className="w-full max-w-5xl mx-auto px-6">
-        <div className="h-px bg-gradient-to-r from-transparent via-white/10 to-transparent" />
-      </div>
-
-      {/* Response Time Banner */}
-      <ResponseTime />
-
-      {/* Contact Form Section */}
-      {/* <div ref={formRef}>
-        <ContactForm preselectedSubject={preselectedSubject} />
-      </div> */}
-
-      {/* Divider */}
-      <div className="w-full max-w-5xl mx-auto px-6">
-        <div className="h-px bg-gradient-to-r from-transparent via-white/10 to-transparent" />
-      </div>
-
-      {/* Team Members Section */}
-      <section ref={teamRef} className="w-full bg-black py-16 px-6">
-        <div className="max-w-[1280px] mx-auto">
-          {/* Section header */}
-          <motion.div 
-            className="text-center mb-12"
-            initial={{ opacity: 0, y: 20 }}
+        <div className="relative z-20 flex flex-col items-center space-y-8 text-center max-w-4xl mx-auto">
+          <motion.h1
+            className="text-5xl sm:text-6xl md:text-7xl font-bold tracking-tighter leading-tight text-white"
+            initial={{ opacity: 0, y: 30 }}
             animate={{ opacity: 1, y: 0 }}
-            transition={{ duration: 0.5 }}
+            transition={{ duration: 0.8, delay: 0.2, ease: [0.22, 1, 0.36, 1] }}
           >
-            <h2 className="text-2xl md:text-3xl font-semibold text-white mb-3">
-              Meet the Team
+            Let's build together.
+          </motion.h1>
+
+          <motion.p
+            className="text-lg sm:text-xl text-neutral-400 max-w-2xl"
+            initial={{ opacity: 0, y: 30 }}
+            animate={{ opacity: 1, y: 0 }}
+            transition={{ duration: 0.8, delay: 0.4, ease: [0.22, 1, 0.36, 1] }}
+          >
+            Questions about partnerships, events, or community? We typically respond within 24 hours.
+          </motion.p>
+
+          <motion.div
+            className="flex flex-col sm:flex-row items-center gap-4 pt-4"
+            initial={{ opacity: 0, y: 30 }}
+            animate={{ opacity: 1, y: 0 }}
+            transition={{ duration: 0.8, delay: 0.6, ease: [0.22, 1, 0.36, 1] }}
+          >
+            <a
+              href={config.discordUrl}
+              target="_blank"
+              rel="noopener noreferrer"
+              className="inline-flex items-center justify-center px-8 py-4 text-base font-semibold text-black bg-white rounded-full transition-all duration-300 hover:bg-neutral-100 hover:scale-[1.02]"
+            >
+              Join Discord
+            </a>
+            <a
+              href="mailto:riku@boostturku.com"
+              className="inline-flex items-center justify-center px-8 py-4 text-base font-semibold text-white bg-white/10 rounded-full transition-all duration-300 hover:bg-white/15 backdrop-blur-xl border border-white/20 hover:border-white/30 hover:scale-[1.02]"
+            >
+              Email Us
+            </a>
+          </motion.div>
+        </div>
+      </section>
+
+      {/* Team Section - Clean Grid */}
+      <section className="w-full bg-black py-24 px-6 border-t border-white/5">
+        <div className="max-w-6xl mx-auto">
+          <motion.div 
+            className="text-center mb-16"
+            initial={{ opacity: 0, y: 20 }}
+            whileInView={{ opacity: 1, y: 0 }}
+            viewport={{ once: true }}
+            transition={{ duration: 0.6 }}
+          >
+            <h2 className="text-4xl md:text-5xl font-bold text-white mb-4 tracking-tight">
+              Team
             </h2>
-            <p className="text-white/60 font-light max-w-xl mx-auto">
-              Have a specific question? Reach out directly to our team members.
+            <p className="text-lg text-neutral-400 max-w-xl mx-auto">
+              Reach out directly to the right person.
             </p>
           </motion.div>
 
-          {/* Team grid */}
-          <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 xl:grid-cols-4 gap-6">
+          <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-6">
             {teamMembers.map((person, index) => (
               <TeamCard key={index} person={person} index={index} />
             ))}
@@ -237,21 +193,77 @@ function ContactPageContent() {
         </div>
       </section>
 
-      {/* Divider */}
-      <div className="w-full max-w-5xl mx-auto px-6">
-        <div className="h-px bg-gradient-to-r from-transparent via-white/10 to-transparent" />
-      </div>
+      {/* Quick FAQ - Minimal */}
+      <section className="w-full bg-black py-24 px-6 border-t border-white/5">
+        <div className="max-w-4xl mx-auto">
+          <motion.div
+            className="text-center mb-16"
+            initial={{ opacity: 0, y: 20 }}
+            whileInView={{ opacity: 1, y: 0 }}
+            viewport={{ once: true }}
+            transition={{ duration: 0.6 }}
+          >
+            <h2 className="text-4xl md:text-5xl font-bold text-white mb-4 tracking-tight">
+              Quick answers
+            </h2>
+            <p className="text-lg text-neutral-400">
+              Common questions about Since AI.
+            </p>
+          </motion.div>
 
-      {/* FAQ Section */}
-      <ContactFAQ discordUrl={config.discordUrl} />
+          <div className="space-y-6">
+            {[
+              {
+                q: "How do I join the community?",
+                a: "Join our Discord server. That's where everything happens — events, projects, and daily discussions."
+              },
+              {
+                q: "Can companies partner with Since AI?",
+                a: "Yes. We offer challenge partnerships, recruiting access, and workshops. Email aarne@boostturku.com or visit our /partners page."
+              },
+              {
+                q: "Where are your events held?",
+                a: "All events are in Turku, Finland. We're building Europe's strongest AI community from one city, with global reach."
+              },
+              {
+                q: "Is Since AI only for students?",
+                a: "No. We welcome builders, researchers, founders, and professionals working on AI projects."
+              },
+            ].map((faq, index) => (
+              <motion.div
+                key={index}
+                initial={{ opacity: 0, y: 20 }}
+                whileInView={{ opacity: 1, y: 0 }}
+                viewport={{ once: true }}
+                transition={{ duration: 0.5, delay: index * 0.1 }}
+                className="border border-white/5 rounded-xl p-6 hover:border-white/10 transition-colors"
+              >
+                <h3 className="text-white font-semibold text-lg mb-2">
+                  {faq.q}
+                </h3>
+                <p className="text-neutral-400 leading-relaxed">
+                  {faq.a}
+                </p>
+              </motion.div>
+            ))}
+          </div>
 
-      {/* Divider */}
-      <div className="w-full max-w-5xl mx-auto px-6">
-        <div className="h-px bg-gradient-to-r from-transparent via-white/10 to-transparent" />
-      </div>
-
-      {/* Direct Contact Section */}
-      <DirectContact discordUrl={config.discordUrl} />
+          <motion.div
+            className="text-center mt-12"
+            initial={{ opacity: 0 }}
+            whileInView={{ opacity: 1 }}
+            viewport={{ once: true }}
+            transition={{ duration: 0.6, delay: 0.4 }}
+          >
+            <a
+              href="/faq"
+              className="inline-flex items-center gap-2 text-neutral-600 hover:text-white transition-colors text-sm"
+            >
+              View all FAQs →
+            </a>
+          </motion.div>
+        </div>
+      </section>
     </>
   );
 }

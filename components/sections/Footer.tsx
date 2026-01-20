@@ -1,6 +1,6 @@
 "use client";
 import React from "react";
-import { InView } from "@/components/motion-primitives/in-view";
+import Link from "next/link";
 import {
   FaDiscord,
   FaInstagram,
@@ -9,124 +9,122 @@ import {
   FaFacebook,
 } from "react-icons/fa";
 import { FaXTwitter } from "react-icons/fa6";
+import { ORG } from "@/lib/org";
 
 interface FooterProps {
   discordUrl?: string;
-  newsletterUrl?: string;
-  partnerUrl?: string;
 }
 
 export const Footer: React.FC<FooterProps> = ({
   discordUrl = "https://discord.gg/6PC74zW68v",
-  newsletterUrl = "#newsletter",
-  partnerUrl = "#partner-section",
 }) => {
   const socialLinks = [
     { name: "Discord", href: discordUrl, icon: FaDiscord },
-    {
-      name: "LinkedIn",
-      href: "https://www.linkedin.com/company/sinceai",
-      icon: FaLinkedin,
-    },
-    {
-      name: "Instagram",
-      href: "https://www.instagram.com/since_ai",
-      icon: FaInstagram,
-    },
+    { name: "LinkedIn", href: "https://www.linkedin.com/company/sinceai", icon: FaLinkedin },
+    { name: "Instagram", href: "https://www.instagram.com/since_ai", icon: FaInstagram },
     { name: "X", href: "https://x.com/since_ai_", icon: FaXTwitter },
     { name: "GitHub", href: "https://github.com/since-ai", icon: FaGithub },
-    {
-      name: "Facebook",
-      href: "https://www.facebook.com/sinceai",
-      icon: FaFacebook,
-    },
+    { name: "Facebook", href: "https://www.facebook.com/sinceai", icon: FaFacebook },
   ];
 
-  const quickLinks = [
-    { name: "Community", href: discordUrl },
-    { name: "Partner With Us", href: "/contact" },
-    { name: "Contact", href: "/contact" },
+  const navigationColumns = [
+    {
+      title: "Product",
+      links: [
+        { name: "Events", href: "/events" },
+        { name: "Projects", href: "/projects" },
+        { name: "Partners", href: "/partners" },
+        { name: "Community", href: discordUrl },
+      ],
+    },
+    {
+      title: "Company",
+      links: [
+        { name: "About", href: "/about" },
+        { name: "Press", href: "/press" },
+        { name: "Contact", href: "/contact" },
+        { name: "FAQ", href: "/faq" },
+      ],
+    },
+    {
+      title: "Legal",
+      links: [
+        { name: "Code of Conduct", href: "/code-of-conduct" },
+        { name: "Privacy Policy", href: "/privacy" },
+        { name: "Terms of Service", href: "/terms" },
+      ],
+    },
   ];
 
   return (
     <footer className="bg-black border-t border-white/5">
-      <InView
-        variants={{
-          hidden: { opacity: 0, y: 30 },
-          visible: { opacity: 1, y: 0 },
-        }}
-        viewOptions={{ margin: "0px 0px -50px 0px" }}
-        transition={{ duration: 0.8, ease: [0.22, 1, 0.36, 1] }}
-        once
-      >
-        <div className="pointer-events-none absolute left-1/2 transform -translate-x-1/2 translate-y-32 bottom-0 w-full h-[700px] rounded-full blur-3xl opacity-60 z-0 bg-[radial-gradient(ellipse_at_center_bottom,_rgba(255,210,120,0.5),_rgba(255,150,90,0.3),_rgba(255,110,120,0.05),_transparent_80%)]" />
-        <div className="max-w-7xl mx-auto px-6 md:px-8 py-24 pb-80 relative">
-          <div className="grid grid-cols-1 md:grid-cols-4 gap-16 relative z-10">
-            {/* Socials */}
-            <div className="space-y-6">
-              <h3 className="text-neutral-600 text-xs font-semibold tracking-wider uppercase">
-                Socials
-              </h3>
-              <nav
-                className="flex flex-col gap-4"
-                aria-label="Footer navigation"
-              >
-                {socialLinks.map((social) => (
-                  <a
-                    key={social.name}
-                    href={social.href}
-                    className="text-neutral-400 hover:text-white transition-colors duration-300 text-sm font-medium"
-                  >
-                    {social.name}
-                  </a>
-                ))}
-              </nav>
-            </div>
+      <div className="max-w-7xl mx-auto px-6">
+        {/* Main Footer Content */}
+        <div className="py-16">
+          {/* Top Section - Logo & Description */}
+          <div className="flex flex-col items-center text-center mb-16">
+            <h2 className="text-2xl font-bold text-white mb-3 tracking-tight">
+              Since AI
+            </h2>
+            <p className="text-neutral-500 text-sm max-w-md">
+              The AI builders community in Europe. Turku-based, globally connected.
+            </p>
+          </div>
 
-            {/* Quick Links */}
-            <div className="space-y-6">
-              <h3 className="text-neutral-600 text-xs font-semibold tracking-wider uppercase">
-                Quick Links
-              </h3>
-              <nav
-                className="flex flex-col gap-4"
-                aria-label="Footer navigation"
-              >
-                {quickLinks.map((link) => (
-                  <a
-                    key={link.name}
-                    href={link.href}
-                    className="text-neutral-400 hover:text-white transition-colors duration-300 text-sm font-medium"
-                  >
-                    {link.name}
-                  </a>
-                ))}
-              </nav>
-            </div>
-
-            {/* Legal */}
-            <div className="space-y-6">
-              <h3 className="text-neutral-600 text-xs font-semibold tracking-wider uppercase">Legal</h3>
-              <div className="gap-4 flex flex-col">
-                <p className="text-neutral-400 text-sm">Boost Turku ry</p>
-                <p className="text-neutral-500 text-xs">Business ID: 2321515-1</p>
-                <a
-                  href="/privacy"
-                  className="block text-neutral-400 hover:text-white transition-colors duration-300 text-sm font-medium"
-                >
-                  Privacy Policy
-                </a>
-                <a
-                  href="/terms"
-                  className="block text-neutral-400 hover:text-white transition-colors duration-300 text-sm font-medium"
-                >
-                  Terms of Service
-                </a>
+          {/* Navigation Grid - Symmetric 3 columns */}
+          <div className="grid grid-cols-1 md:grid-cols-3 gap-12 mb-16">
+            {navigationColumns.map((column) => (
+              <div key={column.title} className="text-center">
+                <h3 className="text-neutral-600 text-xs font-semibold tracking-wider uppercase mb-6">
+                  {column.title}
+                </h3>
+                <nav className="flex flex-col gap-3">
+                  {column.links.map((link) => (
+                    <Link
+                      key={link.name}
+                      href={link.href}
+                      className="text-neutral-400 hover:text-white transition-colors text-sm"
+                    >
+                      {link.name}
+                    </Link>
+                  ))}
+                </nav>
               </div>
-            </div>
+            ))}
+          </div>
+
+          {/* Social Icons - Centered */}
+          <div className="flex justify-center gap-6 mb-12">
+            {socialLinks.map((social) => {
+              const Icon = social.icon;
+              return (
+                <a
+                  key={social.name}
+                  href={social.href}
+                  target="_blank"
+                  rel="noopener noreferrer"
+                  className="w-10 h-10 flex items-center justify-center rounded-full bg-white/5 hover:bg-white/10 transition-all duration-300 group"
+                  aria-label={social.name}
+                >
+                  <Icon className="w-4 h-4 text-neutral-400 group-hover:text-white transition-colors" />
+                </a>
+              );
+            })}
           </div>
         </div>
-      </InView>
+
+        {/* Bottom Bar - Centered */}
+        <div className="border-t border-white/5 py-8">
+          <div className="flex flex-col items-center gap-2 text-center">
+            <p className="text-neutral-500 text-sm">
+              {ORG.legalName} • Business ID: {ORG.businessId}
+            </p>
+            <p className="text-neutral-600 text-xs">
+              © {new Date().getFullYear()} Since AI. All rights reserved.
+            </p>
+          </div>
+        </div>
+      </div>
     </footer>
   );
 };

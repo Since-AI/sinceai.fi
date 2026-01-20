@@ -57,7 +57,7 @@ export const ContactFAQ: React.FC<ContactFAQProps> = ({
     },
     {
       question: "Where are you based?",
-      answer: "Since AI is based in Turku, Finland. We're operated by Boost Turku ry, a non-profit organization focused on fostering innovation and entrepreneurship in the region. Our hackathons and events are typically held in Turku, but our community is global.",
+      answer: "Since AI is based in Turku, Finland. We're a registered non-profit organization (Since AI ry, Business ID: 3593920-2) focused on fostering innovation and AI development in the region and beyond. Our hackathons and events are typically held in Turku, but our community is global.",
     },
     {
       question: "How can I volunteer or contribute?",

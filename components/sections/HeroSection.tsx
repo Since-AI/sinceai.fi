@@ -14,7 +14,7 @@ export const HeroSection: React.FC<HeroSectionProps> = ({
     <>
 
       {/* Hero Section */}
-      <section className="relative w-full min-h-screen flex flex-col items-center justify-center px-6 py-24">
+      <section className="relative w-full min-h-screen flex flex-col items-center justify-center px-6 py-24 overflow-visible">
         {/* Subtle gradient background */}
         <div className="absolute inset-0 z-0">
           <div className="absolute inset-0 bg-gradient-to-b from-black via-neutral-950 to-black" />
@@ -22,80 +22,98 @@ export const HeroSection: React.FC<HeroSectionProps> = ({
         </div>
 
         {/* Content */}
-        <div className="relative z-20 flex flex-col items-center space-y-6 text-center max-w-6xl mx-auto">
-          {/* Main Headline - Apple-style large typography */}
+        <div className="relative z-20 flex flex-col items-center space-y-6 text-center max-w-6xl mx-auto overflow-visible">
+          {/* Main Headline - Elite positioning */}
           <motion.div
-            className="flex flex-col items-center space-y-4 pb-8"
+            className="flex flex-col items-center space-y-4 pb-8 overflow-visible"
             initial={{ opacity: 0, y: 30 }}
             animate={{ opacity: 1, y: 0 }}
             transition={{ duration: 1, delay: 0.2, ease: [0.22, 1, 0.36, 1] }}
           >
-            <h1 className="text-5xl sm:text-6xl md:text-7xl lg:text-8xl xl:text-9xl font-bold tracking-tighter leading-[1.15] text-white">
-              1 Thriving
-            </h1>
-            <h1 className="text-5xl sm:text-6xl md:text-7xl lg:text-8xl xl:text-9xl font-bold tracking-tighter leading-[1.15] bg-gradient-to-b from-white to-neutral-400 bg-clip-text text-transparent pb-4">
-              AI Community.
+            <h1 className="text-4xl sm:text-5xl md:text-6xl lg:text-7xl xl:text-8xl font-bold tracking-tighter leading-[1.15] overflow-visible">
+              <span className="block text-white pb-2">The AI builders' community</span>
+              <span className="block text-white pb-2">in Europe —</span>
+              <span className="block bg-gradient-to-b from-white to-neutral-400 bg-clip-text text-transparent pb-6">
+                Turku-based, globally connected.
+              </span>
             </h1>
           </motion.div>
 
-          {/* Subheading */}
-          <motion.p
-            className="text-xl sm:text-2xl md:text-3xl lg:text-4xl font-light text-neutral-400 max-w-3xl mt-8 leading-tight"
+          {/* Subheading - Mission statement */}
+          <motion.div
+            className="text-lg sm:text-xl md:text-2xl font-normal text-neutral-300 max-w-4xl mt-6 leading-relaxed space-y-4"
             initial={{ opacity: 0, y: 30 }}
             animate={{ opacity: 1, y: 0 }}
             transition={{ duration: 1, delay: 0.4, ease: [0.22, 1, 0.36, 1] }}
           >
-            Stay connected with builders
-            <br className="hidden sm:block" />
-            pushing AI forward.
-          </motion.p>
+            <p>
+              Since AI brings together <strong className="text-white font-semibold">500+ AI builders, researchers, and founders</strong> across Europe — and we're building the next bridge to the world's best talent from places like Stanford, Tsinghua, and top labs in China and the US.
+            </p>
+            <p className="text-neutral-400">
+              We run high-signal hackathons, meetups, and builder programs where teams ship real AI products: <span className="text-neutral-300">code, demos, deployments, and measurable outcomes</span> — in collaboration with partner companies that bring real-world problems and hiring opportunities.
+            </p>
+          </motion.div>
 
-          {/* Text Loop - More subtle */}
+          {/* Proof line - Stats */}
           <motion.div
             initial={{ opacity: 0 }}
             animate={{ opacity: 1 }}
             transition={{ duration: 1, delay: 0.6, ease: [0.22, 1, 0.36, 1] }}
-            className="mt-6"
+            className="mt-8 flex flex-wrap justify-center gap-4 text-sm sm:text-base font-medium text-neutral-500"
           >
-            <TextLoop
-              className="text-sm sm:text-base md:text-lg font-normal tracking-wide text-neutral-500"
-              transition={{
-                type: "spring",
-                stiffness: 200,
-                damping: 35,
-                mass: 1,
-              }}
-              variants={{
-                initial: { y: 20, opacity: 0, filter: "blur(4px)" },
-                animate: { y: 0, opacity: 1, filter: "blur(0px)" },
-                exit: { y: -20, opacity: 0, filter: "blur(4px)" },
-              }}
-            >
-              <span>For AI Enthusiasts</span>
-              <span>For Founders</span>
-              <span>For Developers</span>
-              <span>For Designers</span>
-            </TextLoop>
+            <span className="flex items-center gap-2">
+              <span className="w-1.5 h-1.5 rounded-full bg-neutral-500" />
+              500+ members
+            </span>
+            <span className="flex items-center gap-2">
+              <span className="w-1.5 h-1.5 rounded-full bg-neutral-500" />
+              200+ hackathon participants
+            </span>
+            <span className="flex items-center gap-2">
+              <span className="w-1.5 h-1.5 rounded-full bg-neutral-500" />
+              30+ shipped projects
+            </span>
+            <span className="flex items-center gap-2">
+              <span className="w-1.5 h-1.5 rounded-full bg-neutral-500" />
+              15+ partner companies
+            </span>
           </motion.div>
 
-          {/* CTA Button - Apple-style */}
+          {/* CTA Buttons - Primary + Secondary */}
           <motion.div
-            className="pt-12"
+            className="pt-10 flex flex-col items-center gap-6"
             initial={{ opacity: 0, y: 30 }}
             animate={{ opacity: 1, y: 0 }}
             transition={{ duration: 1, delay: 0.8, ease: [0.22, 1, 0.36, 1] }}
           >
-            <button
-              type="button"
-              onClick={() => window.open(discordUrl, "_blank")}
-              className="group relative inline-flex items-center justify-center px-8 py-3.5 text-sm font-semibold text-white bg-white/10 rounded-full transition-all duration-500 hover:bg-white/15 backdrop-blur-xl border border-white/20 hover:border-white/30 hover:scale-[1.02] transform disabled:opacity-50 disabled:cursor-not-allowed"
-              aria-label="Join Our Community on Discord"
-            >
-              <span className="relative z-10 tracking-wide">
-                Join Community
-              </span>
-              <div className="absolute inset-0 rounded-full bg-gradient-to-r from-white/0 via-white/5 to-white/0 opacity-0 group-hover:opacity-100 transition-opacity duration-500" />
-            </button>
+            <div className="flex flex-wrap items-center justify-center gap-4">
+              <button
+                type="button"
+                onClick={() => window.open(discordUrl, "_blank")}
+                className="group relative inline-flex items-center justify-center px-8 py-4 text-base font-semibold text-black bg-white rounded-full transition-all duration-300 hover:bg-neutral-100 hover:scale-[1.02] transform"
+                aria-label="Join Discord Community"
+              >
+                <span className="relative z-10">
+                  Join the Discord
+                </span>
+              </button>
+              
+              <button
+                type="button"
+                onClick={() => window.location.href = "/partners"}
+                className="group relative inline-flex items-center justify-center px-8 py-4 text-base font-semibold text-white bg-white/10 rounded-full transition-all duration-300 hover:bg-white/15 backdrop-blur-xl border border-white/20 hover:border-white/30 hover:scale-[1.02] transform"
+                aria-label="Partner with Since AI"
+              >
+                <span className="relative z-10">
+                  Partner with Since AI
+                </span>
+              </button>
+            </div>
+            
+            {/* Micro-line qualifier */}
+            <p className="text-sm text-neutral-500 font-medium tracking-wide">
+              If you're building serious AI, you'll fit in here.
+            </p>
           </motion.div>
         </div>
 

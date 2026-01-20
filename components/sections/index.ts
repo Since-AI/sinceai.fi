@@ -1,7 +1,6 @@
 export { HeroSection } from "./HeroSection";
 export { StatsSection } from "./StatsSection";
 export { ValuePropsSection } from "./ValuePropsSection";
-export { FeaturedProjects } from "./FeaturedProjects";
 export { SponsorSection } from "./SponsorSection";
 export { CommunityEngagement } from "./CommunityEngagement";
 export { Testimonials } from "./Testimonials";
