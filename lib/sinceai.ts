@@ -69,8 +69,8 @@ export function hasEventOccurred(): boolean {
 }
 
 // Event status for schema.org
-export function getEventStatus(): string {
+export function getEventStatus() {
   return hasEventOccurred() 
-    ? "https://schema.org/EventCompleted"
-    : "https://schema.org/EventScheduled";
+    ? "https://schema.org/EventCompleted" as const
+    : "https://schema.org/EventScheduled" as const;
 }

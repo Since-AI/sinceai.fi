@@ -83,9 +83,9 @@ export function getEventSchema(event: {
   image?: string
 }): WithContext<Event> {
   const statusMap = {
-    scheduled: 'https://schema.org/EventScheduled',
-    past: 'https://schema.org/EventScheduled', // Use EventScheduled for past events (EventPassed is not in schema.org)
-    cancelled: 'https://schema.org/EventCancelled',
+    scheduled: 'https://schema.org/EventScheduled' as const,
+    past: 'https://schema.org/EventScheduled' as const, // Use EventScheduled for past events (EventPassed is not in schema.org)
+    cancelled: 'https://schema.org/EventCancelled' as const,
   }
 
   const baseSchema: WithContext<Event> = {
@@ -95,7 +95,7 @@ export function getEventSchema(event: {
     description: event.description,
     startDate: event.startDate,
     endDate: event.endDate,
-    eventStatus: statusMap[event.eventStatus || 'scheduled'],
+    eventStatus: statusMap[event.eventStatus || 'scheduled'] as Event['eventStatus'],
     eventAttendanceMode: 'https://schema.org/OfflineEventAttendanceMode',
     location: {
       '@type': 'Place',
@@ -134,7 +134,7 @@ export function getFirstEventSchema(): WithContext<Event> {
     url: LINKS.lumaHackathon2025,
     startDate: FIRST_EVENT.startDate,
     endDate: FIRST_EVENT.endDate,
-    eventStatus: getEventStatus(),
+    eventStatus: getEventStatus() as Event['eventStatus'],
     eventAttendanceMode: 'https://schema.org/OfflineEventAttendanceMode',
     location: {
       '@type': 'Place',
@@ -170,7 +170,7 @@ export function getUpcoming2026EventSchema(): WithContext<Event> {
     name: UPCOMING_EVENT_2026.name,
     description: `${UPCOMING_EVENT_2026.name} will be held in ${UPCOMING_EVENT_2026.month} ${UPCOMING_EVENT_2026.year} in Turku, Finland. ${UPCOMING_EVENT_2026.dateNote}`,
     url: LINKS.lumaOrg,
-    eventStatus: 'https://schema.org/EventScheduled',
+    eventStatus: 'https://schema.org/EventScheduled' as Event['eventStatus'],
     eventAttendanceMode: 'https://schema.org/OfflineEventAttendanceMode',
     location: {
       '@type': 'Place',
