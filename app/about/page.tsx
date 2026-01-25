@@ -79,6 +79,7 @@ export default function AboutPage() {
                     <dt className="text-sm font-semibold text-neutral-500 uppercase tracking-wider mb-2">Official links</dt>
                     <dd className="flex flex-wrap gap-3">
                       <a href="https://discord.gg/6PC74zW68v" target="_blank" rel="noopener noreferrer" className="text-neutral-400 hover:text-white underline">Discord</a>
+                      <a href="https://t.me/sinceaihq" target="_blank" rel="noopener noreferrer" className="text-neutral-400 hover:text-white underline">Telegram</a>
                       <a href="https://www.linkedin.com/company/sinceai" target="_blank" rel="noopener noreferrer" className="text-neutral-400 hover:text-white underline">LinkedIn</a>
                       <a href="https://github.com/since-ai" target="_blank" rel="noopener noreferrer" className="text-neutral-400 hover:text-white underline">GitHub</a>
                       <a href="https://x.com/since_ai_" target="_blank" rel="noopener noreferrer" className="text-neutral-400 hover:text-white underline">X</a>
@@ -115,7 +116,7 @@ export default function AboutPage() {
                   </li>
                   <li className="flex items-start gap-3">
                     <span className="text-white font-bold mt-1">•</span>
-                    <span><strong className="text-white">Discord Community:</strong> 500+ members sharing knowledge, job opportunities, and collaborating on projects. Active channels for ML papers, career advice, and technical discussions.</span>
+                    <span><strong className="text-white">Community Channels:</strong> Join 500+ members in our Discord and Telegram channels, sharing knowledge, job opportunities, and collaborating on projects. Active discussions on ML papers, career advice, and technical topics.</span>
                   </li>
                   <li className="flex items-start gap-3">
                     <span className="text-white font-bold mt-1">•</span>

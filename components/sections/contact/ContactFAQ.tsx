@@ -36,7 +36,7 @@ export const ContactFAQ: React.FC<ContactFAQProps> = ({
     },
     {
       question: "How do I join the community?",
-      answer: "Join our Discord server for free! You'll get access to member-only channels, our job board, networking events, and updates about upcoming hackathons. It's the best way to connect with 500+ AI developers, founders, and enthusiasts.",
+      answer: "Join our Discord or Telegram for free! You'll get access to member-only channels, our job board, networking events, and updates about upcoming hackathons. It's the best way to connect with 500+ AI developers, founders, and enthusiasts.",
       link: {
         text: "Join Discord",
         href: discordUrl,
@@ -61,7 +61,7 @@ export const ContactFAQ: React.FC<ContactFAQProps> = ({
     },
     {
       question: "How can I volunteer or contribute?",
-      answer: "We're always looking for passionate individuals to help with events, content creation, community management, and more. Join our Discord and let us know you're interested in contributing. We'll find a way to get you involved!",
+      answer: "We're always looking for passionate individuals to help with events, content creation, community management, and more. Join our Discord or Telegram and let us know you're interested in contributing. We'll find a way to get you involved!",
       link: {
         text: "Join Discord to learn more",
         href: discordUrl,

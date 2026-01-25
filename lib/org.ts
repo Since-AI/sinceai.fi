@@ -19,6 +19,7 @@ export const ORG = {
   },
   social: {
     discord: "https://discord.gg/6PC74zW68v",
+    telegram: "https://t.me/sinceaihq",
     linkedin: "https://www.linkedin.com/company/sinceai",
     instagram: "https://www.instagram.com/since_ai/",
     x: "https://x.com/since_ai_",

@@ -203,6 +203,16 @@ export default function PressPage() {
                     <span className="text-sm text-neutral-500">500+ members</span>
                   </a>
                   <a
+                    href="https://t.me/sinceaihq"
+                    target="_blank"
+                    rel="noopener noreferrer"
+                    className="p-4 rounded-xl border border-white/10 bg-white/[0.02] hover:bg-white/[0.05] transition-colors text-neutral-300 hover:text-white"
+                  >
+                    <strong>Telegram</strong>
+                    <br />
+                    <span className="text-sm text-neutral-500">@sinceaihq</span>
+                  </a>
+                  <a
                     href="https://www.linkedin.com/company/sinceai"
                     target="_blank"
                     rel="noopener noreferrer"

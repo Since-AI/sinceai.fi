@@ -28,6 +28,7 @@ export function getOrganizationSchema(): WithContext<Organization> {
     },
     sameAs: [
       ORG.social.discord,
+      ORG.social.telegram,
       ORG.social.linkedin,
       ORG.social.instagram,
       ORG.social.x,

@@ -2,7 +2,8 @@
 import React from "react";
 import { motion } from "framer-motion";
 import { Mail, MapPin, Clock } from "lucide-react";
-import { FaDiscord } from "react-icons/fa";
+import { FaDiscord, FaTelegram } from "react-icons/fa";
+import { ORG } from "@/lib/org";
 
 interface ContactCard {
   icon: React.ElementType;
@@ -31,9 +32,17 @@ export const DirectContact: React.FC<DirectContactProps> = ({
     {
       icon: FaDiscord,
       title: "Discord",
-      description: "Join community of AI enthusiasts",
+      description: "Join 500+ AI builders",
       value: "Join our server",
       href: discordUrl,
+      external: true,
+    },
+    {
+      icon: FaTelegram,
+      title: "Telegram",
+      description: "Get event updates",
+      value: "Join channel",
+      href: ORG.social.telegram,
       external: true,
     },
     {
@@ -95,7 +104,7 @@ export const DirectContact: React.FC<DirectContactProps> = ({
 
         {/* Contact cards grid */}
         <motion.div
-          className="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-4 gap-6"
+          className="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-5 gap-6"
           variants={containerVariants}
           initial="hidden"
           animate="visible"

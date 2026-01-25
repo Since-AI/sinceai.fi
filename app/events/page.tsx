@@ -230,17 +230,27 @@ export default function EventsPage() {
                 Stay Updated
               </h3>
               <p className="text-lg text-neutral-400 mb-8 max-w-xl mx-auto">
-                Join our Discord to get notified about upcoming events, meetups, and hackathons.
+                Join our Discord or Telegram to get notified about upcoming events, meetups, and hackathons.
               </p>
               
-              <a
-                href={config.discordUrl}
-                target="_blank"
-                rel="noopener noreferrer"
-                className="inline-flex items-center justify-center px-6 py-3 text-base font-semibold text-black bg-white rounded-full hover:bg-neutral-100 transition-all duration-300"
-              >
-                Join Discord
-              </a>
+              <div className="flex flex-col sm:flex-row gap-4 justify-center items-center">
+                <a
+                  href={config.discordUrl}
+                  target="_blank"
+                  rel="noopener noreferrer"
+                  className="inline-flex items-center justify-center px-6 py-3 text-base font-semibold text-black bg-white rounded-full hover:bg-neutral-100 transition-all duration-300"
+                >
+                  Join Discord
+                </a>
+                <a
+                  href="https://t.me/sinceaihq"
+                  target="_blank"
+                  rel="noopener noreferrer"
+                  className="inline-flex items-center justify-center px-6 py-3 text-base font-semibold text-white bg-white/10 rounded-full hover:bg-white/15 border border-white/20 hover:border-white/30 transition-all duration-300"
+                >
+                  Join Telegram
+                </a>
+              </div>
             </motion.div>
           </div>
         </section>

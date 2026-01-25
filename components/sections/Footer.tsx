@@ -7,6 +7,7 @@ import {
   FaLinkedin,
   FaGithub,
   FaFacebook,
+  FaTelegram,
 } from "react-icons/fa";
 import { FaXTwitter } from "react-icons/fa6";
 import { ORG } from "@/lib/org";
@@ -20,6 +21,7 @@ export const Footer: React.FC<FooterProps> = ({
 }) => {
   const socialLinks = [
     { name: "Discord", href: discordUrl, icon: FaDiscord },
+    { name: "Telegram", href: ORG.social.telegram, icon: FaTelegram },
     { name: "LinkedIn", href: "https://www.linkedin.com/company/sinceai", icon: FaLinkedin },
     { name: "Instagram", href: "https://www.instagram.com/since_ai", icon: FaInstagram },
     { name: "X", href: "https://x.com/since_ai_", icon: FaXTwitter },

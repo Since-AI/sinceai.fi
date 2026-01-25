@@ -24,57 +24,27 @@ export function TrustBar() {
           Trusted & Supported By
         </p>
 
-        {/* Infinite scrolling logos */}
-        <div className="relative w-full">
-          <div className="flex gap-16 animate-scroll">
-            {/* First set */}
-            {allLogos.map((logo, index) => (
-              <div
-                key={`logo-1-${index}`}
-                className="flex items-center justify-center flex-shrink-0 w-32 h-16"
-              >
-                <Image
-                  src={logo.logo}
-                  alt={`${logo.name} logo`}
-                  width={120}
-                  height={60}
-                  style={{ width: 'auto', height: 'auto', maxWidth: '100%', maxHeight: '100%' }}
-                  className="object-contain grayscale opacity-50 hover:grayscale-0 hover:opacity-100 transition-all duration-300"
-                />
-              </div>
-            ))}
-            
-            {/* Duplicate set for seamless loop */}
-            {allLogos.map((logo, index) => (
-              <div
-                key={`logo-2-${index}`}
-                className="flex items-center justify-center flex-shrink-0 w-32 h-16"
-              >
-                <Image
-                  src={logo.logo}
-                  alt={`${logo.name} logo`}
-                  width={120}
-                  height={60}
-                  style={{ width: 'auto', height: 'auto', maxWidth: '100%', maxHeight: '100%' }}
-                  className="object-contain grayscale opacity-50 hover:grayscale-0 hover:opacity-100 transition-all duration-300"
-                />
-              </div>
-            ))}
-
-            {/* Third set for extra smoothness */}
-            {allLogos.map((logo, index) => (
-              <div
-                key={`logo-3-${index}`}
-                className="flex items-center justify-center flex-shrink-0 w-32 h-16"
-              >
-                <Image
-                  src={logo.logo}
-                  alt={`${logo.name} logo`}
-                  width={120}
-                  height={60}
-                  style={{ width: 'auto', height: 'auto', maxWidth: '100%', maxHeight: '100%' }}
-                  className="object-contain grayscale opacity-50 hover:grayscale-0 hover:opacity-100 transition-all duration-300"
-                />
+        {/* Infinite scrolling logos - truly seamless */}
+        <div className="logo-scroll-container">
+          <div className="logo-scroll-wrapper">
+            {/* Render logos 3 times for seamless loop */}
+            {[1, 2, 3].map((setNum) => (
+              <div key={`set-${setNum}`} className="logo-set">
+                {allLogos.map((logo, index) => (
+                  <div
+                    key={`logo-${setNum}-${index}`}
+                    className="logo-item"
+                  >
+                    <Image
+                      src={logo.logo}
+                      alt={`${logo.name} logo`}
+                      width={120}
+                      height={60}
+                      style={{ width: 'auto', height: 'auto', maxWidth: '100%', maxHeight: '100%' }}
+                      className="object-contain grayscale opacity-50 hover:grayscale-0 hover:opacity-100 transition-all duration-300"
+                    />
+                  </div>
+                ))}
               </div>
             ))}
           </div>
@@ -82,21 +52,45 @@ export function TrustBar() {
       </div>
 
       <style jsx>{`
-        @keyframes scroll {
+        .logo-scroll-container {
+          position: relative;
+          width: 100%;
+          overflow: hidden;
+        }
+
+        .logo-scroll-wrapper {
+          display: flex;
+          gap: 4rem;
+          width: fit-content;
+          animation: scroll-left 45s linear infinite;
+        }
+
+        .logo-scroll-wrapper:hover {
+          animation-play-state: paused;
+        }
+
+        .logo-set {
+          display: flex;
+          gap: 4rem;
+          flex-shrink: 0;
+        }
+
+        .logo-item {
+          display: flex;
+          align-items: center;
+          justify-center: center;
+          width: 8rem;
+          height: 4rem;
+          flex-shrink: 0;
+        }
+
+        @keyframes scroll-left {
           0% {
             transform: translateX(0);
           }
           100% {
             transform: translateX(calc(-100% / 3));
           }
-        }
-
-        .animate-scroll {
-          animation: scroll 40s linear infinite;
-        }
-
-        .animate-scroll:hover {
-          animation-play-state: paused;
         }
       `}</style>
     </section>
