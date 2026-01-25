@@ -81,9 +81,11 @@ export default function AboutPage() {
                       <a href="https://discord.gg/6PC74zW68v" target="_blank" rel="noopener noreferrer" className="text-neutral-400 hover:text-white underline">Discord</a>
                       <a href="https://t.me/sinceaihq" target="_blank" rel="noopener noreferrer" className="text-neutral-400 hover:text-white underline">Telegram</a>
                       <a href="https://www.linkedin.com/company/sinceai" target="_blank" rel="noopener noreferrer" className="text-neutral-400 hover:text-white underline">LinkedIn</a>
-                      <a href="https://github.com/since-ai" target="_blank" rel="noopener noreferrer" className="text-neutral-400 hover:text-white underline">GitHub</a>
-                      <a href="https://x.com/since_ai_" target="_blank" rel="noopener noreferrer" className="text-neutral-400 hover:text-white underline">X</a>
-                      <a href="https://www.instagram.com/since_ai/" target="_blank" rel="noopener noreferrer" className="text-neutral-400 hover:text-white underline">Instagram</a>
+                      <a href="https://github.com/sinceaihq" target="_blank" rel="noopener noreferrer" className="text-neutral-400 hover:text-white underline">GitHub</a>
+                      <a href="https://x.com/sinceaihq" target="_blank" rel="noopener noreferrer" className="text-neutral-400 hover:text-white underline">X</a>
+                      <a href="https://www.instagram.com/sinceaihq" target="_blank" rel="noopener noreferrer" className="text-neutral-400 hover:text-white underline">Instagram</a>
+                      <a href="https://www.youtube.com/@sinceaihq" target="_blank" rel="noopener noreferrer" className="text-neutral-400 hover:text-white underline">YouTube</a>
+                      <a href="https://www.tiktok.com/@sinceaihq" target="_blank" rel="noopener noreferrer" className="text-neutral-400 hover:text-white underline">TikTok</a>
                       <a href="https://www.facebook.com/sinceai" target="_blank" rel="noopener noreferrer" className="text-neutral-400 hover:text-white underline">Facebook</a>
                     </dd>
                   </div>

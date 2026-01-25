@@ -34,6 +34,8 @@ export function getOrganizationSchema(): WithContext<Organization> {
       ORG.social.x,
       ORG.social.github,
       ORG.social.facebook,
+      ORG.social.youtube,
+      ORG.social.tiktok,
     ],
     foundingDate: FOUNDING_YEAR.toString(),
     contactPoint: {

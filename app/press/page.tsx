@@ -223,34 +223,54 @@ export default function PressPage() {
                     <span className="text-sm text-neutral-500">@sinceai</span>
                   </a>
                   <a
-                    href="https://www.instagram.com/since_ai/"
+                    href="https://www.instagram.com/sinceaihq"
                     target="_blank"
                     rel="noopener noreferrer"
                     className="p-4 rounded-xl border border-white/10 bg-white/[0.02] hover:bg-white/[0.05] transition-colors text-neutral-300 hover:text-white"
                   >
                     <strong>Instagram</strong>
                     <br />
-                    <span className="text-sm text-neutral-500">@since_ai</span>
+                    <span className="text-sm text-neutral-500">@sinceaihq</span>
                   </a>
                   <a
-                    href="https://x.com/since_ai_"
+                    href="https://x.com/sinceaihq"
                     target="_blank"
                     rel="noopener noreferrer"
                     className="p-4 rounded-xl border border-white/10 bg-white/[0.02] hover:bg-white/[0.05] transition-colors text-neutral-300 hover:text-white"
                   >
                     <strong>X (Twitter)</strong>
                     <br />
-                    <span className="text-sm text-neutral-500">@since_ai_</span>
+                    <span className="text-sm text-neutral-500">@sinceaihq</span>
                   </a>
                   <a
-                    href="https://github.com/since-ai"
+                    href="https://github.com/sinceaihq"
                     target="_blank"
                     rel="noopener noreferrer"
                     className="p-4 rounded-xl border border-white/10 bg-white/[0.02] hover:bg-white/[0.05] transition-colors text-neutral-300 hover:text-white"
                   >
                     <strong>GitHub</strong>
                     <br />
-                    <span className="text-sm text-neutral-500">@since-ai</span>
+                    <span className="text-sm text-neutral-500">@sinceaihq</span>
+                  </a>
+                  <a
+                    href="https://www.youtube.com/@sinceaihq"
+                    target="_blank"
+                    rel="noopener noreferrer"
+                    className="p-4 rounded-xl border border-white/10 bg-white/[0.02] hover:bg-white/[0.05] transition-colors text-neutral-300 hover:text-white"
+                  >
+                    <strong>YouTube</strong>
+                    <br />
+                    <span className="text-sm text-neutral-500">@sinceaihq</span>
+                  </a>
+                  <a
+                    href="https://www.tiktok.com/@sinceaihq"
+                    target="_blank"
+                    rel="noopener noreferrer"
+                    className="p-4 rounded-xl border border-white/10 bg-white/[0.02] hover:bg-white/[0.05] transition-colors text-neutral-300 hover:text-white"
+                  >
+                    <strong>TikTok</strong>
+                    <br />
+                    <span className="text-sm text-neutral-500">@sinceaihq</span>
                   </a>
                   <a
                     href="https://www.facebook.com/sinceai"
