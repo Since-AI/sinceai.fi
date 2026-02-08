@@ -151,7 +151,7 @@ export default function CodeOfConductPage() {
                 </p>
                 <div className="p-6 rounded-xl border border-white/10 bg-white/[0.02] mb-6">
                   <p className="text-neutral-300 mb-2">
-                    <strong className="text-white">Email:</strong> riku@boostturku.com
+                    <strong className="text-white">Email:</strong> info@sinceai.fi
                   </p>
                   <p className="text-neutral-300 mb-2">
                     <strong className="text-white">During events:</strong> Contact any organizer (identifiable by Since AI staff badges)
@@ -202,8 +202,8 @@ export default function CodeOfConductPage() {
                 </h2>
                 <p className="text-neutral-300 mb-4">
                   If you have questions about this Code of Conduct, please contact us at{" "}
-                  <a href="mailto:riku@boostturku.com" className="text-white hover:text-neutral-300 underline">
-                    riku@boostturku.com
+                  <a href="mailto:info@sinceai.fi" className="text-white hover:text-neutral-300 underline">
+                    info@sinceai.fi
                   </a>.
                 </p>
                 <p className="text-neutral-400 text-sm">

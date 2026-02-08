@@ -14,8 +14,9 @@ export const ORG = {
     countryCode: "FI",
   },
   contact: {
-    generalEmail: "riku@boostturku.com", // TODO: Update when Since AI email available
-    partnershipEmail: "aarne@boostturku.com", // TODO: Update when Since AI email available
+    infoEmail: "info@sinceai.fi",
+    generalEmail: "riku.lauttia@sinceai.fi",
+    partnershipEmail: "aarne.ollila@sinceai.fi",
   },
   social: {
     discord: "https://discord.gg/6PC74zW68v",

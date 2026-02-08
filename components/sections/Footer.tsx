@@ -78,6 +78,12 @@ export const Footer: React.FC<FooterProps> = ({
             <p className="text-neutral-500 text-sm max-w-md">
               The AI builders community in Europe. Turku-based, globally connected.
             </p>
+            <a
+              href={`mailto:${ORG.contact.infoEmail}`}
+              className="text-neutral-400 hover:text-white transition-colors text-sm mt-3 inline-block"
+            >
+              {ORG.contact.infoEmail}
+            </a>
           </div>
 
           {/* Navigation Grid - Symmetric 3 columns */}

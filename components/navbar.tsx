@@ -50,7 +50,7 @@ export const Navbar = () => {
     blog: "/blog",
     contact: "/contact",
     partner: "#partner-section",
-    instagram: "https://www.instagram.com/since_ai/",
+    instagram: "https://www.instagram.com/sinceaihq",
     linkedin:
       "https://www.linkedin.com/company/sinceai/about/?viewAsMember=true",
   };

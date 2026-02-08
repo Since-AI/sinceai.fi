@@ -176,8 +176,8 @@ export default function PressPage() {
                     <p className="text-neutral-300">
                       <Mail className="inline w-4 h-4 mr-2" />
                       <strong className="text-white">Email:</strong>{" "}
-                      <a href="mailto:riku@boostturku.com" className="text-white hover:text-neutral-300 underline">
-                        riku@boostturku.com
+                      <a href="mailto:info@sinceai.fi" className="text-white hover:text-neutral-300 underline">
+                        info@sinceai.fi
                       </a>
                     </p>
                     <p className="text-neutral-300">

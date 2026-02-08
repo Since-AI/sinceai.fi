@@ -19,39 +19,51 @@ import {
 // Team members data
 const teamMembers = [
   {
-    name: "Aarne Ollila",
-    role: "Partnerships",
-    email: "aarne@boostturku.com",
-    linkedin: "https://www.linkedin.com/in/aarne-ollila-53429028b/",
-  },
-  {
     name: "Riku Lauttia",
     role: "Operations",
-    email: "riku@boostturku.com",
+    email: "riku.lauttia@sinceai.fi",
     linkedin: "https://www.linkedin.com/in/rikulauttia/",
   },
   {
-    name: "Arttu Myyryläinen",
-    role: "Strategic Outreach",
-    email: "arttu@boostturku.com",
-    linkedin: "https://www.linkedin.com/in/arttu-myyryl%C3%A4inen/",
+    name: "Aarne Ollila",
+    role: "Partnerships",
+    email: "aarne.ollila@sinceai.fi",
+    linkedin: "https://www.linkedin.com/in/aarne-ollila-53429028b/",
   },
   {
     name: "Aman Vyas",
     role: "International",
-    email: "aman@boostturku.com",
+    email: "aman.vyas@sinceai.fi",
     linkedin: "https://www.linkedin.com/in/aman-vyas-21b674133/",
   },
   {
-    name: "Vishaka Salpiumi",
-    role: "Social Media",
-    email: "vishaka@boostturku.com",
-    linkedin: "https://www.linkedin.com/in/vishaka-salpiumi-3b6578349/",
+    name: "Venla Raassina",
+    role: "Community",
+    email: "venla.raassina@sinceai.fi",
+    linkedin: "https://www.linkedin.com/in/venlaraassina/",
   },
   {
     name: "Abdul Wasay",
     role: "Content",
+    email: "abdul.wasay@sinceai.fi",
     linkedin: "https://www.linkedin.com/in/abdulwasaymuhammad/",
+  },
+  {
+    name: "Arttu Myyryläinen",
+    role: "Strategic Outreach",
+    email: "arttu.myyrilainen@sinceai.fi",
+    linkedin: "https://www.linkedin.com/in/arttu-myyryl%C3%A4inen/",
+  },
+  {
+    name: "Arttu Karonen",
+    role: "Finance",
+    email: "arttu.karonen@sinceai.fi",
+    linkedin: "https://www.linkedin.com/in/arttu-karonen-526872261/",
+  },
+  {
+    name: "Vishaka Salpiumi",
+    role: "Social Media",
+    linkedin: "https://www.linkedin.com/in/vishaka-salpiumi-3b6578349/",
   },
 ];
 
@@ -143,6 +155,16 @@ function ContactPageContent() {
             Questions about partnerships, events, or community? We typically respond within 24 hours.
           </motion.p>
 
+          <motion.a
+            href="mailto:info@sinceai.fi"
+            className="text-lg sm:text-xl text-white hover:text-neutral-300 transition-colors"
+            initial={{ opacity: 0, y: 30 }}
+            animate={{ opacity: 1, y: 0 }}
+            transition={{ duration: 0.8, delay: 0.5, ease: [0.22, 1, 0.36, 1] }}
+          >
+            info@sinceai.fi
+          </motion.a>
+
           <motion.div
             className="flex flex-col sm:flex-row items-center gap-4 pt-4"
             initial={{ opacity: 0, y: 30 }}
@@ -158,7 +180,7 @@ function ContactPageContent() {
               Join Discord
             </a>
             <a
-              href="mailto:riku@boostturku.com"
+              href="mailto:info@sinceai.fi"
               className="inline-flex items-center justify-center px-8 py-4 text-base font-semibold text-white bg-white/10 rounded-full transition-all duration-300 hover:bg-white/15 backdrop-blur-xl border border-white/20 hover:border-white/30 hover:scale-[1.02]"
             >
               Email Us
@@ -219,7 +241,7 @@ function ContactPageContent() {
               },
               {
                 q: "Can companies partner with Since AI?",
-                a: "Yes. We offer challenge partnerships, recruiting access, and workshops. Email aarne@boostturku.com or visit our /partners page."
+                a: "Yes. We offer challenge partnerships, recruiting access, and workshops. Email aarne.ollila@sinceai.fi or visit our /partners page."
               },
               {
                 q: "Where are your events held?",

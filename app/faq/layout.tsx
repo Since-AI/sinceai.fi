@@ -55,7 +55,7 @@ const faqData = [
   },
   {
     question: "How do I contact Since AI?",
-    answer: "For general inquiries: riku@boostturku.com. For partnerships: aarne@boostturku.com. We typically respond within 24 hours.",
+    answer: "For general inquiries: info@sinceai.fi. We typically respond within 24 hours.",
   },
 ];
 

@@ -48,12 +48,12 @@ export const ContactFAQ: React.FC<ContactFAQProps> = ({
     //   answer: "Yes! Companies can post jobs to our community job board through Discord, or you can sponsor the hackathon for dedicated recruiting access. We have 500+ AI-focused developers, designers, and founders in our community looking for their next opportunity.",
     //   link: {
     //     text: "Email us about job postings",
-    //     href: "mailto:riku@boostturku.com?subject=Job%20Posting%20Inquiry",
+    //     href: "mailto:info@sinceai.fi?subject=Job%20Posting%20Inquiry",
     //   },
     // },
     {
       question: "What's the best way to reach you?",
-      answer: "For general inquiries, fill out the contact form above. For urgent matters, email us directly at riku@boostturku.com. We typically respond within 24 hours. For partnership discussions, you can also reach out to individual team members listed on this page.",
+      answer: "For general inquiries, fill out the contact form above. For urgent matters, email us directly at info@sinceai.fi. We typically respond within 24 hours. For partnership discussions, you can also reach out to individual team members listed on this page.",
     },
     {
       question: "Where are you based?",

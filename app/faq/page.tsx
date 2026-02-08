@@ -45,7 +45,7 @@ export default function FAQPage() {
         },
         {
           q: "When is the next hackathon?",
-          a: `Since AI Hackathon 2026 will be held in November 2026. Exact dates will be announced soon. Get updates on our Luma page (${LINKS.lumaOrg}) or join our Discord community. Follow us on LinkedIn and Instagram (@since_ai) for announcements.`,
+          a: `Since AI Hackathon 2026 will be held in November 2026. Exact dates will be announced soon. Get updates on our Luma page (${LINKS.lumaOrg}) or join our Discord community. Follow us on LinkedIn and Instagram (@sinceaihq) for announcements.`,
         },
         {
           q: "Do I need a team to participate?",
@@ -58,7 +58,7 @@ export default function FAQPage() {
       questions: [
         {
           q: "What sponsorship options are available?",
-          a: "Every partnership is custom-tailored to your goals. Whether you're looking to recruit talent, build brand awareness, or support the AI community, we'll create a solution that works. Options include event sponsorships, workshop hosting, job board access, and custom partnership packages. Email us at riku@boostturku.com with your objectives.",
+          a: "Every partnership is custom-tailored to your goals. Whether you're looking to recruit talent, build brand awareness, or support the AI community, we'll create a solution that works. Options include event sponsorships, workshop hosting, job board access, and custom partnership packages. Email us at info@sinceai.fi with your objectives.",
         },
         {
           q: "What do partners get?",
@@ -66,7 +66,7 @@ export default function FAQPage() {
         },
         {
           q: "How much does partnership cost?",
-          a: "Partnership packages vary based on scope and goals. Contact our partnerships team at aarne@boostturku.com for pricing and custom packages tailored to your needs.",
+          a: "Partnership packages vary based on scope and goals. Contact our partnerships team at info@sinceai.fi for pricing and custom packages tailored to your needs.",
         },
       ],
     },
@@ -92,7 +92,7 @@ export default function FAQPage() {
       questions: [
         {
           q: "How do I contact Since AI?",
-          a: "For general inquiries: riku@boostturku.com. For partnerships: aarne@boostturku.com. For urgent matters, check our contact page for specific team members and their areas. We typically respond within 24 hours.",
+          a: "For general inquiries: info@sinceai.fi. For urgent matters, check our contact page for specific team members and their areas. We typically respond within 24 hours.",
         },
         {
           q: "Can I volunteer or contribute?",
@@ -164,9 +164,9 @@ export default function FAQPage() {
                   <dd className="flex flex-wrap gap-3">
                     <a href="https://discord.gg/6PC74zW68v" target="_blank" rel="noopener noreferrer" className="text-neutral-400 hover:text-white underline">Discord</a>
                     <a href="https://www.linkedin.com/company/sinceai" target="_blank" rel="noopener noreferrer" className="text-neutral-400 hover:text-white underline">LinkedIn</a>
-                    <a href="https://github.com/since-ai" target="_blank" rel="noopener noreferrer" className="text-neutral-400 hover:text-white underline">GitHub</a>
-                    <a href="https://x.com/since_ai_" target="_blank" rel="noopener noreferrer" className="text-neutral-400 hover:text-white underline">X</a>
-                    <a href="https://www.instagram.com/since_ai/" target="_blank" rel="noopener noreferrer" className="text-neutral-400 hover:text-white underline">Instagram</a>
+                    <a href="https://github.com/sinceaihq" target="_blank" rel="noopener noreferrer" className="text-neutral-400 hover:text-white underline">GitHub</a>
+                    <a href="https://x.com/sinceaihq" target="_blank" rel="noopener noreferrer" className="text-neutral-400 hover:text-white underline">X</a>
+                    <a href="https://www.instagram.com/sinceaihq" target="_blank" rel="noopener noreferrer" className="text-neutral-400 hover:text-white underline">Instagram</a>
                     <a href="https://www.facebook.com/sinceai" target="_blank" rel="noopener noreferrer" className="text-neutral-400 hover:text-white underline">Facebook</a>
                   </dd>
                 </div>

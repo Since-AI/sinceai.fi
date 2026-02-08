@@ -26,8 +26,8 @@ export const DirectContact: React.FC<DirectContactProps> = ({
       icon: Mail,
       title: "Email",
       description: "For general inquiries and questions",
-      value: "riku@boostturku.com",
-      href: "mailto:riku@boostturku.com",
+      value: "info@sinceai.fi",
+      href: "mailto:info@sinceai.fi",
     },
     {
       icon: FaDiscord,

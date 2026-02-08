@@ -131,7 +131,7 @@ export default function TermsPage() {
                 For questions about these Terms of Service, please contact:
               </p>
               <p className="text-neutral-300 leading-relaxed">
-                Email: <a href="mailto:riku@boostturku.com" className="text-white hover:text-neutral-300 transition-colors">riku@boostturku.com</a>
+                Email: <a href="mailto:info@sinceai.fi" className="text-white hover:text-neutral-300 transition-colors">info@sinceai.fi</a>
                 <br />
                 Organization: Since AI ry
                 <br />

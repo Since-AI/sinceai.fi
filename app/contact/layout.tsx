@@ -50,7 +50,7 @@ const faqData = [
   },
   {
     question: "What's the best way to reach you?",
-    answer: "For general inquiries, fill out the contact form above. For urgent matters, email us directly at riku@boostturku.com. We typically respond within 24 hours. For partnership discussions, you can also reach out to individual team members listed on this page.",
+    answer: "For general inquiries, fill out the contact form above. For urgent matters, email us directly at info@sinceai.fi. We typically respond within 24 hours. For partnership discussions, you can also reach out to individual team members listed on this page.",
   },
   {
     question: "Where are you based?",
