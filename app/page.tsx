@@ -16,6 +16,7 @@ import { ThreePillars } from "@/components/sections/homepage/ThreePillars";
 import { ProofStrip } from "@/components/sections/homepage/ProofStrip";
 import { ProjectSpotlight } from "@/components/sections/homepage/ProjectSpotlight";
 import { DualCTA } from "@/components/sections/homepage/DualCTA";
+import { LatestPosts } from "@/components/sections/homepage/LatestPosts";
 
 export default function HomePage() {
   const [isLoading, setIsLoading] = useState(true);
@@ -59,7 +60,10 @@ export default function HomePage() {
           {/* E) Project Spotlight - 2 Challenge Themes */}
           <ProjectSpotlight themes={spotlightThemes} />
 
-          {/* F) Dual CTA - Partner + Join */}
+          {/* F) Latest Blog Posts */}
+          <LatestPosts />
+
+          {/* G) Dual CTA - Partner + Join */}
           <DualCTA discordUrl={config.discordUrl} />
 
           {/* Footer */}

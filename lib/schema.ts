@@ -1,6 +1,7 @@
-import { Organization, WithContext, FAQPage, Event } from 'schema-dts'
+import { Organization, WithContext, FAQPage, Event, Blog } from 'schema-dts'
 import { ORG } from './org'
 import { FOUNDING_YEAR, FIRST_EVENT, UPCOMING_EVENT_2026, getEventStatus, LINKS } from './sinceai'
+import { blogPosts } from './blog'
 
 /**
  * Generate Organization schema for Since AI
@@ -36,6 +37,7 @@ export function getOrganizationSchema(): WithContext<Organization> {
       ORG.social.facebook,
       ORG.social.youtube,
       ORG.social.tiktok,
+      ORG.social.medium,
     ],
     foundingDate: FOUNDING_YEAR.toString(),
     contactPoint: {
@@ -188,5 +190,47 @@ export function getUpcoming2026EventSchema(): WithContext<Event> {
       name: ORG.name,
       url: ORG.baseUrl,
     },
+  }
+}
+
+/**
+ * Generate Blog + BlogPosting JSON-LD schema
+ * Each post uses mainEntityOfPage pointing to its Medium URL
+ */
+export function getBlogSchema(): WithContext<Blog> {
+  return {
+    '@context': 'https://schema.org',
+    '@type': 'Blog',
+    name: `${ORG.name} Blog`,
+    description: 'Guides, playbooks, and insights on AI hackathons, team building, and the builder community.',
+    url: `${ORG.baseUrl}/blog`,
+    publisher: {
+      '@type': 'Organization',
+      name: ORG.name,
+      url: ORG.baseUrl,
+      logo: {
+        '@type': 'ImageObject',
+        url: `${ORG.baseUrl}/assets/logo/SINCE AI full black.png`,
+      },
+    },
+    blogPost: blogPosts.map((post) => ({
+      '@type': 'BlogPosting' as const,
+      headline: post.title,
+      description: post.excerpt,
+      url: post.url,
+      mainEntityOfPage: post.url,
+      datePublished: post.datePublished,
+      author: {
+        '@type': 'Organization' as const,
+        name: ORG.name,
+        url: ORG.baseUrl,
+      },
+      publisher: {
+        '@type': 'Organization' as const,
+        name: ORG.name,
+        url: ORG.baseUrl,
+      },
+      keywords: post.tags.join(', '),
+    })),
   }
 }

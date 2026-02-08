@@ -118,6 +118,10 @@ export function DualCTA({ discordUrl }: DualCTAProps) {
             Projects
           </Link>
           <span className="text-neutral-800">•</span>
+          <Link href="/blog" className="hover:text-white transition-colors">
+            Blog
+          </Link>
+          <span className="text-neutral-800">•</span>
           <Link href="/faq" className="hover:text-white transition-colors">
             FAQ
           </Link>

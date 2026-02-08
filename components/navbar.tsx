@@ -47,6 +47,7 @@ export const Navbar = () => {
     events: "/events",
     projects: "/projects",
     partners: "/partners",
+    blog: "/blog",
     contact: "/contact",
     partner: "#partner-section",
     instagram: "https://www.instagram.com/since_ai/",
@@ -113,6 +114,12 @@ export const Navbar = () => {
                   className="text-base font-medium text-neutral-300 hover:text-white transition-colors duration-300 cursor-pointer py-3 px-4 text-left rounded-xl hover:bg-white/5"
                 >
                   Partners
+                </button>
+                <button
+                  onClick={() => handleNavigation(links.blog)}
+                  className="text-base font-medium text-neutral-300 hover:text-white transition-colors duration-300 cursor-pointer py-3 px-4 text-left rounded-xl hover:bg-white/5"
+                >
+                  Blog
                 </button>
                 <button
                   onClick={() => handleNavigation(links.contact)}
@@ -193,6 +200,16 @@ export const Navbar = () => {
                     className="text-sm font-medium px-3 py-1.5 rounded-lg transition-all duration-300 text-neutral-400 hover:text-white hover:bg-white/5 bg-transparent border-none cursor-pointer"
                   >
                     Partners
+                  </button>
+                </NavigationMenuLink>
+              </NavigationMenuItem>
+              <NavigationMenuItem>
+                <NavigationMenuLink asChild>
+                  <button
+                    onClick={() => handleNavigation(links.blog)}
+                    className="text-sm font-medium px-3 py-1.5 rounded-lg transition-all duration-300 text-neutral-400 hover:text-white hover:bg-white/5 bg-transparent border-none cursor-pointer"
+                  >
+                    Blog
                   </button>
                 </NavigationMenuLink>
               </NavigationMenuItem>

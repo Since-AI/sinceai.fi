@@ -27,6 +27,7 @@ export const ORG = {
     facebook: "https://www.facebook.com/sinceai",
     youtube: "https://www.youtube.com/@sinceaihq",
     tiktok: "https://www.tiktok.com/@sinceaihq",
+    medium: "https://medium.com/@sinceai",
   },
   stats: {
     members: "500+",

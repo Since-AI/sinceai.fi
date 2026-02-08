@@ -10,6 +10,7 @@ import {
   FaTelegram,
   FaYoutube,
   FaTiktok,
+  FaMedium,
 } from "react-icons/fa";
 import { FaXTwitter } from "react-icons/fa6";
 import { ORG } from "@/lib/org";
@@ -31,6 +32,7 @@ export const Footer: React.FC<FooterProps> = ({
     { name: "YouTube", href: ORG.social.youtube, icon: FaYoutube },
     { name: "TikTok", href: ORG.social.tiktok, icon: FaTiktok },
     { name: "Facebook", href: ORG.social.facebook, icon: FaFacebook },
+    { name: "Medium", href: ORG.social.medium, icon: FaMedium },
   ];
 
   const navigationColumns = [
@@ -41,6 +43,7 @@ export const Footer: React.FC<FooterProps> = ({
         { name: "Projects", href: "/projects" },
         { name: "Partners", href: "/partners" },
         { name: "Community", href: discordUrl },
+        { name: "Blog", href: "/blog" },
       ],
     },
     {
