@@ -29,6 +29,7 @@ export const ORG = {
     youtube: "https://www.youtube.com/@sinceaihq",
     tiktok: "https://www.tiktok.com/@sinceaihq",
     medium: "https://medium.com/@sinceai",
+    substack: "https://sinceai.substack.com",
   },
   stats: {
     members: "500+",

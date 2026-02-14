@@ -8,6 +8,7 @@ import { TimelineItem } from "@/components/motion-primitives/timeline-item";
 import { FOUNDING_YEAR, FIRST_EVENT, COPY } from "@/lib/sinceai";
 import { getBreadcrumbSchema } from "@/lib/schema";
 import { ORG } from "@/lib/org";
+import NewsletterSignup from "@/components/NewsletterSignup";
 
 const milestones = [
   { year: "2025", event: "Since AI founded as Europe's AI builders community" },
@@ -101,6 +102,7 @@ export default function AboutPage() {
                       <a href={ORG.social.youtube} target="_blank" rel="noopener noreferrer" className="text-neutral-400 hover:text-white underline">YouTube</a>
                       <a href={ORG.social.tiktok} target="_blank" rel="noopener noreferrer" className="text-neutral-400 hover:text-white underline">TikTok</a>
                       <a href={ORG.social.facebook} target="_blank" rel="noopener noreferrer" className="text-neutral-400 hover:text-white underline">Facebook</a>
+                      <a href={ORG.social.substack} target="_blank" rel="noopener noreferrer" className="text-neutral-400 hover:text-white underline">Substack</a>
                     </dd>
                   </div>
                 </dl>
@@ -580,6 +582,11 @@ export default function AboutPage() {
                     </Link>.
                   </p>
                 </div>
+              </section>
+
+              {/* Newsletter */}
+              <section className="mb-12">
+                <NewsletterSignup />
               </section>
 
               <p className="text-xs text-neutral-600 mt-16 pt-6 border-t border-white/5">

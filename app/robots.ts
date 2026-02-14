@@ -6,7 +6,7 @@ export default function robots(): MetadataRoute.Robots {
       {
         userAgent: '*',
         allow: '/',
-        disallow: ['/api/'],
+        disallow: ['/api/', '/_next/'],
       },
       // AI crawlers — explicitly allow everything
       {
@@ -43,6 +43,14 @@ export default function robots(): MetadataRoute.Robots {
       },
       {
         userAgent: 'cohere-ai',
+        allow: '/',
+      },
+      {
+        userAgent: 'Applebot-Extended',
+        allow: '/',
+      },
+      {
+        userAgent: 'Bytespider',
         allow: '/',
       },
     ],

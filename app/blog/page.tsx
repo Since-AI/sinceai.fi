@@ -13,6 +13,7 @@ import {
 import { getBlogSchema, getBlogItemListSchema, getBreadcrumbSchema, getBlogFAQSchema } from "@/lib/schema";
 import Link from "next/link";
 import { ORG } from "@/lib/org";
+import NewsletterSignup from "@/components/NewsletterSignup";
 
 const ALL_FILTER = "all" as const;
 type FilterValue = typeof ALL_FILTER | BlogCategory;
@@ -216,6 +217,13 @@ export default function BlogPage() {
           </div>
         </section>
 
+        {/* Newsletter */}
+        <section className="relative w-full px-6 py-16 border-t border-white/5">
+          <div className="max-w-3xl mx-auto">
+            <NewsletterSignup />
+          </div>
+        </section>
+
         {/* Follow CTA */}
         <section className="relative w-full px-6 py-24 border-t border-white/5">
           <div className="max-w-3xl mx-auto text-center">
@@ -226,21 +234,32 @@ export default function BlogPage() {
               transition={{ duration: 0.6 }}
             >
               <h3 className="text-3xl md:text-4xl font-bold text-white mb-4 tracking-tight">
-                Follow us on Medium
+                Follow Since AI
               </h3>
               <p className="text-lg text-neutral-400 mb-8 max-w-xl mx-auto">
                 More guides and insights from the Since AI community, published
                 regularly.
               </p>
-              <a
-                href="https://medium.com/@sinceai"
-                target="_blank"
-                rel="noopener noreferrer"
-                className="inline-flex items-center justify-center px-6 py-3 text-base font-semibold text-black bg-white rounded-full hover:bg-neutral-100 transition-all duration-300 group"
-              >
-                Follow on Medium
-                <ArrowUpRight className="w-4 h-4 ml-2 group-hover:translate-x-0.5 group-hover:-translate-y-0.5 transition-transform" />
-              </a>
+              <div className="flex flex-col sm:flex-row items-center justify-center gap-4">
+                <a
+                  href="https://sinceai.substack.com"
+                  target="_blank"
+                  rel="noopener noreferrer"
+                  className="inline-flex items-center justify-center px-6 py-3 text-base font-semibold text-black bg-white rounded-full hover:bg-neutral-100 transition-all duration-300 group"
+                >
+                  Subscribe on Substack
+                  <ArrowUpRight className="w-4 h-4 ml-2 group-hover:translate-x-0.5 group-hover:-translate-y-0.5 transition-transform" />
+                </a>
+                <a
+                  href="https://medium.com/@sinceai"
+                  target="_blank"
+                  rel="noopener noreferrer"
+                  className="inline-flex items-center justify-center px-6 py-3 text-base font-semibold text-white bg-white/10 rounded-full hover:bg-white/15 border border-white/20 hover:border-white/30 transition-all duration-300 group"
+                >
+                  Follow on Medium
+                  <ArrowUpRight className="w-4 h-4 ml-2 group-hover:translate-x-0.5 group-hover:-translate-y-0.5 transition-transform" />
+                </a>
+              </div>
             </motion.div>
           </div>
         </section>

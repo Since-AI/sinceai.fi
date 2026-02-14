@@ -74,6 +74,7 @@ export function getOrganizationSchema(): WithContext<Organization> & Record<stri
       ORG.social.youtube,
       ORG.social.tiktok,
       ORG.social.medium,
+      ORG.social.substack,
       LINKS.lumaOrg,
     ],
     foundingDate: FOUNDING_YEAR.toString(),

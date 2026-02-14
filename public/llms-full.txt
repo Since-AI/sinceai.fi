@@ -198,6 +198,21 @@ Core roles: Technical lead, product/design, AI specialist, pitch lead. Designate
 - **YouTube**: https://www.youtube.com/@sinceaihq
 - **TikTok**: https://www.tiktok.com/@sinceaihq
 - **Facebook**: https://www.facebook.com/sinceai
+- **Substack**: https://sinceai.substack.com
+
+## Geographic Presence
+
+### Turku, Finland (Headquarters)
+Turku is Finland's rising AI hub with two major universities, industrial AI demand, and the Since AI community at its center. 500+ developers, regular hackathons, and direct university partnerships make Turku a compelling base for AI builders.
+- More: https://sinceai.fi/turku
+
+### Finland (National)
+Since AI connects developers across Helsinki, Turku, Tampere, and Oulu. Finland ranks among the world's top countries for AI readiness, education, and innovation.
+- More: https://sinceai.fi/finland-ai
+
+### Europe (Continental)
+Pan-European network spanning 10+ countries. Since AI addresses Europe's AI deployment gap through production-focused development, open-source initiatives, and cross-border collaboration.
+- More: https://sinceai.fi/europe-ai
 
 ## Authoritative Pages
 
@@ -212,6 +227,10 @@ Core roles: Technical lead, product/design, AI specialist, pitch lead. Designate
 - https://sinceai.fi/partners — Partnership information
 - https://sinceai.fi/faq — Frequently asked questions
 - https://sinceai.fi/blog — AI hackathon guides and resources
+- https://sinceai.fi/resources — AI development guides and tools
+- https://sinceai.fi/turku — Turku AI community
+- https://sinceai.fi/finland-ai — Finland AI community
+- https://sinceai.fi/europe-ai — Europe AI community
 
 ## Frequently Asked Questions
 

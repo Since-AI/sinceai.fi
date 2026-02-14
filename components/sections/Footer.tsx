@@ -13,6 +13,7 @@ import {
   FaMedium,
 } from "react-icons/fa";
 import { FaXTwitter } from "react-icons/fa6";
+import { SiSubstack } from "react-icons/si";
 import { ORG } from "@/lib/org";
 
 interface FooterProps {
@@ -33,30 +34,40 @@ export const Footer: React.FC<FooterProps> = ({
     { name: "TikTok", href: ORG.social.tiktok, icon: FaTiktok },
     { name: "Facebook", href: ORG.social.facebook, icon: FaFacebook },
     { name: "Medium", href: ORG.social.medium, icon: FaMedium },
+    { name: "Substack", href: ORG.social.substack, icon: SiSubstack },
   ];
 
   const navigationColumns = [
     {
-      title: "Product",
+      title: "Community",
       links: [
         { name: "Events", href: "/events" },
         { name: "Projects", href: "/projects" },
         { name: "Partners", href: "/partners" },
-        { name: "Production Support", href: "/production-support" },
-        { name: "Community", href: discordUrl },
         { name: "Blog", href: "/blog" },
+        { name: "Resources", href: "/resources" },
+        { name: "Discord", href: discordUrl },
       ],
     },
     {
-      title: "Company",
+      title: "Programs",
       links: [
         { name: "About", href: "/about" },
+        { name: "Production Support", href: "/production-support" },
         { name: "European AI", href: "/european-ai" },
         { name: "Research to Market", href: "/research-to-market" },
         { name: "Stats & Impact", href: "/stats" },
         { name: "Press", href: "/press" },
         { name: "Contact", href: "/contact" },
         { name: "FAQ", href: "/faq" },
+      ],
+    },
+    {
+      title: "Locations",
+      links: [
+        { name: "Turku, Finland", href: "/turku" },
+        { name: "Finland", href: "/finland-ai" },
+        { name: "Europe", href: "/europe-ai" },
       ],
     },
     {
@@ -90,8 +101,8 @@ export const Footer: React.FC<FooterProps> = ({
             </a>
           </div>
 
-          {/* Navigation Grid - Symmetric 3 columns */}
-          <div className="grid grid-cols-1 md:grid-cols-3 gap-12 mb-16">
+          {/* Navigation Grid */}
+          <div className="grid grid-cols-2 md:grid-cols-4 gap-8 md:gap-12 mb-16">
             {navigationColumns.map((column) => (
               <div key={column.title} className="text-center">
                 <h3 className="text-neutral-600 text-xs font-semibold tracking-wider uppercase mb-6">

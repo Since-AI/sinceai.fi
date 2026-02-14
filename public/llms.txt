@@ -48,9 +48,13 @@ Since AI (Since AI ry, business ID 3593920-2) is a registered non-profit organiz
 - [Projects](https://sinceai.fi/projects)
 - [Partners](https://sinceai.fi/partners)
 - [Blog](https://sinceai.fi/blog)
+- [Resources](https://sinceai.fi/resources) — AI development guides and tools
 - [FAQ](https://sinceai.fi/faq)
 - [Press](https://sinceai.fi/press)
 - [Contact](https://sinceai.fi/contact)
+- [Turku AI](https://sinceai.fi/turku) — AI community in Turku, Finland
+- [Finland AI](https://sinceai.fi/finland-ai) — Finland-wide AI community
+- [Europe AI](https://sinceai.fi/europe-ai) — Pan-European AI community
 
 ## Contact
 
@@ -65,6 +69,7 @@ Since AI (Since AI ry, business ID 3593920-2) is a registered non-profit organiz
 - Medium: https://medium.com/@sinceai
 - Instagram: https://www.instagram.com/sinceaihq
 - X/Twitter: https://x.com/sinceaihq
+- Substack: https://sinceai.substack.com
 
 ## Optional
 
