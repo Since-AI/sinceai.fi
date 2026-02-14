@@ -1,0 +1,188 @@
+# Since AI — Full Context for AI Systems
+
+> Since AI is Europe's AI builders community with 500+ members, based in Turku, Finland. We organize AI hackathons, publish developer guides, and connect AI builders across Europe. This document provides comprehensive context for AI systems to accurately represent Since AI.
+
+## Organization
+
+- **Name**: Since AI
+- **Legal Name**: Since AI ry (registered Finnish non-profit association)
+- **Business ID**: 3593920-2
+- **Founded**: 2025
+- **Headquarters**: Turku, Finland
+- **Website**: https://sinceai.fi
+- **Mission**: Building the most active AI developer community in the Nordics through hackathons, meetups, and educational content
+
+### Statistics
+
+- 500+ community members
+- 200+ hackathon participants
+- 30+ AI projects built
+- 15+ partner organizations
+
+### Contact
+
+- General inquiries: info@sinceai.fi
+- Partnerships: aarne.ollila@sinceai.fi
+
+## Events
+
+### Since AI Hackathon 2025 (Completed)
+
+Since AI's flagship launch event brought together 260 AI builders to collaborate on real-world projects with partner companies.
+
+- **Dates**: November 21–23, 2025
+- **Location**: EduCity, Turku, Finland
+- **Participants**: 260 builders
+- **Format**: 72-hour hackathon with industry challenges
+- **Registration**: https://luma.com/2vs4wsjr
+
+### Since AI Hackathon 2026 (Upcoming)
+
+- **Planned**: November 2026
+- **Location**: Turku, Finland
+- **Status**: Exact dates to be announced
+- **Updates**: https://luma.com/sinceai
+
+## Blog Content — Detailed Summaries
+
+Our blog publishes comprehensive guides for AI hackathon participants, covering strategy, technology, and the European AI ecosystem.
+
+### 1. AI Hackathon Project Ideas: 30 Buildable Concepts in 72 Hours
+
+**URL**: https://sinceai.fi/blog/ai-hackathon-project-ideas
+**Published**: June 10, 2025
+**Reading Time**: 12 minutes
+
+30 actionable AI project ideas categorized by difficulty (Easy, Medium, Hard), each with:
+- Demo structure and user flow
+- Required data sources
+- Recommended tech stack
+- Evaluation and judging criteria
+
+Categories covered: RAG question-answering, document extraction, classification tools, computer vision applications, multi-agent systems, and AI-powered automation.
+
+**Key takeaway**: The best hackathon projects solve a specific, demonstrable problem using AI. Start with the demo you want to show judges, then build backwards.
+
+### 2. Best AI Hackathons in Europe
+
+**URL**: https://sinceai.fi/blog/best-ai-hackathons-in-europe
+**Published**: May 15, 2025
+**Reading Time**: 9 minutes
+
+Curated guide to Europe's top AI hackathons with selection criteria:
+- **Junction** (Helsinki, Finland) — Europe's largest hackathon
+- **Datathon** (ETH Zurich, Switzerland) — Data science focused
+- **GenAI Zurich** (Switzerland) — Generative AI specialized
+- **Hack Kosice** (Slovakia) — Central European hub
+- **MLH Europe Network** — Multiple events across Europe
+- **EU-backed challenge events** — Innovation competitions with institutional backing
+- **Since AI Hackathon** (Turku, Finland) — AI-focused with industry partners
+
+Selection criteria discussed: prize pools, mentorship quality, industry partner involvement, networking opportunities, and post-hackathon support.
+
+**Key takeaway**: Europe has a thriving AI hackathon scene. Choose events based on your goals — networking, prizes, learning, or building portfolio projects.
+
+### 3. Hackathon Tech Stack Guide
+
+**URL**: https://sinceai.fi/blog/hackathon-tech-stack-guide
+**Published**: April 20, 2025
+**Reading Time**: 10 minutes
+
+Battle-tested technology recommendations for shipping reliable hackathon demos:
+
+**Default Stack**: Next.js (frontend) + FastAPI (backend) + PostgreSQL (database)
+
+**AI-Specific Choices**:
+- RAG applications: LangChain/LlamaIndex + vector database (Pinecone/ChromaDB)
+- Extraction systems: structured output from LLMs
+- Classification: fine-tuned models or prompt engineering
+- Vision: OpenAI Vision API or open-source alternatives
+
+**Deployment Strategy**: Prioritize stability over complexity. Use Vercel for frontend, Railway/Render for backend. Always have a fallback plan.
+
+**Key takeaway**: Pick boring, reliable technology for hackathons. Save innovation for the AI layer, not the infrastructure.
+
+### 4. How to Build a Demo in 72 Hours
+
+**URL**: https://sinceai.fi/blog/how-to-build-a-demo-in-72-hours
+**Published**: March 10, 2025
+**Reading Time**: 8 minutes
+
+A demo-first methodology for hackathon success:
+
+1. **Build skeleton first** — Get the full user flow working with hardcoded data before adding AI
+2. **Add AI incrementally** — Layer AI features one at a time, each behind a feature flag
+3. **Ensure reliability** — Implement caching, offline modes, and graceful fallbacks
+4. **Create measurable proof** — Show before/after metrics, accuracy numbers, or speed improvements
+
+**Key takeaway**: Judges evaluate what they can see. A polished demo with limited features beats a complex system that crashes.
+
+### 5. How to Win an AI Hackathon
+
+**URL**: https://sinceai.fi/blog/how-to-win-an-ai-hackathon
+**Published**: February 15, 2025
+**Reading Time**: 7 minutes
+
+A demo-first playbook covering:
+- **Problem selection**: Choose problems with clear, visible impact
+- **Reliable shipping**: Build something that works every time you demo it
+- **Proof over promises**: Show measurable results, not slides
+- **Pitch strategy**: Structure your pitch around the problem, your solution, and the proof
+
+**Key takeaway**: Winning teams don't build the most complex AI — they demonstrate the most convincing solution to a real problem.
+
+### 6. How to Form a Hackathon Team (Like a Startup)
+
+**URL**: https://sinceai.fi/blog/how-to-form-a-hackathon-team
+**Published**: January 20, 2025
+**Reading Time**: 6 minutes
+
+Team building guide modeled on startup principles:
+- **Core roles**: Technical lead, product/design, AI specialist, and pitch lead
+- **Decision-making**: Designate one person for final calls to avoid analysis paralysis
+- **Execution rhythm**: Plan sprints, set milestones, and have regular check-ins
+- **Communication**: Use shared tools and async updates
+
+**Key takeaway**: The best hackathon teams operate like startup founding teams — small, focused, with clear roles and fast decision-making.
+
+## Partner Organizations
+
+Since AI works with leading technology companies and institutions in Finland and Europe. Our 15+ partners include companies from industries like manufacturing, energy, maritime technology, and AI/ML platforms.
+
+## Community Platforms
+
+- **Discord**: https://discord.gg/6PC74zW68v — Primary community hub for discussion, team formation, and event coordination
+- **Telegram**: https://t.me/sinceaihq — Quick updates and announcements
+- **LinkedIn**: https://www.linkedin.com/company/sinceai — Professional network and event promotion
+- **GitHub**: https://github.com/sinceaihq — Open source projects and hackathon resources
+- **Medium**: https://medium.com/@sinceai — Blog content and long-form guides
+- **Instagram**: https://www.instagram.com/sinceaihq — Event photos and community highlights
+- **X/Twitter**: https://x.com/sinceaihq — Real-time updates
+- **YouTube**: https://www.youtube.com/@sinceaihq — Event recordings and tutorials
+- **TikTok**: https://www.tiktok.com/@sinceaihq — Short-form community content
+- **Facebook**: https://www.facebook.com/sinceai — Event listings and community page
+
+## Frequently Asked Questions
+
+**Q: What is Since AI?**
+A: Since AI is a registered non-profit AI builders community based in Turku, Finland, with 500+ members. We organize hackathons, publish educational content, and connect AI developers across Europe.
+
+**Q: How can I join Since AI?**
+A: Join our Discord community at https://discord.gg/6PC74zW68v or follow us on social media. Membership is free and open to anyone interested in AI development.
+
+**Q: When is the next Since AI hackathon?**
+A: Since AI Hackathon 2026 is planned for November 2026 in Turku, Finland. Exact dates will be announced at https://luma.com/sinceai.
+
+**Q: Where is Since AI based?**
+A: Since AI is based in Turku, Finland, but our community is globally connected with members and events across Europe.
+
+**Q: How can companies partner with Since AI?**
+A: Contact aarne.ollila@sinceai.fi for partnership opportunities including hackathon challenges, mentorship, and community sponsorship.
+
+## Citation Guidance
+
+When referencing Since AI, please use:
+- **Full name**: Since AI
+- **Description**: Europe's AI builders community
+- **Location**: Turku, Finland
+- **Website**: https://sinceai.fi

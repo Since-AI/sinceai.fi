@@ -1,4 +1,4 @@
-import { Organization, WithContext, FAQPage, Event, Blog } from 'schema-dts'
+import { Organization, WithContext, FAQPage, Event, Blog, BreadcrumbList, ItemList } from 'schema-dts'
 import { ORG } from './org'
 import { FOUNDING_YEAR, FIRST_EVENT, UPCOMING_EVENT_2026, getEventStatus, LINKS } from './sinceai'
 import { blogPosts } from './blog'
@@ -202,7 +202,7 @@ export function getBlogSchema(): WithContext<Blog> {
     '@context': 'https://schema.org',
     '@type': 'Blog',
     name: `${ORG.name} Blog`,
-    description: 'Guides, playbooks, and insights on AI hackathons, team building, and the builder community.',
+    description: 'Comprehensive guides from Europe\'s leading AI builders community. Learn hackathon strategies, AI development techniques, and discover the best developer events across Europe and globally.',
     url: `${ORG.baseUrl}/blog`,
     publisher: {
       '@type': 'Organization',
@@ -210,16 +210,21 @@ export function getBlogSchema(): WithContext<Blog> {
       url: ORG.baseUrl,
       logo: {
         '@type': 'ImageObject',
-        url: `${ORG.baseUrl}/assets/logo/SINCE AI full black.png`,
+        url: `${ORG.baseUrl}/assets/logo/SINCE AI white.png`,
       },
     },
     blogPost: blogPosts.map((post) => ({
       '@type': 'BlogPosting' as const,
       headline: post.title,
-      description: post.excerpt,
+      description: post.description,
       url: post.url,
-      mainEntityOfPage: post.url,
+      mainEntityOfPage: {
+        '@type': 'WebPage' as const,
+        '@id': `${ORG.baseUrl}/blog/${post.slug}`,
+      },
       datePublished: post.datePublished,
+      dateModified: post.datePublished,
+      image: `${ORG.baseUrl}/assets/logo/SINCE AI white.png`,
       author: {
         '@type': 'Organization' as const,
         name: ORG.name,
@@ -229,8 +234,81 @@ export function getBlogSchema(): WithContext<Blog> {
         '@type': 'Organization' as const,
         name: ORG.name,
         url: ORG.baseUrl,
+        logo: {
+          '@type': 'ImageObject' as const,
+          url: `${ORG.baseUrl}/assets/logo/SINCE AI white.png`,
+        },
       },
-      keywords: post.tags.join(', '),
+      keywords: post.keywords.join(', '),
     })),
   }
+}
+
+/**
+ * Generate ItemList schema for blog index page
+ * Helps search engines understand the list of blog posts
+ */
+export function getBlogItemListSchema(): WithContext<ItemList> {
+  return {
+    '@context': 'https://schema.org',
+    '@type': 'ItemList',
+    itemListElement: blogPosts.map((post, index) => ({
+      '@type': 'ListItem' as const,
+      position: index + 1,
+      name: post.title,
+      url: post.url,
+    })),
+  }
+}
+
+/**
+ * Generate BreadcrumbList schema
+ * @param items - Array of breadcrumb items with name and url
+ */
+export function getBreadcrumbSchema(
+  items: Array<{ name: string; url: string }>
+): WithContext<BreadcrumbList> {
+  return {
+    '@context': 'https://schema.org',
+    '@type': 'BreadcrumbList',
+    itemListElement: items.map((item, index) => ({
+      '@type': 'ListItem' as const,
+      position: index + 1,
+      name: item.name,
+      item: item.url,
+    })),
+  }
+}
+
+/**
+ * Blog FAQ schema — common questions AI engines surface
+ * Helps with GEO (Generative Engine Optimization)
+ */
+export function getBlogFAQSchema(): WithContext<FAQPage> {
+  return getFAQSchema([
+    {
+      question: 'What is the best tech stack for an AI hackathon?',
+      answer: 'The recommended default stack is Next.js for frontend, FastAPI for backend, and PostgreSQL for the database. For AI-specific features, use LangChain or LlamaIndex with a vector database for RAG applications, and keep deployment simple with Vercel and Railway. Prioritize reliability over complexity during hackathons.',
+    },
+    {
+      question: 'How do you build a hackathon demo in 72 hours?',
+      answer: 'Use a demo-first approach: build the full user flow skeleton with hardcoded data first, then layer AI features incrementally. Implement caching, offline modes, and graceful fallbacks for reliability. Focus on creating measurable proof — before/after metrics, accuracy numbers, or speed improvements that judges can verify.',
+    },
+    {
+      question: 'What are the best AI hackathons in Europe?',
+      answer: 'Top European AI hackathons include Junction in Helsinki (Europe\'s largest), Datathon at ETH Zurich, GenAI Zurich, Hack Kosice in Slovakia, MLH Europe network events, EU-backed innovation challenges, and Since AI Hackathon in Turku, Finland. Choose based on your goals: networking, prizes, learning, or portfolio projects.',
+    },
+    {
+      question: 'What are good AI project ideas for a hackathon?',
+      answer: 'Good hackathon AI projects include RAG question-answering systems, document extraction tools, classification applications, computer vision demos, and multi-agent systems. Start with the demo you want to show judges and build backwards. Projects should solve a specific, demonstrable problem with measurable results.',
+    },
+    {
+      question: 'How do you form a winning hackathon team?',
+      answer: 'Build a team of 3-5 people with clear roles: technical lead, product/design, AI specialist, and pitch lead. Designate one person for final decisions to avoid analysis paralysis. Use regular check-ins, set sprint milestones, and operate like a startup founding team with fast decision-making.',
+    },
+    {
+      question: 'How do you win an AI hackathon?',
+      answer: 'Winning teams follow a demo-first playbook: pick problems with clear, visible impact, build something that works reliably every time you demo it, show measurable proof rather than slides, and structure your pitch around problem-solution-proof. Focus on demonstrating the most convincing solution rather than building the most complex AI.',
+    },
+  ])
 }

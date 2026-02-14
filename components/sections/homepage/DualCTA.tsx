@@ -3,7 +3,6 @@ import React from "react";
 import Link from "next/link";
 import { motion } from "framer-motion";
 import { ArrowRight, Users, Briefcase } from "lucide-react";
-import { UPCOMING_EVENT_2026 } from "@/lib/sinceai";
 
 interface DualCTAProps {
   discordUrl: string;
@@ -81,53 +80,24 @@ export function DualCTA({ discordUrl }: DualCTAProps) {
 
         {/* Upcoming Event Notice */}
         <motion.div
-          initial={{ opacity: 0 }}
-          whileInView={{ opacity: 1 }}
+          initial={{ opacity: 0, y: 10 }}
+          whileInView={{ opacity: 1, y: 0 }}
           viewport={{ once: true }}
           transition={{ duration: 0.6, delay: 0.2 }}
           className="mt-12 text-center"
         >
           <Link
             href="/events"
-            className="inline-flex items-center gap-2 px-4 py-2 rounded-full bg-white/5 border border-white/10 hover:border-white/20 transition-all group"
+            className="inline-flex items-center gap-3 px-6 py-3 rounded-full bg-white/5 border border-white/10 hover:border-white/20 hover:bg-white/[0.08] transition-all group"
           >
-            <span className="text-sm font-semibold text-neutral-500 group-hover:text-white transition-colors">
-              Next: {UPCOMING_EVENT_2026.statusLabelShort}
+            <span className="relative flex h-2 w-2">
+              <span className="animate-ping absolute inline-flex h-full w-full rounded-full bg-green-400 opacity-75" />
+              <span className="relative inline-flex rounded-full h-2 w-2 bg-green-500" />
             </span>
-            <ArrowRight className="w-3 h-3 text-neutral-600 group-hover:text-white group-hover:translate-x-0.5 transition-all" />
-          </Link>
-        </motion.div>
-
-        {/* Navigation Links */}
-        <motion.div
-          initial={{ opacity: 0 }}
-          whileInView={{ opacity: 1 }}
-          viewport={{ once: true }}
-          transition={{ duration: 0.6, delay: 0.3 }}
-          className="mt-8 flex flex-wrap justify-center gap-6 text-sm text-neutral-600"
-        >
-          <Link href="/about" className="hover:text-white transition-colors">
-            About
-          </Link>
-          <span className="text-neutral-800">•</span>
-          <Link href="/events" className="hover:text-white transition-colors">
-            Events
-          </Link>
-          <span className="text-neutral-800">•</span>
-          <Link href="/projects" className="hover:text-white transition-colors">
-            Projects
-          </Link>
-          <span className="text-neutral-800">•</span>
-          <Link href="/blog" className="hover:text-white transition-colors">
-            Blog
-          </Link>
-          <span className="text-neutral-800">•</span>
-          <Link href="/faq" className="hover:text-white transition-colors">
-            FAQ
-          </Link>
-          <span className="text-neutral-800">•</span>
-          <Link href="/contact" className="hover:text-white transition-colors">
-            Contact
+            <span className="text-sm font-medium text-neutral-300 group-hover:text-white transition-colors">
+              Since AI Hackathon 2026 — November in Turku
+            </span>
+            <ArrowRight className="w-3.5 h-3.5 text-neutral-500 group-hover:text-white group-hover:translate-x-0.5 transition-all" />
           </Link>
         </motion.div>
       </div>

@@ -2,8 +2,18 @@
 import React from "react";
 import Link from "next/link";
 import { motion } from "framer-motion";
-import { ArrowRight, ArrowUpRight } from "lucide-react";
-import { blogPosts } from "@/lib/blog";
+import { ArrowRight, ArrowUpRight, Clock } from "lucide-react";
+import { getLatestPosts } from "@/lib/blog";
+
+const latestPosts = getLatestPosts(3);
+
+function formatDate(dateString: string): string {
+  return new Date(dateString).toLocaleDateString("en-US", {
+    year: "numeric",
+    month: "short",
+    day: "numeric",
+  });
+}
 
 export function LatestPosts() {
   return (
@@ -15,28 +25,19 @@ export function LatestPosts() {
           whileInView={{ opacity: 1, y: 0 }}
           viewport={{ once: true }}
           transition={{ duration: 0.5 }}
-          className="flex items-end justify-between mb-12"
+          className="text-center mb-12"
         >
-          <div>
-            <h2 className="text-3xl md:text-4xl font-bold text-white tracking-tight">
-              Latest from the blog
-            </h2>
-            <p className="text-neutral-400 mt-3 text-base">
-              Playbooks and guides from the Since AI community.
-            </p>
-          </div>
-          <Link
-            href="/blog"
-            className="hidden sm:inline-flex items-center gap-1.5 text-sm font-medium text-neutral-400 hover:text-white transition-colors group"
-          >
-            All posts
-            <ArrowRight className="w-3.5 h-3.5 group-hover:translate-x-0.5 transition-transform" />
-          </Link>
+          <h2 className="text-3xl md:text-4xl font-bold text-white tracking-tight">
+            Latest from the blog
+          </h2>
+          <p className="text-neutral-400 mt-3 text-base">
+            Playbooks and guides from the Since AI community.
+          </p>
         </motion.div>
 
         {/* Post Cards */}
-        <div className="grid grid-cols-1 md:grid-cols-2 gap-6">
-          {blogPosts.map((post, index) => (
+        <div className="grid grid-cols-1 md:grid-cols-3 gap-6">
+          {latestPosts.map((post, index) => (
             <motion.a
               key={post.slug}
               href={post.url}
@@ -51,7 +52,7 @@ export function LatestPosts() {
               <div>
                 {/* Tags */}
                 <div className="flex flex-wrap gap-2 mb-5">
-                  {post.tags.map((tag) => (
+                  {post.tags.slice(0, 3).map((tag) => (
                     <span
                       key={tag}
                       className="px-3 py-1 text-xs font-medium text-neutral-300 bg-white/5 border border-white/10 rounded-full"
@@ -67,9 +68,20 @@ export function LatestPosts() {
                 </h3>
 
                 {/* Excerpt */}
-                <p className="text-sm text-neutral-400 leading-relaxed mb-6">
+                <p className="text-sm text-neutral-400 leading-relaxed mb-4">
                   {post.excerpt}
                 </p>
+
+                {/* Meta */}
+                <div className="flex items-center gap-3 text-xs text-neutral-500 mb-6">
+                  <span className="flex items-center gap-1">
+                    <Clock className="w-3 h-3" />
+                    {post.readingTime} min
+                  </span>
+                  <time dateTime={post.datePublished}>
+                    {formatDate(post.datePublished)}
+                  </time>
+                </div>
               </div>
 
               {/* CTA */}
@@ -81,8 +93,8 @@ export function LatestPosts() {
           ))}
         </div>
 
-        {/* Mobile "All posts" link */}
-        <div className="sm:hidden mt-8 text-center">
+        {/* All posts link */}
+        <div className="mt-10 text-center">
           <Link
             href="/blog"
             className="inline-flex items-center gap-1.5 text-sm font-medium text-neutral-400 hover:text-white transition-colors group"

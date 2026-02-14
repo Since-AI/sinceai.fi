@@ -1,0 +1,59 @@
+# Since AI
+
+> Since AI is Europe's AI builders community with 500+ members, based in Turku, Finland. We organize AI hackathons, publish developer guides, and connect AI builders across Europe.
+
+## About
+
+Since AI (Since AI ry, business ID 3593920-2) is a registered non-profit organization founded in 2025. We build the most active AI developer community in the Nordics through hackathons, meetups, and educational content.
+
+- Website: https://sinceai.fi
+- Location: Turku, Finland
+- Members: 500+
+- Hackathon Participants: 200+
+- Projects Built: 30+
+- Partners: 15+
+
+## Key Events
+
+- **Since AI Hackathon 2025**: Nov 21–23, 2025 at EduCity, Turku. 260 builders participated.
+- **Since AI Hackathon 2026**: Planned for November 2026 in Turku. Dates TBA.
+
+## Blog & Guides
+
+Our blog covers AI hackathon strategies, tech stacks, project ideas, and European developer events:
+
+- [AI Hackathon Project Ideas: 30 Buildable Concepts in 72 Hours](https://sinceai.fi/blog/ai-hackathon-project-ideas): 30 actionable AI project ideas categorized by difficulty with demo structures and stack suggestions.
+- [Best AI Hackathons in Europe](https://sinceai.fi/blog/best-ai-hackathons-in-europe): Curated guide to Europe's top AI hackathons including Junction, Datathon ETH Zurich, GenAI Zurich, and more.
+- [Hackathon Tech Stack Guide](https://sinceai.fi/blog/hackathon-tech-stack-guide): Battle-tested technology stack recommendations for shipping reliable hackathon demos.
+- [How to Build a Demo in 72 Hours](https://sinceai.fi/blog/how-to-build-a-demo-in-72-hours): A demo-first approach to hackathon success with incremental AI feature development.
+- [How to Win an AI Hackathon](https://sinceai.fi/blog/how-to-win-an-ai-hackathon): Demo-first playbook covering problem selection, reliable shipping, and effective pitching.
+- [How to Form a Hackathon Team](https://sinceai.fi/blog/how-to-form-a-hackathon-team): Guide to building hackathon teams like startups with roles, decision-making, and execution rhythm.
+
+## Pages
+
+- [Home](https://sinceai.fi/)
+- [About](https://sinceai.fi/about)
+- [Events](https://sinceai.fi/events)
+- [Projects](https://sinceai.fi/projects)
+- [Partners](https://sinceai.fi/partners)
+- [Blog](https://sinceai.fi/blog)
+- [FAQ](https://sinceai.fi/faq)
+- [Contact](https://sinceai.fi/contact)
+
+## Contact
+
+- General: info@sinceai.fi
+- Partnerships: aarne.ollila@sinceai.fi
+
+## Social
+
+- Discord: https://discord.gg/6PC74zW68v
+- LinkedIn: https://www.linkedin.com/company/sinceai
+- GitHub: https://github.com/sinceaihq
+- Medium: https://medium.com/@sinceai
+- Instagram: https://www.instagram.com/sinceaihq
+- X/Twitter: https://x.com/sinceaihq
+
+## Optional
+
+- [llms-full.txt](https://sinceai.fi/llms-full.txt): Extended version with detailed content descriptions.
