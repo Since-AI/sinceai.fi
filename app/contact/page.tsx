@@ -1,20 +1,12 @@
 "use client";
-import React, { useRef, useEffect, useState, Suspense } from "react";
-import { useSearchParams } from "next/navigation";
+import React, { Suspense } from "react";
 import { motion } from "framer-motion";
-import { FaInstagram, FaLinkedin } from "react-icons/fa";
+import { FaLinkedin } from "react-icons/fa";
 
 import SmoothScroll from "@/components/smoothScroll";
 import { Navbar } from "@/components/navbar";
 import { Footer } from "@/components/sections/Footer";
-import {
-  ContactHero,
-  ContactForm,
-  ContactRoutes,
-  ContactFAQ,
-  DirectContact,
-  ResponseTime,
-} from "@/components/sections/contact";
+import ContactForm from "@/components/ContactForm";
 
 // Team members data
 const teamMembers = [
@@ -28,13 +20,13 @@ const teamMembers = [
     name: "Aarne Ollila",
     role: "Partnerships",
     email: "aarne.ollila@sinceai.fi",
-    linkedin: "https://www.linkedin.com/in/aarne-ollila-53429028b/",
+    linkedin: "https://www.linkedin.com/in/aarneollila/",
   },
   {
     name: "Aman Vyas",
     role: "International",
     email: "aman.vyas@sinceai.fi",
-    linkedin: "https://www.linkedin.com/in/aman-vyas-21b674133/",
+    linkedin: "https://www.linkedin.com/in/aman--vyas/",
   },
   {
     name: "Venla Raassina",
@@ -89,7 +81,7 @@ const TeamCard: React.FC<{ person: TeamMember; index: number }> = ({ person, ind
     whileInView={{ opacity: 1, y: 0 }}
     viewport={{ once: true }}
     transition={{ duration: 0.5, delay: index * 0.05 }}
-    className="group relative border border-white/5 rounded-xl p-6 hover:border-white/10 hover:bg-white/[0.02] transition-all duration-300"
+    className="group relative border border-white/5 rounded-xl p-6 hover:border-white/10 hover:bg-white/[0.02] transition-all duration-300 text-center"
   >
     <div className="space-y-3">
       <div>
@@ -115,7 +107,7 @@ const TeamCard: React.FC<{ person: TeamMember; index: number }> = ({ person, ind
           href={person.linkedin}
           target="_blank"
           rel="noopener noreferrer"
-          className="inline-flex items-center gap-2 text-sm text-neutral-600 hover:text-white transition-colors"
+          className="inline-flex items-center justify-center gap-2 text-sm text-neutral-600 hover:text-white transition-colors w-full"
         >
           <FaLinkedin size={16} />
           <span>LinkedIn</span>
@@ -155,16 +147,6 @@ function ContactPageContent() {
             Questions about partnerships, events, or community? We typically respond within 24 hours.
           </motion.p>
 
-          <motion.a
-            href="mailto:info@sinceai.fi"
-            className="text-lg sm:text-xl text-white hover:text-neutral-300 transition-colors"
-            initial={{ opacity: 0, y: 30 }}
-            animate={{ opacity: 1, y: 0 }}
-            transition={{ duration: 0.8, delay: 0.5, ease: [0.22, 1, 0.36, 1] }}
-          >
-            info@sinceai.fi
-          </motion.a>
-
           <motion.div
             className="flex flex-col sm:flex-row items-center gap-4 pt-4"
             initial={{ opacity: 0, y: 30 }}
@@ -189,6 +171,13 @@ function ContactPageContent() {
         </div>
       </section>
 
+      {/* Contact Form */}
+      <section className="w-full bg-black py-24 px-6 border-t border-white/5">
+        <div className="max-w-2xl mx-auto">
+          <ContactForm />
+        </div>
+      </section>
+
       {/* Team Section - Clean Grid */}
       <section className="w-full bg-black py-24 px-6 border-t border-white/5">
         <div className="max-w-6xl mx-auto">
@@ -207,9 +196,11 @@ function ContactPageContent() {
             </p>
           </motion.div>
 
-          <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-6">
+          <div className="flex flex-wrap justify-center gap-6">
             {teamMembers.map((person, index) => (
-              <TeamCard key={index} person={person} index={index} />
+              <div key={index} className="w-full md:w-[calc(50%-12px)] lg:w-[calc(33.333%-16px)]">
+                <TeamCard person={person} index={index} />
+              </div>
             ))}
           </div>
         </div>
