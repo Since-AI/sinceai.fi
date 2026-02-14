@@ -8,6 +8,8 @@ import { Footer } from "@/components/sections/Footer";
 import { motion } from "framer-motion";
 import { Calendar, MapPin, Users, ExternalLink, ArrowRight } from "lucide-react";
 import { FIRST_EVENT, UPCOMING_EVENT_2026, COPY, LINKS } from "@/lib/sinceai";
+import { getFirstEventSchema, getUpcoming2026EventSchema, getBreadcrumbSchema } from "@/lib/schema";
+import { ORG } from "@/lib/org";
 
 export default function EventsPage() {
   const config = {
@@ -16,10 +18,31 @@ export default function EventsPage() {
     lumaHackathon2025Url: LINKS.lumaHackathon2025, // Specific 2025 event page
   };
 
+  const firstEventSchema = getFirstEventSchema();
+  const upcoming2026Schema = getUpcoming2026EventSchema();
+  const breadcrumbSchema = getBreadcrumbSchema([
+    { name: "Home", url: ORG.baseUrl },
+    { name: "Events", url: `${ORG.baseUrl}/events` },
+  ]);
+
   return (
     <SmoothScroll>
       <Navbar />
-      
+
+      {/* JSON-LD structured data */}
+      <script
+        type="application/ld+json"
+        dangerouslySetInnerHTML={{ __html: JSON.stringify(firstEventSchema) }}
+      />
+      <script
+        type="application/ld+json"
+        dangerouslySetInnerHTML={{ __html: JSON.stringify(upcoming2026Schema) }}
+      />
+      <script
+        type="application/ld+json"
+        dangerouslySetInnerHTML={{ __html: JSON.stringify(breadcrumbSchema) }}
+      />
+
       <main className="flex flex-col w-full bg-black min-h-screen">
         {/* Hero Section - Minimal */}
         <section className="relative w-full px-6 py-24 md:py-32">
@@ -154,7 +177,7 @@ export default function EventsPage() {
                   <div className="relative w-full h-64 md:h-80 rounded-2xl overflow-hidden bg-neutral-900/50">
                     <Image
                       src="/assets/images/educity.jpg"
-                      alt="Since AI Hackathon 2025 at EduCity, Turku"
+                      alt="Since AI Hackathon 2025 — 260+ AI builders collaborating at EduCity campus in Turku, Finland"
                       fill
                       className="object-cover"
                     />
@@ -229,8 +252,19 @@ export default function EventsPage() {
               <h3 className="text-3xl md:text-4xl font-bold text-white mb-4 tracking-tight">
                 Stay Updated
               </h3>
-              <p className="text-lg text-neutral-400 mb-8 max-w-xl mx-auto">
+              <p className="text-lg text-neutral-400 mb-4 max-w-xl mx-auto">
                 Join our Discord or Telegram to get notified about upcoming events, meetups, and hackathons.
+              </p>
+              <p className="text-sm text-neutral-500 mb-8 max-w-xl mx-auto">
+                New to hackathons? Read our{" "}
+                <Link href="/blog" className="text-neutral-300 hover:text-white underline">
+                  AI hackathon guides
+                </Link>{" "}
+                or explore{" "}
+                <Link href="/projects" className="text-neutral-300 hover:text-white underline">
+                  past projects
+                </Link>{" "}
+                for inspiration.
               </p>
               
               <div className="flex flex-col sm:flex-row gap-4 justify-center items-center">

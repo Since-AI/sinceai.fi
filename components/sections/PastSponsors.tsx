@@ -16,25 +16,25 @@ interface PastSponsorsProps {
 }
 
 const defaultSponsors: Sponsor[] = [
-  { src: "/assets/sponsors/businessturku.png", url: "https://businessturku.fi/", alt: "Business Turku" },
-  { src: "/assets/sponsors/valmet.png", url: "https://www.valmet.com", alt: "Valmet" },
-  { src: "/assets/sponsors/sandvik.png", url: "https://www.sandvik.com", alt: "Sandvik" },
-  { src: "/assets/sponsors/elevenlabs.png", url: "https://www.elevenlabs.io", alt: "ElevenLabs" },
-  { src: "/assets/sponsors/apelago.png", url: "https://www.apelago.fi", alt: "Apelago" },
-  { src: "/assets/sponsors/eisko.svg", url: "https://eisko.fi", alt: "Eisko" },
-  { src: "/assets/sponsors/featherless.svg", url: "https://featherless.ai", alt: "Featherless" },
-  { src: "/assets/sponsors/Skillio.png", url: "https://skillio.ai", alt: "Skillio" },
-  { src: "/assets/sponsors/kongsberg.png", url: "https://www.kongsberg.com/", alt: "Kongsberg" },
-  { src: "/assets/sponsors/antler.png", url: "https://www.antler.co/", alt: "Antler" },
+  { src: "/assets/sponsors/businessturku.png", url: "https://businessturku.fi/", alt: "Business Turku logo — regional development partner of Since AI Hackathon" },
+  { src: "/assets/sponsors/valmet.png", url: "https://www.valmet.com", alt: "Valmet logo — industrial technology partner providing AI hackathon challenges" },
+  { src: "/assets/sponsors/sandvik.png", url: "https://www.sandvik.com", alt: "Sandvik logo — engineering partner of Since AI Hackathon 2025" },
+  { src: "/assets/sponsors/elevenlabs.png", url: "https://www.elevenlabs.io", alt: "ElevenLabs logo — AI voice technology sponsor providing API credits" },
+  { src: "/assets/sponsors/apelago.png", url: "https://www.apelago.fi", alt: "Apelago logo — Finnish tech partner of Since AI community" },
+  { src: "/assets/sponsors/eisko.svg", url: "https://eisko.fi", alt: "Eisko logo — partner company at Since AI Hackathon" },
+  { src: "/assets/sponsors/featherless.svg", url: "https://featherless.ai", alt: "Featherless.ai logo — AI compute sponsor providing model inference credits" },
+  { src: "/assets/sponsors/Skillio.png", url: "https://skillio.ai", alt: "Skillio logo — AI skills platform partner of Since AI" },
+  { src: "/assets/sponsors/kongsberg.png", url: "https://www.kongsberg.com/", alt: "Kongsberg logo — maritime technology partner providing hackathon challenges" },
+  { src: "/assets/sponsors/antler.png", url: "https://www.antler.co/", alt: "Antler logo — venture capital partner supporting AI startup builders" },
 ];
 
 const defaultSupports: Sponsor[] = [
-  { src: "/assets/supports/boost.svg", url: "https://boostturku.com/", alt: "Boost Turku" },
-  { src: "/assets/supports/turkuamk.png", url: "https://turkuamk.fi", alt: "Turku University of Applied Sciences" },
-  { src: "/assets/supports/cityofturku.png", url: "https://turku.fi/", alt: "City of Turku" },
-  { src: "/assets/supports/universityofturku.png", url: "https://utu.fi/", alt: "University of Turku" },
-  { src: "/assets/supports/aimadlab.svg", url: "https://aimadlab.com/", alt: "AI Mad Lab" },
-  { src: "/assets/supports/aaltoai.png", url: "https://aaltoai.com/", alt: "Aalto AI" },
+  { src: "/assets/supports/boost.svg", url: "https://boostturku.com/", alt: "Boost Turku logo — startup ecosystem supporter of Since AI" },
+  { src: "/assets/supports/turkuamk.png", url: "https://turkuamk.fi", alt: "Turku University of Applied Sciences logo — academic partner of Since AI" },
+  { src: "/assets/supports/cityofturku.png", url: "https://turku.fi/", alt: "City of Turku logo — municipal supporter of Since AI community events" },
+  { src: "/assets/supports/universityofturku.png", url: "https://utu.fi/", alt: "University of Turku logo — research university partner of Since AI" },
+  { src: "/assets/supports/aimadlab.svg", url: "https://aimadlab.com/", alt: "AI Mad Lab logo — AI community partner of Since AI" },
+  { src: "/assets/supports/aaltoai.png", url: "https://aaltoai.com/", alt: "Aalto AI logo — student AI community partner of Since AI" },
 ];
 
 export const PastSponsors: React.FC<PastSponsorsProps> = ({

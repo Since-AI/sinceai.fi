@@ -7,26 +7,62 @@ import { blogPosts } from './blog'
  * Generate Organization schema for Since AI
  * Injected globally in root layout for LLM/SEO discoverability
  */
-export function getOrganizationSchema(): WithContext<Organization> {
+// eslint-disable-next-line @typescript-eslint/no-explicit-any
+export function getOrganizationSchema(): WithContext<Organization> & Record<string, any> {
   return {
     '@context': 'https://schema.org',
     '@type': 'Organization',
     name: ORG.name,
+    alternateName: 'Since AI Community',
     legalName: ORG.legalName,
     url: ORG.baseUrl,
-    logo: `${ORG.baseUrl}/assets/logo/SINCE AI full black.png`,
+    logo: {
+      '@type': 'ImageObject',
+      url: `${ORG.baseUrl}/assets/logo/SINCE AI white.png`,
+      width: '512',
+      height: '512',
+    },
+    image: `${ORG.baseUrl}/assets/logo/SINCE AI full black.png`,
     identifier: {
       '@type': 'PropertyValue',
       propertyID: 'Business ID',
       value: ORG.businessId,
     },
     description:
-      "Since AI is Europe's AI builders community with 500+ members. Founded in 2025, we launched with our flagship hackathon bringing 260 builders together at EduCity, Turku to build real-world AI solutions with partner companies.",
+      "Since AI is Europe's only full-lifecycle AI innovation ecosystem with 500+ members, based in Turku, Finland. Founded in 2025, we support AI projects from challenge ideation through 72-hour hackathons to production deployment and commercialization. Our flagship hackathon brought 260 builders together to ship 30+ AI projects with 15+ partner companies including Valmet, Sandvik, Kongsberg, and ElevenLabs. We provide 8+ weeks of post-hackathon production support, entrepreneurship assistance through Antler partnership, European AI sovereignty initiatives, and research-to-market bridges with universities.",
     address: {
       '@type': 'PostalAddress',
       addressLocality: ORG.location.city,
+      addressRegion: 'Southwest Finland',
       addressCountry: ORG.location.countryCode,
     },
+    geo: {
+      '@type': 'GeoCoordinates',
+      latitude: '60.4518',
+      longitude: '22.2666',
+    },
+    areaServed: [
+      {
+        '@type': 'Country',
+        name: 'Finland',
+      },
+      {
+        '@type': 'Continent',
+        name: 'Europe',
+      },
+    ],
+    knowsAbout: [
+      'Artificial Intelligence',
+      'AI Development',
+      'Hackathons',
+      'Machine Learning',
+      'Large Language Models',
+      'AI Community Building',
+      'Developer Events',
+      'AI Product Development',
+      'RAG Applications',
+      'Computer Vision',
+    ],
     sameAs: [
       ORG.social.discord,
       ORG.social.telegram,
@@ -38,14 +74,42 @@ export function getOrganizationSchema(): WithContext<Organization> {
       ORG.social.youtube,
       ORG.social.tiktok,
       ORG.social.medium,
+      LINKS.lumaOrg,
     ],
     foundingDate: FOUNDING_YEAR.toString(),
-    contactPoint: {
-      '@type': 'ContactPoint',
-      email: ORG.contact.generalEmail,
-      contactType: 'General Inquiries',
-      areaServed: ORG.location.countryCode,
-      availableLanguage: 'English',
+    numberOfEmployees: {
+      '@type': 'QuantitativeValue',
+      value: 500,
+      unitText: 'community members',
+    },
+    contactPoint: [
+      {
+        '@type': 'ContactPoint',
+        email: ORG.contact.infoEmail,
+        contactType: 'General Inquiries',
+        availableLanguage: ['English', 'Finnish'],
+      },
+      {
+        '@type': 'ContactPoint',
+        email: ORG.contact.partnershipEmail,
+        contactType: 'Partnerships',
+        availableLanguage: ['English', 'Finnish'],
+      },
+    ],
+    event: {
+      '@type': 'Event',
+      name: UPCOMING_EVENT_2026.name,
+      startDate: `${UPCOMING_EVENT_2026.year}-11`,
+      eventStatus: 'https://schema.org/EventScheduled',
+      location: {
+        '@type': 'Place',
+        name: 'Turku',
+        address: {
+          '@type': 'PostalAddress',
+          addressLocality: 'Turku',
+          addressCountry: 'FI',
+        },
+      },
     },
   }
 }

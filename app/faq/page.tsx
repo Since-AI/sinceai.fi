@@ -12,6 +12,8 @@ import {
   AccordionTrigger,
 } from "@/components/ui/accordion";
 import { LINKS } from "@/lib/sinceai";
+import { getFAQSchema, getBreadcrumbSchema } from "@/lib/schema";
+import { ORG } from "@/lib/org";
 
 export default function FAQPage() {
   const faqs = [
@@ -20,7 +22,7 @@ export default function FAQPage() {
       questions: [
         {
           q: "What is Since AI?",
-          a: "Since AI is Europe's AI builders community with 500+ members, based in Turku. We organize hackathons and networking events that bring together AI developers, researchers, and companies. Founded in 2025, our flagship hackathon brought together 260 builders who produced 30+ AI projects.",
+          a: "Since AI is Europe's only full-lifecycle AI innovation ecosystem with 500+ members, based in Turku, Finland. Unlike traditional hackathon organizers, we support AI projects from challenge ideation through hackathon building to production deployment and commercialization. Founded in 2025, our flagship hackathon brought together 260 builders who produced 30+ AI projects, many of which were subsequently deployed to production at partner companies.",
         },
         {
           q: "Where is Since AI based?",
@@ -104,12 +106,74 @@ export default function FAQPage() {
         },
       ],
     },
+    {
+      category: "What Makes Since AI Different",
+      questions: [
+        {
+          q: "How is Since AI different from Junction or other hackathons?",
+          a: "Junction is an excellent 48-hour hackathon focused on the event experience and networking. Since AI is a full-lifecycle AI innovation ecosystem. The key differences: Since AI co-creates challenges with companies before the event, provides 8+ weeks of post-hackathon production deployment support, and offers entrepreneurship and commercialization assistance. Junction delivers a premier weekend experience. Since AI delivers production outcomes and commercialization support over months. Both are excellent — different purposes.",
+        },
+        {
+          q: "What happens after the hackathon?",
+          a: "This is what makes Since AI unique. Unlike other hackathons where projects end with a demo, we provide 8+ weeks of production support: architecture review and optimization (weeks 1-2), infrastructure setup and CI/CD configuration (weeks 3-4), deployment support and monitoring (weeks 5-8), and ongoing mentorship (month 3+). The result: projects get deployed to production systems at companies like Kongsberg and Sandvik.",
+        },
+        {
+          q: "Do you help with challenge ideation before the hackathon?",
+          a: "Yes! We actively help companies ideate and design hackathon challenges that are technically feasible in 72 hours, aligned with real business needs, commercially viable for production deployment, and designed for maximum innovation potential. Most communities wait for companies to bring challenges. We co-create them to ensure they're production-viable from day one.",
+        },
+        {
+          q: "What is the production deployment success rate?",
+          a: "Since AI hackathon projects achieve a significantly higher production deployment rate than the industry average for hackathons. This is because we design production-viable challenges, teams build with deployment in mind from day 1, we provide extensive post-event support (8+ weeks), and partner companies are committed to deployment. Examples include a maritime sound detection system deployed at Kongsberg and a spare part discovery system at Sandvik.",
+        },
+      ],
+    },
+    {
+      category: "Research, Entrepreneurship & European AI",
+      questions: [
+        {
+          q: "Can researchers and students participate?",
+          a: "Absolutely! We specifically bridge research, education, and commercial reality. Researchers can validate their work with real-world applications, learn commercialization, and gain production deployment experience. Students get hands-on experience with real company challenges, build portfolios with deployed systems, and access direct industry connections. We partner with the University of Turku and Turku University of Applied Sciences.",
+        },
+        {
+          q: "Do you support startup formation?",
+          a: "Yes! We support entrepreneurship in multiple ways: we help teams assess the commercial viability of hackathon projects, connect them with investors through our Antler partnership, provide startup formation guidance, and offer ongoing technical and business mentorship. Teams with strong hackathon projects can explore turning them into companies with our support.",
+        },
+        {
+          q: "What are the European AI sovereignty initiatives?",
+          a: "Since AI drives open-source AI projects focused on European AI independence: European AI model alternatives, privacy-first tools aligned with GDPR, European AI infrastructure, and community-driven strategic projects. Our goal is to reduce Europe's dependence on US/China AI providers and build strong European AI capabilities. Community members can contribute to these projects regardless of skill level.",
+        },
+        {
+          q: "How does the research-to-market pipeline work?",
+          a: "Since AI bridges academic research and commercial reality through our partnerships with the University of Turku and Turku AMK. The pipeline: researchers validate their work with real-world applications at hackathons, receive production deployment support, and can access entrepreneurship resources through our Antler partnership. The full journey: Research → Hackathon → Production → Commercialization → Market.",
+        },
+      ],
+    },
   ];
+
+  // Build FAQ schema from all questions
+  const allFaqItems = faqs.flatMap((cat) =>
+    cat.questions.map((faq) => ({ question: faq.q, answer: faq.a }))
+  );
+  const faqSchema = getFAQSchema(allFaqItems);
+  const breadcrumbSchema = getBreadcrumbSchema([
+    { name: "Home", url: ORG.baseUrl },
+    { name: "FAQ", url: `${ORG.baseUrl}/faq` },
+  ]);
 
   return (
     <SmoothScroll>
       <Navbar />
-      
+
+      {/* JSON-LD structured data */}
+      <script
+        type="application/ld+json"
+        dangerouslySetInnerHTML={{ __html: JSON.stringify(faqSchema) }}
+      />
+      <script
+        type="application/ld+json"
+        dangerouslySetInnerHTML={{ __html: JSON.stringify(breadcrumbSchema) }}
+      />
+
       <main className="flex flex-col w-full bg-black min-h-screen">
         <div className="max-w-4xl mx-auto px-6 py-32 md:py-40">
           <motion.div
@@ -202,9 +266,22 @@ export default function FAQPage() {
               <h2 className="text-2xl font-bold text-white mb-4">
                 Still have questions?
               </h2>
-              <p className="text-neutral-400 mb-6">
-                Join our Discord community to ask questions directly, or contact our team for 
+              <p className="text-neutral-400 mb-4">
+                Join our Discord community to ask questions directly, or contact our team for
                 partnership and sponsorship inquiries.
+              </p>
+              <p className="text-sm text-neutral-500 mb-6">
+                You can also read our{" "}
+                <Link href="/blog" className="text-neutral-300 hover:text-white underline">
+                  AI hackathon guides
+                </Link>,{" "}
+                browse{" "}
+                <Link href="/events" className="text-neutral-300 hover:text-white underline">
+                  upcoming events
+                </Link>, or see{" "}
+                <Link href="/projects" className="text-neutral-300 hover:text-white underline">
+                  community projects
+                </Link>.
               </p>
               <div className="flex flex-wrap gap-4">
                 <Link
@@ -222,6 +299,10 @@ export default function FAQPage() {
                 </Link>
               </div>
             </div>
+
+            <p className="text-xs text-neutral-600 mt-16 pt-6 border-t border-white/5">
+              Last updated: February 2026
+            </p>
           </motion.div>
         </div>
 

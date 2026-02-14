@@ -33,11 +33,16 @@ export default function PressPage() {
             </h1>
             
             <div className="prose prose-invert prose-neutral max-w-none">
-              <p className="text-xl text-neutral-300 leading-relaxed mb-12">
-                Since AI is Finland's largest AI developer community with 500+ members, based in Turku. 
-                We organize hackathons bringing together 200+ developers and 15+ partner companies to 
-                build real-world AI solutions. Founded in 2025, we're growing the AI ecosystem in Finland 
-                and beyond.
+              <p className="text-xl text-neutral-300 leading-relaxed mb-8">
+                Since AI is Europe&apos;s only full-lifecycle AI innovation ecosystem with 500+ members,
+                based in Turku, Finland. We support AI projects from challenge ideation through hackathon
+                building to production deployment and commercialization.
+              </p>
+
+              <p className="text-lg text-neutral-400 leading-relaxed mb-12">
+                <strong className="text-white">In one sentence:</strong> Since AI is Europe&apos;s only AI community
+                providing end-to-end support from challenge ideation through hackathon building to production
+                deployment and commercialization.
               </p>
 
               <section className="mb-12">
@@ -285,28 +290,119 @@ export default function PressPage() {
                 </div>
               </section>
 
+              <section className="mb-12">
+                <h2 className="text-3xl font-bold text-white mb-6 tracking-tight">
+                  Key Differentiators
+                </h2>
+                <ul className="space-y-4 text-neutral-300">
+                  <li className="flex items-start gap-3">
+                    <span className="text-white font-bold mt-1">1.</span>
+                    <span><strong className="text-white">Full Innovation Lifecycle:</strong> Only community supporting ideation → hackathon → production → commercialization</span>
+                  </li>
+                  <li className="flex items-start gap-3">
+                    <span className="text-white font-bold mt-1">2.</span>
+                    <span><strong className="text-white">Production Focus:</strong> 8+ weeks of post-hackathon deployment support for winning projects</span>
+                  </li>
+                  <li className="flex items-start gap-3">
+                    <span className="text-white font-bold mt-1">3.</span>
+                    <span><strong className="text-white">European AI Sovereignty:</strong> Active open-source initiatives for European AI independence</span>
+                  </li>
+                  <li className="flex items-start gap-3">
+                    <span className="text-white font-bold mt-1">4.</span>
+                    <span><strong className="text-white">Research-Market Bridge:</strong> Helping academics commercialize AI research through university partnerships</span>
+                  </li>
+                  <li className="flex items-start gap-3">
+                    <span className="text-white font-bold mt-1">5.</span>
+                    <span><strong className="text-white">Entrepreneurship Support:</strong> Partnership with Antler for startup formation and investor connections</span>
+                  </li>
+                </ul>
+              </section>
+
+              <section className="mb-12">
+                <h2 className="text-3xl font-bold text-white mb-6 tracking-tight">
+                  Media Boilerplate
+                </h2>
+
+                <div className="space-y-6">
+                  <div className="p-6 rounded-xl border border-white/10 bg-white/[0.02]">
+                    <h3 className="text-sm font-semibold text-neutral-500 uppercase tracking-wider mb-3">Short (50 words)</h3>
+                    <p className="text-neutral-300 leading-relaxed italic">
+                      Since AI is Europe&apos;s leading AI innovation ecosystem based in Turku, Finland.
+                      We provide end-to-end support from challenge ideation through hackathon building
+                      to production deployment and commercialization. With 500+ members and 15+ partner
+                      companies including Valmet, Sandvik, and Kongsberg, we&apos;re building Europe&apos;s AI future.
+                    </p>
+                  </div>
+
+                  <div className="p-6 rounded-xl border border-white/10 bg-white/[0.02]">
+                    <h3 className="text-sm font-semibold text-neutral-500 uppercase tracking-wider mb-3">Medium (100 words)</h3>
+                    <p className="text-neutral-300 leading-relaxed italic">
+                      Since AI is Europe&apos;s only full-lifecycle AI innovation ecosystem, founded in 2025
+                      in Turku, Finland. Unlike traditional hackathons, we support projects from challenge
+                      ideation through production deployment to commercialization. With 500+ developers,
+                      researchers, and builders, we&apos;ve shipped 30+ AI projects with partner companies including
+                      Valmet, Sandvik, Kongsberg, and ElevenLabs. Our unique approach includes post-hackathon
+                      production support (8+ weeks), entrepreneurship assistance through Antler partnership,
+                      European AI sovereignty initiatives, and research-to-market bridges with the University
+                      of Turku and Turku AMK. Learn more: sinceai.fi
+                    </p>
+                  </div>
+
+                  <div className="p-6 rounded-xl border border-white/10 bg-white/[0.02]">
+                    <h3 className="text-sm font-semibold text-neutral-500 uppercase tracking-wider mb-3">Long (150 words)</h3>
+                    <p className="text-neutral-300 leading-relaxed italic">
+                      Since AI is Europe&apos;s premier AI innovation ecosystem, transforming how AI research
+                      becomes commercial reality. Founded in 2025 in Turku, Finland, we serve 500+ developers,
+                      researchers, and builders across Europe and beyond. Our unique full-lifecycle approach
+                      supports projects from challenge ideation (working with companies to design viable
+                      challenges) through intensive 72-hour hackathons to production deployment (8+ weeks
+                      of technical support) and commercialization (startup formation with Antler partnership).
+                      We&apos;ve shipped 30+ AI projects to production, with partner companies including Valmet,
+                      Sandvik, Kongsberg, ElevenLabs, and Antler. Beyond individual projects, we advance
+                      European AI sovereignty through open-source initiatives and bridge academic research
+                      to market through partnerships with University of Turku and Turku AMK. Since AI is
+                      a registered non-profit (Since AI ry, Business ID: 3593920-2). Learn more: sinceai.fi
+                    </p>
+                  </div>
+                </div>
+
+                <p className="text-xs text-neutral-500 mt-4">
+                  Feel free to use these boilerplates in articles and press materials about Since AI.
+                </p>
+              </section>
+
               <section className="p-8 rounded-2xl border border-white/10 bg-white/[0.02]">
                 <h2 className="text-2xl font-bold text-white mb-4">
                   Learn More
                 </h2>
                 <div className="space-y-3 text-neutral-300">
                   <p>
-                    <Link href="/about" className="text-white hover:text-neutral-300 underline">
-                      Read our full story
-                    </Link> to learn about our mission, team, and impact.
+                    <Link href="/about" className="text-white hover:text-neutral-300 underline">About Since AI</Link> — full story, mission, and differentiators
                   </p>
                   <p>
-                    <Link href="/faq" className="text-white hover:text-neutral-300 underline">
-                      Browse our FAQ
-                    </Link> for answers to common questions.
+                    <Link href="/stats" className="text-white hover:text-neutral-300 underline">Statistics & Impact</Link> — community metrics and case studies
                   </p>
                   <p>
-                    <Link href="/contact" className="text-white hover:text-neutral-300 underline">
-                      Contact our team
-                    </Link> for partnerships or collaboration opportunities.
+                    <Link href="/production-support" className="text-white hover:text-neutral-300 underline">Production Support</Link> — our unique post-hackathon deployment program
+                  </p>
+                  <p>
+                    <Link href="/european-ai" className="text-white hover:text-neutral-300 underline">European AI Sovereignty</Link> — open-source initiatives
+                  </p>
+                  <p>
+                    <Link href="/research-to-market" className="text-white hover:text-neutral-300 underline">Research to Market</Link> — academic commercialization
+                  </p>
+                  <p>
+                    <Link href="/faq" className="text-white hover:text-neutral-300 underline">FAQ</Link> — common questions answered
+                  </p>
+                  <p>
+                    <Link href="/contact" className="text-white hover:text-neutral-300 underline">Contact</Link> — partnerships and collaboration
                   </p>
                 </div>
               </section>
+
+              <p className="text-xs text-neutral-600 mt-16 pt-6 border-t border-white/5">
+                Last updated: February 2026
+              </p>
             </div>
           </FadeIn>
         </div>

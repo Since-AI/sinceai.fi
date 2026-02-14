@@ -25,24 +25,49 @@ export function LeanHero({ discordUrl }: LeanHeroProps) {
           animate={{ opacity: 1, y: 0 }}
           transition={{ duration: 0.8, delay: 0.2, ease: [0.22, 1, 0.36, 1] }}
         >
-          The AI builders community in Europe.
+          Europe&apos;s AI builders community.
         </motion.h1>
 
-        {/* Sub - One short line */}
+        {/* Sub - Full lifecycle positioning */}
         <motion.p
-          className="text-xl sm:text-2xl md:text-3xl font-light text-neutral-400 max-w-2xl"
+          className="text-xl sm:text-2xl md:text-3xl font-light text-neutral-400 max-w-3xl"
           initial={{ opacity: 0, y: 30 }}
           animate={{ opacity: 1, y: 0 }}
           transition={{ duration: 0.8, delay: 0.4, ease: [0.22, 1, 0.36, 1] }}
         >
-          Turku-based. Globally connected.
+          From challenge ideation to production deployment. Hackathons, real AI
+          projects, and a global developer network. Based in Turku, Finland.
         </motion.p>
+
+        {/* Value props */}
+        <motion.div
+          initial={{ opacity: 0 }}
+          animate={{ opacity: 1 }}
+          transition={{ duration: 0.8, delay: 0.6, ease: [0.22, 1, 0.36, 1] }}
+          className="flex flex-wrap justify-center gap-3 sm:gap-4 text-sm font-medium text-neutral-500"
+        >
+          <span className="px-3 py-1.5 rounded-full border border-white/10 bg-white/[0.02]">
+            Challenge Ideation
+          </span>
+          <span className="text-neutral-600 self-center">→</span>
+          <span className="px-3 py-1.5 rounded-full border border-white/10 bg-white/[0.02]">
+            72h Hackathon
+          </span>
+          <span className="text-neutral-600 self-center">→</span>
+          <span className="px-3 py-1.5 rounded-full border border-white/10 bg-white/[0.02]">
+            Production Support
+          </span>
+          <span className="text-neutral-600 self-center">→</span>
+          <span className="px-3 py-1.5 rounded-full border border-white/10 bg-white/[0.02]">
+            Commercialization
+          </span>
+        </motion.div>
 
         {/* Proof line - Metrics */}
         <motion.div
           initial={{ opacity: 0 }}
           animate={{ opacity: 1 }}
-          transition={{ duration: 0.8, delay: 0.6, ease: [0.22, 1, 0.36, 1] }}
+          transition={{ duration: 0.8, delay: 0.7, ease: [0.22, 1, 0.36, 1] }}
           className="flex flex-wrap justify-center gap-4 sm:gap-6 text-sm sm:text-base font-medium text-neutral-500"
         >
           <span className="flex items-center gap-2">
@@ -51,7 +76,7 @@ export function LeanHero({ discordUrl }: LeanHeroProps) {
           </span>
           <span className="flex items-center gap-2">
             <span className="w-1.5 h-1.5 rounded-full bg-neutral-500" />
-            200+ participants
+            260+ builders
           </span>
           <span className="flex items-center gap-2">
             <span className="w-1.5 h-1.5 rounded-full bg-neutral-500" />
@@ -68,7 +93,7 @@ export function LeanHero({ discordUrl }: LeanHeroProps) {
           className="flex flex-col sm:flex-row items-center gap-4 pt-4"
           initial={{ opacity: 0, y: 30 }}
           animate={{ opacity: 1, y: 0 }}
-          transition={{ duration: 0.8, delay: 0.8, ease: [0.22, 1, 0.36, 1] }}
+          transition={{ duration: 0.8, delay: 0.9, ease: [0.22, 1, 0.36, 1] }}
         >
           <a
             href={discordUrl}
@@ -92,7 +117,7 @@ export function LeanHero({ discordUrl }: LeanHeroProps) {
           className="text-sm text-neutral-600 font-medium tracking-wide pt-2"
           initial={{ opacity: 0 }}
           animate={{ opacity: 1 }}
-          transition={{ duration: 0.8, delay: 1, ease: [0.22, 1, 0.36, 1] }}
+          transition={{ duration: 0.8, delay: 1.1, ease: [0.22, 1, 0.36, 1] }}
         >
           Open to top builders worldwide.
         </motion.p>

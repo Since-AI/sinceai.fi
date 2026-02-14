@@ -42,6 +42,7 @@ export const Footer: React.FC<FooterProps> = ({
         { name: "Events", href: "/events" },
         { name: "Projects", href: "/projects" },
         { name: "Partners", href: "/partners" },
+        { name: "Production Support", href: "/production-support" },
         { name: "Community", href: discordUrl },
         { name: "Blog", href: "/blog" },
       ],
@@ -50,6 +51,9 @@ export const Footer: React.FC<FooterProps> = ({
       title: "Company",
       links: [
         { name: "About", href: "/about" },
+        { name: "European AI", href: "/european-ai" },
+        { name: "Research to Market", href: "/research-to-market" },
+        { name: "Stats & Impact", href: "/stats" },
         { name: "Press", href: "/press" },
         { name: "Contact", href: "/contact" },
         { name: "FAQ", href: "/faq" },
@@ -76,7 +80,7 @@ export const Footer: React.FC<FooterProps> = ({
               Since AI
             </h2>
             <p className="text-neutral-500 text-sm max-w-md">
-              The AI builders community in Europe. Turku-based, globally connected.
+              Europe&apos;s full-lifecycle AI innovation ecosystem. Turku-based, globally connected.
             </p>
             <a
               href={`mailto:${ORG.contact.infoEmail}`}

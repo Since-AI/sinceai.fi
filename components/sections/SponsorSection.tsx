@@ -172,7 +172,7 @@ export const SponsorSection: React.FC<SponsorSectionProps> = ({
               <div className="flex-shrink-0">
                 <img
                   src="/assets/sponsors/sandvik.png"
-                  alt="Sandvik Logo"
+                  alt="Sandvik logo — engineering partner providing real AI challenges at Since AI Hackathon"
                   className="w-24 h-24 md:w-32 md:h-32 object-contain opacity-80"
                 />
               </div>

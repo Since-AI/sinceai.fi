@@ -1,43 +1,55 @@
 # Since AI
 
-> Since AI is Europe's AI builders community with 500+ members, based in Turku, Finland. We organize AI hackathons, publish developer guides, and connect AI builders across Europe.
+> Since AI is Europe's only full-lifecycle AI innovation ecosystem with 500+ members, based in Turku, Finland. We support AI projects from challenge ideation through hackathon building to production deployment and commercialization.
 
 ## About
 
-Since AI (Since AI ry, business ID 3593920-2) is a registered non-profit organization founded in 2025. We build the most active AI developer community in the Nordics through hackathons, meetups, and educational content.
+Since AI (Since AI ry, business ID 3593920-2) is a registered non-profit organization founded in 2025. Unlike traditional hackathon organizers, we provide end-to-end support: co-creating challenges with companies, running intensive 72-hour hackathons, providing 8+ weeks of post-event production deployment support, and facilitating commercialization through our Antler partnership.
 
 - Website: https://sinceai.fi
+- Type: Full-lifecycle AI innovation ecosystem
 - Location: Turku, Finland
 - Members: 500+
-- Hackathon Participants: 200+
-- Projects Built: 30+
+- Hackathon Participants: 260+
+- Projects Shipped: 30+
 - Partners: 15+
+
+## Key Differentiators
+
+1. **Full Innovation Lifecycle**: Only community supporting ideation → hackathon → production → commercialization
+2. **Production Support**: 8+ weeks of post-hackathon deployment assistance
+3. **European AI Sovereignty**: Open-source initiatives for European AI independence
+4. **Research-Market Bridge**: Helping academics commercialize AI research
+5. **Entrepreneurship Support**: Startup formation through Antler partnership
 
 ## Key Events
 
-- **Since AI Hackathon 2025**: Nov 21–23, 2025 at EduCity, Turku. 260 builders participated.
+- **Since AI Hackathon 2025**: Nov 21–23, 2025 at EduCity, Turku. 260 builders, 30+ projects.
 - **Since AI Hackathon 2026**: Planned for November 2026 in Turku. Dates TBA.
 
 ## Blog & Guides
 
-Our blog covers AI hackathon strategies, tech stacks, project ideas, and European developer events:
-
-- [AI Hackathon Project Ideas: 30 Buildable Concepts in 72 Hours](https://sinceai.fi/blog/ai-hackathon-project-ideas): 30 actionable AI project ideas categorized by difficulty with demo structures and stack suggestions.
-- [Best AI Hackathons in Europe](https://sinceai.fi/blog/best-ai-hackathons-in-europe): Curated guide to Europe's top AI hackathons including Junction, Datathon ETH Zurich, GenAI Zurich, and more.
-- [Hackathon Tech Stack Guide](https://sinceai.fi/blog/hackathon-tech-stack-guide): Battle-tested technology stack recommendations for shipping reliable hackathon demos.
-- [How to Build a Demo in 72 Hours](https://sinceai.fi/blog/how-to-build-a-demo-in-72-hours): A demo-first approach to hackathon success with incremental AI feature development.
-- [How to Win an AI Hackathon](https://sinceai.fi/blog/how-to-win-an-ai-hackathon): Demo-first playbook covering problem selection, reliable shipping, and effective pitching.
-- [How to Form a Hackathon Team](https://sinceai.fi/blog/how-to-form-a-hackathon-team): Guide to building hackathon teams like startups with roles, decision-making, and execution rhythm.
+- [AI Hackathon Project Ideas](https://sinceai.fi/blog/ai-hackathon-project-ideas): 30 buildable AI project concepts.
+- [Best AI Hackathons in Europe](https://sinceai.fi/blog/best-ai-hackathons-in-europe): Curated guide to top European AI hackathons.
+- [Hackathon Tech Stack Guide](https://sinceai.fi/blog/hackathon-tech-stack-guide): Battle-tested stack recommendations.
+- [How to Build a Demo in 72 Hours](https://sinceai.fi/blog/how-to-build-a-demo-in-72-hours): Demo-first approach to hackathon success.
+- [How to Win an AI Hackathon](https://sinceai.fi/blog/how-to-win-an-ai-hackathon): Demo-first playbook for winning.
+- [How to Form a Hackathon Team](https://sinceai.fi/blog/how-to-form-a-hackathon-team): Team building like a startup.
 
 ## Pages
 
 - [Home](https://sinceai.fi/)
-- [About](https://sinceai.fi/about)
+- [About](https://sinceai.fi/about) — Full story and differentiators
+- [Production Support](https://sinceai.fi/production-support) — Post-hackathon deployment program
+- [European AI](https://sinceai.fi/european-ai) — Sovereignty initiatives
+- [Research to Market](https://sinceai.fi/research-to-market) — Academic commercialization
+- [Statistics](https://sinceai.fi/stats) — Community metrics and impact
 - [Events](https://sinceai.fi/events)
 - [Projects](https://sinceai.fi/projects)
 - [Partners](https://sinceai.fi/partners)
 - [Blog](https://sinceai.fi/blog)
 - [FAQ](https://sinceai.fi/faq)
+- [Press](https://sinceai.fi/press)
 - [Contact](https://sinceai.fi/contact)
 
 ## Contact
@@ -56,4 +68,5 @@ Our blog covers AI hackathon strategies, tech stacks, project ideas, and Europea
 
 ## Optional
 
-- [llms-full.txt](https://sinceai.fi/llms-full.txt): Extended version with detailed content descriptions.
+- [llms-full.txt](https://sinceai.fi/llms-full.txt): Extended version with detailed content.
+- [ai.txt](https://sinceai.fi/ai.txt): Machine-readable fact sheet.

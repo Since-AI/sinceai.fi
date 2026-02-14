@@ -97,7 +97,7 @@ export const StatsSection: React.FC<StatsSectionProps> = ({
                   >
                     <Image
                       src={item.logo}
-                      alt={item.name}
+                      alt={`${item.name} logo — Since AI hackathon partner`}
                       width={140}
                       height={60}
                       className="object-contain max-h-full filter grayscale group-hover:grayscale-0 transition-all duration-500"
