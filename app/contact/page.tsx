@@ -25,7 +25,7 @@ const teamMembers = [
   {
     name: "Aman Vyas",
     role: "International",
-    email: "aman.vyas@sinceai.fi",
+    email: "aman@sinceai.fi",
     linkedin: "https://www.linkedin.com/in/aman--vyas/",
   },
   {
@@ -37,7 +37,7 @@ const teamMembers = [
   {
     name: "Abdul Wasay",
     role: "Content",
-    email: "abdul.wasay@sinceai.fi",
+    email: "abdul@sinceai.fi",
     linkedin: "https://www.linkedin.com/in/abdulwasaymuhammad/",
   },
   {
